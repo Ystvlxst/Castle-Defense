@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class FloatingJoystick : Joystick
@@ -6,13 +8,7 @@ public class FloatingJoystick : Joystick
     protected override void Start()
     {
         base.Start();
-        background.anchoredPosition = Vector2.zero;
-        ResetInput();
-    }
-
-    private void OnDisable()
-    {
-        ResetInput();
+        background.gameObject.SetActive(false);
     }
 
     public override void OnPointerDown(PointerEventData eventData)
@@ -26,11 +22,5 @@ public class FloatingJoystick : Joystick
     {
         background.gameObject.SetActive(false);
         base.OnPointerUp(eventData);
-    }
-
-    private void ResetInput()
-    {
-        OnPointerDown(new PointerEventData(EventSystem.current));
-        background.gameObject.SetActive(false);
     }
 }
