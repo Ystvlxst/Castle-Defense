@@ -32,5 +32,6 @@ public class Enemy : MonoBehaviour
     private void Die()
     {
         Dying?.Invoke(this);
+        Destroy(gameObject);
     }
 }
