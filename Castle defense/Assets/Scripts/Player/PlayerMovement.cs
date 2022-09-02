@@ -15,8 +15,6 @@ public class PlayerMovement : MonoBehaviour
     private float _speedRate;
     private Coroutine _changeSpeed;
     
-    public event UnityAction PositionUpdated;
-    
     public NavMeshAgent Agent => _agent;
 
     private void Awake()
