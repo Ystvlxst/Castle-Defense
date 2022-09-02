@@ -1342,7 +1342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetState: {fileID: 6753661178183727276}
-  _transitionRange: 1
+  _transitionRange: 2
   _rangeSpread: 0.5
 --- !u!114 &3353025041451323208
 MonoBehaviour:

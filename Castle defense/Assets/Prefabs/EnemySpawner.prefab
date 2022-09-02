@@ -48,7 +48,8 @@ MonoBehaviour:
     Delay: 1
     Count: 2
   - Template: {fileID: 996242031350278236, guid: db126b84e0bab4d73a242a31f7d70a9d, type: 3}
-    Delay: 2
+    Delay: 1
     Count: 4
   _spawnPoint: {fileID: 1396516491721220574}
+  _target: {fileID: 0}
   _player: {fileID: 0}

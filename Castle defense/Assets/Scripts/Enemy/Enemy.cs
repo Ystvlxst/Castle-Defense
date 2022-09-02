@@ -9,14 +9,14 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float _health;
     [SerializeField] private int _reward;
 
-    private Player _target;
+    private EnemyTarget _target;
 
-    public Player Target => _target;
+    public EnemyTarget Target => _target;
     public int Reward => _reward;
 
     public event UnityAction<Enemy> Dying;
 
-    public void Init(Player target)
+    public void Init(EnemyTarget target)
     {
         _target = target;
     }
