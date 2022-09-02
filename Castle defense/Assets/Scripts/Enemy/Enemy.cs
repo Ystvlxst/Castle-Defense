@@ -4,17 +4,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(EnemyMovement))]
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private float _health;
     [SerializeField] private int _reward;
 
-    [SerializeField] private Player _target;
+    private Player _target;
 
     public Player Target => _target;
+    public int Reward => _reward;
 
-    public event UnityAction Dying;
+    public event UnityAction<Enemy> Dying;
+
+    public void Init(Player target)
+    {
+        _target = target;
+    }
 
     public void TakeDamage(float damage)
     {
@@ -26,6 +31,6 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
-        Dying?.Invoke();
+        Dying?.Invoke(this);
     }
 }

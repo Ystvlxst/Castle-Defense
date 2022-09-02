@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
 
     private int _currentHealth;
 
+    public int Money { get; private set; }
+
     private void Start()
     {
         _currentHealth = _health;
@@ -18,6 +20,11 @@ public class Player : MonoBehaviour
 
         if (_currentHealth <= 0)
             Dying();
+    }
+
+    public void AddMoney(int reward)
+    {
+        Money += reward;
     }
 
     private void Dying()

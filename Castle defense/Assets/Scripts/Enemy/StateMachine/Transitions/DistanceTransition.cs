@@ -7,13 +7,6 @@ public class DistanceTransition : Transition
     [SerializeField] private float _transitionRange;
     [SerializeField] private float _rangeSpread;
 
-    private EnemyMovement _enemyMovement;
-
-    private void Awake()
-    {
-        _enemyMovement = GetComponent<EnemyMovement>();
-    }
-
     private void Start()
     {
         _transitionRange += Random.Range(-_rangeSpread, _rangeSpread);
@@ -26,7 +19,7 @@ public class DistanceTransition : Transition
 
     public void CheckDistanceToTarget()
     {
-        if (Vector3.Distance(_enemyMovement.transform.position, _enemyMovement.Target.position) < _transitionRange)
+        if (Vector3.Distance(transform.position, Target.transform.position) < _transitionRange)
             NeedTransit = true;
     }
 }
