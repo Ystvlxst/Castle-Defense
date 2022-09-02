@@ -8,16 +8,23 @@ using UnityEngine.AI;
 public class AttackState : State
 {
     [SerializeField] private int _damage;
-    [SerializeField] private float _delay;
+
+     private float _delay;
 
     private NavMeshAgent _navMeshAgent;
     private Animator _animator;
     private float _lastAttackTime;
 
+    private Player _player;
+
     private void Start()
     {
+        _delay = Random.Range(2, 4);
+
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _animator = GetComponent<Animator>();
+
+        _player = FindObjectOfType<Player>();
 
         _navMeshAgent.speed = 0;
     }
@@ -34,6 +41,6 @@ public class AttackState : State
 
     private void Attack(EnemyTarget target)
     {
-        
+        _player.ApplyDamage(_damage);
     }
 }

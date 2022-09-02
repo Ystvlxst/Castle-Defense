@@ -45,14 +45,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _waves:
   - Template: {fileID: 996242031350278236, guid: db126b84e0bab4d73a242a31f7d70a9d, type: 3}
-    Delay: 1
+    Delay: 0.5
     Count: 2
   - Template: {fileID: 996242031350278236, guid: f87d841f4f39549f6b19c6acd4d541e0, type: 3}
-    Delay: 1
+    Delay: 0.5
     Count: 4
   - Template: {fileID: 996242031350278236, guid: 706924c8e234943b9b0352591a18b149, type: 3}
-    Delay: 2
+    Delay: 1
     Count: 1
+  - Template: {fileID: 996242031350278236, guid: db126b84e0bab4d73a242a31f7d70a9d, type: 3}
+    Delay: 0.5
+    Count: 8
   _spawnPoint: {fileID: 1396516491721220574}
   _target: {fileID: 0}
+  _bossTarget: {fileID: 0}
   _player: {fileID: 0}

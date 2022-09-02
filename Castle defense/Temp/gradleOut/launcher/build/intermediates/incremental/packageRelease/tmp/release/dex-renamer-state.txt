@@ -1,0 +1,4 @@
+#Fri Sep 02 19:21:25 YEKT 2022
+base.0=/Users/artemijgerzina/Documents/GitHub/Castle-Defence/Castle defense/Temp/gradleOut/launcher/build/intermediates/dex/release/mergeDexRelease/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

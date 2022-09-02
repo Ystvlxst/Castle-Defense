@@ -5,7 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Bullet : MonoBehaviour
 {
-    private float _damage;
+    [SerializeField] private float _damage;
+
     private Rigidbody _rigidbody;
 
     public Rigidbody Rigidbody => _rigidbody;
@@ -13,7 +14,6 @@ public class Bullet : MonoBehaviour
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
-        _damage = 90;
     }
 
     private void OnTriggerEnter(Collider other)

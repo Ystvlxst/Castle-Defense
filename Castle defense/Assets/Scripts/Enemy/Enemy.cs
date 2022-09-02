@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
 
     public EnemyTarget Target => _target;
     public int Reward => _reward;
+    public float Health => _health;
 
     public event UnityAction<Enemy> Dying;
 
