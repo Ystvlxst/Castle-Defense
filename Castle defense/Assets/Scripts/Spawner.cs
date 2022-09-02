@@ -8,6 +8,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private List<Wave> _waves;
     [SerializeField] private Transform _spawnPoint;
     [SerializeField] private EnemyTarget _target;
+    [SerializeField] private EnemyTarget _bossTarget;
     [SerializeField] private Player _player;
 
     private Wave _currentWave;
@@ -53,7 +54,12 @@ public class Spawner : MonoBehaviour
     private void InstantiateEnemy()
     {
         Enemy enemy = Instantiate(_currentWave.Template, _spawnPoint.position, _spawnPoint.rotation, _spawnPoint).GetComponent<Enemy>();
-        enemy.Init(_target);
+
+        if (enemy.GetComponent<EnemyBoss>())
+            enemy.Init(_bossTarget);
+        else
+            enemy.Init(_target);
+
         enemy.Dying += OnEnemyDying;
     }
 
