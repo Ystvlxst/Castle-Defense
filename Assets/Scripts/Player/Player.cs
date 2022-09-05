@@ -29,6 +29,5 @@ public class Player : MonoBehaviour
     private void Dying()
     {
         Die?.Invoke();
-        Debug.Log("Die");
     }
 }

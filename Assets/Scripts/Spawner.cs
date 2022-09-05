@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -17,6 +16,9 @@ public class Spawner : MonoBehaviour
     private int _spawned;
 
     public event UnityAction AllEnemySpawned;
+
+    public int Spawned => _spawned;
+    public Wave CurrentWave => _currentWave;
 
     private void Start()
     {
@@ -45,6 +47,7 @@ public class Spawner : MonoBehaviour
             _currentWave = null;
         }
     }
+
     public void NextWave()
     {
         SetWave(++_currentWaveNumber);
@@ -71,6 +74,8 @@ public class Spawner : MonoBehaviour
     private void OnEnemyDying(Enemy enemy)
     {
         enemy.Dying -= OnEnemyDying;
+
+        _spawned--;
 
         _player.AddMoney(enemy.Reward);
     }

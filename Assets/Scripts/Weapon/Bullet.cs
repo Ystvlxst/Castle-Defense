@@ -5,8 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private float _damage;
-
     private Rigidbody _rigidbody;
 
     public Rigidbody Rigidbody => _rigidbody;
@@ -18,13 +16,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out Enemy enemy))
-        {
-            enemy.TakeDamage(_damage);
-            Destroy(gameObject);
-        }
-
-        if (other.TryGetComponent(out Ground ground))
+        if (other.TryGetComponent(out Enemy enemy) || other.TryGetComponent(out Ground ground))
             Destroy(gameObject);
     }
 }
