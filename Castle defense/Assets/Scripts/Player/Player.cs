@@ -4,17 +4,17 @@ using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] GameObject _loseCanvas;
     [SerializeField] private int _health = 100;
 
     private int _currentHealth;
+
+    public event UnityAction Die;
 
     public int Health => _health;
     public int CurrentHealth => _currentHealth;
 
     private void Awake()
     {
-        _loseCanvas.SetActive(false);
         _currentHealth = _health;
     }
 
@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
 
     private void Dying()
     {
-        _loseCanvas.SetActive(true);
+        Die?.Invoke();
+        Debug.Log("Die");
     }
 }
