@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4898267704630984257}
   - component: {fileID: 4898267704630984256}
   - component: {fileID: 4898267704630984319}
-  - component: {fileID: 4898267704630984318}
+  - component: {fileID: 5258755961510967630}
   m_Layer: 0
-  m_Name: Detail
+  m_Name: Ammo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 758629b1cef7e8b43a6424f07b384a62, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -96,7 +96,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4898267704630984318
+--- !u!114 &5258755961510967630
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,6 +105,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4898267704630984317}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4555a51de83c842eabc1b46715a08df3, type: 3}
+  m_Script: {fileID: 11500000, guid: 3361215b214b4200a10916dc04b3c977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
