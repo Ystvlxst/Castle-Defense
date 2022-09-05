@@ -9,7 +9,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private Transform _spawnPoint;
     [SerializeField] private EnemyTarget _target;
     [SerializeField] private EnemyTarget _bossTarget;
-    [SerializeField] private MoneyCollector _player;
+    [SerializeField] private MoneyHolder _moneyHolder;
 
     private Wave _currentWave;
     private int _currentWaveNumber = 0;
@@ -72,7 +72,7 @@ public class Spawner : MonoBehaviour
     {
         enemy.Dying -= OnEnemyDying;
 
-        _player.AddMoney(enemy.Reward);
+        _moneyHolder.AddMoney(enemy.Reward);
     }
 }
 
