@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
@@ -7,8 +8,6 @@ public class Player : MonoBehaviour
     [SerializeField] private int _health = 100;
 
     private int _currentHealth;
-
-    public int Money { get; private set; }
 
     public int Health => _health;
     public int CurrentHealth => _currentHealth;
@@ -25,11 +24,6 @@ public class Player : MonoBehaviour
 
         if (_currentHealth <= 0)
             Dying();
-    }
-
-    public void AddMoney(int reward)
-    {
-        Money += reward;
     }
 
     private void Dying()

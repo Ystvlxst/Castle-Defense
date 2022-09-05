@@ -9,7 +9,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private Transform _spawnPoint;
     [SerializeField] private EnemyTarget _target;
     [SerializeField] private EnemyTarget _bossTarget;
-    [SerializeField] private Player _player;
+    [SerializeField] private MoneyCollector _player;
 
     private Wave _currentWave;
     private int _currentWaveNumber = 0;
