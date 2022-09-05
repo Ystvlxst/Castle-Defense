@@ -8,7 +8,7 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField] private Spawner _spawner;
     [SerializeField] private int _capacity;
     [SerializeField] private Transform _target;
-    [SerializeField] private float _speed;
+    [SerializeField] private float _duration;
 
     public void Reload(int countBullets)
     {
@@ -19,8 +19,7 @@ public abstract class Weapon : MonoBehaviour
     {
         if (_spawner.Spawned != 0 && _capacity > 0)
         {
-            _bulletSpawner.InstantiateBullet(_target, _speed);
-            _capacity--;
+            _bulletSpawner.InstantiateBullet(_target, _duration);
         }
     }
 }

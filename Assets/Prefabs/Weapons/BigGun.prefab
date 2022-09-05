@@ -292,6 +292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bulletTemplate: {fileID: 8898101797642281198, guid: da5b5e936fb534a16b0aa46f1c278bf3, type: 3}
+  _delay: 0
 --- !u!1 &9132461959770648807
 GameObject:
   m_ObjectHideFlags: 0
@@ -833,6 +834,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bulletSpawner: {fileID: 9132461960856345244}
   _spawner: {fileID: 0}
-  _capacity: 10
+  _capacity: 100
   _target: {fileID: 0}
-  _speed: 2
+  _duration: 1.5

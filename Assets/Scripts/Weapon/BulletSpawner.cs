@@ -6,12 +6,24 @@ using DG.Tweening;
 public class BulletSpawner : MonoBehaviour
 {
     [SerializeField] private Bullet _bulletTemplate;
+    [SerializeField] private float _delay;
 
-    private Bullet _bullet;
+    private float _time;
+
+    private void Update()
+    {
+        _time += Time.deltaTime;
+    }
 
     public void InstantiateBullet(Transform target, float duration)
     {
-        _bullet = Instantiate(_bulletTemplate, transform.position, transform.rotation);
-        _bullet.transform.DOMove(target.position, duration);
+        if (_time >= _delay)
+        {
+           Bullet bullet = Instantiate(_bulletTemplate, transform.position, transform.rotation);
+            bullet.transform.DOMove(target.position, duration);
+            _time = 0;
+        }
+        else
+            return;
     }
 }

@@ -791,7 +791,7 @@ MonoBehaviour:
   _spawner: {fileID: 0}
   _capacity: 100
   _target: {fileID: 0}
-  _speed: 3
+  _duration: 1
 --- !u!1 &1668154497773181886
 GameObject:
   m_ObjectHideFlags: 0
@@ -836,3 +836,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bulletTemplate: {fileID: 9163521458465192286, guid: 40a1dc751563c4b14b42ba973a8ad1c4, type: 3}
+  _delay: 0
