@@ -1288,6 +1288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 270
   _reward: 100
+  _detail: {fileID: 4898267704630984318, guid: f182b78f62688485c97337c5694f69f7, type: 3}
 --- !u!114 &5523400202685983315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1331,7 +1332,6 @@ MonoBehaviour:
   _transitions:
   - {fileID: 3353025041451323208}
   _damage: 5
-  _delay: 1
 --- !u!114 &1942900552111517391
 MonoBehaviour:
   m_ObjectHideFlags: 0
