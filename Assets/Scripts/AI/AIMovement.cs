@@ -120,4 +120,9 @@ public class AIMovement : MonoBehaviour, IModificationListener<float>
     {
         transform.DOLookAt(transform.position + direction, 1f);
     }
+
+    public void SetSpeed(float speedRate)
+    {
+        _agent.speed = speedRate;
+    }
 }

@@ -23,7 +23,8 @@ public class PlayerMovement : MonoBehaviour, IModificationListener<float>
     {
         _playerModel.LookAt(_playerModel.position + direction);
         _movement.Move(transform.position + direction);
-
+        _movement.SetSpeed(_speedRate * _speed * direction.magnitude);
+        
         _animation.SetSpeed(direction.magnitude);
         IsMoving = true;
     }
