@@ -30,21 +30,17 @@ public class Spawner : MonoBehaviour
 
             while (true)
             {
-                //Transform spawnPoint = _spawnPoints[Random.Range(0, _spawnPoints.Count)];
-
-
-                for (int j = 0; j < _spawnPoints.Count; j++)
+                foreach (var spawnPoint in _spawnPoints)
                 {
                     for (int i = 0; i < _amount; i++)
                     {
-                        SpawnEnemy(_spawnPoints[j]);
+                        SpawnEnemy(spawnPoint);
                         yield return new WaitForSeconds(0.1f);
                     }
-                    
                 }
+
                 yield return new WaitForSeconds(30);
             }
-            
         }
     }
 
@@ -88,32 +84,14 @@ public class Spawner : MonoBehaviour
 
         return closest;
     }
-
     private void InitTarget(Enemy enemy)
     {
         enemy.Target.AddToQueue();
-        
-        if (enemy.Target.FollowingEnemy == null)
-        {
-            enemy.Target.Follow(enemy);
-            return;
-        }
-
-        InitLastEnemyInQueueToTarget(enemy.Target.FollowingEnemy, enemy);
     }
 
-    private void InitLastEnemyInQueueToTarget(Enemy enemy, Enemy spawnedEnemy)
-    {
-        if (enemy.FollowingEnemy == null)
-        {
-            enemy.Follow(spawnedEnemy);
-            return;
-        }
-
-        InitLastEnemyInQueueToTarget(enemy.FollowingEnemy, spawnedEnemy);
-    }
     private void OnEnemyDying(Enemy enemy)
     {
+        enemy.Target.RemoveFromQueue();
         _spawned--;
         enemy.Dying -= OnEnemyDying;
     }

@@ -13,7 +13,6 @@ public class Enemy : MonoBehaviour
     public EnemyTarget Target => _target;
     public int Reward => _reward;
     public float Health => _health;
-    public Enemy FollowingEnemy { get; private set; }
 
     public event UnityAction<Enemy> Dying;
 
@@ -21,11 +20,6 @@ public class Enemy : MonoBehaviour
     {
         _target = target;
         _enemyStateMachine.Launch();
-    }
-
-    public void Follow(Enemy enemy)
-    {
-        FollowingEnemy = enemy;
     }
 
     public void TakeDamage(float damage)

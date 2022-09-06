@@ -1,16 +1,14 @@
 using UnityEngine;
 using UnityEngine.AI;
-using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class MoveState : State
 {
     [SerializeField] private Enemy _enemy;
     [SerializeField] private float _speed;
-    [SerializeField] private float _offset = 1.5f;
+    [SerializeField] private LayerMask _layerMask;
 
     private NavMeshAgent _navMeshAgent;
-    private float _horizontalOffset;
 
     private void Awake()
     {
@@ -18,26 +16,17 @@ public class MoveState : State
         _navMeshAgent.speed = _speed;
     }
 
-    private void Start() => 
-        _horizontalOffset = Random.Range(-0.5f, 0.5f);
-
-    private void Update() => 
-        _navMeshAgent.SetDestination(GetTargetPosition());
-
-    private Vector3 GetTargetPosition()
+    private void Update()
     {
-        if (_enemy.Target.FollowingEnemy == _enemy)
-            return _enemy.Target.transform.position;
+        RaycastHit[] raycastHits = new RaycastHit[1];
+        var target = GetTargetPosition();
 
-        float offset = GetOffset(_enemy.Target.FollowingEnemy);
-        return _enemy.Target.transform.position + new Vector3(_horizontalOffset, 0, offset);
+        if (Physics.RaycastNonAlloc(transform.position + Vector3.up, transform.forward, raycastHits, 1.5f, _layerMask) != 0)
+            target = transform.position;
+        
+        _navMeshAgent.SetDestination(target);
     }
 
-    private float GetOffset(Enemy enemy)
-    {
-        if (enemy.FollowingEnemy == _enemy)
-            return _offset;
-
-        return GetOffset(enemy.FollowingEnemy) + _offset;
-    }
+    private Vector3 GetTargetPosition() => 
+        _enemy.Target.transform.position;
 }
