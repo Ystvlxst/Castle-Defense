@@ -8,8 +8,15 @@ public class Ballistics : MonoBehaviour
     [SerializeField] private Transform _targetTransform;
     [SerializeField] private float _angle;
     [SerializeField] private Bullet _template;
+    [SerializeField] private int _maxCapaity;
 
     private float _g = Physics.gravity.y;
+    private int _currentBulletsCount;
+
+    private void Start()
+    {
+        _currentBulletsCount = _maxCapaity;
+    }
 
     private void Update()
     {
@@ -17,7 +24,13 @@ public class Ballistics : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            Shot();
+            _currentBulletsCount--;
+
+            if(_currentBulletsCount > 0)
+                Shot();
+
+            if (_currentBulletsCount < 0)
+                _currentBulletsCount = 0;
         }
        
     }
