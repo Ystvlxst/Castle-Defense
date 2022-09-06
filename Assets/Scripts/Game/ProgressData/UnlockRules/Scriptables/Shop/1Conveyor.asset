@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbfd954a08589d043b1fc4f5956cd5d2, type: 3}
   m_Name: 1Conveyor
   m_EditorClassIdentifier: 
-  _targetProgress: 1
-  _progress: {fileID: 11400000, guid: 85423e5a7955020438a787c061778744, type: 2}
+  _targetProgress: 0
+  _progress: {fileID: 11400000, guid: 96b162980c61bf4498cd5c4ac005293a, type: 2}
   _icon: {fileID: 0}

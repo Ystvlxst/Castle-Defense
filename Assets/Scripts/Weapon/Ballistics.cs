@@ -5,11 +5,21 @@ using UnityEngine;
 public class Ballistics : MonoBehaviour
 {
     [SerializeField] private Transform _spawn;
+    [SerializeField] private Transform _targetTransform;
     [SerializeField] private float _angle;
     [SerializeField] private Bullet _template;
     [SerializeField] private TargetSelector _targetSelector;
+    [SerializeField] private StackPresenter _stackPresenter;
 
     private float _g = Physics.gravity.y;
+    private int _maxCapaity;
+    private int _currentBulletsCount;
+
+    private void Start()
+    {
+        _maxCapaity = _stackPresenter.Capacity;
+        _currentBulletsCount = _maxCapaity;
+    }
 
     private void Update()
     {
@@ -17,7 +27,13 @@ public class Ballistics : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            Shot();
+            _currentBulletsCount--;
+
+            if(_currentBulletsCount > 0)
+                Shot();
+
+            if (_currentBulletsCount < 0)
+                _currentBulletsCount = 0;
         }
        
     }
