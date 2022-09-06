@@ -20,11 +20,14 @@ public class Ballistics : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitUntil(() => _stackPresenter.Empty == false);
+            yield return new WaitUntil(CanShoot);
             Shot();
             yield return new WaitForSeconds(_cooldown);
         }
     }
+
+    private bool CanShoot() => 
+        _stackPresenter.Empty == false && _targetSelector.HasTarget;
 
     private void Shot()
     {

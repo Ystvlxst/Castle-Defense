@@ -17,9 +17,10 @@ public class Conveyor : LockedGameObject, IModificationListener<float>
     [SerializeField] private TimerView _timerView;
     [SerializeField] private Transform _takePoint;
     [SerializeField] private Transform _placePoint;
+    [SerializeField] private float _baseProcessDuration = 2.5f;
 
     private readonly Timer _timer = new Timer();
-    private float _childProcessDuration => 2.5f / _speedRate;
+    private float _processDuration => _baseProcessDuration / _speedRate;
     private Stackable _removedItem;
     private float _speedRate = 1;
 
@@ -60,9 +61,9 @@ public class Conveyor : LockedGameObject, IModificationListener<float>
             _removedItem.transform.DOComplete(true);
             _removedItem.transform.DOMove(_transfomrateBox.position, 1f);
 
-            _transfomrateBox.DOShakeScale(_childProcessDuration, 20f);
+            _transfomrateBox.DOShakeScale(_processDuration, 20f);
             
-            _timer.Start(_childProcessDuration);
+            _timer.Start(_processDuration);
         }
     }
 

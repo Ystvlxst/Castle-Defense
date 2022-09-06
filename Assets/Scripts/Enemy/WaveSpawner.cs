@@ -10,7 +10,7 @@ public class WaveSpawner : MonoBehaviour
 
     private int _spawned;
 
-    private void Start() => 
+    private void Start() =>
         StartCoroutine(Spawn());
 
     private IEnumerator Spawn()
@@ -18,25 +18,20 @@ public class WaveSpawner : MonoBehaviour
         while (true)
         {
             yield return new WaitUntil(() => _spawned == 0);
-
-            while (true)
+            
+            foreach (var enemySpawner in _enemySpawners)
             {
-                foreach (var enemySpawner in _enemySpawners)
-                {
-                    var spawnPoint = enemySpawner.GetRandomSpawnPoint();
-                
-                    for (int i = 0; i < enemySpawner.Amount; i++)
-                    {
-                        Enemy enemy = enemySpawner.SpawnEnemy(spawnPoint);
-                        _spawned++;
-                        enemy.Dying += OnEnemyDying;
-                        StartCoroutine(InitEnemyDelayed(spawnPoint, enemy, enemySpawner));
+                var spawnPoint = enemySpawner.GetRandomSpawnPoint();
 
-                        yield return new WaitForSeconds(0.1f);
-                    }
+                for (int i = 0; i < enemySpawner.Amount; i++)
+                {
+                    Enemy enemy = enemySpawner.SpawnEnemy(spawnPoint);
+                    _spawned++;
+                    enemy.Dying += OnEnemyDying;
+                    StartCoroutine(InitEnemyDelayed(spawnPoint, enemy, enemySpawner));
+
+                    yield return new WaitForSeconds(0.1f);
                 }
-                
-                yield return new WaitForSeconds(30);
             }
         }
     }
