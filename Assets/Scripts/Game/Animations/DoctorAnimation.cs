@@ -1,9 +1,12 @@
+using System;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class DoctorAnimation : MonoBehaviour
 {
     [SerializeField] private StackPresenter _playerStack;
     [SerializeField] private Animator _animator;
+    [SerializeField] private NavMeshAgent _navMeshAgent;
 
     private void Awake()
     {
@@ -12,20 +15,32 @@ public class DoctorAnimation : MonoBehaviour
 
     private void OnEnable()
     {
+        if(_playerStack == null)
+            return;
+        
         _playerStack.Added += OnAdded;
         _playerStack.BecameEmpty += OnBecameEmpty;
     }
 
+    private void Update()
+    {
+        if (_animator)
+            _animator.SetFloat(AnimationParams.Speed, _navMeshAgent.velocity.magnitude);
+    }
+
     private void OnDisable()
     {
+        if(_playerStack == null)
+            return;
+
         _playerStack.Added -= OnAdded;
         _playerStack.BecameEmpty -= OnBecameEmpty;
     }
 
     public void SetSpeed(float normalizedSpeed)
     {
-        if (_animator)
-            _animator.SetFloat(AnimationParams.Speed, normalizedSpeed);
+        /*if (_animator)
+            _animator.SetFloat(AnimationParams.Speed, normalizedSpeed);*/
     }
 
     protected virtual void OnAwake() { }
@@ -46,16 +61,6 @@ public class DoctorAnimation : MonoBehaviour
     public void StopHolding()
     {
         _animator.SetLayerWeight(1, 0f);
-    }
-
-    public void StartDigging()
-    {
-        _animator.SetBool("isDig", true);
-    }
-
-    public void StopDigging()
-    {
-        _animator.SetBool("isDig", false);
     }
 
     private void OnAdded(Stackable _)
