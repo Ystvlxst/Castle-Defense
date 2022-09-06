@@ -35,11 +35,11 @@ public class Bullet : MonoBehaviour
             if(collider.TryGetComponent(out Enemy enemy))
             {
                 enemy.TakeDamage(_damage);
-                Destroy(gameObject, 0.1f);
+                Destroy(gameObject, 0.01f);
             }
 
             if (collider.TryGetComponent(out Ground ground))
-                Destroy(gameObject, 0.1f);
+                Destroy(gameObject, 0.01f);
         }
     }
 }
