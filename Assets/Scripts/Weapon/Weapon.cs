@@ -17,7 +17,7 @@ public abstract class Weapon : MonoBehaviour
 
     public void Shot()
     {
-        if (_spawner.Spawned != 0 && _capacity > 0)
+        if (_capacity > 0)
         {
             _bulletSpawner.InstantiateBullet(_target, _duration);
         }
