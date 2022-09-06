@@ -826,7 +826,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawn: {fileID: 550172899}
-  _targetTransform: {fileID: 801308607}
+  _targetTransform: {fileID: 461300844}
   _angle: 30
   _template: {fileID: 8898101797642281198, guid: da5b5e936fb534a16b0aa46f1c278bf3, type: 3}
 --- !u!65 &473837145
