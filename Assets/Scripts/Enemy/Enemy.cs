@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int _reward;
     [SerializeField] private Detail _detail;
     [SerializeField] private EnemyStateMachine _enemyStateMachine;
+    [SerializeField] private LootDrop _lootDrop;
 
     private EnemyTarget _target;
 
@@ -34,6 +35,6 @@ public class Enemy : MonoBehaviour
     {
         Dying?.Invoke(this);
         Destroy(gameObject);
-        var detail = Instantiate(_detail, _target.transform);
+        _lootDrop.DropLoot();
     }
 }

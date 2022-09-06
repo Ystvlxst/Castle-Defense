@@ -347,6 +347,7 @@ GameObject:
   - component: {fileID: 996242031350510652}
   - component: {fileID: 5476676231918954280}
   - component: {fileID: 4899200719387570678}
+  - component: {fileID: 2821396261395732526}
   - component: {fileID: 5523400202685983315}
   - component: {fileID: 707216310172040280}
   - component: {fileID: 6753661178183727276}
@@ -418,6 +419,22 @@ MonoBehaviour:
   _reward: 10
   _detail: {fileID: 4898267704630984318, guid: f182b78f62688485c97337c5694f69f7, type: 3}
   _enemyStateMachine: {fileID: 5523400202685983315}
+  _lootDrop: {fileID: 2821396261395732526}
+--- !u!114 &2821396261395732526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996242031350278236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1bdc77fb13d413ba082a3acbe86558d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _droppableItem: {fileID: -7184618940887743099, guid: f182b78f62688485c97337c5694f69f7, type: 3}
+  _spawnOffset: {x: 0.38, y: 2.2, z: 0}
+  _amount: 1
 --- !u!114 &5523400202685983315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -447,7 +464,6 @@ MonoBehaviour:
   - {fileID: 3333445092884928461}
   _enemy: {fileID: 4899200719387570678}
   _speed: 6
-  _offset: 2
   _layerMask:
     serializedVersion: 2
     m_Bits: 512

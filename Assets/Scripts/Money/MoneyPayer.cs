@@ -10,11 +10,11 @@ public class MoneyPayer : MonoBehaviour
     [SerializeField] private DroppableDollar _dollarTemplate;
     [SerializeField] private  Vector3 _spawnOffset = new Vector3(0.38f, 2.2f, 0.0f);
     [SerializeField] private float _payDelay = 1.5f;
+    private float _spawnDelayBetweenDollars = 0.1f;
+    private float _force = 6f;
 
     private UnityAction _payCompleted;
     private int _defaultDollars;
-    private float _force = 6f;
-    private float _spawnDelayBetweenDollars = 0.1f;
     private Vector3 _spawnPosition => transform.position + _spawnOffset  + Random.insideUnitSphere * 0.5f;
 
     public event UnityAction PayCompleted;
