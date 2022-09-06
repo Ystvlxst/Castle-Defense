@@ -8,13 +8,15 @@ public class Ballistics : MonoBehaviour
     [SerializeField] private Transform _targetTransform;
     [SerializeField] private float _angle;
     [SerializeField] private Bullet _template;
-    [SerializeField] private int _maxCapaity;
+    [SerializeField] private StackPresenter _stackPresenter;
 
     private float _g = Physics.gravity.y;
+    private int _maxCapaity;
     private int _currentBulletsCount;
 
     private void Start()
     {
+        _maxCapaity = _stackPresenter.Capacity;
         _currentBulletsCount = _maxCapaity;
     }
 
