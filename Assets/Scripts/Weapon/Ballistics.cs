@@ -5,9 +5,9 @@ using UnityEngine;
 public class Ballistics : MonoBehaviour
 {
     [SerializeField] private Transform _spawn;
-    [SerializeField] private Transform _targetTransform;
     [SerializeField] private float _angle;
     [SerializeField] private Bullet _template;
+    [SerializeField] private TargetSelector _targetSelector;
 
     private float _g = Physics.gravity.y;
 
@@ -24,7 +24,7 @@ public class Ballistics : MonoBehaviour
 
     private void Shot()
     {
-        Vector3 fromTo = _targetTransform.position - transform.position;
+        Vector3 fromTo = _targetSelector.SelectTarget() - transform.position;
         Vector3 fromToXZ = new Vector3(fromTo.x, 0f, fromTo.z);
 
         transform.rotation = Quaternion.LookRotation(fromToXZ, Vector3.up);

@@ -12,6 +12,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private Enemy _enemyTemplate;
     [SerializeField] private EnemyTarget[] _enemyTargets;
     [SerializeField] private int _amount;
+    [SerializeField] private EnemyContainer _enemyContainer;
 
     private int _spawned;
 
@@ -56,6 +57,7 @@ public class Spawner : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         enemy.Init(GetClosestTarget(spawnPoint, SelectTargets()));
+        _enemyContainer.Add(enemy);
         InitTarget(enemy);
     }
 
@@ -92,6 +94,7 @@ public class Spawner : MonoBehaviour
     private void OnEnemyDying(Enemy enemy)
     {
         enemy.Target.RemoveFromQueue();
+        _enemyContainer.Remove(enemy);
         _spawned--;
         enemy.Dying -= OnEnemyDying;
     }
