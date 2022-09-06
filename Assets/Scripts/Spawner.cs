@@ -5,13 +5,10 @@ using UnityEngine.Events;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private List<Wave> _waves;
-    [SerializeField] private Transform _spawnPoint;
-    [SerializeField] private EnemyTarget _target;
-    [SerializeField] private EnemyTarget _bossTarget;
-    [SerializeField] private MoneyHolder _moneyHolder;
+    [SerializeField] private List<Transform> _spawnPoints;
+    [SerializeField] private Enemy _enemyTemplate;
+    [SerializeField] private EnemyTarget _enemyTarget;
 
-    private Wave _currentWave;
     private int _currentWaveNumber = 0;
     private float _timeAfterLastSpawn;
     private int _spawned;
@@ -20,66 +17,36 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
-        SetWave(_currentWaveNumber);
+        StartCoroutine(Spawn());
     }
 
-    private void Update()
+    private IEnumerator Spawn()
     {
-        if (_currentWave == null)
-            return;
-
-        _timeAfterLastSpawn += Time.deltaTime;
-
-        if(_timeAfterLastSpawn >= _currentWave.Delay)
+        while (true)
         {
-            InstantiateEnemy();
-            _spawned++;
-            _timeAfterLastSpawn = 0;
-        }
+            yield return new WaitUntil(() => _spawned == 0);
 
-        if(_currentWave.Count <= _spawned)
-        {
-            if (_waves.Count > _currentWaveNumber + 1)
-                AllEnemySpawned?.Invoke();
+            Transform spawnPoint = _spawnPoints[Random.Range(0, _spawnPoints.Count)];
 
-            _currentWave = null;
+            for (int i = 0; i < 10; i++)
+            {
+                SpawnEnemy(spawnPoint);
+            }
+            
         }
     }
-    public void NextWave()
+
+    private void SpawnEnemy(Transform spawnPoint)
     {
-        SetWave(++_currentWaveNumber);
-        _spawned = 0;
-    }
-
-    private void InstantiateEnemy()
-    {
-        Enemy enemy = Instantiate(_currentWave.Template, _spawnPoint.position, _spawnPoint.rotation, _spawnPoint).GetComponent<Enemy>();
-
-        if (enemy.GetComponent<EnemyBoss>())
-            enemy.Init(_bossTarget);
-        else
-            enemy.Init(_target);
-
+        Enemy enemy = Instantiate(_enemyTemplate, spawnPoint.position, spawnPoint.rotation);
+        enemy.Init(_enemyTarget);
+        _spawned++;
         enemy.Dying += OnEnemyDying;
-    }
-
-    private void SetWave(int index)
-    {
-        _currentWave = _waves[index];
     }
 
     private void OnEnemyDying(Enemy enemy)
     {
+        _spawned--;
         enemy.Dying -= OnEnemyDying;
-
-        _moneyHolder.AddMoney(enemy.Reward);
     }
-}
-
-[System.Serializable]
-public class Wave
-{
-    public GameObject Template;
-    public float Delay;
-    public int Count;
 }

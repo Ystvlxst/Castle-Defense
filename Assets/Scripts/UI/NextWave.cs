@@ -29,9 +29,6 @@ public class NextWave : MonoBehaviour
 
     public void OnNextWaveButtonClick()
     {
-        foreach (var spawner in _spawners)
-            spawner.NextWave();
-
         _nextWaveButton.gameObject.SetActive(false);
     }
 }

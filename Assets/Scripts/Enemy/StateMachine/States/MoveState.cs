@@ -4,6 +4,7 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class MoveState : State
 {
+    [SerializeField] private Enemy _enemy;
     [SerializeField] private float _speed;
 
     private NavMeshAgent _navMeshAgent;
@@ -16,6 +17,6 @@ public class MoveState : State
 
     private void Update()
     {
-        _navMeshAgent.SetDestination(Target.transform.position);
+        _navMeshAgent.SetDestination(_enemy.Target.transform.position);
     }
 }

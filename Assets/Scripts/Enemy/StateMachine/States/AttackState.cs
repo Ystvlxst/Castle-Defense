@@ -6,6 +6,7 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class AttackState : State
 {
+    [SerializeField] private Enemy _enemy;
     [SerializeField] private int _damage;
 
      private float _delay;
@@ -30,7 +31,7 @@ public class AttackState : State
     {
         if(_lastAttackTime <= 0)
         {
-            Attack(Target);
+            Attack(_enemy.Target);
             _lastAttackTime = _delay;
         }
         _lastAttackTime -= Time.deltaTime;
