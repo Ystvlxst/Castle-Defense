@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-[RequireComponent(typeof(Animator))]
 public class AttackState : State
 {
     [SerializeField] private int _damage;
@@ -12,7 +11,6 @@ public class AttackState : State
      private float _delay;
 
     private NavMeshAgent _navMeshAgent;
-    private Animator _animator;
     private float _lastAttackTime;
 
     private Player _player;
@@ -22,7 +20,6 @@ public class AttackState : State
         _delay = Random.Range(2, 4);
 
         _navMeshAgent = GetComponent<NavMeshAgent>();
-        _animator = GetComponent<Animator>();
 
         _player = FindObjectOfType<Player>();
 
@@ -33,13 +30,13 @@ public class AttackState : State
     {
         if(_lastAttackTime <= 0)
         {
-            Attack(Target);
+            Attack();
             _lastAttackTime = _delay;
         }
         _lastAttackTime -= Time.deltaTime;
     }
 
-    private void Attack(EnemyTarget target)
+    private void Attack()
     {
         _player.ApplyDamage(_damage);
     }

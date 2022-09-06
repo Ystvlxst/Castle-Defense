@@ -3,21 +3,26 @@ using TMPro;
 
 public class MoneyView : MonoBehaviour
 {
-    [SerializeField] private TMP_Text _moneyText;
-    [SerializeField] private MoneyCollector _player;
+    [SerializeField] private MoneyHolder _playerMoney;
+    [SerializeField] private TMP_Text _text;
 
     private void OnEnable()
     {
-        _player.MoneyBalanceChange += OnMoneyBalanceChanged;
+        _playerMoney.BalanceChanged += OnBalanceChanged;
     }
 
     private void OnDisable()
     {
-        _player.MoneyBalanceChange -= OnMoneyBalanceChanged;
+        _playerMoney.BalanceChanged -= OnBalanceChanged;
     }
 
-    private void OnMoneyBalanceChanged()
+    private void Start()
     {
-        _moneyText.text = _player.Money.ToString();
+        _text.text = _playerMoney.Value.ToString();
+    }
+
+    private void OnBalanceChanged(int balance)
+    {
+        _text.text = balance.ToString();
     }
 }

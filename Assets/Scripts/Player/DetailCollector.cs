@@ -1,22 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
-public class DetailCollector : MonoBehaviour
+public class DetailCollector : Trigger<Detail>
 {
-    public event UnityAction DetailBalanceChange;
-
-    public int Detail { get; private set; }
-
-    private void Awake()
+    [SerializeField] private StackPresenter _stackPresenter;
+    
+    protected override void OnEnter(Detail detail)
     {
-        AddDetail(0);
-    }
+        if(detail.Taken)
+            return;
 
-    public void AddDetail(int reward)
-    {
-        Detail += reward;
-        DetailBalanceChange?.Invoke();
+        if (_stackPresenter.CanAddToStack(detail.Type) == false) 
+            return;
+        
+        detail.Take();
+        _stackPresenter.AddToStack(detail);
     }
 }

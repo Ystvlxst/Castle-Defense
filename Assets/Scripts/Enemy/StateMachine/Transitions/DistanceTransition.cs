@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DistanceTransition : Transition
 {
+    [SerializeField] private Enemy _enemy;
     [SerializeField] private float _transitionRange;
     [SerializeField] private float _rangeSpread;
 
@@ -19,7 +20,7 @@ public class DistanceTransition : Transition
 
     public void CheckDistanceToTarget()
     {
-        if (Vector3.Distance(transform.position, Target.transform.position) < _transitionRange)
+        if (Vector3.Distance(transform.position, _enemy.Target.transform.position) < _transitionRange)
             NeedTransit = true;
     }
 }
