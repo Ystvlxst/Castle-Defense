@@ -3,49 +3,40 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(MeshFilter))]
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private int _damage;
+    [SerializeField] private float _damageRadius;
 
-    private MeshFilter _meshFilter;
     private Rigidbody _rigidbody;
 
     public Rigidbody Rigidbody => _rigidbody;
     public int Damage => _damage;
 
-    public float DamageRadius { get; set; }
-
     private void Awake()
     {
-        _meshFilter = GetComponent<MeshFilter>();
         _rigidbody = GetComponent<Rigidbody>();
-        DamageRadius = 1;
-    }
-
-    private void Update()
-    {
-        CheckDistructibles();
     }
 
     private void CheckDistructibles()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, DamageRadius);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, _damageRadius);
 
-        foreach(var collider in colliders)
+        foreach(Collider collider in colliders)
         {
             if(collider.TryGetComponent(out Enemy enemy))
             {
                 enemy.TakeDamage(_damage);
-                _meshFilter.mesh = null;
-                Destroy(gameObject, 0.1f);
             }
+        }
+    }
 
-            if (collider.TryGetComponent(out Ground ground))
-            {
-                _meshFilter.mesh = null;
-                Destroy(gameObject, 0.1f);
-            }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.TryGetComponent(out Ground ground) || other.TryGetComponent(out Enemy enemy))
+        {
+            CheckDistructibles();
+            Destroy(gameObject);
         }
     }
 }

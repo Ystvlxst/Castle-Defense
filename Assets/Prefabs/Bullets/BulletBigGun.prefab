@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 8898101797642281194}
   - component: {fileID: 8898101797642281199}
   - component: {fileID: 8898101797642281198}
-  - component: {fileID: 2076489994342649058}
   m_Layer: 0
   m_Name: BulletBigGun
   m_TagString: Untagged
@@ -96,7 +95,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.53
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8898101797642281199
 Rigidbody:
@@ -127,19 +126,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 100
-  _distructible:
-    serializedVersion: 2
-    m_Bits: 64
---- !u!114 &2076489994342649058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8898101797642281109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dc97eca877b34edcbd89a419b84c82c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _radiusFactor: 5
+  _damageRadius: 5
