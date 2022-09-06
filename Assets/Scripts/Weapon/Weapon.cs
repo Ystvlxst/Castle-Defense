@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Weapon : MonoBehaviour
 {
     [SerializeField] private BulletSpawner _bulletSpawner;
-    [SerializeField] private Spawner _spawner;
+    [SerializeField] private WaveSpawner waveSpawner;
     [SerializeField] private int _capacity;
     [SerializeField] private Transform _target;
     [SerializeField] private float _duration;
