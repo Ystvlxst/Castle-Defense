@@ -15,12 +15,18 @@ public class Enemy : MonoBehaviour
     public EnemyTarget Target => _target;
     public int Reward => _reward;
     public float Health => _health;
+    public Enemy FollowingEnemy { get; private set; }
 
     public event UnityAction<Enemy> Dying;
 
     public void Init(EnemyTarget target)
     {
         _target = target;
+    }
+
+    public void Follow(Enemy enemy)
+    {
+        FollowingEnemy = enemy;
     }
 
     public void TakeDamage(float damage)

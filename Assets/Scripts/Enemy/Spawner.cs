@@ -40,10 +40,31 @@ public class Spawner : MonoBehaviour
     {
         Enemy enemy = Instantiate(_enemyTemplate, spawnPoint.position, spawnPoint.rotation);
         enemy.Init(_enemyTarget);
+        InitTarget(enemy);
         _spawned++;
         enemy.Dying += OnEnemyDying;
     }
+    private void InitTarget(Enemy enemy)
+    {
+        if (enemy.Target.FollowingEnemy == null)
+        {
+            enemy.Target.Follow(enemy);
+            return;
+        }
 
+        InitLastEnemyInQueueToTarget(enemy.Target.FollowingEnemy, enemy);
+    }
+
+    private void InitLastEnemyInQueueToTarget(Enemy enemy, Enemy spawnedEnemy)
+    {
+        if (enemy.FollowingEnemy == null)
+        {
+            enemy.Follow(spawnedEnemy);
+            return;
+        }
+
+        InitLastEnemyInQueueToTarget(enemy.FollowingEnemy, spawnedEnemy);
+    }
     private void OnEnemyDying(Enemy enemy)
     {
         _spawned--;
