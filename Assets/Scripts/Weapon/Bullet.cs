@@ -25,9 +25,7 @@ public class Bullet : MonoBehaviour
         foreach(Collider collider in colliders)
         {
             if(collider.TryGetComponent(out Enemy enemy))
-            {
                 enemy.TakeDamage(_damage);
-            }
         }
     }
 
