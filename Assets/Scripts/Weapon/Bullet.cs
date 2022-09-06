@@ -26,7 +26,6 @@ public class Bullet : MonoBehaviour
     private void Update()
     {
         CheckDistructibles();
-        Debug.Log(DamageRadius);
     }
 
     private void CheckDistructibles()
@@ -37,7 +36,6 @@ public class Bullet : MonoBehaviour
         {
             if(collider.TryGetComponent(out Enemy enemy))
             {
-                Debug.Log("enemy");
                 enemy.TakeDamage(_damage);
                 _meshFilter.mesh = null;
                 Destroy(gameObject, 0.1f);
@@ -45,7 +43,6 @@ public class Bullet : MonoBehaviour
 
             if (collider.TryGetComponent(out Ground ground))
             {
-                Debug.Log("ground");
                 _meshFilter.mesh = null;
                 Destroy(gameObject, 0.1f);
             }
