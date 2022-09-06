@@ -13,11 +13,11 @@ public class ReloadSlider : MonoBehaviour
     private void Awake()
     {
         _slider = GetComponent<Slider>();
-        _slider.maxValue = _bulletSpawner.Delay;
+       // _slider.maxValue = _bulletSpawner.Delay;
     }
 
     private void Update()
     {
-        _slider.value = _bulletSpawner.Timer;
+        //_slider.value = _bulletSpawner.Timer;
     }
 }

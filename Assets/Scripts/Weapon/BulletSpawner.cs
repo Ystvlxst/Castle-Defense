@@ -1,30 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class BulletSpawner : MonoBehaviour
 {
     [SerializeField] private Bullet _bulletTemplate;
-    [SerializeField] private float _speed;
-    [SerializeField] private int _delay;
+    [SerializeField] private float _delay;
 
-    private float _timeAfterLastShot;
-
-    public int Delay => _delay;
-    public float Timer => _timeAfterLastShot;
+    private float _time;
 
     private void Update()
     {
-        _timeAfterLastShot += Time.deltaTime;
+        _time += Time.deltaTime;
     }
 
-    public void Shot()
+    public void InstantiateBullet(Transform target, float duration)
     {
-        if (_timeAfterLastShot >= _delay)
+        if (_time >= _delay)
         {
-            Bullet bullet = Instantiate(_bulletTemplate, transform.position, transform.rotation);
-            bullet.Rigidbody.velocity = Vector3.forward * _speed;
-            _timeAfterLastShot = 0;
+           Bullet bullet = Instantiate(_bulletTemplate, transform.position, transform.rotation);
+            bullet.transform.DOMove(target.position, duration);
+            _time = 0;
         }
         else
             return;

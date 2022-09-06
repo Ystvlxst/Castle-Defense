@@ -2,13 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StandartGun : MonoBehaviour
+public class StandartGun : Weapon
 {
-    [SerializeField] private BulletSpawner _bulletSpawner;
-
-    private void OnTriggerEnter(Collider other)
+    private void Update()
     {
-        if (other.TryGetComponent(out Player player))
-            _bulletSpawner.Shot();
+        Shot();
     }
 }
