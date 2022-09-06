@@ -18,8 +18,6 @@ public class StackPresenter : MonoBehaviour, IModificationListener<int>
     public event UnityAction<Stackable> Removed;
     public event UnityAction BecameEmpty;
 
-    public event Action SetInputType;
-
     public IEnumerable<Stackable> Data => _stack.Data;
     public bool IsFull => _stack.Count == _stack.Capacity;
     public int Count => _stack.Count;
@@ -122,7 +120,6 @@ public class StackPresenter : MonoBehaviour, IModificationListener<int>
     private void OnStackableMoveEnded(Stackable stackable)
     {
         Added?.Invoke(stackable);
-        SetInputType?.Invoke();
     }
 
     public void OnModificationUpdate(int value)

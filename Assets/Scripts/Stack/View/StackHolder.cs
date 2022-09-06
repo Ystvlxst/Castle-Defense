@@ -13,7 +13,7 @@ public class StackHolder : StackView
 
     protected override Vector3 CalculateAddEndPosition(Transform container, Transform stackable)
     {
-        var stackableLocalScale = container.InverseTransformVector(stackable.lossyScale);
+        var stackableLocalScale = stackable.localScale;
         var endPosition = new Vector3(0, stackableLocalScale.y / 2, 0);
 
         if (container.childCount > _lastChildCount)
@@ -56,7 +56,7 @@ public class StackHolder : StackView
     {
         Transform topStackable = container.GetChild(0);
 
-        foreach (Transform stackable in container)
+        foreach (Transform stackable in container.GetComponentsInChildren<Transform>())
             if (topStackable.position.y < stackable.position.y)
                 topStackable = stackable;
 

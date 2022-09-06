@@ -9,7 +9,6 @@ public abstract class StackView : MonoBehaviour, IStackableContainer
     [SerializeField] private float _animationDuration;
     [SerializeField] private FloatSetting _scalePunch = new FloatSetting(true, 1.1f);
     [SerializeField] private FloatSetting _jumpPower = new FloatSetting(false, 0f);
-    [SerializeField] private Vector3 _scaleMultiply = Vector3.one;
 
     private List<Transform> _transforms = new List<Transform>();
 
@@ -19,14 +18,9 @@ public abstract class StackView : MonoBehaviour, IStackableContainer
 
     public void Add(Stackable stackable)
     {
-        Vector3 defaultScale = stackable.transform.localScale;
-
-        stackable.transform.localScale = new Vector3(_scaleMultiply.x * defaultScale.x,
-            _scaleMultiply.y * defaultScale.y, _scaleMultiply.z * defaultScale.z);
-
         Vector3 endPosition = CalculateAddEndPosition(_stackContainer, stackable.transform);
         Vector3 endRotation = CalculateEndRotation(_stackContainer, stackable.transform);
-
+        Vector3 defaultScale = stackable.transform.localScale;
 
         stackable.transform.DOComplete(true);
         stackable.transform.parent = _stackContainer;
@@ -62,21 +56,14 @@ public abstract class StackView : MonoBehaviour, IStackableContainer
         float topPositionY = 0f;
 
         foreach (var item in _transforms)
-            if (item.position.y + item.localScale.y > topPositionY)
-                topPositionY = item.position.y + item.localScale.y;
+            if (item.position.y > topPositionY)
+                topPositionY = item.position.y;
 
         return topPositionY;
     }
 
-    protected virtual void OnRemove(Transform stackable)
-    {
-    }
-
-    protected virtual Vector3 CalculateEndRotation(Transform container, Transform stackable)
-    {
-        return Vector3.zero;
-    }
-
+    protected virtual void OnRemove(Transform stackable) { }
+    protected virtual Vector3 CalculateEndRotation(Transform container, Transform stackable) { return Vector3.zero; }
     protected abstract Vector3 CalculateAddEndPosition(Transform container, Transform stackable);
     protected abstract void Sort(List<Transform> unsortedTransforms);
 
@@ -100,18 +87,14 @@ public abstract class StackView : MonoBehaviour, IStackableContainer
     public class FloatSetting : Setting<float>
     {
         public FloatSetting(bool enabled, float value)
-            : base(enabled, value)
-        {
-        }
+        : base(enabled, value) { }
     }
 
     [Serializable]
     public class VectorSetting : Setting<Vector3>
     {
         public VectorSetting(bool enabled, Vector3 value)
-            : base(enabled, value)
-        {
-        }
+        : base(enabled, value) { }
     }
 }
 

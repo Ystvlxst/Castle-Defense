@@ -1288,7 +1288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 270
   _reward: 100
-  _detail: {fileID: 3686968842551994496, guid: a5ef4bdf6eb8c4118b6649aab904593b, type: 3}
+  _detail: {fileID: 4898267704630984318, guid: f182b78f62688485c97337c5694f69f7, type: 3}
 --- !u!114 &5523400202685983315
 MonoBehaviour:
   m_ObjectHideFlags: 0
