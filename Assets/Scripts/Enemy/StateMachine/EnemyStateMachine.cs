@@ -11,7 +11,7 @@ public class EnemyStateMachine : MonoBehaviour
 
     public State CurrentState => _currentState;
 
-    private void Start()
+    public void Launch()
     {
         Reset(_firstState);
     }

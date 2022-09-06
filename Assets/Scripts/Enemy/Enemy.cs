@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,6 +6,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float _health;
     [SerializeField] private int _reward;
     [SerializeField] private Detail _detail;
+    [SerializeField] private EnemyStateMachine _enemyStateMachine;
 
     private EnemyTarget _target;
 
@@ -22,6 +20,7 @@ public class Enemy : MonoBehaviour
     public void Init(EnemyTarget target)
     {
         _target = target;
+        _enemyStateMachine.Launch();
     }
 
     public void Follow(Enemy enemy)

@@ -401,7 +401,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 2
 --- !u!114 &4899200719387570678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,6 +417,7 @@ MonoBehaviour:
   _health: 100
   _reward: 10
   _detail: {fileID: 4898267704630984318, guid: f182b78f62688485c97337c5694f69f7, type: 3}
+  _enemyStateMachine: {fileID: 5523400202685983315}
 --- !u!114 &5523400202685983315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -701,6 +702,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyHealthCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1742921026302162129, guid: 89635787f802347fea820d1b2e39a14a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6320604298120341707, guid: 89635787f802347fea820d1b2e39a14a, type: 3}
       propertyPath: _enemy
       value: 
@@ -795,11 +800,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9142476215642859202, guid: 89635787f802347fea820d1b2e39a14a, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 9142476215642859202, guid: 89635787f802347fea820d1b2e39a14a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89635787f802347fea820d1b2e39a14a, type: 3}
