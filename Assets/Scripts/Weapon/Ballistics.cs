@@ -1,45 +1,35 @@
 using System.Collections;
-using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Ballistics : MonoBehaviour
 {
     [SerializeField] private Transform _spawn;
-    [SerializeField] private Transform _targetTransform;
     [SerializeField] private float _angle;
     [SerializeField] private Bullet _template;
     [SerializeField] private TargetSelector _targetSelector;
     [SerializeField] private StackPresenter _stackPresenter;
+    [SerializeField] private float _cooldown;
 
-    private float _g = Physics.gravity.y;
-    private int _maxCapaity;
-    private int _currentBulletsCount;
+    private readonly float _g = Physics.gravity.y;
 
-    private void Start()
+    private void Start() => 
+        StartCoroutine(Shoot());
+
+    private IEnumerator Shoot()
     {
-        _maxCapaity = _stackPresenter.Capacity;
-        _currentBulletsCount = _maxCapaity;
-    }
-
-    private void Update()
-    {
-        _spawn.localEulerAngles = new Vector3(-_angle, 0f, 0f);
-
-        if (Input.GetMouseButtonDown(0))
+        while (true)
         {
-            _currentBulletsCount--;
-
-            if(_currentBulletsCount > 0)
-                Shot();
-
-            if (_currentBulletsCount < 0)
-                _currentBulletsCount = 0;
+            yield return new WaitUntil(() => _stackPresenter.Empty == false);
+            Shot();
+            yield return new WaitForSeconds(_cooldown);
         }
-       
     }
 
     private void Shot()
     {
+        _spawn.localEulerAngles = new Vector3(-_angle, 0f, 0f);
+
         Vector3 fromTo = _targetSelector.SelectTarget() - transform.position;
         Vector3 fromToXZ = new Vector3(fromTo.x, 0f, fromTo.z);
 
@@ -55,5 +45,9 @@ public class Ballistics : MonoBehaviour
 
         Bullet bullet = Instantiate(_template, _spawn.position, Quaternion.identity);
         bullet.Rigidbody.velocity = _spawn.forward * v;
+
+        Stackable stackable = _stackPresenter.Data.Last();
+        _stackPresenter.RemoveFromStack(stackable);
+        Destroy(stackable.gameObject);
     }
 }

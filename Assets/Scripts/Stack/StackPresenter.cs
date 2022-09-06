@@ -22,6 +22,7 @@ public class StackPresenter : MonoBehaviour, IModificationListener<int>
     public bool IsFull => _stack.Count == _stack.Capacity;
     public int Count => _stack.Count;
     public int Capacity => _stack.Capacity;
+    public bool Empty => Count == 0;
 
     private void Awake()
     {

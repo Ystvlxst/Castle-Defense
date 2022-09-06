@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d3b516d-3b73-4cfc-ac92-be663e9d2345" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemySpawner.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Castle-Defense/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Castle-Defense/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemyes/Enemy2.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemyes/Enemy2.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemyes/EnemyBoss1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemyes/EnemyBoss1.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemyes/EnemySpawner.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemyes/EnemySpawner.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/BigGun.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/Weapon.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/Weapon.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Spawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/WaveSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Spawner.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/WaveSpawner.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/NextWave.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/NextWave.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/Weapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stack/StackPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stack/StackPresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon/Ballistics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/Ballistics.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,23 +27,35 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/StateMachine/States/AttackState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/07c89f7520694139991332d3cf930d4813bc00/e1/092a4787/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Shop/CanvasShopPresenter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Shop/IModificationPlacement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/WaveSpawner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Work/Projects/git/Castle-Defense/Assets/Prefabs/Weapons/BigGun.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Work/Projects/git/Castle-Defense/Assets/Prefabs/Weapons/BigGun.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Work/Projects/git/Castle-Defense/Assets/Prefabs/Weapons/BigGun.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Weapon/Ballistics.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Work/Projects/git/Castle-Defense/Assets/Scripts/Weapon/Ballistics.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Work/Projects/git/Castle-Defense/Assets/Scripts/Weapon/Ballistics.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Work/Projects/git/Castle-Defense/Assets/Scripts/Weapon/Ballistics.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Stack/View/StackHolder.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Assistants/Assistant.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Work/Projects/git/Castle-Defense/Assets/Prefabs/Weapons/BigGun.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/StateMachine/Transitions/DistanceTransition.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/StateMachine/States/AttackState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Work/Projects/git/Castle-Defense/Assets/Prefabs/Weapons/BigGun.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/EnemySpawner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Graveyard-idler/Assets/Scripts/Game/Shop/Conveyor/ConveyorOutputInteractable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/StateMachine/States/MoveState.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/WaveSpawner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Work/Projects/git/Castle-Defense/Assets/Prefabs/Weapons/BigGun.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Graveyard-idler/Assets/Scripts/Game/Shop/Items/Stone.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/StateMachine/State.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Weapon/Ballistics.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/StateMachine/Transition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Work/Projects/git/Castle-Defense/Assets/Scripts/Weapon/Ballistics.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Shop/Conveyor/ConveyorList.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Stack/View/StackHolder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/StateMachine/EnemyStateMachine.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Assistants/Assistant.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/StateMachine/Transitions/DistanceTransition.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Work/Projects/git/Castle-Defense/Assets/Scripts/Weapon/Ballistics.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2EO6QRUvRx0KLrkrFkSYey6kQ8B" />
   <component name="ProjectViewState">
