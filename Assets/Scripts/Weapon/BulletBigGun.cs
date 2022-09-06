@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class BulletBigGun : MonoBehaviour
 {
-    [SerializeField] private SphereCollider _sphereCollider;
     [SerializeField] private float _radiusFactor;
+
+    private Bullet _bullet;
+
+    private void Start()
+    {
+        _bullet = GetComponent<Bullet>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out Enemy enemy) || other.TryGetComponent(out Ground ground))
+        if (other.TryGetComponent(out Ground ground) || other.TryGetComponent(out Enemy enemy))
         {
-            StartCoroutine(Boom());
+            _bullet.DamageRadius *= _radiusFactor;
         }
-    }
-
-    private IEnumerator Boom()
-    {
-        _sphereCollider.radius = Mathf.Lerp(_sphereCollider.radius, _sphereCollider.radius * _radiusFactor, 1);
-        yield return null;
     }
 }

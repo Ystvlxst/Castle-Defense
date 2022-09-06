@@ -126,3 +126,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 80
+  _distructible:
+    serializedVersion: 2
+    m_Bits: 64
