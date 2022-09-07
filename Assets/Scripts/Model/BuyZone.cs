@@ -45,6 +45,9 @@ namespace BabyStack.Model
 
         protected override void OnLoad(BuyZone loadedObject)
         {
+            if(_dynamicCost == loadedObject._dynamicCost)
+                return;
+            
             _dynamicCost = loadedObject._dynamicCost;
 
             if (_dynamicCost.CurrentCost == 0)

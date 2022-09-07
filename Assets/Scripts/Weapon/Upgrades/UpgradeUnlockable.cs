@@ -1,12 +1,15 @@
+using System;
 using BabyStack.Model;
 using UnityEngine;
 
 public abstract class UpgradeUnlockable<T> : UnlockableObject
 {
     [SerializeField] private MonoBehaviour _upgradeable;
+    [SerializeField] private UpgradeUnlockableView _view;
     
     private Modification<T> _modification;
 
+    
 #if UNITY_EDITOR
     private void OnValidate()
     {
@@ -25,8 +28,10 @@ public abstract class UpgradeUnlockable<T> : UnlockableObject
 
     public override GameObject Unlock(Transform parent, bool onLoad, string guid)
     {
+        Debug.Log(gameObject.name);
         _modification.Upgrade();
         (_upgradeable as IModificationListener<T>)?.OnModificationUpdate(_modification.CurrentModificationValue);
+        _view.Unlock();
         
         return gameObject;
     }
