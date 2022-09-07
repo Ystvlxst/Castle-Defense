@@ -6,14 +6,18 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class AttackState : State
 {
-    [SerializeField] private int _damage;
+    private const string _attack = "Attack";
 
-     private float _delay;
+    [SerializeField] private int _damage;
+    [SerializeField] private Animator _animator;
+    [SerializeField] private ParticleSystem _shotEffect;
+
+    private float _delay;
 
     private NavMeshAgent _navMeshAgent;
     private float _lastAttackTime;
 
-    private Player _player;
+    private Tower _player;
 
     private void Start()
     {
@@ -21,7 +25,7 @@ public class AttackState : State
 
         _navMeshAgent = GetComponent<NavMeshAgent>();
 
-        _player = FindObjectOfType<Player>();
+        _player = FindObjectOfType<Tower>();
 
         _navMeshAgent.speed = 0;
     }
@@ -33,11 +37,14 @@ public class AttackState : State
             Attack();
             _lastAttackTime = _delay;
         }
+
         _lastAttackTime -= Time.deltaTime;
     }
 
     private void Attack()
     {
+        _animator.SetTrigger(_attack);
+        _shotEffect.Play();
         _player.ApplyDamage(_damage);
     }
 }

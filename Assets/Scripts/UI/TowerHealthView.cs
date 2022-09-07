@@ -6,7 +6,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Slider))]
 public class TowerHealthView : MonoBehaviour
 {
-    [SerializeField] private Player _player;
+    [SerializeField] private Tower _player;
 
     private Slider _slider;
 
