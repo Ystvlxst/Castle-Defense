@@ -18,11 +18,15 @@ public class LootDrop : MonoBehaviour
 
     private IEnumerator DropLootOverTime()
     {
+        _amount = Random.Range(1, 3);
+        
         for (int i = 0; i < _amount; i++)
         {
             DropableItem spawnedDollar = Instantiate(_droppableItem, _spawnPosition, Random.rotation);
-            spawnedDollar.Push(GetRandomDirection() * _force);
+            //spawnedDollar.Push(GetRandomDirection() * _force);
 
+            spawnedDollar.transform.position = FindObjectOfType<LootPoint>().transform.position + Vector3.up * 2f;
+            
             yield return new WaitForSeconds(_spawnDelayBetweenItems);
         }
     }

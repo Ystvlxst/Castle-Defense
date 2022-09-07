@@ -11,8 +11,10 @@ public class Weapon : MonoBehaviour
     [SerializeField] private TargetSelector _targetSelector;
     [SerializeField] private StackPresenter _stackPresenter;
     [SerializeField] private float _cooldown;
+    [SerializeField] private int _shotsPerAmmo;
 
     private readonly float _g = Physics.gravity.y;
+    private int _ammo;
 
     private void Start() => 
         StartCoroutine(Shoot());
@@ -21,17 +23,38 @@ public class Weapon : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitUntil(CanShoot);
-            Shot();
-            yield return new WaitForSeconds(_cooldown);
+            if(CanRefillAmmo())
+                RefillAmmo();
+            
+            while (CanShoot())
+            {
+                Shot();
+                
+                yield return new WaitForSeconds(_cooldown);
+            }
+
+            yield return null;
         }
     }
 
     private bool CanShoot() => 
-        _stackPresenter.Empty == false && _targetSelector.HasTarget;
+        _ammo > 0 && _targetSelector.HasTarget;
+
+    private bool CanRefillAmmo() => 
+        _stackPresenter.Empty == false && _ammo == 0;
+
+    private void RefillAmmo()
+    {
+        Stackable stackable = _stackPresenter.Data.Last();
+        _stackPresenter.RemoveFromStack(stackable);
+        Destroy(stackable.gameObject);
+        _ammo = _shotsPerAmmo;
+    }
 
     private void Shot()
     {
+        _ammo--;
+        
         _spawn.localEulerAngles = new Vector3(-_angle, 0f, 0f);
 
         Vector3 fromTo = _targetSelector.SelectTarget() - _weaponTransform.position;
@@ -49,9 +72,5 @@ public class Weapon : MonoBehaviour
 
         Bullet bullet = Instantiate(_template, _spawn.position, Quaternion.identity);
         bullet.Rigidbody.velocity = _spawn.forward * v;
-
-        Stackable stackable = _stackPresenter.Data.Last();
-        _stackPresenter.RemoveFromStack(stackable);
-        Destroy(stackable.gameObject);
     }
 }
