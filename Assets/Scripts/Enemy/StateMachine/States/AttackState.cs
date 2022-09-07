@@ -12,7 +12,7 @@ public class AttackState : State
     [SerializeField] private Animator _animator;
     [SerializeField] private ParticleSystem _shotEffect;
 
-     private float _delay;
+    private float _delay;
 
     private NavMeshAgent _navMeshAgent;
     private float _lastAttackTime;

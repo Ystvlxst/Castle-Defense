@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class Tower : MonoBehaviour
 {
     [SerializeField] private int _health;
+    [SerializeField] private ParticleSystem _hitEffect;
     [SerializeField] private List<PartTower> _towerParts;
 
     private int _currentHealth;
@@ -30,6 +31,7 @@ public class Tower : MonoBehaviour
         if (_currentHealth <= 0)
             Dying();
 
+        _hitEffect.Play();
         CheckLoss();
     }
 
