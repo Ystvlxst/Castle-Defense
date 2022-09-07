@@ -6,7 +6,11 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class AttackState : State
 {
+    private const string _attack = "Attack";
+
     [SerializeField] private int _damage;
+    [SerializeField] private Animator _animator;
+    [SerializeField] private ParticleSystem _shotEffect;
 
      private float _delay;
 
@@ -33,11 +37,14 @@ public class AttackState : State
             Attack();
             _lastAttackTime = _delay;
         }
+
         _lastAttackTime -= Time.deltaTime;
     }
 
     private void Attack()
     {
+        _animator.SetTrigger(_attack);
+        _shotEffect.Play();
         _player.ApplyDamage(_damage);
     }
 }
