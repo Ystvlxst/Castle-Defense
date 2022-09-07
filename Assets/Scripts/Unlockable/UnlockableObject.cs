@@ -13,5 +13,6 @@ public enum UnlockableObjectType
 {
     Conveyour,
     Weapon,
-    ItemProducer
+    ItemProducer,
+    Upgrade
 }

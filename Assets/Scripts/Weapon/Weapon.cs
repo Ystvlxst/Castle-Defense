@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Linq;
+using BabyStack.Model;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour
+public class Weapon : MonoBehaviour, IModificationListener<float>
 {
     [SerializeField] private Transform _spawn;
     [SerializeField] private Transform _weaponTransform;
@@ -15,6 +16,7 @@ public class Weapon : MonoBehaviour
 
     private readonly float _g = Physics.gravity.y;
     private int _ammo;
+    private float _cooldownFactor = 1;
 
     private void Start() => 
         StartCoroutine(Shoot());
@@ -30,7 +32,7 @@ public class Weapon : MonoBehaviour
             {
                 Shot();
                 
-                yield return new WaitForSeconds(_cooldown);
+                yield return new WaitForSeconds(_cooldown / _cooldownFactor);
             }
 
             yield return null;
@@ -72,5 +74,10 @@ public class Weapon : MonoBehaviour
 
         Bullet bullet = Instantiate(_template, _spawn.position, Quaternion.identity);
         bullet.Rigidbody.velocity = _spawn.forward * v;
+    }
+
+    public void OnModificationUpdate(float value)
+    {
+        _cooldownFactor = value;
     }
 }
