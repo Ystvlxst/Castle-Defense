@@ -156,7 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _targetState: {fileID: 3032293603511135660}
   _enemy: {fileID: 7242003024018466625}
-  _transitionRange: 2
+  _transitionRange: 7
   _rangeSpread: 0.5
 --- !u!54 &1209078372021513524
 Rigidbody:
