@@ -197,7 +197,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4563132428532715455}
-  - component: {fileID: 5005274142752373817}
   - component: {fileID: 440756972189358731}
   - component: {fileID: 7327021122813760994}
   m_Layer: 6
@@ -222,24 +221,6 @@ Transform:
   m_Father: {fileID: 7080637460571569043}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5005274142752373817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2540019702216340037}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed6d473140f18497b955da70dbc2a9de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spawn: {fileID: 5580619549680555691}
-  _angle: 45
-  _template: {fileID: 9163521458465192286, guid: 40a1dc751563c4b14b42ba973a8ad1c4, type: 3}
-  _targetSelector: {fileID: 411113465}
-  _stackPresenter: {fileID: 480776563243333823}
-  _cooldown: 5
 --- !u!33 &440756972189358731
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -542,6 +523,7 @@ GameObject:
   - component: {fileID: 7080637460571569041}
   - component: {fileID: 480776563243333823}
   - component: {fileID: 411113465}
+  - component: {fileID: 4463202599686578740}
   m_Layer: 6
   m_Name: WeaponRoot
   m_TagString: Untagged
@@ -611,6 +593,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyContainer: {fileID: 0}
+  _aheadOffset: 15
+--- !u!114 &4463202599686578740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7080637460571569055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed6d473140f18497b955da70dbc2a9de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawn: {fileID: 5580619549680555691}
+  _weaponTransform: {fileID: 4563132428532715455}
+  _angle: 45
+  _template: {fileID: 9163521458465192286, guid: 40a1dc751563c4b14b42ba973a8ad1c4, type: 3}
+  _targetSelector: {fileID: 411113465}
+  _stackPresenter: {fileID: 480776563243333823}
+  _cooldown: 5
 --- !u!1 &8860060156952230049
 GameObject:
   m_ObjectHideFlags: 0

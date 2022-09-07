@@ -12,7 +12,6 @@ public abstract class UnlockableObject : MonoBehaviour
 public enum UnlockableObjectType
 {
     Conveyour,
-    CashDesk,
-    ItemProducer,
-    Grave
+    Weapon,
+    ItemProducer
 }

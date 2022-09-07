@@ -20,7 +20,6 @@ public abstract class BuyZonePresenter : GUIDObject
     public abstract event UnityAction Unlocking;
 
     public int TotalCost => _totalCost;
-    public UnlockableObject UnlockableObject => _unlockable;
 
 
 #if UNITY_EDITOR
