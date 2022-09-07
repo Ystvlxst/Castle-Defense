@@ -17,7 +17,7 @@ public class AttackState : State
     private NavMeshAgent _navMeshAgent;
     private float _lastAttackTime;
 
-    private Player _player;
+    private Tower _player;
 
     private void Start()
     {
@@ -25,7 +25,7 @@ public class AttackState : State
 
         _navMeshAgent = GetComponent<NavMeshAgent>();
 
-        _player = FindObjectOfType<Player>();
+        _player = FindObjectOfType<Tower>();
 
         _navMeshAgent.speed = 0;
     }

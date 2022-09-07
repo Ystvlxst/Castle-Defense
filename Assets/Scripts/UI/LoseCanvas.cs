@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LoseCanvas : MonoBehaviour
 {
-    [SerializeField] private Player _player;
+    [SerializeField] private Tower _player;
     [SerializeField] private Canvas _canvas;
 
     private void OnEnable()

@@ -5,23 +5,37 @@ using UnityEngine.Events;
 
 public class Tower : MonoBehaviour
 {
-    [SerializeField] private Player _player;
+    [SerializeField] private int _health;
     [SerializeField] private List<PartTower> _towerParts;
 
+    private int _currentHealth;
     private int _lossFactor;
-    private int _currentHealth => _player.CurrentHealth;
-    private int _health => _player.Health;
 
-    private void OnEnable()
+    public event UnityAction Die;
+
+    public int Health => _health;
+    public int CurrentHealth => _currentHealth;
+
+    private void Awake()
     {
-        _lossFactor = 1000;
+        _currentHealth = _health;
 
-        _player.HealthChanged += CheckLoss;
+        _lossFactor = 1000;
     }
 
-    private void OnDisable()
+    public void ApplyDamage(int damage)
     {
-        _player.HealthChanged -= CheckLoss;
+        _currentHealth -= damage;
+
+        if (_currentHealth <= 0)
+            Dying();
+
+        CheckLoss();
+    }
+
+    private void Dying()
+    {
+        Die?.Invoke();
     }
 
     private void CheckLoss()
