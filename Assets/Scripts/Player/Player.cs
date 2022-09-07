@@ -4,10 +4,11 @@ using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private int _health = 100;
+    [SerializeField] private int _health;
 
     private int _currentHealth;
 
+    public event UnityAction HealthChanged;
     public event UnityAction Die;
 
     public int Health => _health;
@@ -24,6 +25,8 @@ public class Player : MonoBehaviour
 
         if (_currentHealth <= 0)
             Dying();
+
+        HealthChanged?.Invoke();
     }
 
     private void Dying()
