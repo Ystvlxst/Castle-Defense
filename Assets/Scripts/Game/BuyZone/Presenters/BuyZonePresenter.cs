@@ -58,7 +58,9 @@ public abstract class BuyZonePresenter : GUIDObject
 
     private void Start()
     {
-        _buyZone.Load();
+        if(IsUnlocked)
+            OnBuyZoneUnlocked(true);
+        
         UpdateCost();
 
         OnBuyZoneLoaded(_buyZone);

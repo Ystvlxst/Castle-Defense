@@ -11,12 +11,13 @@ public class UpgradeBuyZonesList : MonoBehaviour
         _buyZones = GetComponentsInChildren<BuyZonePresenter>().ToList();
 
         DisableLocked();
+        ActivateFirstLocked();
     }
 
     private void DisableLocked()
     {
-        for (var i = 1; i < _buyZones.Count; i++) 
-            _buyZones[i].gameObject.SetActive(_buyZones[i].IsUnlocked);
+        foreach (BuyZonePresenter buyZonePresenter in _buyZones)
+            buyZonePresenter.gameObject.SetActive(buyZonePresenter.IsUnlocked);
     }
 
     private void ActivateFirstLocked()

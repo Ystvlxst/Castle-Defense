@@ -78,7 +78,6 @@ public class Weapon : MonoBehaviour, IModificationListener<float>
 
     public void OnModificationUpdate(float value)
     {
-        Debug.Log(value);
         _cooldownFactor = value;
     }
 }

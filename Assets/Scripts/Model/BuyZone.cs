@@ -30,6 +30,7 @@ namespace BabyStack.Model
             
             BuyZone buyZone = new BuyZone(totalCost, guid);
             _buyZones.Add(guid, buyZone);
+            buyZone.Load();
 
             return buyZone;
         }
@@ -45,7 +46,7 @@ namespace BabyStack.Model
 
         protected override void OnLoad(BuyZone loadedObject)
         {
-            if(_dynamicCost == loadedObject._dynamicCost)
+            if(_dynamicCost.CurrentCost == loadedObject._dynamicCost.CurrentCost)
                 return;
             
             _dynamicCost = loadedObject._dynamicCost;

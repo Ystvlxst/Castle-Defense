@@ -21,15 +21,21 @@ public abstract class UpgradeUnlockable<T> : UnlockableObject
     }
 #endif
 
-    private void Awake() => 
+    private void Awake()
+    {
         _modification = LoadModification();
+    }
 
     protected abstract Modification<T> LoadModification();
 
     public override GameObject Unlock(Transform parent, bool onLoad, string guid)
     {
-        Debug.Log(gameObject.name);
-        _modification.Upgrade();
+        _modification.Load();
+
+        if(onLoad == false && _modification.TryGetNextModification(out ModificationData<T> _))
+            _modification.Upgrade();
+        
+        _modification.Save();
         (_upgradeable as IModificationListener<T>)?.OnModificationUpdate(_modification.CurrentModificationValue);
         _view.Unlock();
         
