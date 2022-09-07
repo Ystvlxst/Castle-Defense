@@ -20,7 +20,7 @@ public abstract class BuyZonePresenter : GUIDObject
     public abstract event UnityAction Unlocking;
 
     public int TotalCost => _totalCost;
-    public UnlockableObject UnlockableObject => _unlockable;
+    public bool IsUnlocked => _buyZone.CurrentCost == 0;
 
 
 #if UNITY_EDITOR
@@ -58,7 +58,9 @@ public abstract class BuyZonePresenter : GUIDObject
 
     private void Start()
     {
-        _buyZone.Load();
+        if(IsUnlocked)
+            OnBuyZoneUnlocked(true);
+        
         UpdateCost();
 
         OnBuyZoneLoaded(_buyZone);
@@ -72,11 +74,12 @@ public abstract class BuyZonePresenter : GUIDObject
     private void OnPlayerTriggerEnter(MoneyHolder moneyHolder)
     {
         var movement = moneyHolder.GetComponent<PlayerMovement>();
+        var stackPresenter = moneyHolder.GetComponent<StackPresenter>();
 
         if (_tryBuy != null)
             StopCoroutine(_tryBuy);
 
-        _tryBuy = StartCoroutine(TryBuy(moneyHolder, movement));
+        _tryBuy = StartCoroutine(TryBuy(moneyHolder, stackPresenter, movement));
         
         OnEnter();
     }
@@ -101,7 +104,7 @@ public abstract class BuyZonePresenter : GUIDObject
             FirstTimeUnlocked?.Invoke(this);
     }
 
-    private IEnumerator TryBuy(MoneyHolder moneyHolder, PlayerMovement playerMovement)
+    private IEnumerator TryBuy(MoneyHolder moneyHolder, StackPresenter stackPresenter, PlayerMovement playerMovement)
     {
         yield return null;
 
@@ -113,7 +116,7 @@ public abstract class BuyZonePresenter : GUIDObject
                 if (delayed == false)
                     yield return new WaitForSeconds(0.75f);
 
-                BuyFrame(_buyZone, moneyHolder);
+                BuyFrame(_buyZone, moneyHolder, stackPresenter);
                 UpdateCost();
                 delayed = true;
             }
@@ -141,5 +144,5 @@ public abstract class BuyZonePresenter : GUIDObject
     protected virtual void OnDisabled() { }
     protected virtual void OnEnter() { }
     protected virtual void OnExit() { }
-    protected abstract void BuyFrame(BuyZone buyZone, MoneyHolder moneyHolder);
+    protected abstract void BuyFrame(BuyZone buyZone, MoneyHolder moneyHolder, StackPresenter stackPresenter);
 }

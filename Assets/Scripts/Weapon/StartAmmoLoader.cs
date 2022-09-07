@@ -8,7 +8,7 @@ public class StartAmmoLoader : MonoBehaviour
 
     private StackPresenter _stackPresenter;
 
-    private void Start()
+    private void Awake()
     {
         _stackPresenter = GetComponent<StackPresenter>();
 

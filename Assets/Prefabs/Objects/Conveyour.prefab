@@ -142,7 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stackView: {fileID: 91218847}
   _stackUIView: {fileID: 2130796208678875123}
-  _stackCapacity: 3
+  _stackCapacity: 10
   _allTypesThatCanBeAdded:
   - {fileID: 11400000, guid: d8d38e680c135c44b8c70bcc3b617e55, type: 2}
 --- !u!1 &1780790672770779718
@@ -174,7 +174,7 @@ Transform:
   m_GameObject: {fileID: 1780790672770779718}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0.15}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 1780790674461094587}
   - {fileID: 1780790673085907593}
@@ -218,6 +218,7 @@ MonoBehaviour:
   _timerView: {fileID: 8768399918069191481}
   _takePoint: {fileID: 2089764256700518090}
   _placePoint: {fileID: 3562431179262086752}
+  _baseProcessDuration: 1
 --- !u!208 &6791309429033149529
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -305,7 +306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stackView: {fileID: 533313516827031600}
   _stackUIView: {fileID: 1058551176511256131}
-  _stackCapacity: 5
+  _stackCapacity: 10
   _allTypesThatCanBeAdded:
   - {fileID: 11400000, guid: 6175fdb5c9707a845a2f1f3f8b61b2bd, type: 2}
 --- !u!1 &1780790673440422213
@@ -381,7 +382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _trigger: {fileID: 1780790673440422208}
-  _interactionTime: 1
+  _interactionTime: 0.1
   _view: {fileID: 0}
   _conveyorEndStack: {fileID: 1780790672700220931}
 --- !u!1 &1780790673482276029
@@ -545,7 +546,6 @@ MonoBehaviour:
   _jumpPower:
     _enabled: 1
     _value: 3
-  _scaleMultiply: {x: 1, y: 1, z: 1}
   _space: 0.01
   _sortAnimationDuration: 0
 --- !u!1 &2042312632000752448
@@ -630,7 +630,6 @@ MonoBehaviour:
   _jumpPower:
     _enabled: 1
     _value: 3
-  _scaleMultiply: {x: 1, y: 1, z: 1}
   _space: 0.01
   _sortAnimationDuration: 1
 --- !u!1 &2690900378052699934
@@ -7111,6 +7110,10 @@ PrefabInstance:
     - target: {fileID: 3399682869636781955, guid: 4f7d9f51a2789074c84b0e75ced493e7, type: 3}
       propertyPath: m_Name
       value: TimerCanvas Output
+      objectReference: {fileID: 0}
+    - target: {fileID: 3399682869636781955, guid: 4f7d9f51a2789074c84b0e75ced493e7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f7d9f51a2789074c84b0e75ced493e7, type: 3}

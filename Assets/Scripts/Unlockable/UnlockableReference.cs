@@ -17,7 +17,7 @@ public class UnlockableReference : UnlockableObject
         inst.transform.localScale = Vector3.zero;
         inst.transform.DOScale(startScale, 1f);
 
-        if (onLoad == false)
+        if (onLoad == false && _unlockEffect != null)
             Instantiate(_unlockEffect, inst.transform.position + Vector3.up, _unlockEffect.transform.rotation);
 
         Unlocked?.Invoke(inst, onLoad, guid);

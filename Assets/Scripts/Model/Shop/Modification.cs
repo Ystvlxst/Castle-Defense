@@ -45,7 +45,6 @@ namespace BabyStack.Model
             PlayerPrefs.SetInt(_guid, _currentModification);
         }
 
-
         public void Load()
         {
             if (PlayerPrefs.HasKey(_guid) == false)

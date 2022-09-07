@@ -2,10 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BigGun : Weapon
+public class LootPoint : MonoBehaviour
 {
-    private void Update()
-    {
-        Shot();
-    }
+    
 }
