@@ -126,10 +126,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0368d5ef582442d8c189e810adca98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 10
+  _damage: 34
   _damageRadius: 0.5
-  _hitEffect: {fileID: 3761598065930690125}
   _force: 10
+  _hitEffect: {fileID: 3761598065930690125}
 --- !u!1001 &3549570679018974589
 PrefabInstance:
   m_ObjectHideFlags: 0

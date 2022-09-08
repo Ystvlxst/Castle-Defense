@@ -109,7 +109,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _droppableItem: {fileID: -7184618940887743099, guid: f182b78f62688485c97337c5694f69f7, type: 3}
   _spawnOffset: {x: 0.38, y: 2.2, z: 0}
-  _amount: 1
+  _amountRange: {x: 0, y: 0}
+  _spawnDelayBetweenItems: 0.1
 --- !u!114 &1754436801047152394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,8 +202,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5, z: 0.5}
-  m_Center: {x: 0, y: 0.3, z: 0}
+  m_Size: {x: 0.5, y: 1.5760136, z: 0.7589507}
+  m_Center: {x: 0, y: -0.2380058, z: 0}
 --- !u!1 &5460194661826974497
 GameObject:
   m_ObjectHideFlags: 0
@@ -1100,7 +1101,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0000016572388, y: 0.15830646, z: 0.0000013503297}
+  m_ConnectedAnchor: {x: -0.0000016254281, y: 0.15830655, z: 0.0000013596424}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -1631,7 +1632,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.16963947, y: 0.15186565, z: -0.0002961974}
+  m_ConnectedAnchor: {x: -0.1696395, y: 0.15186565, z: -0.0002961974}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:

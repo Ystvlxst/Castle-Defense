@@ -761,6 +761,7 @@ GameObject:
   - component: {fileID: 480776563243333823}
   - component: {fileID: 411113465}
   - component: {fileID: 4463202599686578740}
+  - component: {fileID: 274675578288667966}
   m_Layer: 6
   m_Name: WeaponRoot
   m_TagString: Untagged
@@ -846,11 +847,28 @@ MonoBehaviour:
   _spawn: {fileID: 5580619549680555691}
   _weaponTransform: {fileID: 4563132428532715455}
   _angle: 45
-  _template: {fileID: 9163521458465192286, guid: 40a1dc751563c4b14b42ba973a8ad1c4, type: 3}
+  _template: {fileID: 1352228147017972891, guid: 40a1dc751563c4b14b42ba973a8ad1c4, type: 3}
   _targetSelector: {fileID: 411113465}
   _stackPresenter: {fileID: 480776563243333823}
   _cooldown: 5
   _shotsPerAmmo: 3
+  _shotEffect: {fileID: 0}
+  _torqueForce: 0
+--- !u!114 &274675578288667966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7080637460571569055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 687b8bfefde3a424896de3f856ad7d5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _amount: 0
+  _template: {fileID: 0}
+  _loadTime: 0
 --- !u!1 &7595669428187903820
 GameObject:
   m_ObjectHideFlags: 0

@@ -150,8 +150,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 411113465, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: _aheadOffset
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 411113465, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: EnemyContainer
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 274675578288667966, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: _amount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 274675578288667966, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: _template
+      value: 
+      objectReference: {fileID: 5258755961510967630, guid: f97696551bb562f4a8c5f297fd1e0777, type: 3}
+    - target: {fileID: 4463202599686578740, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: _angle
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4463202599686578740, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: _cooldown
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4463202599686578740, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _shotEffect
@@ -159,7 +179,11 @@ PrefabInstance:
       objectReference: {fileID: 4611224154618752605}
     - target: {fileID: 4463202599686578740, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _torqueForce
-      value: 1000
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4463202599686578740, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: _shotsPerAmmo
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5005274142752373817, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _angle
