@@ -29,8 +29,6 @@ public class Bullet : MonoBehaviour
         {
             if(collider.TryGetComponent(out Enemy enemy))
             {
-                enemy.TakeDamage(_damage);
-
                 if (enemy.IsDying)
                     enemy.TakeImpulseForce(_force);
             }
@@ -39,12 +37,21 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out Ground ground) || other.TryGetComponent(out Enemy enemy))
+        if (other.TryGetComponent(out Ground ground))
+            Collision();
+
+        if (other.TryGetComponent(out Enemy enemy))
         {
-            _meshRenderer.enabled = false;
-            CheckDistructibles();
-            _hitEffect.Play();
-            Destroy(gameObject, 1f);
+            enemy.TakeDamage(_damage);
+            Collision();
         }
+    }
+
+    private void Collision()
+    {
+        _meshRenderer.enabled = false;
+        CheckDistructibles();
+        _hitEffect.Play();
+        Destroy(gameObject, 1);
     }
 }
