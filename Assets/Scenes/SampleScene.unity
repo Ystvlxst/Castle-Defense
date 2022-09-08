@@ -934,7 +934,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &201369396
 Transform:
   m_ObjectHideFlags: 0
@@ -5211,8 +5211,7 @@ MonoBehaviour:
   _amount: 0
   _enemyContainer: {fileID: 1594673592}
   _enemySpawners:
-  - {fileID: 1105483765}
-  - {fileID: 1518659568}
+  - {fileID: 201369397}
 --- !u!114 &1594673592
 MonoBehaviour:
   m_ObjectHideFlags: 0
