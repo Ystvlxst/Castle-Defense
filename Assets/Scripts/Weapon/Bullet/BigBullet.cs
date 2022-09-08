@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class BigBullet : Bullet
 {
-    [SerializeField] private ParticleSystem _hitEffectTemplate;
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out Ground ground))
@@ -27,12 +25,5 @@ public class BigBullet : Bullet
                     enemy.TakeImpulseForce(Force);
             }
         }
-    }
-
-    private void Collide()
-    {
-        ParticleSystem effect = Instantiate(_hitEffectTemplate, transform.position, Quaternion.identity);
-        effect.Play();
-        Destroy(gameObject);
     }
 }
