@@ -60,6 +60,7 @@ public class Enemy : MonoBehaviour
     {
         _animator.enabled = false;
         _rootRigidbody.isKinematic = true;
+        _healthCanvas.gameObject.SetActive(false);
         _navMeshAgent.speed = 0;
         _shotEffect.Stop();
 
