@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2d3b516d-3b73-4cfc-ac92-be663e9d2345" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/NavMesh-NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/NavMesh-NavMesh.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unlockable/UnlockableMapZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unlockable/UnlockableMapZone.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
