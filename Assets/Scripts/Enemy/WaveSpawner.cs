@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
 {
-    [SerializeField] private int _amount;
     [SerializeField] private EnemyContainer _enemyContainer;
     [SerializeField] private List<EnemySpawner> _enemySpawners;
 
