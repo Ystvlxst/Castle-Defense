@@ -568,6 +568,7 @@ MonoBehaviour:
   _detail: {fileID: 4898267704630984318, guid: f182b78f62688485c97337c5694f69f7, type: 3}
   _enemyStateMachine: {fileID: 9023973869760570834}
   _lootDrop: {fileID: 9023973869760570835}
+  _healthCanvas: {fileID: 4347891829287229304}
 --- !u!114 &9023973869760570835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -661,7 +662,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &9023973869760570841
 BoxCollider:
@@ -1451,12 +1452,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1742921026302162129, guid: 89635787f802347fea820d1b2e39a14a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6320604298120341707, guid: 89635787f802347fea820d1b2e39a14a, type: 3}
       propertyPath: _enemy
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 9023973869760570832}
     - target: {fileID: 7451212930729988261, guid: 89635787f802347fea820d1b2e39a14a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1541,6 +1542,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8460097327259309900, guid: 89635787f802347fea820d1b2e39a14a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8575298735367835719, guid: 89635787f802347fea820d1b2e39a14a, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
@@ -1567,16 +1572,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9142476215642859202, guid: 89635787f802347fea820d1b2e39a14a, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9142476215642859202, guid: 89635787f802347fea820d1b2e39a14a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89635787f802347fea820d1b2e39a14a, type: 3}
 --- !u!224 &3339027189055983761 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7451212930729988261, guid: 89635787f802347fea820d1b2e39a14a, type: 3}
+  m_PrefabInstance: {fileID: 5277828605009248308}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &4347891829287229304 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 8460097327259309900, guid: 89635787f802347fea820d1b2e39a14a, type: 3}
   m_PrefabInstance: {fileID: 5277828605009248308}
   m_PrefabAsset: {fileID: 0}

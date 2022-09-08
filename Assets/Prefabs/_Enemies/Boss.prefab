@@ -79,6 +79,7 @@ MonoBehaviour:
   _detail: {fileID: 4898267704630984318, guid: f182b78f62688485c97337c5694f69f7, type: 3}
   _enemyStateMachine: {fileID: 7821586195624221401}
   _lootDrop: {fileID: 4278025167964966448}
+  _healthCanvas: {fileID: 4720081841340620265}
 --- !u!114 &4278025167964966448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,7 +173,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &6873959722381386687
 BoxCollider:
@@ -20656,7 +20657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e921ec52783b4541855c3990cbb68be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemy: {fileID: 0}
+  _enemy: {fileID: 7242003024018466625}
 --- !u!1 &4720081841198176246
 GameObject:
   m_ObjectHideFlags: 0
@@ -25529,7 +25530,7 @@ RectTransform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.01, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -6, y: -6}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -30471,7 +30472,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4720081841340620266
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30499,7 +30500,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4720081841340620269}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 2
   m_Camera: {fileID: 0}

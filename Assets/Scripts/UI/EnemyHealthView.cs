@@ -10,7 +10,7 @@ public class EnemyHealthView : MonoBehaviour
 
     private Slider _slider;
 
-    private void Awake()
+    private void Start()
     {
         _slider = GetComponent<Slider>();
 

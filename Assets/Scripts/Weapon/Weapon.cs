@@ -13,6 +13,7 @@ public class Weapon : MonoBehaviour, IModificationListener<float>
     [SerializeField] private StackPresenter _stackPresenter;
     [SerializeField] private float _cooldown;
     [SerializeField] private int _shotsPerAmmo;
+    [SerializeField] private ParticleSystem _shotEffect;
 
     private readonly float _g = Physics.gravity.y;
     private int _ammo;
@@ -56,6 +57,7 @@ public class Weapon : MonoBehaviour, IModificationListener<float>
     private void Shot()
     {
         _ammo--;
+        _shotEffect.Play();
         
         _spawn.localEulerAngles = new Vector3(-_angle, 0f, 0f);
 

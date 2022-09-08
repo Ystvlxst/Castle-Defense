@@ -1,14 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(MeshRenderer))]
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private int _damage;
     [SerializeField] private float _damageRadius;
+    [SerializeField] private ParticleSystem _hitEffect;
 
     private Rigidbody _rigidbody;
+    private MeshRenderer _meshRenderer;
 
     public Rigidbody Rigidbody => _rigidbody;
     public int Damage => _damage;
@@ -16,6 +17,7 @@ public class Bullet : MonoBehaviour
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _meshRenderer = GetComponent<MeshRenderer>();
     }
 
     private void CheckDistructibles()
@@ -26,6 +28,9 @@ public class Bullet : MonoBehaviour
         {
             if(collider.TryGetComponent(out Enemy enemy))
                 enemy.TakeDamage(_damage);
+
+            //if (collider.TryGetComponent(out Rigidbody rigidbody))
+                //rigidbody.AddForce(-collider.transform.position * _damageRadius * _damage);
         }
     }
 
@@ -33,8 +38,10 @@ public class Bullet : MonoBehaviour
     {
         if (other.TryGetComponent(out Ground ground) || other.TryGetComponent(out Enemy enemy))
         {
+            _meshRenderer.enabled = false;
             CheckDistructibles();
-            Destroy(gameObject);
+            _hitEffect.Play();
+            Destroy(gameObject, 1f);
         }
     }
 }
