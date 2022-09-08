@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.Events;
 
 public class Enemy : MonoBehaviour
@@ -9,6 +10,11 @@ public class Enemy : MonoBehaviour
     [SerializeField] private EnemyStateMachine _enemyStateMachine;
     [SerializeField] private LootDrop _lootDrop;
     [SerializeField] private Canvas _healthCanvas;
+    [SerializeField] private Rigidbody _rootRigidbody;
+    [SerializeField] private Rigidbody[] _ragdollRigidbodyes;
+    [SerializeField] private Animator _animator;
+    [SerializeField] private NavMeshAgent _navMeshAgent;
+    [SerializeField] private ParticleSystem _shotEffect;
 
     private EnemyTarget _target;
     private Coroutine _coroutine;
@@ -16,6 +22,7 @@ public class Enemy : MonoBehaviour
     public EnemyTarget Target => _target;
     public int Reward => _reward;
     public float Health => _health;
+    public bool IsDying => _health <= 0;
 
     public event UnityAction<Enemy> Dying;
 
@@ -23,6 +30,11 @@ public class Enemy : MonoBehaviour
     {
         _target = target;
         _enemyStateMachine.Launch();
+
+        _rootRigidbody.isKinematic = false;
+
+        foreach (Rigidbody rigidbody in _ragdollRigidbodyes)
+            rigidbody.isKinematic = true;
     }
 
     public void TakeDamage(float damage)
@@ -40,9 +52,18 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
-        Dying?.Invoke(this);
-        Destroy(gameObject);
+        _animator.enabled = false;
+        _rootRigidbody.isKinematic = true;
+        _navMeshAgent.speed = 0;
+        _shotEffect.Stop();
+
+        foreach (Rigidbody rigidbody in _ragdollRigidbodyes)
+            rigidbody.isKinematic = false;
+
         _lootDrop.DropLoot();
+        Dying?.Invoke(this);
+
+        Destroy(gameObject, 2);
     }
 
     private IEnumerator HealthView()

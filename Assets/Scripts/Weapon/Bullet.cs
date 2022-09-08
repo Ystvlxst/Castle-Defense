@@ -27,10 +27,12 @@ public class Bullet : MonoBehaviour
         foreach(Collider collider in colliders)
         {
             if(collider.TryGetComponent(out Enemy enemy))
+            {
                 enemy.TakeDamage(_damage);
 
-            //if (collider.TryGetComponent(out Rigidbody rigidbody))
-                //rigidbody.AddForce(-collider.transform.position * _damageRadius * _damage);
+                if (enemy.IsDying && collider.TryGetComponent(out Rigidbody rigidbody))
+                    rigidbody.AddForce(Vector3.forward * _damage * 2, ForceMode.Impulse);
+            }
         }
     }
 
