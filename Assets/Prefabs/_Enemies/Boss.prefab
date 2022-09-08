@@ -138,7 +138,7 @@ MonoBehaviour:
   _transitions:
   - {fileID: 6836135705838682155}
   _enemy: {fileID: 7242003024018466625}
-  _speed: 4
+  _speed: 5.5
   _layerMask:
     serializedVersion: 2
     m_Bits: 512
@@ -732,7 +732,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4720081840433892738}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: bad0a705743079e4eb1980b5cf1d3eef, type: 3}
   m_Controller: {fileID: 9100000, guid: 85aeff43b6dbe4dfa8181438eca5aba6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0

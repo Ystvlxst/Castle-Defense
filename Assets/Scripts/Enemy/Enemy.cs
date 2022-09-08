@@ -70,7 +70,7 @@ public class Enemy : MonoBehaviour
         _lootDrop.DropLoot();
         Dying?.Invoke(this);
 
-        Destroy(gameObject, 1);
+        Destroy(gameObject, 2f);
     }
 
     private IEnumerator HealthView()
