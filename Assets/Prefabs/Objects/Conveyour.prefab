@@ -144,7 +144,7 @@ MonoBehaviour:
   _stackUIView: {fileID: 2130796208678875123}
   _stackCapacity: 10
   _allTypesThatCanBeAdded:
-  - {fileID: 11400000, guid: d8d38e680c135c44b8c70bcc3b617e55, type: 2}
+  - {fileID: 11400000, guid: 4281b31a95058f94d83d138af419b577, type: 2}
 --- !u!1 &1780790672770779718
 GameObject:
   m_ObjectHideFlags: 0

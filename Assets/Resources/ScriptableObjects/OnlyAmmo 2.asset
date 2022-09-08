@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f87ebd35e7edf9e4cafadf2a3f9911c8, type: 3}
-  m_Name: AllItems
+  m_Name: OnlyAmmo 2
   m_EditorClassIdentifier: 
-  _stackableTypes: 0000000001000000020000000300000004000000
+  _stackableTypes: 04000000
