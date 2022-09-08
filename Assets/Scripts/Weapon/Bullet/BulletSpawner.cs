@@ -19,7 +19,7 @@ public class BulletSpawner : MonoBehaviour
     {
         if (_time >= _delay)
         {
-           Bullet bullet = Instantiate(_bulletTemplate, transform.position, transform.rotation);
+            Bullet bullet = Instantiate(_bulletTemplate, transform.position, transform.rotation);
             bullet.transform.DOMove(target.position, duration);
             _time = 0;
         }
