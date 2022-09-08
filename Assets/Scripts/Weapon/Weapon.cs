@@ -14,6 +14,7 @@ public class Weapon : MonoBehaviour, IModificationListener<float>
     [SerializeField] private float _cooldown;
     [SerializeField] private int _shotsPerAmmo;
     [SerializeField] private ParticleSystem _shotEffect;
+    [SerializeField] private float _torqueForce;
 
     private readonly float _g = Physics.gravity.y;
     private int _ammo;
@@ -76,6 +77,7 @@ public class Weapon : MonoBehaviour, IModificationListener<float>
 
         Bullet bullet = Instantiate(_template, _spawn.position, Quaternion.identity);
         bullet.Rigidbody.velocity = _spawn.forward * v;
+        bullet.Rigidbody.AddTorque(_spawn.forward * _torqueForce);
     }
 
     public void OnModificationUpdate(float value)

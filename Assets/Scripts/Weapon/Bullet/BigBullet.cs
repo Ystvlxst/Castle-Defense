@@ -1,10 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BigBullet : Bullet
 {
-    private void CheckDistructibles()
+    [SerializeField] private ParticleSystem _hitEffectTemplate;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.TryGetComponent(out Ground ground))
+        {
+            Collide();
+            Explode();
+        }
+    }
+
+    private void Explode()
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, DamageRadius);
 
@@ -20,12 +29,10 @@ public class BigBullet : Bullet
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void Collide()
     {
-        if (other.TryGetComponent(out Ground ground) || other.TryGetComponent(out Enemy enemy))
-        {
-            Collision();
-            CheckDistructibles();
-        }
+        ParticleSystem effect = Instantiate(_hitEffectTemplate, transform.position, Quaternion.identity);
+        effect.Play();
+        Destroy(gameObject);
     }
 }

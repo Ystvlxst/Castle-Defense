@@ -157,6 +157,10 @@ PrefabInstance:
       propertyPath: _shotEffect
       value: 
       objectReference: {fileID: 4611224154618752605}
+    - target: {fileID: 4463202599686578740, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: _torqueForce
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 5005274142752373817, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _angle
       value: 10

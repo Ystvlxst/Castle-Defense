@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1619,7 +1619,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Size: {x: 10, y: 0.2, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &594669423
 GameObject:
@@ -5208,7 +5208,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ee5e73addae0cf4b872263a4b65f239, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _amount: 0
   _enemyContainer: {fileID: 1594673592}
   _enemySpawners:
   - {fileID: 201369397}

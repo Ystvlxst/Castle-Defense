@@ -36,6 +36,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7003829402408405102}
     - target: {fileID: 4463202599686578740, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: _torqueForce
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4463202599686578740, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _shotsPerAmmo
       value: 1
       objectReference: {fileID: 0}
