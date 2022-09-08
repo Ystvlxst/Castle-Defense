@@ -934,7 +934,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &201369396
 Transform:
   m_ObjectHideFlags: 0
@@ -3404,7 +3404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58d368c87c0c49a6ad241a355a29b71a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyTemplate: {fileID: 1728411569124962843, guid: db126b84e0bab4d73a242a31f7d70a9d, type: 3}
+  _enemyTemplate: {fileID: 1754436801047152392, guid: 4cef7ec99cd5e41ba858a6255e364c5b, type: 3}
   _spawnPoints:
   - {fileID: 1396516491897937516}
   - {fileID: 643997174}
@@ -4803,7 +4803,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1518659568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5168,9 +5168,7 @@ MonoBehaviour:
   _amount: 0
   _enemyContainer: {fileID: 1594673592}
   _enemySpawners:
-  - {fileID: 201369397}
   - {fileID: 1105483765}
-  - {fileID: 1518659568}
 --- !u!114 &1594673592
 MonoBehaviour:
   m_ObjectHideFlags: 0
