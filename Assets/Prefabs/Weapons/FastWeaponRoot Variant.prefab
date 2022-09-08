@@ -25,7 +25,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4463202599686578740, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _shotsPerAmmo
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5005274142752373817, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _angle
@@ -104,3 +104,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _amount: 6
   _template: {fileID: 5258755961510967630, guid: f97696551bb562f4a8c5f297fd1e0777, type: 3}
+  _loadTime: 0

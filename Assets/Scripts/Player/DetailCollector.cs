@@ -8,7 +8,7 @@ public class DetailCollector : Trigger<Detail>
     
     protected override void OnEnter(Detail detail)
     {
-        if(detail.Taken)
+        if(!enabled || detail.Taken)
             return;
         
         detail.Take();

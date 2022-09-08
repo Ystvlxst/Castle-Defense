@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 8898101797642281198, guid: da5b5e936fb534a16b0aa46f1c278bf3, type: 3}
     - target: {fileID: 4463202599686578740, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _shotsPerAmmo
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5580619549680555691, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: m_LocalScale.x

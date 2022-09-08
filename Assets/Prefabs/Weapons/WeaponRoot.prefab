@@ -850,7 +850,7 @@ MonoBehaviour:
   _targetSelector: {fileID: 411113465}
   _stackPresenter: {fileID: 480776563243333823}
   _cooldown: 5
-  _shotsPerAmmo: 0
+  _shotsPerAmmo: 3
 --- !u!1 &7595669428187903820
 GameObject:
   m_ObjectHideFlags: 0

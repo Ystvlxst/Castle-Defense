@@ -6,6 +6,7 @@ public class DronePlatform : Trigger<PlayerMovement>
     [SerializeField] private JoystickInput _joystickInput;
     [SerializeField] private PlayerMovement _playerMovement;
     [SerializeField] private DroneMovement _droneMovement;
+    [SerializeField] private DetailCollector _droneCollector;
     [SerializeField] private CameraBlend _camera;
     
     private Coroutine _switchControl;
@@ -21,6 +22,7 @@ public class DronePlatform : Trigger<PlayerMovement>
 
         _joystickInput.SetMovement(_droneMovement);
         _camera.ShowDrone();
+        _droneCollector.enabled = true;
         _switchControl = StartCoroutine(SwitchControlBack());
     }
 
@@ -33,6 +35,7 @@ public class DronePlatform : Trigger<PlayerMovement>
         yield return new WaitUntil(() => _joystickInput.Moving == false);
         _joystickInput.SetMovement(_playerMovement);
         _camera.ShowPlayer();
+        _droneCollector.enabled = false;
         yield return new WaitUntil(() => _exit);
         _switchControl = null;
     }

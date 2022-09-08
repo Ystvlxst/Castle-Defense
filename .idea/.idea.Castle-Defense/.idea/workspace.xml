@@ -3,19 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="2d3b516d-3b73-4cfc-ac92-be663e9d2345" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Castle-Defense/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Castle-Defense/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemyes/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemyes/Enemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Materials/Ground.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Materials/Ground.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Materials/Tower.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Materials/Tower.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Detail.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Detail.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/DetailTaken.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/DetailTaken.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Drone/DronePlatform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Drone/DronePlatform.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Items/Detail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Items/Detail.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Haptic/MoneyMagnetHaptics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Haptic/MoneyMagnetHaptics.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Money/LootDrop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Money/LootDrop.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Money/MoneyCollector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Money/MoneyCollector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Money/MoneyMagnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Money/ItemMagnet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Money/MoneyMagnit.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Money/ItemMagnet.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/DetailCollector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/DetailCollector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stack/StackPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stack/StackPresenter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon/StartAmmoLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/StartStackItemsLoader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon/StartAmmoLoader.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/StartStackItemsLoader.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +95,7 @@
       <workItem from="1662454275216" duration="2851000" />
       <workItem from="1662465286394" duration="8106000" />
       <workItem from="1662553541643" duration="15072000" />
-      <workItem from="1662617653583" duration="6207000" />
+      <workItem from="1662617653583" duration="7633000" />
     </task>
     <servers />
   </component>
