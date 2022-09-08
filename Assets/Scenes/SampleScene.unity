@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4088,7 +4088,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1360251314
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4846,7 +4846,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1518659568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4859,7 +4859,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58d368c87c0c49a6ad241a355a29b71a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyTemplate: {fileID: 9023973869760570832, guid: 1d969e901afb146d88e04e3ef4132808, type: 3}
+  _enemyTemplate: {fileID: 1954327373974811798, guid: 0a29ff5d508f6434b8375b10ab6cee5e, type: 3}
   _spawnPoints:
   - {fileID: 1048575383}
   - {fileID: 1721990775}
@@ -5212,6 +5212,7 @@ MonoBehaviour:
   _enemyContainer: {fileID: 1594673592}
   _enemySpawners:
   - {fileID: 1105483765}
+  - {fileID: 1518659568}
 --- !u!114 &1594673592
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -86,7 +86,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Attack
-  m_Speed: 0.5
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -98,7 +98,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: 37e40d8f7632046878d0764d1a074ba8, type: 3}
+  m_Motion: {fileID: -203655887218126122, guid: 341a86078cbd54516a1355cc28ef0c19, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -330,7 +330,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: RobotEnemy
+  m_Name: RobotEnemyUpgreade
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Speed
@@ -425,7 +425,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: -203655887218126122, guid: 953fbd23fca584b6b839f368298a12d3, type: 3}
+    m_Motion: {fileID: 7400000, guid: 962afe0202de4964ab720f967e52a86f, type: 2}
     m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 0.5
@@ -433,7 +433,7 @@ BlendTree:
     m_DirectBlendParameter: Blend
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: -203655887218126122, guid: 953fbd23fca584b6b839f368298a12d3, type: 3}
+    m_Motion: {fileID: 7400000, guid: 38f19bd511386244cb3fcd8bfd229e3f, type: 2}
     m_Threshold: 2
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -746,7 +746,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Idle
-  m_Speed: 1
+  m_Speed: 0.7
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -4474297431766723884}
@@ -761,7 +761,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 8595678088a320b499bcc49ea393bef3, type: 2}
+  m_Motion: {fileID: -203655887218126122, guid: b03ff182de82a4d9e8e51dfa2b23fd4a, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
