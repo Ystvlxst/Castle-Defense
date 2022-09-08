@@ -129,6 +129,7 @@ MonoBehaviour:
   _damage: 10
   _damageRadius: 0.5
   _hitEffect: {fileID: 3761598065930690125}
+  _force: 10
 --- !u!1001 &3549570679018974589
 PrefabInstance:
   m_ObjectHideFlags: 0

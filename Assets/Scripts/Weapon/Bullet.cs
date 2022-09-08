@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] private int _damage;
     [SerializeField] private float _damageRadius;
     [SerializeField] private ParticleSystem _hitEffect;
+    [SerializeField] private float _force;
 
     private Rigidbody _rigidbody;
     private MeshRenderer _meshRenderer;
@@ -30,8 +31,8 @@ public class Bullet : MonoBehaviour
             {
                 enemy.TakeDamage(_damage);
 
-                if (enemy.IsDying && collider.TryGetComponent(out Rigidbody rigidbody))
-                    rigidbody.AddForce(Vector3.forward * _damage * 2, ForceMode.Impulse);
+                if (enemy.IsDying)
+                    enemy.TakeImpulseForce(_force);
             }
         }
     }

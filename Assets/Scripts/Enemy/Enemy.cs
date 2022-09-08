@@ -50,6 +50,12 @@ public class Enemy : MonoBehaviour
         _coroutine = StartCoroutine(HealthView());
     }
 
+    public void TakeImpulseForce(float force)
+    {
+        foreach (Rigidbody rigidbody in _ragdollRigidbodyes)
+            rigidbody.AddForce(Vector3.forward * force, ForceMode.Impulse);
+    }
+
     private void Die()
     {
         _animator.enabled = false;
@@ -63,7 +69,7 @@ public class Enemy : MonoBehaviour
         _lootDrop.DropLoot();
         Dying?.Invoke(this);
 
-        Destroy(gameObject, 2);
+        Destroy(gameObject, 1);
     }
 
     private IEnumerator HealthView()
