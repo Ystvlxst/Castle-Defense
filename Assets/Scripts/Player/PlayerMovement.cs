@@ -2,7 +2,7 @@ using UnityEngine;
 using BabyStack.Model;
 
 [RequireComponent(typeof(AIMovement))]
-public class PlayerMovement : MonoBehaviour, IModificationListener<float>
+public class PlayerMovement : MonoBehaviour, IMovement, IModificationListener<float>
 {
     [SerializeField] private DoctorAnimation _animation;
     [SerializeField] private Transform _playerModel;
