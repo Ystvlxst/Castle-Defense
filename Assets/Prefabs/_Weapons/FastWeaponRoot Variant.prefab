@@ -159,12 +159,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 274675578288667966, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _amount
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 274675578288667966, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _template
       value: 
       objectReference: {fileID: 5258755961510967630, guid: f97696551bb562f4a8c5f297fd1e0777, type: 3}
+    - target: {fileID: 1526255522862522775, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4463202599686578740, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _angle
       value: 2.5
