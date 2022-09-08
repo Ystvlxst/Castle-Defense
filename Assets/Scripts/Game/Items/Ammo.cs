@@ -1,4 +1,8 @@
+using UnityEngine;
+
 public class Ammo : Stackable
 {
-    public override StackableType Type => StackableType.Ammo;
+    [SerializeField] private StackableType _ammoType = StackableType.Ammo;
+    
+    public override StackableType Type => _ammoType;
 }

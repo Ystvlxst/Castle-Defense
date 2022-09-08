@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MoneyCollector : MonoBehaviour
 {
-    [SerializeField] private MoneyMagnit _magnit;
+    [SerializeField] private ItemMagnet _magnet;
     [SerializeField] private MoneyHolder _moneyHolder;
     [SerializeField] private Trigger<DroppableDollar> _trigger;
     [SerializeField] private Trigger<MoneyZone> _moneyZoneTrigger;
@@ -13,14 +13,12 @@ public class MoneyCollector : MonoBehaviour
 
     private void OnEnable()
     {
-        _magnit.Attracted += OnDollarAttracted;
         _trigger.Stay += OnStay;
         _moneyZoneTrigger.Stay += OnStay;
     }
 
     private void OnDisable()
     {
-        _magnit.Attracted -= OnDollarAttracted;
         _trigger.Stay -= OnStay;
         _moneyZoneTrigger.Stay -= OnStay;
     }
@@ -31,7 +29,7 @@ public class MoneyCollector : MonoBehaviour
             return;
 
         Dollar dollar = droppableDollar.Take();
-        _magnit.Attract(dollar);
+        _magnet.Attract(droppableDollar, () => OnDollarAttracted(dollar.Value, dollar.transform));
     }
 
     private void OnStay(MoneyZone moneyZone)
@@ -42,16 +40,17 @@ public class MoneyCollector : MonoBehaviour
         for (int i = 0; i < 5; i++)
         {
             var dollar = moneyZone.Remove();
-            _magnit.Attract(dollar);
+            _magnet.Attract(dollar.transform, () => OnDollarAttracted(dollar.Value, dollar.transform));
 
             if (moneyZone.Dollars == 0)
                 break;
         }
     }
 
-    public void OnDollarAttracted(int dollarValue)
+    public void OnDollarAttracted(int dollarValue, Transform dollarTransform)
     {
         _moneyHolder.AddMoney(dollarValue);
         Collected?.Invoke(dollarValue);
+        Destroy(dollarTransform.gameObject);
     }
 }

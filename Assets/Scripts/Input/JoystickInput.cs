@@ -3,8 +3,11 @@ using UnityEngine;
 
 public class JoystickInput : MonoBehaviour
 {
-    [SerializeField] private PlayerMovement _movement;
+    [RequireInterface(typeof(IMovement))]
+    [SerializeField] private MonoBehaviour _startMovement;
     [SerializeField] private Joystick _joystick;
+
+    private IMovement _movement;
 
     public bool LastFrameMoving { get; private set; }
 
@@ -16,6 +19,7 @@ public class JoystickInput : MonoBehaviour
     private void Awake()
     {
         Input.multiTouchEnabled = false;
+        _movement = (IMovement) _startMovement;
     }
 
     private void OnDisable()
@@ -35,6 +39,11 @@ public class JoystickInput : MonoBehaviour
         _movement.Move(rawDirection);
 
         Moved?.Invoke();
+    }
+
+    public void SetMovement(IMovement movement)
+    {
+        _movement = movement;
     }
 
     private void LateUpdate()

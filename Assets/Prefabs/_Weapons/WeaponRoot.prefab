@@ -185,7 +185,7 @@ MonoBehaviour:
   _jumpPower:
     _enabled: 0
     _value: 3
-  _size: {x: 2, y: 15, z: 2}
+  _size: {x: 2, y: 4, z: 2}
   _distanceBetweenObjects: {x: 0.7, y: 0.33, z: 0.7}
   _canDrawGizmos: 1
 --- !u!1 &2407548213906622146
@@ -761,7 +761,6 @@ GameObject:
   - component: {fileID: 480776563243333823}
   - component: {fileID: 411113465}
   - component: {fileID: 4463202599686578740}
-  - component: {fileID: 1679418612413351518}
   m_Layer: 6
   m_Name: WeaponRoot
   m_TagString: Untagged
@@ -816,7 +815,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stackView: {fileID: 5408711824464836288}
   _stackUIView: {fileID: 5847299478783470806}
-  _stackCapacity: 60
+  _stackCapacity: 16
   _allTypesThatCanBeAdded:
   - {fileID: 11400000, guid: d8d38e680c135c44b8c70bcc3b617e55, type: 2}
 --- !u!114 &411113465
@@ -831,7 +830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2ef217b7eb0408d9a8e6cad2a75ba3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _aheadOffset: 7
+  _aheadOffset: 15
 --- !u!114 &4463202599686578740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -846,27 +845,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawn: {fileID: 5580619549680555691}
   _weaponTransform: {fileID: 4563132428532715455}
-  _angle: 2.5
-  _template: {fileID: 1352228147017972891, guid: 40a1dc751563c4b14b42ba973a8ad1c4, type: 3}
+  _angle: 45
+  _template: {fileID: 9163521458465192286, guid: 40a1dc751563c4b14b42ba973a8ad1c4, type: 3}
   _targetSelector: {fileID: 411113465}
   _stackPresenter: {fileID: 480776563243333823}
-  _cooldown: 0.5
-  _shotsPerAmmo: 1
-  _shotEffect: {fileID: 0}
---- !u!114 &1679418612413351518
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7080637460571569055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 687b8bfefde3a424896de3f856ad7d5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _amount: 60
-  _template: {fileID: 5258755961510967630, guid: f97696551bb562f4a8c5f297fd1e0777, type: 3}
+  _cooldown: 5
+  _shotsPerAmmo: 3
 --- !u!1 &7595669428187903820
 GameObject:
   m_ObjectHideFlags: 0
