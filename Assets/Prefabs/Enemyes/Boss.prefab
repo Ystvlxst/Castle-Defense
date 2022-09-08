@@ -93,7 +93,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _droppableItem: {fileID: -7184618940887743099, guid: f182b78f62688485c97337c5694f69f7, type: 3}
   _spawnOffset: {x: 0.38, y: 2.2, z: 0}
-  _amount: 5
+  _amountRange: {x: 3, y: 6}
+  _spawnDelayBetweenItems: 0.1
 --- !u!114 &7821586195624221401
 MonoBehaviour:
   m_ObjectHideFlags: 0

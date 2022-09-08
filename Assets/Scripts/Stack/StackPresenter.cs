@@ -24,7 +24,7 @@ public class StackPresenter : MonoBehaviour, IModificationListener<int>
     public int Capacity => _stack.Capacity;
     public bool Empty => Count == 0;
 
-    private void Awake()
+    public void Awake()
     {
         _stack = new StackStorage(_stackCapacity, _allTypesThatCanBeAdded);
     }

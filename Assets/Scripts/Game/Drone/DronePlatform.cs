@@ -7,6 +7,7 @@ public class DronePlatform : Trigger<PlayerMovement>
     [SerializeField] private PlayerMovement _playerMovement;
     [SerializeField] private DroneMovement _droneMovement;
     [SerializeField] private CameraBlend _camera;
+    
     private Coroutine _switchControl;
     private bool _exit;
 

@@ -4,8 +4,9 @@ using UnityEngine;
 [RequireComponent(typeof(DropableItem))]
 public class Detail : Stackable
 {
+    [field: SerializeField] public bool Taken { get; private set; } =  false;
+    
     public override StackableType Type => StackableType.Detail;
-    public bool Taken { get; private set; } =  false;
 
     private DropableItem _dropableItem;
 

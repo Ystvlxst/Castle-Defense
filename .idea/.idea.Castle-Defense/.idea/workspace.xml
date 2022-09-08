@@ -2,26 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d3b516d-3b73-4cfc-ac92-be663e9d2345" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Drone.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Drone/CameraBlend.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Drone/CameraBlend.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Drone/DroneMovement.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Drone/DroneMovement.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Drone/DronePlatform.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Drone/DronePlatform.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Input/IMovement.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Input/IMovement.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Castle-Defense/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Castle-Defense/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/BuyZonePresenter.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/BuyZonePresenter/NewText.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/BuyZonePresenter/NewText.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/BuyZonePresenter/NewText.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/BuyZonePresenter/NewText.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemyes/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemyes/Enemy.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/NavMesh-NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/NavMesh-NavMesh.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/JoystickInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Input/JoystickInput.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Drone/DronePlatform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Drone/DronePlatform.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Items/Detail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Items/Detail.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Haptic/MoneyMagnetHaptics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Haptic/MoneyMagnetHaptics.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Money/LootDrop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Money/LootDrop.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Money/MoneyCollector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Money/MoneyCollector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Money/MoneyMagnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Money/ItemMagnet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Money/MoneyMagnit.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Money/ItemMagnet.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/DetailCollector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/DetailCollector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stack/StackPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stack/StackPresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon/StartAmmoLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/StartStackItemsLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon/StartAmmoLoader.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/StartStackItemsLoader.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +100,7 @@
       <workItem from="1662454275216" duration="2851000" />
       <workItem from="1662465286394" duration="8106000" />
       <workItem from="1662553541643" duration="15072000" />
-      <workItem from="1662617653583" duration="2495000" />
+      <workItem from="1662617653583" duration="6207000" />
     </task>
     <servers />
   </component>

@@ -3,19 +3,19 @@ using System.Collections;
 
 public class MoneyMagnetHaptics : BaseHaptics
 {
-    [SerializeField] private MoneyMagnit _moneyMagnet;
+    [SerializeField] private MoneyCollector itemMagnet;
 
     private void OnEnable()
     {
-        _moneyMagnet.Attracted += OnAttracted;
+        itemMagnet.Collected += OnCollected;
     }
 
     private void OnDisable()
     {
-        _moneyMagnet.Attracted -= OnAttracted;
+        itemMagnet.Collected -= OnCollected;
     }
 
-    private void OnAttracted(int count)
+    private void OnCollected(int count)
     {
         Vibrate();
     }
