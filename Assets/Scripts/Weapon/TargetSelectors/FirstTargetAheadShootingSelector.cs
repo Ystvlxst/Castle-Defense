@@ -3,7 +3,7 @@ using UnityEngine;
 
 class FirstTargetAheadShootingSelector : TargetSelector
 {
-    [SerializeField] private float _aheadOffset = 15f;
+    [SerializeField] private float _aheadOffset;
     
     private Enemy _lastSelected;
 
