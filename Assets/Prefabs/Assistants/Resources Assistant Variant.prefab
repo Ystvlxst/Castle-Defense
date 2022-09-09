@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1188167488, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0000030994415
+      value: -0.00000333786
       objectReference: {fileID: 0}
     - target: {fileID: 1188167488, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -27,6 +27,10 @@ PrefabInstance:
       propertyPath: _startMovement
       value: 
       objectReference: {fileID: 3646681777254273270}
+    - target: {fileID: 1330972624, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
+      propertyPath: _inputSourceBehaviour
+      value: 
+      objectReference: {fileID: 4443018700968632793}
     - target: {fileID: 1589434751, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: _itemMagnet
       value: 
@@ -37,7 +41,7 @@ PrefabInstance:
       objectReference: {fileID: 3646681776895084118}
     - target: {fileID: 2163363535663578311, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_Name
-      value: Player
+      value: Resources Assistant Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2163363535663734951, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_RootOrder
@@ -223,7 +227,8 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: 0.00026430422
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8709567511414753730, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
 --- !u!1 &3215097813674634209 stripped
 GameObject:
@@ -252,7 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63d46db80d7fa644a97152c23d936969, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &724548269
+--- !u!114 &4443018700968632793
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -261,9 +266,46 @@ MonoBehaviour:
   m_GameObject: {fileID: 3215097813674634209}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 687b8bfefde3a424896de3f856ad7d5e, type: 3}
+  m_Script: {fileID: 11500000, guid: f0ff055af9d748d586fe4d93ebceb8a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _amount: 5
-  _template: {fileID: 4640972309376714515, guid: 05fb1c1c9b2128a448405f37d1ee6bec, type: 3}
-  _loadTime: 1
+--- !u!114 &9089199569766767580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3215097813674634209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d7b55c7ecdb49a4a89fa5e6f9022861, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startWhenEnabled: 1
+  asynchronousLoad: 0
+  pauseWhenDisabled: 0
+  restartWhenComplete: 0
+  logTaskChanges: 0
+  group: 0
+  resetValuesOnRestart: 0
+  externalBehavior: {fileID: 0}
+  mBehaviorSource:
+    behaviorName: Behavior
+    behaviorDescription: 
+    mTaskData:
+      types: []
+      parentIndex: 
+      startIndex: 
+      variableStartIndex: 
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(220,12)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(0,122)"},"ID":1,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Idle","NodeData":{"Offset":"(-2.44442749,159)"},"ID":2,"Name":"Idle","Instant":true}]},"Variables":[{"Type":"Game.Assistants.Behaviour.SharedBotCharacterInput","Name":"_botCharacterInput","IsShared":true}]}'
+      fieldSerializationData:
+        typeName: []
+        fieldNameHash: 
+        startIndex: 
+        dataPosition: 
+        unityObjects: []
+        byteData: 
+        byteDataArray: 
+      Version: 1.7.2
+  gizmoViewMode: 2
+  showBehaviorDesignerGizmo: 1
