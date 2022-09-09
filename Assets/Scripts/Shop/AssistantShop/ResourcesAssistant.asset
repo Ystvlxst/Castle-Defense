@@ -19,4 +19,10 @@ MonoBehaviour:
     _price: 10
     _icon: {fileID: 0}
     _guid: ResourcesAssistant1
-    _alwaysUnlocked: 1
+    _alwaysUnlocked: 0
+  - _template: {fileID: 1500773337, guid: 20102aeaa0c8c15429ce4182294674cd, type: 3}
+    _name: Resources Assistant
+    _price: 20
+    _icon: {fileID: 0}
+    _guid: ResourcesAssistant2
+    _alwaysUnlocked: 0
