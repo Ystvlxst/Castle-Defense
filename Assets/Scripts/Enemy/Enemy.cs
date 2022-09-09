@@ -68,8 +68,6 @@ public class Enemy : MonoBehaviour
             StopCoroutine(_deathCoroutine);
 
         _deathCoroutine = StartCoroutine(Death());
-
-        Debug.Log("Die");
     }
 
     private IEnumerator Death()
