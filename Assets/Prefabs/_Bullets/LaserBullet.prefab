@@ -206,7 +206,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5464875016633983812, guid: f860f32180bce41988f207882a4ed146, type: 3}
       propertyPath: VelocityModule.enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5464875016633983812, guid: f860f32180bce41988f207882a4ed146, type: 3}
       propertyPath: VelocityModule.z.scalar
