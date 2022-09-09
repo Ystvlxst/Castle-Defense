@@ -28,19 +28,6 @@ public class CharacterMovement : MonoBehaviour, IModificationListener<float>
         Move();
     }
 
-    private void Move()
-    {
-        _playerModel.LookAt(_playerModel.position + Vector3.ProjectOnPlane(_movement.Velocity, Vector3.up));
-        _movement.Move(_inputSource.Destination);
-
-        float distanceToDestination = Vector3.Distance(transform.position, _inputSource.Destination);
-
-        float deltaMovement = Mathf.Clamp01(distanceToDestination);
-        _movement.SetSpeed(_speedRate * _speed * deltaMovement);
-        _animation.SetSpeed(deltaMovement);
-        IsMoving = true;
-    }
-
     public void Stop()
     {
         if (_movement != null)
@@ -61,5 +48,24 @@ public class CharacterMovement : MonoBehaviour, IModificationListener<float>
             throw new System.ArgumentOutOfRangeException(nameof(rate));
 
         _flySpeedRate = rate;
+    }
+
+    public void SetInput(IInputSource inputSource)
+    {
+        _inputSource = inputSource;
+    }
+    
+    private void Move()
+    {
+        _playerModel.LookAt(_playerModel.position + Vector3.ProjectOnPlane(_movement.Velocity, Vector3.up));
+        _movement.Move(_inputSource.Destination);
+
+        float distanceToDestination = Vector3.Distance(transform.position, _inputSource.Destination);
+
+        float deltaMovement = Mathf.Clamp01(distanceToDestination);
+        _movement.SetSpeed(_speedRate * _speed * deltaMovement);
+        _animation.SetSpeed(deltaMovement);
+        
+        IsMoving = transform.position != _inputSource.Destination;
     }
 }

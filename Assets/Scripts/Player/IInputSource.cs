@@ -1,6 +1,6 @@
 using UnityEngine;
 
-internal interface IInputSource
+public interface IInputSource
 {
     Vector3 Destination { get; set; }
 }
