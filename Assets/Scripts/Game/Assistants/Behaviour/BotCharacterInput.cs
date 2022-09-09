@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Game.Assistants.Behaviour
@@ -6,7 +7,6 @@ namespace Game.Assistants.Behaviour
     {
         public Vector3 Destination { get; set; }
 
-        private void Update() => 
-            Destination = transform.position;
+        private void Start() => Destination = transform.position;
     }
 }
