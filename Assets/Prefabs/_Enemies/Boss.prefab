@@ -80,6 +80,7 @@ MonoBehaviour:
   _lootDrop: {fileID: 4278025167964966448}
   _healthCanvas: {fileID: 4720081841340620265}
   _rootRigidbody: {fileID: 1209078372021513524}
+  _rootCollider: {fileID: 6873959722381386687}
   _ragdollRigidbodyes:
   - {fileID: 5633952232977779057}
   - {fileID: 8238045548684134077}

@@ -42,30 +42,34 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        _health -= damage;
-
-        if (_health <= 0)
-            Die();
-
         if (_takeDamageCoroutine != null)
             StopCoroutine(_takeDamageCoroutine);
 
-        _takeDamageCoroutine = StartCoroutine(HealthView());
+        _takeDamageCoroutine = StartCoroutine(Damage(damage));
+
+        if (_health <= 0)
+            Die();
+    }
+
+    private IEnumerator Damage(float damage)
+    {
+        _health -= damage;
+        _healthCanvas.enabled = true;
+        yield return new WaitForSeconds(1);
+        _healthCanvas.enabled = false;
+        _takeDamageCoroutine = null;
     }
 
     private void Die()
     {
+        _health = 0;
+
         if (_deathCoroutine != null)
             StopCoroutine(_deathCoroutine);
 
         _deathCoroutine = StartCoroutine(Death());
-    }
 
-    private IEnumerator HealthView()
-    {
-        _healthCanvas.enabled = true;
-        yield return new WaitForSeconds(1);
-        _healthCanvas.enabled = false;
+        Debug.Log("Die");
     }
 
     private IEnumerator Death()
@@ -88,5 +92,6 @@ public class Enemy : MonoBehaviour
             collider.isTrigger = true;
 
         Destroy(gameObject, 2f);
+        _deathCoroutine = null;
     }
 }

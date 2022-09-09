@@ -19,17 +19,17 @@ public class BigBullet : Bullet
         {
             if (collider.TryGetComponent(out Enemy enemy))
             {
-                enemy.TakeDamage(Damage);
-
-                if (enemy.IsDying)
+                if (!enemy.IsDying)
+                {
+                    enemy.TakeDamage(Damage);
+                }
+                else
                 {
                     foreach (Rigidbody rigidbody in enemy.RigidBodies)
                         rigidbody.AddForce(-(transform.position - collider.transform.position).normalized * Force, ForceMode.Impulse);
+                    return;
                 }
-                    
             }
         }
     }
-
-
 }

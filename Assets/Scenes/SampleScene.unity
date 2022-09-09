@@ -5238,8 +5238,6 @@ MonoBehaviour:
   _enemyContainer: {fileID: 1594673592}
   _enemySpawners:
   - {fileID: 201369397}
-  - {fileID: 1105483765}
-  - {fileID: 1518659568}
 --- !u!114 &1594673592
 MonoBehaviour:
   m_ObjectHideFlags: 0
