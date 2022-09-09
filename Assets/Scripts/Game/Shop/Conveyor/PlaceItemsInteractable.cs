@@ -1,7 +1,7 @@
 using System.Linq;
 using UnityEngine;
 
-public class ConveyorInputInteractable : TimerStackInteractableZone
+public class PlaceItemsInteractable : TimerStackInteractableZone
 {
     [SerializeField] private StackableTypes _inputTypes;
     [SerializeField] private StackPresenter _conveyorStack;
@@ -22,7 +22,7 @@ public class ConveyorInputInteractable : TimerStackInteractableZone
         if (item == null)
             return false;
         
-        return enteredStack.CanRemoveFromStack(item.Type) &&
+        return base.CanInteract(enteredStack) && enteredStack.CanRemoveFromStack(item.Type) &&
                _conveyorStack.CanAddToStack(item.Type);
     }
 }

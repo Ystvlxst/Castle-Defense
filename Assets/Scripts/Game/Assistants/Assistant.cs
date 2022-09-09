@@ -2,6 +2,7 @@
 using BehaviorDesigner.Runtime;
 using Game.Assistants.Behaviour;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Assistant : MonoBehaviour
 {
@@ -14,4 +15,7 @@ public class Assistant : MonoBehaviour
         WaitPoints = waitPoints;
         _behaviorTree.SetVariableValue("_interactablesContainer", interactablesContainer);
     }
+
+    public Vector3 GetRandomWaypoint() => 
+        WaitPoints[Random.Range(0, WaitPoints.Length)].position;
 }

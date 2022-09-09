@@ -78,5 +78,7 @@ public abstract class TimerStackInteractableZone : StackInteractableZoneBase, IC
     }
 
     public abstract void InteractAction(StackPresenter enteredStack);
-    public abstract bool CanInteract(StackPresenter enteredStack);
+
+    public virtual bool CanInteract(StackPresenter enteredStack) => 
+        EnteredStack == null || enteredStack == EnteredStack;
 }

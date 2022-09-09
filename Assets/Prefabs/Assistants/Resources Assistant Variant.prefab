@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1188167488, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.00000333786
+      value: -0.0000030829387
       objectReference: {fileID: 0}
     - target: {fileID: 1188167488, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1188167488, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.4300003
+      value: -0.42999926
       objectReference: {fileID: 0}
     - target: {fileID: 1330972619, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: _joystick
@@ -97,75 +97,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2164595254061990460, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: 0.0000000017753334
+      value: -2.182787e-10
       objectReference: {fileID: 0}
     - target: {fileID: 2164595254061990460, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 0.0041555082
+      value: 0.0041555106
       objectReference: {fileID: 0}
     - target: {fileID: 2164595254061990460, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: 6.9849204e-10
+      value: 2.3283067e-10
       objectReference: {fileID: 0}
     - target: {fileID: 2678377095170950954, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: 0.0024816017
+      value: 0.0024815996
       objectReference: {fileID: 0}
     - target: {fileID: 2678377095170950954, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 0.0022560942
+      value: 0.0022560928
       objectReference: {fileID: 0}
     - target: {fileID: 2678377095170950954, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: 0.0000043744612
+      value: 0.0000043739956
       objectReference: {fileID: 0}
     - target: {fileID: 3217372107321689923, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -0.0024816894
+      value: -0.0024816892
       objectReference: {fileID: 0}
     - target: {fileID: 3217372107321689923, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 0.002256393
+      value: 0.002256394
       objectReference: {fileID: 0}
     - target: {fileID: 3217372107321689923, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: -0.000015879785
+      value: -0.000015885606
       objectReference: {fileID: 0}
     - target: {fileID: 4828070231835164650, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: 9.604265e-10
+      value: -1.7462301e-10
       objectReference: {fileID: 0}
     - target: {fileID: 4828070231835164650, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 0.0041544633
+      value: 0.004154465
       objectReference: {fileID: 0}
     - target: {fileID: 4828070231835164650, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: -0.0000000020954762
+      value: 1.1641535e-10
       objectReference: {fileID: 0}
     - target: {fileID: 5344481960206511693, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -0.0000000016880219
+      value: -0.0000000013969836
       objectReference: {fileID: 0}
     - target: {fileID: 5344481960206511693, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 0.0028341126
+      value: 0.0028341145
       objectReference: {fileID: 0}
     - target: {fileID: 5344481960206511693, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: -0.000000007537893
+      value: -2.3283067e-10
       objectReference: {fileID: 0}
     - target: {fileID: 5422421464474615729, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: 0.0000010312403
+      value: 0.0000010297314
       objectReference: {fileID: 0}
     - target: {fileID: 5422421464474615729, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -0.00181094
+      value: -0.0018109363
       objectReference: {fileID: 0}
     - target: {fileID: 5422421464474615729, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: -0.0011665033
+      value: -0.001166504
       objectReference: {fileID: 0}
     - target: {fileID: 5772812091444150862, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_IsContraintActive
@@ -193,19 +193,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6332075017711701536, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -0.00000000197906
+      value: 4.0745352e-10
       objectReference: {fileID: 0}
     - target: {fileID: 6332075017711701536, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 0.0028359853
+      value: 0.0028359857
       objectReference: {fileID: 0}
     - target: {fileID: 6332075017711701536, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: 0.000000004627508
+      value: 1.3096721e-10
       objectReference: {fileID: 0}
     - target: {fileID: 7812898729213766979, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -0.00000001452695
+      value: -0.000000012206829
       objectReference: {fileID: 0}
     - target: {fileID: 7812898729213766979, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_ConnectedAnchor.y
@@ -213,7 +213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7812898729213766979, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: 0.000009972994
+      value: 0.000009978815
       objectReference: {fileID: 0}
     - target: {fileID: 8013116022133551709, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_Speed
@@ -221,27 +221,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8114623886956264150, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -0.0016917206
+      value: -0.0016917207
       objectReference: {fileID: 0}
     - target: {fileID: 8114623886956264150, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 0.000791844
+      value: 0.00079184887
       objectReference: {fileID: 0}
     - target: {fileID: 8114623886956264150, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: 0.0002740858
+      value: 0.00027407732
       objectReference: {fileID: 0}
     - target: {fileID: 8210874066855694029, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: 0.0016912485
+      value: 0.0016912507
       objectReference: {fileID: 0}
     - target: {fileID: 8210874066855694029, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 0.00079919444
+      value: 0.0007991936
       objectReference: {fileID: 0}
     - target: {fileID: 8210874066855694029, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: 0.00026430422
+      value: 0.00026430943
       objectReference: {fileID: 0}
     - target: {fileID: 8916872533876900063, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: Speed
@@ -346,11 +346,13 @@ MonoBehaviour:
         Interactable Target","Instant":true,"SharedInteractableCurrentInteractable":{"Type":"Game.Assistants.Behaviour.SharedInteractable","Name":"_currentInteractable","IsShared":true}}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(160,142.352844)"},"ID":7,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-4.500122,182.597458)"},"ID":8,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-86.01947,184.373856)"},"ID":9,"Name":"Sequence","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-293.313934,151.405136)"},"ID":10,"Name":"Selector","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"Game.Assistants.Behaviour.HasInteractableTarget","NodeData":{"Offset":"(-116.436127,130.425339)"},"ID":11,"Name":"Has
         Interactable Target","Instant":true,"SharedInteractableCurrentInteractable":{"Type":"Game.Assistants.Behaviour.SharedInteractable","Name":"_currentInteractable","IsShared":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(99.36169,145.691483)"},"ID":12,"Name":"Sequence","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Inverter","NodeData":{"Offset":"(-98.4364243,141.6279)"},"ID":13,"Name":"Inverter","Instant":true,"Children":[{"Type":"Game.Assistants.Behaviour.HasInteractableTarget","NodeData":{"Offset":"(-0.8163204,142.861359)"},"ID":14,"Name":"Has
         Interactable Target","Instant":true,"SharedInteractableCurrentInteractable":{"Type":"Game.Assistants.Behaviour.SharedInteractable","Name":"_currentInteractable","IsShared":true}}]},{"Type":"Game.Assistants.Behaviour.FindInteractableTarget","NodeData":{"Offset":"(81.56358,153.2558)"},"ID":15,"Name":"Find
-        Interactable Target","Instant":true,"SharedInteractablesContainerSharedInteractablesContainer":{"Type":"Game.Assistants.Behaviour.SharedInteractablesContainer","Name":"_interactablesContainer","IsShared":true,"InteractableObjectsContainermValue":1},"SharedStackPresenterSelfStackPresenter":{"Type":"Game.Assistants.Behaviour.SharedStackPresenter","Name":"_selfStackPresenter","IsShared":true,"StackPresentermValue":2},"SharedInteractableCurrentInteractable":{"Type":"Game.Assistants.Behaviour.SharedInteractable","Name":"_currentInteractable","IsShared":true}}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(185,177.5)"},"ID":16,"Name":"Sequence","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"Game.Assistants.Behaviour.HasInteractableTarget","NodeData":{"Offset":"(-85.26501,157.3274)"},"ID":17,"Name":"Has
-        Interactable Target","Instant":true,"SharedInteractableCurrentInteractable":{"Type":"Game.Assistants.Behaviour.SharedInteractable","Name":"_currentInteractable","IsShared":true}},{"Type":"Game.Assistants.Behaviour.GoToInteractable","NodeData":{"Offset":"(72.30451,156.715149)"},"ID":18,"Name":"Go
-        To Interactable","Instant":true,"SharedInteractableCurrentInteractable":{"Type":"Game.Assistants.Behaviour.SharedInteractable","Name":"_currentInteractable","IsShared":true},"SharedBotCharacterInputBotCharacterInput":{"Type":"Game.Assistants.Behaviour.SharedBotCharacterInput","Name":"_botCharacterInput","IsShared":true,"BotCharacterInputmValue":3}}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Idle","NodeData":{"Offset":"(109.816032,173.060333)"},"ID":19,"Name":"Idle","Instant":true}]}]}]},"DetachedTasks":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(635.8822,1140.58813)"},"ID":20,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-61.94138,177.360245)"},"ID":21,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"Game.Assistants.Behaviour.CanInteract","NodeData":{"Offset":"(-68.8888855,124.44474)"},"ID":22,"Name":"Can
-        Interact","Instant":true,"SharedStackPresenterSelfStackPresenter":{"Type":"Game.Assistants.Behaviour.SharedStackPresenter","Name":"_selfStackPresenter","IsShared":true,"StackPresentermValue":4},"SharedInteractableCurrentInteractable":{"Type":"Game.Assistants.Behaviour.SharedInteractable","Name":"_currentInteractable","IsShared":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Idle","NodeData":{"Offset":"(82.22224,132.221924)"},"ID":23,"Name":"Idle","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Idle","NodeData":{"Offset":"(98.1818848,189.545288)"},"ID":24,"Name":"Idle","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(854.1672,902.5001)"},"ID":25,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(2.82051086,170)"},"ID":26,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"Game.Assistants.Behaviour.Stop","NodeData":{"Offset":"(80,140)"},"ID":27,"Name":"Stop","Instant":true,"SharedBotCharacterInputBotCharacterInput":{"Type":"Game.Assistants.Behaviour.SharedBotCharacterInput","Name":"_botCharacterInput","IsShared":true,"BotCharacterInputmValue":5}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Idle","NodeData":{"Offset":"(125.641022,160)"},"ID":28,"Name":"Idle","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(-354.222473,209.5508)"},"ID":29,"Name":"Behavior
-        Tree Reference","Instant":true,"ExternalBehavior[]externalBehaviors":[],"SharedNamedVariable[]variables":[{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"InteractablesContainer","Stringtype":"SharedInteractablesContainer","SharedVariablevalue":{"Type":"Game.Assistants.Behaviour.SharedInteractablesContainer","Name":null}}}],"Booleancollapsed":true}],"Variables":[{"Type":"Game.Assistants.Behaviour.SharedBotCharacterInput","Name":"_botCharacterInput","IsShared":true,"BotCharacterInputmValue":6},{"Type":"Game.Assistants.Behaviour.SharedInteractablesContainer","Name":"_interactablesContainer","IsShared":true,"InteractableObjectsContainermValue":7},{"Type":"Game.Assistants.Behaviour.SharedInteractable","Name":"_currentInteractable","IsShared":true},{"Type":"Game.Assistants.Behaviour.SharedStackPresenter","Name":"_selfStackPresenter","IsShared":true,"StackPresentermValue":8}]}'
+        Interactable Target","Instant":true,"SharedInteractablesContainerSharedInteractablesContainer":{"Type":"Game.Assistants.Behaviour.SharedInteractablesContainer","Name":"_interactablesContainer","IsShared":true},"SharedStackPresenterSelfStackPresenter":{"Type":"Game.Assistants.Behaviour.SharedStackPresenter","Name":"_selfStackPresenter","IsShared":true,"StackPresentermValue":1},"SharedInteractableCurrentInteractable":{"Type":"Game.Assistants.Behaviour.SharedInteractable","Name":"_currentInteractable","IsShared":true}}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(69.61548,177.5)"},"ID":16,"Name":"Sequence","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"Game.Assistants.Behaviour.HasInteractableTarget","NodeData":{"Offset":"(-85.26501,157.3274)"},"ID":17,"Name":"Has
+        Interactable Target","Instant":true,"SharedInteractableCurrentInteractable":{"Type":"Game.Assistants.Behaviour.SharedInteractable","Name":"_currentInteractable","IsShared":true}},{"Type":"Game.Assistants.Behaviour.GoToInteractable","NodeData":{"Offset":"(90,156.4865)"},"ID":18,"Name":"Go
+        To Interactable","Instant":true,"SharedInteractableCurrentInteractable":{"Type":"Game.Assistants.Behaviour.SharedInteractable","Name":"_currentInteractable","IsShared":true},"SharedBotCharacterInputBotCharacterInput":{"Type":"Game.Assistants.Behaviour.SharedBotCharacterInput","Name":"_botCharacterInput","IsShared":true,"BotCharacterInputmValue":2}}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(500.816284,170)"},"ID":19,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-80,130.204086)"},"ID":20,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Inverter","NodeData":{"Offset":"(-173.478226,142.392212)"},"ID":21,"Name":"Inverter","Instant":true,"Children":[{"Type":"Game.Assistants.Behaviour.HasInteractableTarget","NodeData":{"Offset":"(0,122.608337)"},"ID":22,"Name":"Has
+        Interactable Target","Instant":true,"SharedInteractableCurrentInteractable":{"Type":"Game.Assistants.Behaviour.SharedInteractable","Name":"_currentInteractable","IsShared":true}}]},{"Type":"Game.Assistants.Behaviour.SelectRandomWaypoint","NodeData":{"Offset":"(4.921936,143.857971)"},"ID":23,"Name":"Select
+        Random Waypoint","Instant":true,"SharedVector3Waypoint":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"_currentWaypoint","IsShared":true,"Vector3mValue":"(0,0,0)"},"SharedAssistantAssistant":{"Type":"Game.Assistants.Behaviour.SharedAssistant","Name":"_selfAssistant","IsShared":true,"AssistantmValue":3}},{"Type":"Game.Assistants.Behaviour.GoToWaitPoint","NodeData":{"Offset":"(172.0141,141.4956)"},"ID":24,"Name":"Go
+        To Wait Point","Instant":true,"SharedVector3Waypoint":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"_currentWaypoint","IsShared":true,"Vector3mValue":"(0,0,0)"},"SharedBotCharacterInputBotCharacterInput":{"Type":"Game.Assistants.Behaviour.SharedBotCharacterInput","Name":"_botCharacterInput","IsShared":true,"BotCharacterInputmValue":4}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Idle","NodeData":{"Offset":"(87.4627,137.272476)"},"ID":25,"Name":"Idle","Instant":true}]}]}]}]},"DetachedTasks":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(941.494263,1278.09961)"},"ID":26,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-61.94138,177.360245)"},"ID":27,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"Game.Assistants.Behaviour.CanInteract","NodeData":{"Offset":"(-68.8888855,124.44474)"},"ID":28,"Name":"Can
+        Interact","Instant":true,"SharedStackPresenterSelfStackPresenter":{"Type":"Game.Assistants.Behaviour.SharedStackPresenter","Name":"_selfStackPresenter","IsShared":true,"StackPresentermValue":5},"SharedInteractableCurrentInteractable":{"Type":"Game.Assistants.Behaviour.SharedInteractable","Name":"_currentInteractable","IsShared":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Idle","NodeData":{"Offset":"(82.22224,132.221924)"},"ID":29,"Name":"Idle","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Idle","NodeData":{"Offset":"(98.1818848,189.545288)"},"ID":30,"Name":"Idle","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(1063.46985,972.2677)"},"ID":31,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(2.82051086,170)"},"ID":32,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"Game.Assistants.Behaviour.Stop","NodeData":{"Offset":"(80,140)"},"ID":33,"Name":"Stop","Instant":true,"SharedBotCharacterInputBotCharacterInput":{"Type":"Game.Assistants.Behaviour.SharedBotCharacterInput","Name":"_botCharacterInput","IsShared":true,"BotCharacterInputmValue":6}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Idle","NodeData":{"Offset":"(125.641022,160)"},"ID":34,"Name":"Idle","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(-436.1223,380)"},"ID":35,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false}}],"Variables":[{"Type":"Game.Assistants.Behaviour.SharedBotCharacterInput","Name":"_botCharacterInput","IsShared":true,"BotCharacterInputmValue":7},{"Type":"Game.Assistants.Behaviour.SharedInteractablesContainer","Name":"_interactablesContainer","IsShared":true},{"Type":"Game.Assistants.Behaviour.SharedInteractable","Name":"_currentInteractable","IsShared":true},{"Type":"Game.Assistants.Behaviour.SharedStackPresenter","Name":"_selfStackPresenter","IsShared":true,"StackPresentermValue":8},{"Type":"Game.Assistants.Behaviour.SharedAssistant","Name":"_selfAssistant","IsShared":true,"AssistantmValue":9},{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"_currentWaypoint","IsShared":true,"Vector3mValue":"(0,0,0)"}]}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
@@ -358,14 +360,15 @@ MonoBehaviour:
         dataPosition: 
         unityObjects:
         - {fileID: 3646681777254273257}
-        - {fileID: 0}
         - {fileID: 3646681777254273257}
+        - {fileID: 4443018700968632793}
+        - {fileID: 1500773337}
         - {fileID: 4443018700968632793}
         - {fileID: 3646681777254273257}
         - {fileID: 4443018700968632793}
         - {fileID: 4443018700968632793}
-        - {fileID: 0}
         - {fileID: 3646681777254273257}
+        - {fileID: 1500773337}
         byteData: 
         byteDataArray: 
       Version: 1.7.2

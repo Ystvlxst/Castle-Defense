@@ -3,7 +3,7 @@ using BabyStack.Model;
 using DG.Tweening;
 using UnityEngine;
 
-public class ConveyorOutputInteractable : TimerStackInteractableZone
+public class TakeItemsInteractable : TimerStackInteractableZone
 {
     [SerializeField] private StackPresenter _conveyorEndStack;
     
@@ -16,10 +16,8 @@ public class ConveyorOutputInteractable : TimerStackInteractableZone
         enteredStack.AddToStack(stackable);
     }
 
-    public override bool CanInteract(StackPresenter enteredStack)
-    {
-        return _conveyorEndStack.Count > 0 && enteredStack.CanAddToStack(GetFirstInOutput());
-    }
+    public override bool CanInteract(StackPresenter enteredStack) => 
+        base.CanInteract(enteredStack) && _conveyorEndStack.Count > 0 && enteredStack.CanAddToStack(GetFirstInOutput());
 
     private StackableType GetFirstInOutput() => 
         _conveyorEndStack.Data.First().Type;
