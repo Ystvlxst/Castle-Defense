@@ -33,7 +33,7 @@ public class DronePlatform : Trigger<PlayerMovement>
     {
         yield return new WaitForSeconds(3f);
         yield return new WaitUntil(() => _joystickInput.Moving == false);
-        _joystickInput.SetMovement(_playerMovement);
+        //_joystickInput.SetMovement(_playerMovement);
         _camera.ShowPlayer();
         _droneCollector.enabled = false;
         yield return new WaitUntil(() => _exit);

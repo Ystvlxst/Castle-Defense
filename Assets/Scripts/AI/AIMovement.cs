@@ -9,6 +9,7 @@ using DG.Tweening;
 public class AIMovement : MonoBehaviour, IModificationListener<float>
 {
     [SerializeField] private float Speed = 5f;
+    [SerializeField] private Transform _debugTransorm;
 
     private float _speedRate = 1f;
 
@@ -63,6 +64,9 @@ public class AIMovement : MonoBehaviour, IModificationListener<float>
 
     public AIMovement Move(Vector3 target)
     {
+        if(_debugTransorm != null)
+            _debugTransorm.transform.position = _agent.path.corners[1];
+        
         if (_agent.isActiveAndEnabled == false)
             return this;
         
