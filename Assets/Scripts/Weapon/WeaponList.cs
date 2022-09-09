@@ -11,7 +11,7 @@ public class WeaponList : ReferenceObjectList<Weapon>
     {
         reference.GetComponentInChildren<TargetSelector>().Init(_enemyContainer);
 
-        _interactableObjectsContainer.Add(reference.GetComponentInChildren<ICharacterInteractable>());
+        _interactableObjectsContainer.Add(reference.GetComponentInChildren<ICharacterInteractable>(), 1);
         
         if (_weaponsProgress.Contains(guid))
             return;

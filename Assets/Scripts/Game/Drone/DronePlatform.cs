@@ -36,8 +36,6 @@ public class DronePlatform : Trigger<CharacterMovement>
 
     protected override void OnExit(CharacterMovement triggered)
     {
-        Debug.Log(triggered.name);
-        
         if(triggered == _character)
             _character = null;
     }

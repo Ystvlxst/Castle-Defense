@@ -8,7 +8,7 @@ public class ConveyorList : ReferenceObjectList<Conveyor>
 
     protected override void AfterUnlocked(Conveyor reference, bool onLoad, string guid)
     {
-        _interactableObjectsContainer.AddRange(reference.GetComponentsInChildren<ICharacterInteractable>());
+        _interactableObjectsContainer.AddRange(reference.GetComponentsInChildren<ICharacterInteractable>(), 2);
         
         if (_conveyorsProgress.Contains(guid))
             return;
