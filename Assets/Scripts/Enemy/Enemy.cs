@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Canvas _healthCanvas;
     [SerializeField] private Rigidbody _rootRigidbody;
     [SerializeField] private Rigidbody[] _ragdollRigidbodyes;
+    [SerializeField] private Collider[] _ragdollColliders;
     [SerializeField] private Animator _animator;
     [SerializeField] private NavMeshAgent _navMeshAgent;
     [SerializeField] private ParticleSystem _shotEffect;
@@ -58,6 +59,18 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
+        StartCoroutine(Death());
+    }
+
+    private IEnumerator HealthView()
+    {
+        _healthCanvas.enabled = true;
+        yield return new WaitForSeconds(1);
+        _healthCanvas.enabled = false;
+    }
+
+    private IEnumerator Death()
+    {
         _animator.enabled = false;
         _rootRigidbody.isKinematic = true;
         _healthCanvas.gameObject.SetActive(false);
@@ -70,13 +83,11 @@ public class Enemy : MonoBehaviour
         _lootDrop.DropLoot();
         Dying?.Invoke(this);
 
-        Destroy(gameObject, 2f);
-    }
+        yield return new WaitForSeconds(4);
 
-    private IEnumerator HealthView()
-    {
-        _healthCanvas.enabled = true;
-        yield return new WaitForSeconds(1);
-        _healthCanvas.enabled = false;
+        foreach (Collider collider in _ragdollColliders)
+            collider.isTrigger = true;
+
+        Destroy(gameObject, 2f);
     }
 }
