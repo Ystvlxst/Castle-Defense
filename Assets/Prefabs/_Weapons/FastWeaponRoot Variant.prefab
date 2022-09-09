@@ -166,6 +166,10 @@ PrefabInstance:
       propertyPath: _template
       value: 
       objectReference: {fileID: 5258755961510967630, guid: f97696551bb562f4a8c5f297fd1e0777, type: 3}
+    - target: {fileID: 703423989145785202, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: _upgradeable
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1526255522862522775, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -184,7 +188,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4463202599686578740, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4463202599686578740, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _shotEffect
@@ -197,6 +201,10 @@ PrefabInstance:
     - target: {fileID: 4463202599686578740, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _shotsPerAmmo
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931499040357176379, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: _upgradeable
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5005274142752373817, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _angle
@@ -268,66 +276,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
---- !u!1 &4096565765930592524 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7080637460571569055, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
-  m_PrefabInstance: {fileID: 6528696212523094675}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &6644666670693689900 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 480776563243333823, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
-  m_PrefabInstance: {fileID: 6528696212523094675}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4096565765930592524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 140da3603717c8d4da294ce8810af370, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6528696212917421418 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 411113465, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
-  m_PrefabInstance: {fileID: 6528696212523094675}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4096565765930592524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2ef217b7eb0408d9a8e6cad2a75ba3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &7334418039793949996 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4563132428532715455, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
-  m_PrefabInstance: {fileID: 6528696212523094675}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1722839565132088376 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5580619549680555691, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
-  m_PrefabInstance: {fileID: 6528696212523094675}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4096565766723345278 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7080637460315802093, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
   m_PrefabInstance: {fileID: 6528696212523094675}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &357837445484085180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4096565765930592524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4796c91c312541859a9fe3bb57e2e38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spawn: {fileID: 1722839565132088376}
-  _weaponTransform: {fileID: 7334418039793949996}
-  _speed: 100
-  _template: {fileID: 1352228147017972891, guid: 40a1dc751563c4b14b42ba973a8ad1c4, type: 3}
-  _targetSelector: {fileID: 6528696212917421418}
-  _stackPresenter: {fileID: 6644666670693689900}
-  _cooldown: 0.3
-  _shotsPerAmmo: 9
-  _shotEffect: {fileID: 4611224154618752605}
