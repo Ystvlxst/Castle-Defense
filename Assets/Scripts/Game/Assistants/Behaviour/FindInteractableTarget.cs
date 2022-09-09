@@ -19,10 +19,10 @@ namespace Game.Assistants.Behaviour
             
             bool hasInteractable = interactables.Any(CanInteract());
 
-            foreach (ICharacterInteractable interactable in interactables)
+            /*foreach (ICharacterInteractable interactable in interactables)
             {
                 Debug.Log(interactable.CanInteract(SelfStackPresenter.Value));
-            }
+            }*/
             ICharacterInteractable characterInteractable = hasInteractable ? interactables.First(CanInteract()) : null;
             
             CurrentInteractable.Value = new CharacterInteractableReference(characterInteractable);

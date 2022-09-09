@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Game.Assistants.Behaviour;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,6 +12,7 @@ public class AssistantsContainer : MonoBehaviour
     [SerializeField] private UnlockRule _refreshRule;
     [Space(15)]
     [SerializeField] private Transform[] _waitPoints;
+    [SerializeField] private InteractableObjectsContainer _interactablesContainer;
 
     private List<string> _spawnedGuid;
     private AssistantInventory _inventory;
@@ -48,7 +50,7 @@ public class AssistantsContainer : MonoBehaviour
     public Assistant Spawn(Assistant template)
     {
         var doctor = Instantiate(template, _spawnContainer);
-        doctor.Init(_waitPoints);
+        doctor.Init(_waitPoints, _interactablesContainer);
 
         return doctor;
     }

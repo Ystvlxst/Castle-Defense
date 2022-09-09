@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
@@ -7,9 +8,13 @@ namespace Game.Assistants.Behaviour
     public class InteractableObjectsContainer : MonoBehaviour
     {
         [SerializeField] private List<MonoBehaviour> _interactableBehaviours;
+        
+        private List<ICharacterInteractable> _addedInteractables = new List<ICharacterInteractable>();
 
-        public IEnumerable<ICharacterInteractable> Interactables =>
-            _interactableBehaviours.OfType<ICharacterInteractable>();
+        public IEnumerable<ICharacterInteractable> Interactables => _addedInteractables;
+
+        private void Start() => 
+            _addedInteractables.AddRange(_interactableBehaviours.OfType<ICharacterInteractable>());
 
         [ContextMenu(nameof(FindInteractables))]
         private void FindInteractables()
@@ -26,6 +31,11 @@ namespace Game.Assistants.Behaviour
             {
                 Debug.Log(interactable.InteractPoint);
             }
+        }
+
+        public void Add(ICharacterInteractable getComponentInChildren)
+        {
+            _addedInteractables.Add(getComponentInChildren);
         }
     }
 }

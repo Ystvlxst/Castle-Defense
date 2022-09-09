@@ -2,26 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d3b516d-3b73-4cfc-ac92-be663e9d2345" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Assistants/Behaviour/AchievedDestination.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Assistants/Behaviour/AchievedDestination.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Assistants/Behaviour/BehaviourHelper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Assistants/Behaviour/BehaviourHelper.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Assistants/Behaviour/CanInteract.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Assistants/Behaviour/CanInteract.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Assistants/Behaviour/FindInteractableTarget.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Assistants/Behaviour/FindInteractableTarget.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Assistants/Behaviour/ResetInteractableTarget.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Assistants/Behaviour/ResetInteractableTarget.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Assistants/Behaviour/Stop.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Assistants/Behaviour/Stop.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Castle-Defense/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Castle-Defense/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Assistants/Resources Assistant Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Assistants/Resources Assistant Variant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Assistants/Behaviour/BotCharacterInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Assistants/Behaviour/BotCharacterInput.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Assistants/Behaviour/CharacterInteractableReference.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Assistants/Behaviour/CharacterInteractableReference.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Assistants/Behaviour/GoToInteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Assistants/Behaviour/GoToInteractable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Assistants/Behaviour/HasInteractableTarget.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Assistants/Behaviour/HasInteractableTarget.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Assistants/Behaviour/HasInteractableTarget.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Assistants/Behaviour/HasInteractableTarget.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Assistants/Assistant.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Assistants/Assistant.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Assistants/Behaviour/FindInteractableTarget.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Assistants/Behaviour/FindInteractableTarget.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Assistants/Behaviour/InteractableObjectsContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Assistants/Behaviour/InteractableObjectsContainer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shop/AssistantShop/AssistantsContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shop/AssistantShop/AssistantsContainer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shop/AssistantShop/ResourcesAssistant.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shop/AssistantShop/ResourcesAssistant.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon/WeaponList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/WeaponList.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
