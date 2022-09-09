@@ -2,34 +2,23 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using BabyStack.Model;
 using DG.Tweening;
 using UnityEngine;
 
-public class WeaponWithoutBallistics : Weapon
+public class WeaponWithoutBallistics : Weapon, IModificationListener<float>
 {
-    [SerializeField] private Transform _spawn;
-    [SerializeField] private Transform _weaponTransform;
     [SerializeField] private float _speed;
-    [SerializeField] private Bullet _template;
-    [SerializeField] private TargetSelector _targetSelector;
-    [SerializeField] private StackPresenter _stackPresenter;
-    [SerializeField] private float _cooldown;
-    [SerializeField] private int _shotsPerAmmo;
-    [SerializeField] private ParticleSystem _shotEffect;
     [SerializeField] private float _rotationSpeed;
 
-    private int _ammo;
     private float _timePerAmmo = 5;
-    private float _cooldownFactor = 1;
     private Enemy _target;
 
     private void Start() =>
         StartCoroutine(Shoot());
 
-    private void Update()
-    {
+    private void Update() =>
         Rotate();
-    }
 
     private IEnumerator Shoot()
     {
@@ -43,7 +32,7 @@ public class WeaponWithoutBallistics : Weapon
                 RefillAmmo();
 
             if(CanShoot() && (_target == null || _target.IsDying))
-                _target = _targetSelector.SelectEnemyTarget();
+                _target = TargetSelector.SelectEnemyTarget();
 
             while (CanShoot() && _target != null)
             {
@@ -55,11 +44,11 @@ public class WeaponWithoutBallistics : Weapon
 
                 if (time > _timePerAmmo)
                 {
-                    _ammo--;
+                    MinusAmmo();
                     time = 0;
                 }
 
-                yield return new WaitForSeconds(_cooldown / _cooldownFactor);
+                yield return new WaitForSeconds(Cooldown / CooldownFactor);
             }
 
             yield return null;
@@ -71,35 +60,16 @@ public class WeaponWithoutBallistics : Weapon
         if(_target == null)
             return;
 
-        Vector3 targetDirection = _target.transform.position - Vector3.up * 0.5f - _weaponTransform.position;
-        
-        _spawn.Rotate(Vector3.Cross(targetDirection, _spawn.forward), _rotationSpeed * Time.deltaTime);
-    }
+        Vector3 targetDirection = _target.transform.position - Vector3.up * 0.5f - WeaponTransform.position;
 
-    private bool CanShoot() => 
-        _ammo > 0 && _targetSelector.HasTarget;
-
-    private bool CanRefillAmmo() =>
-        _stackPresenter.Empty == false && _ammo == 0;
-
-    private void RefillAmmo()
-    {
-        Stackable stackable = _stackPresenter.Data.Last();
-        _stackPresenter.RemoveFromStack(stackable);
-        Destroy(stackable.gameObject);
-        _ammo = _shotsPerAmmo;
+        Spawn.Rotate(Vector3.Cross(targetDirection, Spawn.forward), _rotationSpeed * Time.deltaTime);
     }
 
     private void Shot(Vector3 targetPosition)
     {
-        _shotEffect.Play();
+        ShotEffect.Play();
 
-        Bullet bullet = Instantiate(_template, _spawn.position, Quaternion.identity);
-        bullet.Rigidbody.velocity = _spawn.forward * _speed;
-    }
-
-    public void OnModificationUpdate(float value)
-    {
-        _cooldownFactor = value;
+        Bullet bullet = Instantiate(Template, Spawn.position, Quaternion.identity);
+        bullet.Rigidbody.velocity = Spawn.forward * _speed;
     }
 }
