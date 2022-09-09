@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerSpeedModificationPresenter : ModificationPresenter<PlayerSpeedRateModification, float>
 {
-    [SerializeField] private PlayerMovement _movement;
+    [SerializeField] private CharacterMovement _movement;
 
     protected override void Enabled()
     {

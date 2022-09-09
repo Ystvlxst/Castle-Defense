@@ -1,10 +1,10 @@
 using System.Collections;
 using UnityEngine;
 
-public class DronePlatform : Trigger<PlayerMovement>
+public class DronePlatform : Trigger<CharacterMovement>
 {
     [SerializeField] private JoystickInput _joystickInput;
-    [SerializeField] private PlayerMovement _playerMovement;
+    [SerializeField] private CharacterMovement characterMovement;
     [SerializeField] private DroneMovement _droneMovement;
     [SerializeField] private DetailCollector _droneCollector;
     [SerializeField] private CameraBlend _camera;
@@ -12,10 +12,10 @@ public class DronePlatform : Trigger<PlayerMovement>
     private Coroutine _switchControl;
     private bool _exit;
 
-    protected override void OnEnter(PlayerMovement triggered) => 
+    protected override void OnEnter(CharacterMovement triggered) => 
         _exit = false;
 
-    protected override void OnStay(PlayerMovement triggered)
+    protected override void OnStay(CharacterMovement triggered)
     {
         if(triggered.IsMoving || _switchControl != null)
             return;
@@ -26,7 +26,7 @@ public class DronePlatform : Trigger<PlayerMovement>
         _switchControl = StartCoroutine(SwitchControlBack());
     }
 
-    protected override void OnExit(PlayerMovement triggered) => 
+    protected override void OnExit(CharacterMovement triggered) => 
         _exit = true;
 
     private IEnumerator SwitchControlBack()

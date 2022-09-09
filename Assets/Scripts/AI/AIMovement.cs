@@ -4,18 +4,19 @@ using UnityEngine.AI;
 using BabyStack.Model;
 using System;
 using DG.Tweening;
+using TMPro;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class AIMovement : MonoBehaviour, IModificationListener<float>
 {
     [SerializeField] private float Speed = 5f;
-    [SerializeField] private Transform _debugTransorm;
 
     private float _speedRate = 1f;
 
     private NavMeshAgent _agent;
     private UnityAction _completeAction;
 
+    public Vector3 Velocity => _agent.velocity;
     public bool Completed { get; private set; }
     public float NormalizedSpeed => _agent.velocity.magnitude / 5f;
     public float RemainingDistance => _agent.remainingDistance;
@@ -64,9 +65,6 @@ public class AIMovement : MonoBehaviour, IModificationListener<float>
 
     public AIMovement Move(Vector3 target)
     {
-        if(_debugTransorm != null)
-            _debugTransorm.transform.position = _agent.path.corners[1];
-        
         if (_agent.isActiveAndEnabled == false)
             return this;
         

@@ -1,31 +1,43 @@
+using System;
 using UnityEngine;
 using BabyStack.Model;
 
 [RequireComponent(typeof(AIMovement))]
-public class PlayerMovement : MonoBehaviour, IMovement, IModificationListener<float>
+public class CharacterMovement : MonoBehaviour, IModificationListener<float>
 {
     [SerializeField] private DoctorAnimation _animation;
     [SerializeField] private Transform _playerModel;
     [SerializeField] private float _speed;
+    [SerializeField] private MonoBehaviour _inputSourceBehaviour;
 
     private AIMovement _movement;
     private float _speedRate = 1f;
     private float _flySpeedRate = 1f;
+    private IInputSource _inputSource;
 
     public bool IsMoving { get; private set; }
 
     private void Awake()
     {
         _movement = GetComponent<AIMovement>();
+        _inputSource = (IInputSource) _inputSourceBehaviour;
     }
 
-    public void Move(Vector3 direction)
+    private void Update()
     {
-        _playerModel.LookAt(_playerModel.position + direction);
-        _movement.Move(transform.position + direction);
-        _movement.SetSpeed(_speedRate * _speed * direction.magnitude);
-        
-        _animation.SetSpeed(direction.magnitude);
+        Move();
+    }
+
+    private void Move()
+    {
+        _playerModel.LookAt(_playerModel.position + Vector3.ProjectOnPlane(_movement.Velocity, Vector3.up));
+        _movement.Move(_inputSource.Destination);
+
+        float distanceToDestination = Vector3.Distance(transform.position, _inputSource.Destination);
+
+        float deltaMovement = Mathf.Clamp01(distanceToDestination);
+        _movement.SetSpeed(_speedRate * _speed * deltaMovement);
+        _animation.SetSpeed(deltaMovement);
         IsMoving = true;
     }
 

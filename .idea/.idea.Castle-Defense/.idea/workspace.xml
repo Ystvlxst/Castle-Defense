@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d3b516d-3b73-4cfc-ac92-be663e9d2345" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Castle-Defense/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Castle-Defense/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/IInputSource.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/IInputSource.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerJoystickInput.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/AIMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/AIMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Drone/DronePlatform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Drone/DronePlatform.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,37 +25,25 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/StateMachine/States/AttackState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/07c89f7520694139991332d3cf930d4813bc00/e1/092a4787/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Shop/CanvasShopPresenter.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Work/Projects/git/Castle-Defense/Assets/Prefabs/Items/Detail.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Work/Projects/git/Castle-Defense/Assets/Prefabs/_Weapons/3WeaponRoot Variant.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Shop/IModificationPlacement.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/WaveSpawner.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Work/Projects/git/Castle-Defense/Assets/Prefabs/_Bullets/BulletStandart.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Work/Projects/git/Castle-Defense/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Weapon/Weapon.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Work/Projects/git/Castle-Defense/Assets/Prefabs/_Weapons/3WeaponRoot Variant.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Work/Projects/git/Castle-Defense/Assets/Prefabs/_Bullets/BulletStandart.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Work/Projects/git/Castle-Defense/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Stack/View/StackHolder.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Assistants/Assistant.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Work/Projects/git/Castle-Defense/Assets/Prefabs/_Bullets/BulletStandart.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Work/Projects/git/Castle-Defense/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/StateMachine/Transitions/DistanceTransition.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/StateMachine/States/AttackState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/EnemySpawner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Graveyard-idler/Assets/Scripts/Game/Shop/Conveyor/ConveyorOutputInteractable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/StateMachine/States/MoveState.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Work/Projects/git/Castle-Defense/Assets/Prefabs/_Weapons/3WeaponRoot Variant.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/WaveSpawner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Graveyard-idler/Assets/Scripts/Game/Shop/Items/Stone.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/StateMachine/State.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Weapon/Weapon.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/StateMachine/Transition.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Work/Projects/git/Castle-Defense/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Shop/Conveyor/ConveyorList.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tower/Tower.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Stack/View/StackHolder.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Assistants/Assistant.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/StateMachine/EnemyStateMachine.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Work/Projects/git/Castle-Defense/Assets/Prefabs/_Weapons/3WeaponRoot Variant.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/StateMachine/Transitions/DistanceTransition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Weapon/Bullet/BigBullet.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/LootPoint.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -104,6 +92,7 @@
       <workItem from="1662454275216" duration="2851000" />
       <workItem from="1662465286394" duration="8106000" />
       <workItem from="1662553541643" duration="15072000" />
+      <workItem from="1662702124694" duration="595000" />
     </task>
     <servers />
   </component>
