@@ -13,10 +13,13 @@ public class DronePlatform : Trigger<CharacterMovement>
     [SerializeField] private CameraBlend _camera;
     
     private Coroutine _switchControl;
-    private bool _exit;
+    private CharacterMovement _character;
 
-    protected override void OnEnter(CharacterMovement triggered) => 
-        _exit = false;
+    protected override void OnEnter(CharacterMovement triggered)
+    {
+        if(_character == null)
+            _character = triggered;
+    }
 
     protected override void OnStay(CharacterMovement triggered)
     {
@@ -31,8 +34,13 @@ public class DronePlatform : Trigger<CharacterMovement>
         _switchControl = StartCoroutine(SwitchControlBack());
     }
 
-    protected override void OnExit(CharacterMovement triggered) => 
-        _exit = true;
+    protected override void OnExit(CharacterMovement triggered)
+    {
+        Debug.Log(triggered.name);
+        
+        if(triggered == _character)
+            _character = null;
+    }
 
     private IEnumerator SwitchControlBack()
     {
@@ -44,7 +52,7 @@ public class DronePlatform : Trigger<CharacterMovement>
         
         _camera.ShowPlayer();
         _droneCollector.enabled = false;
-        yield return new WaitUntil(() => _exit);
+        yield return new WaitUntil(() => _character == null);
         _switchControl = null;
     }
 }

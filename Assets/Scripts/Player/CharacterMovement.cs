@@ -14,6 +14,7 @@ public class CharacterMovement : MonoBehaviour, IModificationListener<float>
     private float _speedRate = 1f;
     private float _flySpeedRate = 1f;
     private IInputSource _inputSource;
+    private Vector3 _lastPosition;
 
     public bool IsMoving { get; private set; }
 
@@ -66,6 +67,7 @@ public class CharacterMovement : MonoBehaviour, IModificationListener<float>
         _movement.SetSpeed(_speedRate * _speed * deltaMovement);
         _animation.SetSpeed(deltaMovement);
         
-        IsMoving = transform.position != _inputSource.Destination;
+        IsMoving = transform.position != _lastPosition;
+        _lastPosition = transform.position;
     }
 }
