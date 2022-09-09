@@ -7,10 +7,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 411113465, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: _aheadOffset
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 274675578288667966, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: _amount
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 274675578288667966, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _template
       value: 
       objectReference: {fileID: 5258755961510967630, guid: 363aa6a63349d57438b44b6d0099873f, type: 3}
+    - target: {fileID: 480776563243333823, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: _stackCapacity
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 480776563243333823, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _allTypesThatCanBeAdded.Array.data[0]
       value: 
@@ -20,9 +32,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 36a1b0a0d206b8544bd620b44442744b, type: 2}
     - target: {fileID: 4463202599686578740, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: _angle
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4463202599686578740, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: _cooldown
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4463202599686578740, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _template
       value: 
-      objectReference: {fileID: 238934233880829515, guid: da5b5e936fb534a16b0aa46f1c278bf3, type: 3}
+      objectReference: {fileID: 8979116813183756481, guid: 5299685d24aba4a88aca5e1d6fe6670b, type: 3}
+    - target: {fileID: 4463202599686578740, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: _shotEffect
+      value: 
+      objectReference: {fileID: 5464875016633975434, guid: f860f32180bce41988f207882a4ed146, type: 3}
+    - target: {fileID: 4463202599686578740, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: _shotsPerAmmo
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5408711824464836288, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: _size.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7080637460315802093, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.53
+      objectReference: {fileID: 0}
     - target: {fileID: 7080637460571569043, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -69,7 +105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7080637460571569055, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: m_Name
-      value: 3WeaponRoot Variant
+      value: LaserWeaponRoot Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
