@@ -1,16 +1,36 @@
+using System;
+using TMPro;
 using UnityEngine;
 
-internal class DroneMovement : MonoBehaviour, IMovement
+internal class DroneMovement : MonoBehaviour
 {
     [SerializeField] private float _speed;
+    [SerializeField] private MonoBehaviour _inputBehaviour;
+    
+    private IInputSource _input;
 
-    public void Move(Vector3 rawDirection)
+    private void Start()
     {
-        transform.Translate(rawDirection * Time.deltaTime * _speed);
+        _input = (IInputSource) _inputBehaviour;
+    }
+
+    private void Update()
+    {
+        Move();
+    }
+
+    public void Move()
+    {
+        transform.Translate((_input.Destination - transform.position).normalized * Time.deltaTime * _speed);
     }
 
     public void Stop()
     {
         
+    }
+
+    public void SetInput(IInputSource input)
+    {
+        _input = input;
     }
 }

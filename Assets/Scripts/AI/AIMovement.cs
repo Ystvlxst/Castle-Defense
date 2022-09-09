@@ -4,6 +4,7 @@ using UnityEngine.AI;
 using BabyStack.Model;
 using System;
 using DG.Tweening;
+using TMPro;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class AIMovement : MonoBehaviour, IModificationListener<float>
@@ -15,6 +16,7 @@ public class AIMovement : MonoBehaviour, IModificationListener<float>
     private NavMeshAgent _agent;
     private UnityAction _completeAction;
 
+    public Vector3 Velocity => _agent.velocity;
     public bool Completed { get; private set; }
     public float NormalizedSpeed => _agent.velocity.magnitude / 5f;
     public float RemainingDistance => _agent.remainingDistance;

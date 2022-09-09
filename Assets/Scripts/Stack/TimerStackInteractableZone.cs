@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using BabyStack.Model;
 
-public abstract class TimerStackInteractableZone : StackInteractableZoneBase
+public abstract class TimerStackInteractableZone : StackInteractableZoneBase, ICharacterInteractable
 {
     [SerializeField] private float _interactionTime;
     [SerializeField] private StackInteractableZoneView _view;
@@ -11,8 +11,10 @@ public abstract class TimerStackInteractableZone : StackInteractableZoneBase
     private Timer _timer = new Timer();
     private Coroutine _waitCoroutine;
 
+    public Vector3 InteractPoint => transform.position;
     public ITimer Timer => _timer;
     protected virtual float InteracionTime => _interactionTime;
+
 
     private void OnValidate()
     {

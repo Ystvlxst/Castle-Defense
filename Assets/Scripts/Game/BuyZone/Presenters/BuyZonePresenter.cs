@@ -73,7 +73,7 @@ public abstract class BuyZonePresenter : GUIDObject
 
     private void OnPlayerTriggerEnter(MoneyHolder moneyHolder)
     {
-        var movement = moneyHolder.GetComponent<PlayerMovement>();
+        var movement = moneyHolder.GetComponent<CharacterMovement>();
         var stackPresenter = moneyHolder.GetComponent<StackPresenter>();
 
         if (_tryBuy != null)
@@ -104,14 +104,14 @@ public abstract class BuyZonePresenter : GUIDObject
             FirstTimeUnlocked?.Invoke(this);
     }
 
-    private IEnumerator TryBuy(MoneyHolder moneyHolder, StackPresenter stackPresenter, PlayerMovement playerMovement)
+    private IEnumerator TryBuy(MoneyHolder moneyHolder, StackPresenter stackPresenter, CharacterMovement characterMovement)
     {
         yield return null;
 
         bool delayed = false;
         while (true)
         {
-            if (playerMovement.IsMoving == false)
+            if (characterMovement.IsMoving == false)
             {
                 if (delayed == false)
                     yield return new WaitForSeconds(0.75f);

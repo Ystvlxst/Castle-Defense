@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1188167487}
   m_LocalRotation: {x: -0.0034209276, y: -0.000000016655099, z: -0.000004868563, w: 0.99999416}
-  m_LocalPosition: {x: -0.0000030994415, y: 0.77199984, z: -0.2519989}
+  m_LocalPosition: {x: -0.00000333786, y: 0.77199984, z: -0.2519989}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2163363535663734951}
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce33cb3058aeec640b30741649fa5581, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _magnit: {fileID: 2043433328}
+  _magnet: {fileID: 0}
   _moneyHolder: {fileID: 1330972618}
   _trigger: {fileID: 2043433325}
   _moneyZoneTrigger: {fileID: 2043433326}
@@ -147,9 +147,11 @@ MonoBehaviour:
   _attractDuration: 1
   _followOffsetDistance: 5
   _speed: 5
+  _takeShakeDuration: 0.2
+  _reduceScale: 1
   _scaleReduceDuration: 0.5
   _scaleReduceMoveSpeed: 5
-  _takeShakeDuration: 0.2
+  _targetOffsetMagnitude: 0
 --- !u!136 &2043433327
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -203,6 +205,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _disableStayCallback: 0
+  _itemMagnet: {fileID: 0}
+  _dronePlatform: {fileID: 0}
   _stackPresenter: {fileID: 1330972623}
 --- !u!1 &2163363535663578285
 GameObject:
@@ -556,10 +560,10 @@ GameObject:
   - component: {fileID: 8013116022133551709}
   - component: {fileID: 6393979337540201469}
   - component: {fileID: 1330972618}
-  - component: {fileID: 1330972619}
   - component: {fileID: 1330972623}
   - component: {fileID: 1330972624}
   - component: {fileID: 8916872533876900063}
+  - component: {fileID: 8709567511414753730}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -626,7 +630,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 2163363535663578311}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.1
+  m_Radius: 0.26
   m_Speed: 7
   m_Acceleration: Infinity
   avoidancePriority: 50
@@ -651,7 +655,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f123f89ac7f044e8eabe385fd12d440f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 10000
 --- !u!114 &1330972618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -665,20 +668,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _totalMoneyProgress: {fileID: 11400000, guid: 96b162980c61bf4498cd5c4ac005293a, type: 2}
---- !u!114 &1330972619
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2163363535663578311}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 737288a2697278e4987a5c3b721d2c4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _movement: {fileID: 1330972624}
-  _joystick: {fileID: 0}
 --- !u!114 &1330972623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -711,6 +700,7 @@ MonoBehaviour:
   _animation: {fileID: 561823856780372659}
   _playerModel: {fileID: 6045728211679510568}
   _speed: 6
+  _inputSourceBehaviour: {fileID: 8709567511414753730}
 --- !u!114 &8916872533876900063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -724,6 +714,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 6
+--- !u!114 &8709567511414753730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2163363535663578311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d358513c06421aa505329dec938dbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _joystick: {fileID: 0}
 --- !u!1 &3220907499617801300
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,6 +773,46 @@ PrefabInstance:
       propertyPath: _navMeshAgent
       value: 
       objectReference: {fileID: 8013116022133551709}
+    - target: {fileID: 1467870407701783777, guid: 784c872c500f81242b9ce4c706431204, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -2.182787e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1467870407701783777, guid: 784c872c500f81242b9ce4c706431204, type: 3}
+      propertyPath: m_ConnectedAnchor.z
+      value: 2.3283067e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3422527318943785463, guid: 784c872c500f81242b9ce4c706431204, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.0022560928
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647619945408252048, guid: 784c872c500f81242b9ce4c706431204, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -0.0000000013969836
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647619945408252048, guid: 784c872c500f81242b9ce4c706431204, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.0028341145
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647619945408252048, guid: 784c872c500f81242b9ce4c706431204, type: 3}
+      propertyPath: m_ConnectedAnchor.z
+      value: -2.3283067e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5283852636107299127, guid: 784c872c500f81242b9ce4c706431204, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -1.7462301e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752249475975555325, guid: 784c872c500f81242b9ce4c706431204, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 4.0745352e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752249475975555325, guid: 784c872c500f81242b9ce4c706431204, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.0028359857
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752249475975555325, guid: 784c872c500f81242b9ce4c706431204, type: 3}
+      propertyPath: m_ConnectedAnchor.z
+      value: 1.3096721e-10
+      objectReference: {fileID: 0}
     - target: {fileID: 7271438006962470257, guid: 784c872c500f81242b9ce4c706431204, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -814,9 +857,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7365705697429867422, guid: 784c872c500f81242b9ce4c706431204, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -0.000000012206829
+      objectReference: {fileID: 0}
+    - target: {fileID: 7365705697429867422, guid: 784c872c500f81242b9ce4c706431204, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.0035340434
+      objectReference: {fileID: 0}
+    - target: {fileID: 7365705697429867422, guid: 784c872c500f81242b9ce4c706431204, type: 3}
+      propertyPath: m_ConnectedAnchor.z
+      value: 0.000009978815
+      objectReference: {fileID: 0}
     - target: {fileID: 8044140300957247435, guid: 784c872c500f81242b9ce4c706431204, type: 3}
       propertyPath: m_Name
       value: Stickman_SCP
+      objectReference: {fileID: 0}
+    - target: {fileID: 8847370804400135179, guid: 784c872c500f81242b9ce4c706431204, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -0.0016917207
+      objectReference: {fileID: 0}
+    - target: {fileID: 8847370804400135179, guid: 784c872c500f81242b9ce4c706431204, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.00079184887
+      objectReference: {fileID: 0}
+    - target: {fileID: 8847370804400135179, guid: 784c872c500f81242b9ce4c706431204, type: 3}
+      propertyPath: m_ConnectedAnchor.z
+      value: 0.00027407732
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909846040138835984, guid: 784c872c500f81242b9ce4c706431204, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.0007991936
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909846040138835984, guid: 784c872c500f81242b9ce4c706431204, type: 3}
+      propertyPath: m_ConnectedAnchor.z
+      value: 0.00026430943
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 784c872c500f81242b9ce4c706431204, type: 3}
