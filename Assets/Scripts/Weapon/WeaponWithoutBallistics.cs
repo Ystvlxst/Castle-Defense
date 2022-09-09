@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class WeaponWithoutBallistics : MonoBehaviour
 {
-
     [SerializeField] private Transform _spawn;
     [SerializeField] private Transform _weaponTransform;
     [SerializeField] private float _speed;

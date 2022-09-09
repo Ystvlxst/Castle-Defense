@@ -158,9 +158,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f3aa50018ad6440ca6e06a43157e086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 50
+  _damage: 5
   _damageRadius: 5
-  _force: 5
+  _force: 1
   _hitEffectTemplate: {fileID: 5825856188868306550, guid: f3930c3068e5f4ed5ad05aa5f14e73ab, type: 3}
 --- !u!1001 &4079024847097615594
 PrefabInstance:

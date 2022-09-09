@@ -4969,7 +4969,7 @@ MonoBehaviour:
   - {fileID: 971043113}
   - {fileID: 1428365507}
   - {fileID: 1458557591}
-  _amount: 5
+  _amount: 10
 --- !u!4 &1518659569
 Transform:
   m_ObjectHideFlags: 0
@@ -5237,8 +5237,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyContainer: {fileID: 1594673592}
   _enemySpawners:
-  - {fileID: 201369397}
-  - {fileID: 1105483765}
   - {fileID: 1518659568}
 --- !u!114 &1594673592
 MonoBehaviour:
