@@ -22,8 +22,14 @@ public class BigBullet : Bullet
                 enemy.TakeDamage(Damage);
 
                 if (enemy.IsDying)
-                    enemy.TakeImpulseForce(Force);
+                {
+                    foreach (Rigidbody rigidbody in enemy.RigidBodies)
+                        rigidbody.AddForce(-(transform.position - collider.transform.position).normalized * Force, ForceMode.Impulse);
+                }
+                    
             }
         }
     }
+
+
 }

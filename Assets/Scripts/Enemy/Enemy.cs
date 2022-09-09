@@ -18,12 +18,14 @@ public class Enemy : MonoBehaviour
     [SerializeField] private ParticleSystem _shotEffect;
 
     private EnemyTarget _target;
-    private Coroutine _coroutine;
+    private Coroutine _takeDamageCoroutine;
+    private Coroutine _deathCoroutine;
 
     public EnemyTarget Target => _target;
     public int Reward => _reward;
     public float Health => _health;
     public bool IsDying => _health <= 0;
+    public Rigidbody[] RigidBodies => _ragdollRigidbodyes;
 
     public event UnityAction<Enemy> Dying;
 
@@ -45,21 +47,18 @@ public class Enemy : MonoBehaviour
         if (_health <= 0)
             Die();
 
-        if (_coroutine != null)
-            StopCoroutine(_coroutine);
+        if (_takeDamageCoroutine != null)
+            StopCoroutine(_takeDamageCoroutine);
 
-        _coroutine = StartCoroutine(HealthView());
-    }
-
-    public void TakeImpulseForce(float force)
-    {
-        foreach (Rigidbody rigidbody in _ragdollRigidbodyes)
-            rigidbody.AddForce(Vector3.forward * force, ForceMode.Impulse);
+        _takeDamageCoroutine = StartCoroutine(HealthView());
     }
 
     private void Die()
     {
-        StartCoroutine(Death());
+        if (_deathCoroutine != null)
+            StopCoroutine(_deathCoroutine);
+
+        _deathCoroutine = StartCoroutine(Death());
     }
 
     private IEnumerator HealthView()
