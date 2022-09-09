@@ -12,7 +12,7 @@ public class LaserTargetSelector : TargetSelector
         Enemy first = EnemyContainer.Enemies.First();
 
         if (first == _lastSelected && EnemyContainer.Enemies.Count() > 1)
-            first = EnemyContainer.Enemies.ElementAt(1);
+            first = EnemyContainer.Enemies.ElementAt(Random.Range(0, EnemyContainer.Enemies.Count()));
 
         _lastSelected = first;
         Vector3 target = first.transform.position;
@@ -20,7 +20,7 @@ public class LaserTargetSelector : TargetSelector
         if (!first.IsDying)
             target += first.transform.forward;
 
-        target.z = Mathf.MoveTowards(target.z, first.Target.transform.position.z, 1);
+        target.z = Mathf.Clamp(target.z, first.Target.transform.position.z, target.z);
 
         return target;
     }
