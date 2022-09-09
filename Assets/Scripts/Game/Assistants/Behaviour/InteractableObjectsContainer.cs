@@ -37,5 +37,10 @@ namespace Game.Assistants.Behaviour
         {
             _addedInteractables.Add(getComponentInChildren);
         }
+
+        public void AddRange(ICharacterInteractable[] getComponentsInChildren)
+        {
+            _addedInteractables.AddRange(getComponentsInChildren);
+        }
     }
 }
