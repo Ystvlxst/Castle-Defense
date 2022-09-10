@@ -61,7 +61,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4898267704630984317, guid: f182b78f62688485c97337c5694f69f7, type: 3}
       propertyPath: m_Name
-      value: Detail Variant
+      value: DetailTaken Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4898267704630984318, guid: f182b78f62688485c97337c5694f69f7, type: 3}
       propertyPath: <Taken>k__BackingField

@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d3b516d-3b73-4cfc-ac92-be663e9d2345" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Assistants/Behaviour/ClearStack.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Assistants/Behaviour/ClearStack.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Detail.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Detail.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/DetailTaken Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/DetailTaken Variant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +96,7 @@
       <workItem from="1662553541643" duration="15072000" />
       <workItem from="1662702124694" duration="8353000" />
       <workItem from="1662743570197" duration="4546000" />
-      <workItem from="1662790046652" duration="1933000" />
+      <workItem from="1662790046652" duration="2528000" />
     </task>
     <servers />
   </component>
