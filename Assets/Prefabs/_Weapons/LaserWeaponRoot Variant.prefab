@@ -342,15 +342,16 @@ MonoBehaviour:
   _weaponTransform: {fileID: 3447037063514913048}
   _targetSelector: {fileID: 1100568254346317090}
   _stackPresenter: {fileID: 1597047833278074392}
-  _shotsPerAmmo: 10
+  _shotsPerAmmo: 1
   _shotEffect: {fileID: 5464875016633975434, guid: f860f32180bce41988f207882a4ed146, type: 3}
-  _rotationSpeed: -10
+  _rotationSpeed: 5
   _damage: 5
   _lineRenderer: {fileID: 6712706405991023441}
   _layerMask:
     serializedVersion: 2
     m_Bits: 513
   _laserShotEffectTemplate: {fileID: 5825856188868306550, guid: f3930c3068e5f4ed5ad05aa5f14e73ab, type: 3}
+  _timePerAmmo: 5
 --- !u!1001 &2166616210454746941
 PrefabInstance:
   m_ObjectHideFlags: 0

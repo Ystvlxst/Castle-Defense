@@ -29,7 +29,7 @@ PrefabInstance:
       objectReference: {fileID: 3646681777254273270}
     - target: {fileID: 1330972623, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: _stackCapacity
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1330972624, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: _speed

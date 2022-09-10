@@ -19,13 +19,13 @@ public class BallisticWeapon : Weapon, IModificationListener<float>
         while (true)
         {
             if(CanRefillAmmo())
-                RefillAmmo();
+                RefillAmmo((int)(ShotsPerAmmo * UpgradeFactor));
             
             while (CanShoot())
             {
                 Shot();
                 
-                yield return new WaitForSeconds(_cooldown / CooldownFactor);
+                yield return new WaitForSeconds(_cooldown / UpgradeFactor);
             }
 
             yield return null;

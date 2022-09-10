@@ -2,15 +2,15 @@ using System.Collections;
 using BabyStack.Model;
 using UnityEngine;
 
-public class WeaponWithoutBallistics : Weapon, IModificationListener<float>
+public class LaserWeapon : Weapon, IModificationListener<float>
 {
     [SerializeField] private float _rotationSpeed;
     [SerializeField] private float _damage;
     [SerializeField] private LineRenderer _lineRenderer;
     [SerializeField] private LayerMask _layerMask;
     [SerializeField] private ParticleSystem _laserShotEffectTemplate;
-
-    private float _timePerAmmo = 5;
+    [SerializeField] private float _timePerAmmo = 5;
+    
     private Enemy _target;
 
     private void Start() =>
@@ -28,7 +28,7 @@ public class WeaponWithoutBallistics : Weapon, IModificationListener<float>
             yield return null;
             
             if (CanRefillAmmo())
-                RefillAmmo();
+                RefillAmmo(1);
 
             ResetBeam();
 
@@ -43,7 +43,7 @@ public class WeaponWithoutBallistics : Weapon, IModificationListener<float>
                 Shot();
                 time += Time.deltaTime;
 
-                if (time > _timePerAmmo)
+                if (time > _timePerAmmo * UpgradeFactor)
                 {
                     MinusAmmo();
                     time = 0;
@@ -63,7 +63,8 @@ public class WeaponWithoutBallistics : Weapon, IModificationListener<float>
 
         Vector3 targetDirection = _target.transform.position - Vector3.up * 0.5f - WeaponTransform.position;
 
-        Spawn.Rotate(Vector3.Cross(targetDirection, Spawn.forward), _rotationSpeed * Time.deltaTime);
+        float rotationSpeed = _rotationSpeed * UpgradeFactor * UpgradeFactor * Time.deltaTime;
+        Spawn.Rotate(Vector3.Cross(Spawn.forward, targetDirection), rotationSpeed);
     }
 
     private void Shot()
