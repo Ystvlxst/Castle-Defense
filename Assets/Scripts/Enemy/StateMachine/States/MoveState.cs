@@ -24,7 +24,8 @@ public class MoveState : State
         if (Physics.RaycastNonAlloc(transform.position + Vector3.up, transform.forward, raycastHits, 1.5f, _layerMask) != 0)
             target = transform.position;
         
-        _navMeshAgent.SetDestination(target);
+        if(_navMeshAgent.isOnNavMesh)
+            _navMeshAgent.SetDestination(target);
     }
 
     private Vector3 GetTargetPosition() => 

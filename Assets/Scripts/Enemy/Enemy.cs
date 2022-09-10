@@ -42,6 +42,11 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        if (_health <= 0)
+            return;
+        
+        _health -= damage;
+
         if (_takeDamageCoroutine != null)
             StopCoroutine(_takeDamageCoroutine);
 
@@ -53,7 +58,6 @@ public class Enemy : MonoBehaviour
 
     private IEnumerator Damage(float damage)
     {
-        _health -= damage;
         _healthCanvas.enabled = true;
         yield return new WaitForSeconds(1);
         _healthCanvas.enabled = false;
@@ -62,8 +66,6 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
-        _health = 0;
-
         if (_deathCoroutine != null)
             StopCoroutine(_deathCoroutine);
 
