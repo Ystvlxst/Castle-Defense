@@ -1,10 +1,12 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class BigBullet : Bullet
+public class Laser : Bullet
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out Ground ground))
+        if (other.TryGetComponent(out Ground ground) || other.TryGetComponent(out Enemy enemy))
         {
             Collide();
             Explode();

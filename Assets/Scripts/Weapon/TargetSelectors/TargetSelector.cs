@@ -13,4 +13,6 @@ public abstract class TargetSelector : MonoBehaviour
     }
 
     public abstract Vector3 SelectTarget();
+
+    public abstract Enemy SelectEnemyTarget();
 }

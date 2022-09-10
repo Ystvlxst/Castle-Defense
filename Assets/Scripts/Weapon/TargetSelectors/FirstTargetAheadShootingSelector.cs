@@ -24,4 +24,9 @@ class FirstTargetAheadShootingSelector : TargetSelector
             
         return target;
     }
+
+    public override Enemy SelectEnemyTarget()
+    {
+        return null;
+    }
 }

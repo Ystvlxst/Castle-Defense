@@ -9,7 +9,11 @@ public class RapidBullet : Bullet
 
         if (other.TryGetComponent(out Enemy enemy))
         {
-            enemy.TakeDamage(Damage);
+            if (!enemy.IsDying)
+                enemy.TakeDamage(Damage);
+            else
+                return;
+
             Collide();
         }
     }

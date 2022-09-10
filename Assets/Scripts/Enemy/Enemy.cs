@@ -12,17 +12,20 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Canvas _healthCanvas;
     [SerializeField] private Rigidbody _rootRigidbody;
     [SerializeField] private Rigidbody[] _ragdollRigidbodyes;
+    [SerializeField] private Collider[] _ragdollColliders;
     [SerializeField] private Animator _animator;
     [SerializeField] private NavMeshAgent _navMeshAgent;
     [SerializeField] private ParticleSystem _shotEffect;
 
     private EnemyTarget _target;
-    private Coroutine _coroutine;
+    private Coroutine _takeDamageCoroutine;
+    private Coroutine _deathCoroutine;
 
     public EnemyTarget Target => _target;
     public int Reward => _reward;
     public float Health => _health;
     public bool IsDying => _health <= 0;
+    public Rigidbody[] RigidBodies => _ragdollRigidbodyes;
 
     public event UnityAction<Enemy> Dying;
 
@@ -39,24 +42,35 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        _health -= damage;
+        if (_takeDamageCoroutine != null)
+            StopCoroutine(_takeDamageCoroutine);
+
+        _takeDamageCoroutine = StartCoroutine(Damage(damage));
 
         if (_health <= 0)
             Die();
-
-        if (_coroutine != null)
-            StopCoroutine(_coroutine);
-
-        _coroutine = StartCoroutine(HealthView());
     }
 
-    public void TakeImpulseForce(float force)
+    private IEnumerator Damage(float damage)
     {
-        foreach (Rigidbody rigidbody in _ragdollRigidbodyes)
-            rigidbody.AddForce(Vector3.forward * force, ForceMode.Impulse);
+        _health -= damage;
+        _healthCanvas.enabled = true;
+        yield return new WaitForSeconds(1);
+        _healthCanvas.enabled = false;
+        _takeDamageCoroutine = null;
     }
 
     private void Die()
+    {
+        _health = 0;
+
+        if (_deathCoroutine != null)
+            StopCoroutine(_deathCoroutine);
+
+        _deathCoroutine = StartCoroutine(Death());
+    }
+
+    private IEnumerator Death()
     {
         _animator.enabled = false;
         _rootRigidbody.isKinematic = true;
@@ -70,13 +84,12 @@ public class Enemy : MonoBehaviour
         _lootDrop.DropLoot();
         Dying?.Invoke(this);
 
-        Destroy(gameObject, 2f);
-    }
+        yield return new WaitForSeconds(4);
 
-    private IEnumerator HealthView()
-    {
-        _healthCanvas.enabled = true;
-        yield return new WaitForSeconds(1);
-        _healthCanvas.enabled = false;
+        foreach (Collider collider in _ragdollColliders)
+            collider.isTrigger = true;
+
+        Destroy(gameObject, 2f);
+        _deathCoroutine = null;
     }
 }
