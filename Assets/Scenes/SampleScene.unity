@@ -2568,7 +2568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02f04b75f55984b0685a89e7025ece55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _disableStayCallback: 0
+  _disableStayCallback: 1
   _itemMagnet: {fileID: 716968896}
   _dronePlatform: {fileID: 38154733}
   _stackPresenter: {fileID: 561513566}
@@ -7655,7 +7655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faeda694b5f4e2f498473a9df765d0ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _disableStayCallback: 0
+  _disableStayCallback: 1
   _enableDelay: 0
 --- !u!135 &1844145513
 SphereCollider:

@@ -1,15 +1,16 @@
 using System;
 using System.Collections;
+using UnityEditor;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-[RequireComponent(typeof(Rigidbody))]
 public class DropableItem : MonoBehaviour
 {
     [SerializeField] private float _horizontalForce = 50;
     [SerializeField] private Collider _collider;
 
     private Rigidbody _rigidbody;
+    private Coroutine _disable;
 
     protected virtual void Awake() => 
         _rigidbody = GetComponent<Rigidbody>();
@@ -24,14 +25,19 @@ public class DropableItem : MonoBehaviour
     public void Push(Vector3 direction)
     {
         _rigidbody.AddForce(direction, ForceMode.VelocityChange);
-        StartCoroutine(DisableBodyWhenReady());
+        _disable = StartCoroutine(DisableBodyWhenReady());
     }
 
     public void DisableGravity()
     {
+        if (_disable != null)
+            StopCoroutine(_disable);
+        
         _rigidbody.isKinematic = true;
         _rigidbody.useGravity = false;
         _collider.enabled = false;
+        Destroy(_rigidbody);
+        Destroy(_collider);
     }
 
     private IEnumerator DisableBodyWhenReady()
@@ -40,5 +46,6 @@ public class DropableItem : MonoBehaviour
         yield return new WaitUntil(() => _rigidbody.velocity == Vector3.zero);
 
         _rigidbody.isKinematic = true;
+        _disable = null;
     }
 }

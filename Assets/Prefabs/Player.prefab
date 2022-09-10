@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1188167487}
   m_LocalRotation: {x: -0.0034209276, y: -0.000000016655099, z: -0.000004868563, w: 0.99999416}
-  m_LocalPosition: {x: -0.0000030994415, y: 0.77199984, z: -0.2519989}
+  m_LocalPosition: {x: -0.0000030791168, y: 0.77199984, z: -0.25199872}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2163363535663734951}
@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe20ddfb65f5a924aa9c942fff59c9f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _disableStayCallback: 0
+  _disableStayCallback: 1
 --- !u!114 &2043433325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9c4ff14d42d4186b5e808f97dec177a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _disableStayCallback: 0
+  _disableStayCallback: 1
 --- !u!114 &1589434751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02f04b75f55984b0685a89e7025ece55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _disableStayCallback: 0
+  _disableStayCallback: 1
   _itemMagnet: {fileID: 0}
   _dronePlatform: {fileID: 0}
   _stackPresenter: {fileID: 1330972623}
@@ -698,10 +698,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animation: {fileID: 561823856780372659}
-  _playerModel: {fileID: 6045728211679510568}
   _speed: 6
   _inputSourceBehaviour: {fileID: 8709567511414753730}
-  _modelRotationSpeed: 2000
 --- !u!114 &8916872533876900063
 MonoBehaviour:
   m_ObjectHideFlags: 0

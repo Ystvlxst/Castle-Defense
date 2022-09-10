@@ -13,8 +13,14 @@ public class DeathState : State
 
     private void Awake()
     {
+        if (_ragdollRigidbodyes.Length == 0)
+            return;
+
         foreach (Rigidbody rigidbody in _ragdollRigidbodyes)
+        {
             rigidbody.isKinematic = true;
+            rigidbody.detectCollisions = false;
+        }
     }
 
     private void OnEnable()
@@ -28,7 +34,7 @@ public class DeathState : State
     {
         _ragdollColliders = GetComponentsInChildren<Collider>()
             .Where(colllider => colllider != GetComponent<Collider>()).ToArray();
-        
+
         _ragdollRigidbodyes = GetComponentsInChildren<Rigidbody>()
             .Where(colllider => colllider != GetComponent<Rigidbody>()).ToArray();
     }
@@ -40,7 +46,10 @@ public class DeathState : State
         _navMeshAgent.speed = 0;
 
         foreach (Rigidbody rigidbody in _ragdollRigidbodyes)
+        {
             rigidbody.isKinematic = false;
+            rigidbody.detectCollisions = true;
+        }
 
         _lootDrop.DropLoot();
 

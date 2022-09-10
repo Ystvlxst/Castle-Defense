@@ -847,13 +847,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawn: {fileID: 5580619549680555691}
   _weaponTransform: {fileID: 4563132428532715455}
-  _angle: 45
-  _template: {fileID: 1352228147017972891, guid: 40a1dc751563c4b14b42ba973a8ad1c4, type: 3}
   _targetSelector: {fileID: 411113465}
   _stackPresenter: {fileID: 480776563243333823}
-  _cooldown: 5
   _shotsPerAmmo: 3
   _shotEffect: {fileID: 1526255522877717493}
+  _angle: 45
+  _bulletTemplate: {fileID: 0}
+  _cooldown: 5
   _torqueForce: 0
 --- !u!114 &274675578288667966
 MonoBehaviour:
@@ -989,7 +989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faeda694b5f4e2f498473a9df765d0ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _disableStayCallback: 0
+  _disableStayCallback: 1
   _enableDelay: 0
 --- !u!114 &3194557640345412110
 MonoBehaviour:
