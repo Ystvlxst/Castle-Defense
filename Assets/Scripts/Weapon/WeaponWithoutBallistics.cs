@@ -1,15 +1,14 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using BabyStack.Model;
-using DG.Tweening;
 using UnityEngine;
 
 public class WeaponWithoutBallistics : Weapon, IModificationListener<float>
 {
-    [SerializeField] private float _speed;
     [SerializeField] private float _rotationSpeed;
+    [SerializeField] private float _damage;
+    [SerializeField] private LineRenderer _lineRenderer;
+    [SerializeField] private LayerMask _layerMask;
+    [SerializeField] private ParticleSystem _laserShotEffectTemplate;
 
     private float _timePerAmmo = 5;
     private Enemy _target;
@@ -31,6 +30,8 @@ public class WeaponWithoutBallistics : Weapon, IModificationListener<float>
             if (CanRefillAmmo())
                 RefillAmmo();
 
+            ResetBeam();
+
             if(CanShoot() && (_target == null || _target.IsDying))
                 _target = TargetSelector.SelectEnemyTarget();
 
@@ -39,7 +40,7 @@ public class WeaponWithoutBallistics : Weapon, IModificationListener<float>
                 if(_target.IsDying)
                     break;
                 
-                Shot(_target.transform.position);
+                Shot();
                 time += Time.deltaTime;
 
                 if (time > _timePerAmmo)
@@ -48,7 +49,7 @@ public class WeaponWithoutBallistics : Weapon, IModificationListener<float>
                     time = 0;
                 }
 
-                yield return new WaitForSeconds(Cooldown / CooldownFactor);
+                yield return null;
             }
 
             yield return null;
@@ -65,11 +66,32 @@ public class WeaponWithoutBallistics : Weapon, IModificationListener<float>
         Spawn.Rotate(Vector3.Cross(targetDirection, Spawn.forward), _rotationSpeed * Time.deltaTime);
     }
 
-    private void Shot(Vector3 targetPosition)
+    private void Shot()
     {
+        ResetBeam();
         ShotEffect.Play();
 
-        Bullet bullet = Instantiate(Template, Spawn.position, Quaternion.identity);
-        bullet.Rigidbody.velocity = Spawn.forward * _speed;
+        RaycastHit[] results = new RaycastHit[16];
+
+        int count = Physics.RaycastNonAlloc(Spawn.position, Spawn.forward, results,  1000f,_layerMask);
+
+        for (int i = 0; i < count; i++)
+        {
+            if (results[i].collider.TryGetComponent(out IDamageable damageable)) 
+                damageable.TakeDamage(_damage);
+            
+            Instantiate(_laserShotEffectTemplate, results[i].point, Quaternion.identity);
+        }
+
+        if (count > 0) 
+            SetLaserRayEnd(results[0].point);
+    }
+
+    private void ResetBeam() => 
+        SetLaserRayEnd(Spawn.position);
+
+    private void SetLaserRayEnd(Vector3 position)
+    {
+        _lineRenderer.SetPosition(1, _lineRenderer.transform.InverseTransformPoint(position));
     }
 }

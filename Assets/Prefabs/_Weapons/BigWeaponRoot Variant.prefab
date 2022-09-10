@@ -59,6 +59,10 @@ PrefabInstance:
       propertyPath: _shotsPerAmmo
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4463202599686578740, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: _bulletTemplate
+      value: 
+      objectReference: {fileID: 238934233880829515, guid: da5b5e936fb534a16b0aa46f1c278bf3, type: 3}
     - target: {fileID: 5408711824464836288, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _size.y
       value: 10

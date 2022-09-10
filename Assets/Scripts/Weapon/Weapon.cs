@@ -5,10 +5,8 @@ public class Weapon : MonoBehaviour
 {
     [SerializeField] private Transform _spawn;
     [SerializeField] private Transform _weaponTransform;
-    [SerializeField] private Bullet _template;
     [SerializeField] private TargetSelector _targetSelector;
     [SerializeField] private StackPresenter _stackPresenter;
-    [SerializeField] private float _cooldown;
     [SerializeField] private int _shotsPerAmmo;
     [SerializeField] private ParticleSystem _shotEffect;
 
@@ -17,10 +15,8 @@ public class Weapon : MonoBehaviour
 
     public Transform Spawn => _spawn;
     public Transform WeaponTransform => _weaponTransform;
-    public Bullet Template => _template;
     public TargetSelector TargetSelector => _targetSelector;
     public StackPresenter StackPresenter => _stackPresenter;
-    public float Cooldown => _cooldown;
     public int ShotsPerArmo => _shotsPerAmmo;
     public ParticleSystem ShotEffect => _shotEffect;
     public float CooldownFactor => _cooldownFactor;
@@ -30,17 +26,17 @@ public class Weapon : MonoBehaviour
         _cooldownFactor = value;
 
     public bool CanShoot() =>
-    _ammo > 0 && TargetSelector.HasTarget;
+        _ammo > 0 && TargetSelector.HasTarget;
 
     public bool CanRefillAmmo() =>
-    StackPresenter.Empty == false && _ammo == 0;
+        StackPresenter.Empty == false && _ammo == 0;
 
     public void RefillAmmo()
     {
         Stackable stackable = StackPresenter.Data.Last();
         StackPresenter.RemoveFromStack(stackable);
         Destroy(stackable.gameObject);
-        _ammo = ShotsPerArmo;
+        _ammo++;
     }
 
     public void MinusAmmo() =>

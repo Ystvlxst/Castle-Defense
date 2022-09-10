@@ -1,11 +1,12 @@
 using System.Collections;
-using System.Linq;
 using BabyStack.Model;
 using UnityEngine;
 
 public class BallisticWeapon : Weapon, IModificationListener<float>
 {
     [SerializeField] private float _angle;
+    [SerializeField] private Bullet _bulletTemplate;
+    [SerializeField] private float _cooldown;
     [SerializeField] private float _torqueForce;
 
     private readonly float _g = Physics.gravity.y;
@@ -24,7 +25,7 @@ public class BallisticWeapon : Weapon, IModificationListener<float>
             {
                 Shot();
                 
-                yield return new WaitForSeconds(Cooldown / CooldownFactor);
+                yield return new WaitForSeconds(_cooldown / CooldownFactor);
             }
 
             yield return null;
@@ -51,7 +52,7 @@ public class BallisticWeapon : Weapon, IModificationListener<float>
         float v2 = (_g * x * x) / (2 * (y - Mathf.Tan(angleInRadians) * x) * Mathf.Pow(Mathf.Cos(angleInRadians), 2));
         float v = Mathf.Sqrt(Mathf.Abs(v2));
 
-        Bullet bullet = Instantiate(Template, Spawn.position, Quaternion.identity);
+        Bullet bullet = Instantiate(_bulletTemplate, Spawn.position, Quaternion.identity);
         bullet.Rigidbody.velocity = Spawn.forward * v;
         bullet.Rigidbody.AddTorque(Spawn.forward * _torqueForce);
     }
