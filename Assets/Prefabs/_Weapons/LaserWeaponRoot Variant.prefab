@@ -165,7 +165,7 @@ PrefabInstance:
       objectReference: {fileID: 5258755961510967630, guid: 363aa6a63349d57438b44b6d0099873f, type: 3}
     - target: {fileID: 480776563243333823, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _stackCapacity
-      value: 80
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 480776563243333823, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _allTypesThatCanBeAdded.Array.data[0]
@@ -175,10 +175,22 @@ PrefabInstance:
       propertyPath: _upgradeable
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1557466534994183452, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: _guid
+      value: a0117bf8-b10d-475e-89c9-a790ef04f8f2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945714144404520685, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3194557640345412110, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _inputTypes
       value: 
       objectReference: {fileID: 11400000, guid: 36a1b0a0d206b8544bd620b44442744b, type: 2}
+    - target: {fileID: 3707553395036616038, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: _guid
+      value: ef40ef95-4be8-4b41-8bc8-34d81f8fb82f
+      objectReference: {fileID: 0}
     - target: {fileID: 4463202599686578740, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _angle
       value: -1

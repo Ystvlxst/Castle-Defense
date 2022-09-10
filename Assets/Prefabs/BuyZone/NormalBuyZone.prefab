@@ -400,6 +400,7 @@ MonoBehaviour:
   _view: {fileID: 2081480697731583671}
   _unlockable: {fileID: 0}
   _alwaysUnlocked: 0
+  _currencyType: 0
 --- !u!114 &1838472215714062475
 MonoBehaviour:
   m_ObjectHideFlags: 0

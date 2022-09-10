@@ -58,9 +58,9 @@ public class NormalBuyZonePresenter : BuyZonePresenter
                 
                 removed.transform.DOMove(transform.position, 0.15f).OnComplete(() =>
                 {
+                    _paying = false;
                     Destroy(removed.gameObject);
                     ReduceCost(buyZone);
-                    _paying = false;
                 });
             }
         }
