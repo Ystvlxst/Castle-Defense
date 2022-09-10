@@ -1639,7 +1639,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2081480697575143310, guid: 9d4a4bd794a60184fba6f66301be2fdd, type: 3}
       propertyPath: m_text
-      value: 5
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2081480699277736293, guid: 9d4a4bd794a60184fba6f66301be2fdd, type: 3}
       propertyPath: m_Name
@@ -1774,7 +1774,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2081480697575143310, guid: 9d4a4bd794a60184fba6f66301be2fdd, type: 3}
       propertyPath: m_text
-      value: 50
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2081480699277736293, guid: 9d4a4bd794a60184fba6f66301be2fdd, type: 3}
       propertyPath: m_Name
@@ -3485,7 +3485,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2081480697575143310, guid: 9d4a4bd794a60184fba6f66301be2fdd, type: 3}
       propertyPath: m_text
-      value: 5
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2081480699277736293, guid: 9d4a4bd794a60184fba6f66301be2fdd, type: 3}
       propertyPath: m_Name
@@ -6390,10 +6390,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyContainer: {fileID: 1594673592}
-  _enemySpawners:
-  - {fileID: 1518659568}
-  - {fileID: 1105483765}
-  - {fileID: 201369397}
+  _waves:
+  - <EnemySpawner>k__BackingField: {fileID: 1105483765}
+    <Amount>k__BackingField: 5
+  - <EnemySpawner>k__BackingField: {fileID: 1518659568}
+    <Amount>k__BackingField: 5
+  - <EnemySpawner>k__BackingField: {fileID: 1105483765}
+    <Amount>k__BackingField: 10
+  - <EnemySpawner>k__BackingField: {fileID: 1518659568}
+    <Amount>k__BackingField: 10
+  - <EnemySpawner>k__BackingField: {fileID: 201369397}
+    <Amount>k__BackingField: 1
+  - <EnemySpawner>k__BackingField: {fileID: 1105483765}
+    <Amount>k__BackingField: 10
+  - <EnemySpawner>k__BackingField: {fileID: 1518659568}
+    <Amount>k__BackingField: 10
+  - <EnemySpawner>k__BackingField: {fileID: 201369397}
+    <Amount>k__BackingField: 1
+  _tower: {fileID: 1735101901}
 --- !u!114 &1594673592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7902,7 +7916,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2081480697575143310, guid: 9d4a4bd794a60184fba6f66301be2fdd, type: 3}
       propertyPath: m_text
-      value: 5
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2081480699277736293, guid: 9d4a4bd794a60184fba6f66301be2fdd, type: 3}
       propertyPath: m_Name
@@ -8708,15 +8722,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8095100462971133886, guid: 4067db03c6fa548cf9cc94046dac564f, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 8095100462971133886, guid: 4067db03c6fa548cf9cc94046dac564f, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8095100463950989890, guid: 4067db03c6fa548cf9cc94046dac564f, type: 3}
       propertyPath: m_Name
       value: SliderTowerHealth
+      objectReference: {fileID: 0}
+    - target: {fileID: 8095100463950989890, guid: 4067db03c6fa548cf9cc94046dac564f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8095100463950989891, guid: 4067db03c6fa548cf9cc94046dac564f, type: 3}
       propertyPath: m_Pivot.x

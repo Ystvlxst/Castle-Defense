@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,12 +6,20 @@ using UnityEngine;
 public class WaveSpawner : MonoBehaviour
 {
     [SerializeField] private EnemyContainer _enemyContainer;
-    [SerializeField] private List<EnemySpawner> _enemySpawners;
+    [SerializeField] private List<SpawnWave> _waves;
+    [SerializeField] private Tower _tower;
 
     private int _spawned;
+    private bool _decreaseWave;
+
+    private void OnEnable() => 
+        _tower.Damaged += OnBaseDamaged;
 
     private void Start() =>
         StartCoroutine(Spawn());
+
+    private void OnDisable() => 
+        _tower.Damaged -= OnBaseDamaged;
 
     private IEnumerator Spawn()
     {
@@ -19,22 +28,25 @@ public class WaveSpawner : MonoBehaviour
         while (true)
         {
             wave++;
+
+            if (_decreaseWave)
+            {
+                wave--;
+                _decreaseWave = false;
+            }
+
+            wave = Mathf.Clamp(wave, 0, _waves.Count);
             
+            for (int i = 0; i < wave; i++) 
+                StartCoroutine(Spawn(_waves[i].EnemySpawner));
+
             yield return new WaitUntil(() => _spawned == 0);
-            
-            
-            yield return SpawnAll();
-            
-            if(wave > 3)
-                yield return SpawnAll();
         }
     }
 
-    private IEnumerator SpawnAll()
+    private IEnumerator Spawn(EnemySpawner enemySpawner)
     {
-        foreach (var enemySpawner in _enemySpawners)
-        {
-            var spawnPoint = enemySpawner.GetRandomSpawnPoint();
+        var spawnPoint = enemySpawner.GetRandomSpawnPoint();
 
             for (int i = 0; i < enemySpawner.Amount; i++)
             {
@@ -45,7 +57,12 @@ public class WaveSpawner : MonoBehaviour
 
                 yield return new WaitForSeconds(0.1f);
             }
-        }
+        
+    }
+
+    private void OnBaseDamaged()
+    {
+        _decreaseWave = true;
     }
 
     private IEnumerator InitEnemyDelayed(Transform spawnPoint, Enemy enemy, EnemySpawner enemySpawner)
@@ -68,4 +85,11 @@ public class WaveSpawner : MonoBehaviour
         _spawned--;
         enemy.Dying -= OnEnemyDying;
     }
+}
+
+[Serializable]
+internal class SpawnWave
+{
+    [field: SerializeField] public EnemySpawner EnemySpawner { get; private set; }
+    [field: SerializeField] public int Amount { get; private set; }
 }

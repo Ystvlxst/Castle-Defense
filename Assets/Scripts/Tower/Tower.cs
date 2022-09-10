@@ -13,6 +13,7 @@ public class Tower : MonoBehaviour
     private int _lossFactor;
 
     public event UnityAction Die;
+    public event UnityAction Damaged;
 
     public int Health => _health;
     public int CurrentHealth => _currentHealth;
@@ -26,6 +27,7 @@ public class Tower : MonoBehaviour
 
     public void ApplyDamage(int damage)
     {
+        Damaged?.Invoke();
         _currentHealth -= damage;
 
         if (_currentHealth <= 0)
