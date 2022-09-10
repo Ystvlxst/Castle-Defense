@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Transition : MonoBehaviour
@@ -10,8 +8,11 @@ public abstract class Transition : MonoBehaviour
 
     public bool NeedTransit { get; protected set; }
 
-    private void OnEnable()
+    public void OnEnable()
     {
         NeedTransit = false;
+        Enable();
     }
+
+    protected virtual void Enable(){}
 }

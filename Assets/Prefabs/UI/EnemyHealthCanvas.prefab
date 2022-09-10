@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 8460097327259309900}
   - component: {fileID: 8575298735367835719}
   - component: {fileID: 7473829573859976916}
-  m_Layer: 0
+  - component: {fileID: 9015786527849214494}
+  m_Layer: 9
   m_Name: EnemyHealthCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,14 +27,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1742921026302162129}
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: -0.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9142476214726898495}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -0.013977051, y: 2.4299927}
@@ -82,7 +83,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &7473829573859976916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,6 +101,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!225 &9015786527849214494
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742921026302162129}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1001 &4619109610238459716
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -111,9 +124,17 @@ PrefabInstance:
       propertyPath: _enemy
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1706041448997984143, guid: d20882b7727cb40e1812f57925feeafb, type: 3}
+      propertyPath: _healthCanvasGroup
+      value: 
+      objectReference: {fileID: 9015786527849214494}
     - target: {fileID: 4538157389544295546, guid: d20882b7727cb40e1812f57925feeafb, type: 3}
       propertyPath: m_Name
       value: SliderEnemyHealth
+      objectReference: {fileID: 0}
+    - target: {fileID: 4538157389544295546, guid: d20882b7727cb40e1812f57925feeafb, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4538157389544295547, guid: d20882b7727cb40e1812f57925feeafb, type: 3}
       propertyPath: m_Pivot.x
@@ -206,6 +227,22 @@ PrefabInstance:
     - target: {fileID: 4538157389544295548, guid: d20882b7727cb40e1812f57925feeafb, type: 3}
       propertyPath: m_MaxValue
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4538157389788345726, guid: d20882b7727cb40e1812f57925feeafb, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4538157389847557310, guid: d20882b7727cb40e1812f57925feeafb, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4538157390372135953, guid: d20882b7727cb40e1812f57925feeafb, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4538157390708775301, guid: d20882b7727cb40e1812f57925feeafb, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4538157390708775302, guid: d20882b7727cb40e1812f57925feeafb, type: 3}
       propertyPath: m_AnchorMax.x

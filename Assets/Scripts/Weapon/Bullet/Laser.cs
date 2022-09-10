@@ -19,18 +19,13 @@ public class Laser : Bullet
 
         foreach (Collider collider in colliders)
         {
-            if (collider.TryGetComponent(out Enemy enemy))
+            if (collider.TryGetComponent(out IDamageable enemy)) 
+                enemy.TakeDamage(Damage);
+            
+            if (collider.TryGetComponent(out Rigidbody rigidbody))
             {
-                if (!enemy.IsDying)
-                {
-                    enemy.TakeDamage(Damage);
-                }
-                else
-                {
-                    foreach (Rigidbody rigidbody in enemy.RigidBodies)
-                        rigidbody.AddForce(-(transform.position - collider.transform.position).normalized * Force, ForceMode.Impulse);
-                    return;
-                }
+                Vector3 direction = (collider.transform.position - transform.position).normalized;
+                rigidbody.AddForce(direction * Force, ForceMode.Impulse);
             }
         }
     }

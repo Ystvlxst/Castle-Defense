@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class AttackState : State
@@ -18,6 +20,11 @@ public class AttackState : State
     private float _lastAttackTime;
 
     private Tower _player;
+
+    private void OnDisable()
+    {
+        _shotEffect.Stop();
+    }
 
     private void Start()
     {
