@@ -1680,6 +1680,10 @@ PrefabInstance:
       propertyPath: _currencyType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3453659195425878827, guid: 9d4a4bd794a60184fba6f66301be2fdd, type: 3}
+      propertyPath: _alwaysUnlocked
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d4a4bd794a60184fba6f66301be2fdd, type: 3}
 --- !u!4 &557840293 stripped
@@ -2653,6 +2657,10 @@ PrefabInstance:
       objectReference: {fileID: 1972513694}
     - target: {fileID: 3453659195425878827, guid: 9d4a4bd794a60184fba6f66301be2fdd, type: 3}
       propertyPath: _currencyType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3453659195425878827, guid: 9d4a4bd794a60184fba6f66301be2fdd, type: 3}
+      propertyPath: _alwaysUnlocked
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
