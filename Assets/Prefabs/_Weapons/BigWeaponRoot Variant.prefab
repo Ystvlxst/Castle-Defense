@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: _aheadOffset
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 35143950669050307, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: m_text
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 274675578288667966, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _amount
       value: 5
@@ -21,7 +25,7 @@ PrefabInstance:
       objectReference: {fileID: 5258755961510967630, guid: 9e41260f121a1bc4890ee51421f4c2e7, type: 3}
     - target: {fileID: 480776563243333823, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _stackCapacity
-      value: 40
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 480776563243333823, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _allTypesThatCanBeAdded.Array.data[0]
@@ -30,6 +34,10 @@ PrefabInstance:
     - target: {fileID: 1557466534994183452, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _guid
       value: 5a54193f-ce26-4591-a48d-9b127b327bbe
+      objectReference: {fileID: 0}
+    - target: {fileID: 1557466534994183452, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: _totalCost
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1679418612413351518, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _amount
@@ -43,6 +51,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2779284573692985785, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: m_text
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 2945714144404520685, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -54,6 +66,10 @@ PrefabInstance:
     - target: {fileID: 3707553395036616038, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _guid
       value: c1fb80c7-8feb-425a-9942-9358e84bcb6e
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707553395036616038, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: _totalCost
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4019317050164665422, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -81,7 +97,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4463202599686578740, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _shotsPerAmmo
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4463202599686578740, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _bulletTemplate

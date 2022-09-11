@@ -12,13 +12,13 @@ public class WaveSpawner : MonoBehaviour
     private int _spawned;
     private bool _decreaseWave;
 
-    private void OnEnable() => 
+    private void OnEnable() =>
         _tower.Damaged += OnBaseDamaged;
 
     private void Start() =>
         StartCoroutine(Spawn());
 
-    private void OnDisable() => 
+    private void OnDisable() =>
         _tower.Damaged -= OnBaseDamaged;
 
     private IEnumerator Spawn()
@@ -36,28 +36,29 @@ public class WaveSpawner : MonoBehaviour
             }
 
             wave = Mathf.Clamp(wave, 0, _waves.Count);
-            
-            for (int i = 0; i < wave; i++) 
-                StartCoroutine(Spawn(_waves[i].EnemySpawner));
+
+            for (int i = 0; i < wave; i++)
+                StartCoroutine(Spawn(_waves[i]));
 
             yield return new WaitUntil(() => _spawned == 0);
         }
     }
 
-    private IEnumerator Spawn(EnemySpawner enemySpawner)
+    private IEnumerator Spawn(SpawnWave enemySpawner)
     {
-        var spawnPoint = enemySpawner.GetRandomSpawnPoint();
+        EnemySpawner spawner = enemySpawner.EnemySpawner;
 
-            for (int i = 0; i < enemySpawner.Amount; i++)
-            {
-                Enemy enemy = enemySpawner.SpawnEnemy(spawnPoint);
-                _spawned++;
-                enemy.Dying += OnEnemyDying;
-                StartCoroutine(InitEnemyDelayed(spawnPoint, enemy, enemySpawner));
+        for (int i = 0; i < enemySpawner.Amount; i++)
+        {
+            Transform spawnPoint = spawner.GetRandomSpawnPoint();
 
-                yield return new WaitForSeconds(0.1f);
-            }
-        
+            Enemy enemy = spawner.SpawnEnemy(spawnPoint);
+            _spawned++;
+            enemy.Dying += OnEnemyDying;
+            StartCoroutine(InitEnemyDelayed(spawnPoint, enemy, spawner));
+
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 
     private void OnBaseDamaged()

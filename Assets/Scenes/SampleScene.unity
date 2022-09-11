@@ -887,7 +887,6 @@ MonoBehaviour:
   _enemyTargets:
   - {fileID: 293179884}
   - {fileID: 1895751587}
-  _amount: 1
 --- !u!1 &202913122
 GameObject:
   m_ObjectHideFlags: 0
@@ -1842,7 +1841,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3453659195425878827, guid: 9d4a4bd794a60184fba6f66301be2fdd, type: 3}
       propertyPath: _totalCost
-      value: 1
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3453659195425878827, guid: 9d4a4bd794a60184fba6f66301be2fdd, type: 3}
       propertyPath: _unlockable
@@ -4006,7 +4005,6 @@ MonoBehaviour:
   - {fileID: 893207919}
   - {fileID: 594669425}
   - {fileID: 40972527}
-  _amount: 60
 --- !u!1001 &1140763519
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6021,7 +6019,6 @@ MonoBehaviour:
   - {fileID: 971043113}
   - {fileID: 1428365507}
   - {fileID: 1458557591}
-  _amount: 30
 --- !u!4 &1518659569
 Transform:
   m_ObjectHideFlags: 0
@@ -6407,6 +6404,26 @@ MonoBehaviour:
     <Amount>k__BackingField: 10
   - <EnemySpawner>k__BackingField: {fileID: 201369397}
     <Amount>k__BackingField: 1
+  - <EnemySpawner>k__BackingField: {fileID: 1105483765}
+    <Amount>k__BackingField: 10
+  - <EnemySpawner>k__BackingField: {fileID: 1518659568}
+    <Amount>k__BackingField: 10
+  - <EnemySpawner>k__BackingField: {fileID: 201369397}
+    <Amount>k__BackingField: 1
+  - <EnemySpawner>k__BackingField: {fileID: 201369397}
+    <Amount>k__BackingField: 1
+  - <EnemySpawner>k__BackingField: {fileID: 1105483765}
+    <Amount>k__BackingField: 10
+  - <EnemySpawner>k__BackingField: {fileID: 1518659568}
+    <Amount>k__BackingField: 10
+  - <EnemySpawner>k__BackingField: {fileID: 1105483765}
+    <Amount>k__BackingField: 10
+  - <EnemySpawner>k__BackingField: {fileID: 1518659568}
+    <Amount>k__BackingField: 10
+  - <EnemySpawner>k__BackingField: {fileID: 1105483765}
+    <Amount>k__BackingField: 10
+  - <EnemySpawner>k__BackingField: {fileID: 1518659568}
+    <Amount>k__BackingField: 10
   _tower: {fileID: 1735101901}
 --- !u!114 &1594673592
 MonoBehaviour:
@@ -8846,7 +8863,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 687b8bfefde3a424896de3f856ad7d5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _amount: 99
+  _amount: 50
   _template: {fileID: 4640972309376714515, guid: 05fb1c1c9b2128a448405f37d1ee6bec, type: 3}
   _loadTime: 1
 --- !u!1001 &7725888358796988697

@@ -9,9 +9,6 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private Enemy _enemyTemplate;
     [SerializeField] private List<Transform> _spawnPoints;
     [SerializeField] private EnemyTarget[] _enemyTargets;
-    [SerializeField] private int _amount;
-
-    public int Amount => _amount;
 
     public Transform GetRandomSpawnPoint() => 
         _spawnPoints[Random.Range(0, _spawnPoints.Count)];

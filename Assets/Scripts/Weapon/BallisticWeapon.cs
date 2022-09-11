@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using BabyStack.Model;
 using UnityEngine;
@@ -10,6 +11,7 @@ public class BallisticWeapon : Weapon, IModificationListener<float>
     [SerializeField] private float _torqueForce;
 
     private readonly float _g = Physics.gravity.y;
+    private Vector3 _selectTarget;
 
     private void Start() => 
         StartCoroutine(Shoot());
@@ -39,7 +41,8 @@ public class BallisticWeapon : Weapon, IModificationListener<float>
         
         Spawn.localEulerAngles = new Vector3(-_angle, 0f, 0f);
 
-        Vector3 fromTo = TargetSelector.SelectTarget() - WeaponTransform.position;
+        _selectTarget = TargetSelector.SelectTarget();
+        Vector3 fromTo = _selectTarget - WeaponTransform.position;
         Vector3 fromToXZ = new Vector3(fromTo.x, 0f, fromTo.z);
 
         WeaponTransform.rotation = Quaternion.LookRotation(fromToXZ, Vector3.up);
@@ -55,5 +58,10 @@ public class BallisticWeapon : Weapon, IModificationListener<float>
         Bullet bullet = Instantiate(_bulletTemplate, Spawn.position, Quaternion.identity);
         bullet.Rigidbody.velocity = Spawn.forward * v;
         bullet.Rigidbody.AddTorque(Spawn.forward * _torqueForce);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere(_selectTarget, 1f);
     }
 }

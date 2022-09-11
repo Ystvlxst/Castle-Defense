@@ -23,10 +23,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1597047833278074392, guid: 4ea596172d4871f429a5626986d8b97d, type: 3}
-      propertyPath: _stackCapacity
-      value: 16
-      objectReference: {fileID: 0}
     - target: {fileID: 3897818945815873657, guid: 4ea596172d4871f429a5626986d8b97d, type: 3}
       propertyPath: m_Enabled
       value: 0

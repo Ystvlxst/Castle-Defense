@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using UnityEngine;
 
@@ -20,8 +21,9 @@ class FirstTargetAheadShootingSelector : TargetSelector
         if (first.TryGetComponent(out AttackState attackState) && attackState.enabled == false)
             target += first.transform.forward * _aheadOffset;
 
-        target.z = Mathf.Clamp(target.z, first.Target.transform.position.z, target.z);
-            
+        if (target.z < first.Target.transform.position.z)
+            target.z = first.Target.transform.position.z;
+
         return target;
     }
 
