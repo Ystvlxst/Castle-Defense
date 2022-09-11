@@ -8863,7 +8863,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 687b8bfefde3a424896de3f856ad7d5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _amount: 50
+  _amount: 5
   _template: {fileID: 4640972309376714515, guid: 05fb1c1c9b2128a448405f37d1ee6bec, type: 3}
   _loadTime: 1
 --- !u!1001 &7725888358796988697

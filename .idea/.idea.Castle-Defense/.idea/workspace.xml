@@ -4,15 +4,13 @@
     <list default="true" id="2d3b516d-3b73-4cfc-ac92-be663e9d2345" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Castle-Defense/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Castle-Defense/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Graphics/Materials/Laser.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Materials/Laser.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Ammo 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Ammo 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Ammo 2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Ammo 2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Ammo.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Ammo.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/_Enemies/Robots/Boss Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/_Enemies/Robots/Boss Variant.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/_Enemies/Robots/SimpleEnemyRobot Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/_Enemies/Robots/SimpleEnemyRobot Variant.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/_Weapons/VariantsWithoutUpgrade/BigWeaponRoot Variant NoUpgrade.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/_Weapons/VariantsWithoutUpgrade/BigWeaponRoot Variant NoUpgrade.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/_Weapons/VariantsWithoutUpgrade/FastWeaponRoot Variant NoUpgrade.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/_Weapons/VariantsWithoutUpgrade/FastWeaponRoot Variant NoUpgrade.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/_Enemies/Robots/UpgradedRobot Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/_Enemies/Robots/UpgradedRobot Variant.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemySpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemySpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/WaveSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/WaveSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shop/AssistantShop/ResourcesAssistant.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shop/AssistantShop/ResourcesAssistant.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon/TargetSelectors/FirstTargetAheadShootingSelector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/TargetSelectors/FirstTargetAheadShootingSelector.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +104,7 @@
       <workItem from="1662702124694" duration="8353000" />
       <workItem from="1662743570197" duration="4546000" />
       <workItem from="1662790046652" duration="2528000" />
-      <workItem from="1662886791342" duration="1642000" />
+      <workItem from="1662886791342" duration="2530000" />
     </task>
     <servers />
   </component>
