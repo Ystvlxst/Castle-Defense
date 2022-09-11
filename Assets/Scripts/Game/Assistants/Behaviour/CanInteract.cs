@@ -1,4 +1,5 @@
 using BehaviorDesigner.Runtime.Tasks;
+using UnityEngine;
 
 namespace Game.Assistants.Behaviour
 {
@@ -13,7 +14,6 @@ namespace Game.Assistants.Behaviour
                 return TaskStatus.Failure;
             
             bool canInteract = CurrentInteractable.Value.CharacterInteractable.CanInteract(SelfStackPresenter.Value);
-            
             return BehaviourHelper.ToTaskStatus(canInteract);
         }
     }

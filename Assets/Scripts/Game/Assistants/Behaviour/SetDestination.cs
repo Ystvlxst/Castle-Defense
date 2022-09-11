@@ -5,16 +5,20 @@ using Action = BehaviorDesigner.Runtime.Tasks.Action;
 
 namespace Game.Assistants.Behaviour
 {
-    public class GoTo : Action
+    public abstract class SetDestination : Action
     {
         public SharedBotCharacterInput BotCharacterInput;
         public SharedVector3 Destination;
 
         public override TaskStatus OnUpdate()
         {
-            BotCharacterInput.Value.Destination = Destination.Value;
+            Vector3 destination = GetPosition();
 
-            return TaskStatus.Running;
+            Destination.Value = destination;
+
+            return TaskStatus.Success;
         }
+
+        protected abstract Vector3 GetPosition();
     }
 }

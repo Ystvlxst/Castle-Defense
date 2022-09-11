@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Game.Assistants.Behaviour
 {
-    class GoToInteractable : GoTo
+    class SetDestimationInteractable : SetDestination
     {
         public SharedInteractable CurrentInteractable;
 

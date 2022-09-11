@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Game.Assistants.Behaviour
 {
-    public class GoToWaitPoint : GoTo
+    public class GoToWaitPoint : SetDestination
     {
         public SharedVector3 Waypoint;
 
