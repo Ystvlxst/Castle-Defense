@@ -4609,7 +4609,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3453659195425878827, guid: 9d4a4bd794a60184fba6f66301be2fdd, type: 3}
       propertyPath: _totalCost
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3453659195425878827, guid: 9d4a4bd794a60184fba6f66301be2fdd, type: 3}
       propertyPath: _unlockable
@@ -7319,7 +7319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2319f6c2fdf9e410882d0b484a195874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 999999
+  _health: 5000
   _hitEffect: {fileID: 1516701195}
   _towerParts: []
 --- !u!1 &1736879619
@@ -8755,11 +8755,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8095100462971133886, guid: 4067db03c6fa548cf9cc94046dac564f, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8095100462971133886, guid: 4067db03c6fa548cf9cc94046dac564f, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8095100463950989890, guid: 4067db03c6fa548cf9cc94046dac564f, type: 3}
       propertyPath: m_Name
@@ -8767,7 +8767,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8095100463950989890, guid: 4067db03c6fa548cf9cc94046dac564f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8095100463950989891, guid: 4067db03c6fa548cf9cc94046dac564f, type: 3}
       propertyPath: m_Pivot.x

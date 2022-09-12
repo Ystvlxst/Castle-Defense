@@ -76,5 +76,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 34
   _damageRadius: 0.5
-  _force: 4
+  _force: 1
   _hitEffectTemplate: {fileID: 289002043150383254, guid: df762cee0069947baa7c17416205b5d3, type: 3}

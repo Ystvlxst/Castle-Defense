@@ -21,10 +21,8 @@ public class Weapon : MonoBehaviour
     protected float UpgradeFactor => _upgradeFactor;
     protected float ShotsPerAmmo => _shotsPerAmmo;
 
-    public void OnModificationUpdate(float value)
-    {
+    public void OnModificationUpdate(float value) =>
         _upgradeFactor = value;
-    }
 
     protected bool CanShoot() =>
         _ammo > 0 && TargetSelector.HasTarget;
