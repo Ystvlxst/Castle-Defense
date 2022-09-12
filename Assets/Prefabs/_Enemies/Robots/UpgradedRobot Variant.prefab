@@ -92,6 +92,10 @@ PrefabInstance:
       value: UpgradedRobot Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7187789322495436873, guid: 9b8569960f79d3346b1194417d55692f, type: 3}
+      propertyPath: _damage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7187789322495436873, guid: 9b8569960f79d3346b1194417d55692f, type: 3}
       propertyPath: _animator
       value: 
       objectReference: {fileID: 1319709982390294480}

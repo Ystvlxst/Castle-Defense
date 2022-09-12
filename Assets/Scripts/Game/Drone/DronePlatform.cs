@@ -20,9 +20,10 @@ public class DronePlatform : Trigger<CharacterMovement>
     protected override void OnEnter(CharacterMovement triggered)
     {
         if(_character == null)
+        {
             _character = triggered;
-
-        IsPlayerMover = false;
+            IsPlayerMover = false;
+        }
     }
 
     protected override void OnStay(CharacterMovement triggered)
@@ -41,9 +42,10 @@ public class DronePlatform : Trigger<CharacterMovement>
     protected override void OnExit(CharacterMovement triggered)
     {
         if(triggered == _character)
+        {
             _character = null;
-
-        IsPlayerMover = true;
+            IsPlayerMover = true;
+        }
     }
 
     private IEnumerator SwitchControlBack()

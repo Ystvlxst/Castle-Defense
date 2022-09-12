@@ -19,16 +19,12 @@ internal class DroneMovement : MonoBehaviour
     private void Update()
     {
         Move();
-        CheckMover();
     }
 
     public void Move()
     {
         transform.Translate((_input.Destination - transform.position).normalized * Time.deltaTime * _speed);
-    }
 
-    public void CheckMover()
-    {
         if (_dronePlatform.IsPlayerMover == true)
             transform.position = Vector3.MoveTowards(transform.position, _targetBase.position, Time.deltaTime * _speed);
     }
