@@ -6,6 +6,8 @@ internal class DroneMovement : MonoBehaviour
 {
     [SerializeField] private float _speed;
     [SerializeField] private MonoBehaviour _inputBehaviour;
+    [SerializeField] private Transform _targetBase;
+    [SerializeField] private DronePlatform _dronePlatform;
     
     private IInputSource _input;
 
@@ -17,6 +19,7 @@ internal class DroneMovement : MonoBehaviour
     private void Update()
     {
         Move();
+        CheckMover();
     }
 
     public void Move()
@@ -24,9 +27,10 @@ internal class DroneMovement : MonoBehaviour
         transform.Translate((_input.Destination - transform.position).normalized * Time.deltaTime * _speed);
     }
 
-    public void Stop()
+    public void CheckMover()
     {
-        
+        if (_dronePlatform.IsPlayerMover == true)
+            transform.position = Vector3.MoveTowards(transform.position, _targetBase.position, Time.deltaTime * _speed);
     }
 
     public void SetInput(IInputSource input)

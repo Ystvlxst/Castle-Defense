@@ -15,10 +15,14 @@ public class DronePlatform : Trigger<CharacterMovement>
     private Coroutine _switchControl;
     private CharacterMovement _character;
 
+    public bool IsPlayerMover = false;
+
     protected override void OnEnter(CharacterMovement triggered)
     {
         if(_character == null)
             _character = triggered;
+
+        IsPlayerMover = false;
     }
 
     protected override void OnStay(CharacterMovement triggered)
@@ -38,6 +42,8 @@ public class DronePlatform : Trigger<CharacterMovement>
     {
         if(triggered == _character)
             _character = null;
+
+        IsPlayerMover = true;
     }
 
     private IEnumerator SwitchControlBack()
@@ -47,7 +53,7 @@ public class DronePlatform : Trigger<CharacterMovement>
         
         _playerMovement.SetInput(_playerJoystickInput);
         _droneMovement.SetInput(_droneNullInput);
-        
+
         _camera.ShowPlayer();
         _droneCollector.enabled = false;
         yield return new WaitUntil(() => _character == null);

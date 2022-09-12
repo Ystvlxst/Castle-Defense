@@ -277,6 +277,7 @@ MonoBehaviour:
   _playerMovement: {fileID: 724548270}
   _droneCollector: {fileID: 716968895}
   _camera: {fileID: 1840807951}
+  IsPlayerMover: 0
 --- !u!1 &40972525
 GameObject:
   m_ObjectHideFlags: 0
@@ -2605,6 +2606,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 17
   _inputBehaviour: {fileID: 716968898}
+  _targetBase: {fileID: 1410717340}
+  _dronePlatform: {fileID: 38154733}
 --- !u!4 &716968893
 Transform:
   m_ObjectHideFlags: 0
@@ -2613,7 +2616,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 716968891}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6086011, y: 7.54, z: 42}
+  m_LocalPosition: {x: -0.6086011, y: 8.21, z: -35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 202913123}
@@ -2630,8 +2633,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 3.017585
-  m_Height: 10.687216
+  m_Radius: 3
+  m_Height: 10.5
   m_Direction: 1
   m_Center: {x: 0, y: -4.843608, z: 0}
 --- !u!114 &716968895
@@ -4909,7 +4912,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 716968893}
   m_Lens:
-    FieldOfView: 78
+    FieldOfView: 85
     OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 1000
@@ -4931,7 +4934,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1325672817}
   m_LocalRotation: {x: 0.30070576, y: 0, z: 0, w: 0.953717}
-  m_LocalPosition: {x: -0.6086011, y: 21.77, z: 27.810001}
+  m_LocalPosition: {x: -0.6086011, y: 22.439999, z: -49.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1755012794}
