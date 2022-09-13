@@ -845,6 +845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed6d473140f18497b955da70dbc2a9de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _towerHealthFactor: 0
   _spawn: {fileID: 5580619549680555691}
   _weaponTransform: {fileID: 4563132428532715455}
   _targetSelector: {fileID: 411113465}
@@ -1004,7 +1005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _trigger: {fileID: 3214062109129046668}
-  _interactionTime: 0.3
+  _interactionTime: 0.1
   _view: {fileID: 0}
   _inputTypes: {fileID: 11400000, guid: d8d38e680c135c44b8c70bcc3b617e55, type: 2}
   _conveyorStack: {fileID: 480776563243333823}
