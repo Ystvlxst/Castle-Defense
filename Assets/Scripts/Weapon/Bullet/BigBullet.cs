@@ -18,14 +18,16 @@ public class BigBullet : Bullet
 
         foreach (Collider collider in colliders)
         {
-            if (collider.TryGetComponent(out IDamageable enemy)) 
-                enemy.TakeDamage(Damage);
+            if (!collider.TryGetComponent(out IDamageable enemy))
+                continue;
             
-            if (collider.TryGetComponent(out Rigidbody rigidbody))
+            enemy.TakeDamage(Damage);
+            
+            
+            if (collider.TryGetComponent(out IThrowable rigidbody))
             {
                 Vector3 direction = (collider.transform.position - transform.position).normalized;
-                rigidbody.gameObject.transform.DORotate(transform.rotation.eulerAngles, 1);
-                rigidbody.AddForce(direction * Force, ForceMode.Impulse);
+                rigidbody.Throw(direction * Force);
             }
         }
     }

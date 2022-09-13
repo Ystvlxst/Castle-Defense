@@ -11,6 +11,9 @@ public class RapidBullet : Bullet
         {
             damageable.TakeDamage(Damage);
             Collide();
+            
+            if (other.TryGetComponent(out IThrowable throwable)) 
+                throwable.Throw(transform.forward);
         }
     }
 }
