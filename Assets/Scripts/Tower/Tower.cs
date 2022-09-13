@@ -7,10 +7,8 @@ public class Tower : MonoBehaviour
 {
     [SerializeField] private int _health;
     [SerializeField] private ParticleSystem _hitEffect;
-    [SerializeField] private List<PartTower> _towerParts;
 
     private int _currentHealth;
-    private int _lossFactor;
 
     public event UnityAction Die;
     public event UnityAction Damaged;
@@ -21,8 +19,6 @@ public class Tower : MonoBehaviour
     private void Awake()
     {
         _currentHealth = _health;
-
-        _lossFactor = 1000;
     }
 
     public void ApplyDamage(int damage)
@@ -34,22 +30,18 @@ public class Tower : MonoBehaviour
             Dying();
 
         _hitEffect.Play();
-        CheckLoss();
+    }
+
+    public void AddHealth(int health)
+    {
+        _currentHealth += health;
+
+        if (_currentHealth >= _health)
+            _currentHealth = _health;
     }
 
     private void Dying()
     {
         Die?.Invoke();
-    }
-
-    private void CheckLoss()
-    {
-        if (_currentHealth <= _health - _lossFactor)
-        {
-            foreach(PartTower partTower in _towerParts)
-                partTower.DestroyPart();
-
-            _lossFactor += _lossFactor;
-        }
     }
 }

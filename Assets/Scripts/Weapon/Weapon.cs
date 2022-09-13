@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    [SerializeField] private float _towerHealthFactor;
     [SerializeField] private Transform _spawn;
     [SerializeField] private Transform _weaponTransform;
     [SerializeField] private TargetSelector _targetSelector;
@@ -10,6 +11,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private int _shotsPerAmmo;
     [SerializeField] private ParticleSystem _shotEffect;
 
+    private Tower _tower;
     private float _upgradeFactor = 1;
     private int _ammo;
 
@@ -21,11 +23,14 @@ public class Weapon : MonoBehaviour
     protected float UpgradeFactor => _upgradeFactor;
     protected float ShotsPerAmmo => _shotsPerAmmo;
 
+    private void Awake() =>
+        _tower = FindObjectOfType<Tower>();
+
     public void OnModificationUpdate(float value) =>
         _upgradeFactor = value;
 
     protected bool CanShoot() =>
-        _ammo > 0 && TargetSelector.HasTarget;
+        _ammo > 0 && TargetSelector.HasTarget && _tower.CurrentHealth >= _tower.Health - _towerHealthFactor;
 
     protected bool CanRefillAmmo() =>
         StackPresenter.Empty == false && _ammo == 0;

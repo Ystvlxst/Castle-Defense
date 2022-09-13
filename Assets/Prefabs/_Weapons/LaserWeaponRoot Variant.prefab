@@ -354,6 +354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4796c91c312541859a9fe3bb57e2e38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _towerHealthFactor: 500
   _spawn: {fileID: 6771024462937858060}
   _weaponTransform: {fileID: 3447037063514913048}
   _targetSelector: {fileID: 1100568254346317090}
