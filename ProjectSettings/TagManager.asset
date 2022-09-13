@@ -19,9 +19,9 @@ TagManager:
   - BigBullet
   - Item
   - Drone
-  - 
-  - 
-  - 
+  - Player
+  - Tower
+  - InteractableObject
   - 
   - 
   - 

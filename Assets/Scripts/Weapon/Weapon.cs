@@ -10,6 +10,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private StackPresenter _stackPresenter;
     [SerializeField] private int _shotsPerAmmo;
     [SerializeField] private ParticleSystem _shotEffect;
+    [SerializeField] private float _shootDistance;
 
     private Tower _tower;
     private float _upgradeFactor = 1;
@@ -22,6 +23,7 @@ public class Weapon : MonoBehaviour
     protected ParticleSystem ShotEffect => _shotEffect;
     protected float UpgradeFactor => _upgradeFactor;
     protected float ShotsPerAmmo => _shotsPerAmmo;
+    public float ShootDistance => _shootDistance;
 
     private void Awake() =>
         _tower = FindObjectOfType<Tower>();
@@ -30,7 +32,7 @@ public class Weapon : MonoBehaviour
         _upgradeFactor = value;
 
     protected bool CanShoot() =>
-        _ammo > 0 && TargetSelector.HasTarget && _tower.CurrentHealth >= _tower.Health - _towerHealthFactor;
+        _ammo > 0 && TargetSelector.HasTarget(_shootDistance) && _tower.CurrentHealth >= _tower.Health - _towerHealthFactor;
 
     protected bool CanRefillAmmo() =>
         StackPresenter.Empty == false && _ammo == 0;
