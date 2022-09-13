@@ -2,33 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d3b516d-3b73-4cfc-ac92-be663e9d2345" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Graphics/Materials/DistanceField.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Graphics/Materials/DistanceField/DistanceField.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Graphics/Materials/DistanceField/DistanceField.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Graphics/Materials/DistanceField/Falloff.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Graphics/Materials/DistanceField/Falloff.psd.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Graphics/Materials/DistanceField/Grid.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Graphics/Materials/DistanceField/Grid.psd.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Graphics/Materials/DistanceField/Light.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Graphics/Materials/DistanceField/Light.psd.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Graphics/Materials/DistanceField/Shadow.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Graphics/Materials/DistanceField/Shadow.psd.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Graphics/Shaders.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Graphics/Shaders/ProjectorBlobShadow.shader" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Graphics/Shaders/ProjectorBlobShadow.shader.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/WeaponShootDistanceView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/WeaponShootDistanceView.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Castle-Defense/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Castle-Defense/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Materials/Laser.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Materials/Laser.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Objects/2Conveyour Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Objects/2Conveyour Variant.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Objects/Conveyour.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Objects/Conveyour.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/_Weapons/VariantsWithoutUpgrade/LaserWeaponRoot Variant NoUpgrade.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/_Weapons/VariantsWithoutUpgrade/LaserWeaponRoot Variant NoUpgrade.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/_Weapons/WeaponRoot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/_Weapons/WeaponRoot.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon/TargetSelectors/TargetSelector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/TargetSelectors/TargetSelector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/Weapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Materials/DistanceField/DistanceField.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Materials/DistanceField/DistanceField.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/CharacterMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/CharacterMovement.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

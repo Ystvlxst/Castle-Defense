@@ -82,7 +82,7 @@ Material:
     - _OcclusionStrength: 1
     - _OrthographicSize: 10
     - _Parallax: 0.02
-    - _Radius: 29.999954
+    - _Radius: 0
     - _ShadowRadius: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
