@@ -7,9 +7,6 @@ public class DoctorAnimation : MonoBehaviour
     [SerializeField] private StackPresenter _playerStack;
     [SerializeField] private Animator _animator;
     [SerializeField] private NavMeshAgent _navMeshAgent;
-    [SerializeField] private float _speedChangeSpeed;
-
-    private float _currentSpeed;
 
     private void Awake()
     {
@@ -27,10 +24,8 @@ public class DoctorAnimation : MonoBehaviour
 
     private void Update()
     {
-        _currentSpeed = Mathf.Lerp(_currentSpeed, _navMeshAgent.velocity.magnitude, _speedChangeSpeed * Time.deltaTime);
-        
         if (_animator)
-            _animator.SetFloat(AnimationParams.Speed, _currentSpeed);
+            _animator.SetFloat(AnimationParams.Speed, _navMeshAgent.velocity.magnitude);
     }
 
     private void OnDisable()
