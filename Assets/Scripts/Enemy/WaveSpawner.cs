@@ -11,6 +11,7 @@ public class WaveSpawner : MonoBehaviour
 
     private int _spawned;
     private bool _decreaseWave;
+    private int _wave = 0;
 
     private void OnEnable() =>
         _tower.Damaged += OnBaseDamaged;
@@ -23,21 +24,21 @@ public class WaveSpawner : MonoBehaviour
 
     private IEnumerator Spawn()
     {
-        int wave = 0;
+        _wave = 0;
 
         while (true)
         {
-            wave++;
+            _wave++;
 
             if (_decreaseWave)
             {
-                wave--;
+                _wave--;
                 _decreaseWave = false;
             }
 
-            wave = Mathf.Clamp(wave, 0, _waves.Count);
+            _wave = Mathf.Clamp(_wave, 0, _waves.Count);
 
-            for (int i = 0; i < wave; i++)
+            for (int i = 0; i < _wave; i++)
                 StartCoroutine(Spawn(_waves[i]));
 
             yield return new WaitUntil(() => _spawned == 0);
