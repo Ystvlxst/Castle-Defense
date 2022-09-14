@@ -33,7 +33,9 @@ public abstract class StackView : MonoBehaviour, IStackableContainer
         if (_jumpPower.Enabled)
             stackable.transform.DOLocalJump(endPosition, _jumpPower.Value, 1, _animationDuration);
 
+        Sort(_transforms);
         _transforms.Add(stackable.transform);
+
         Added?.Invoke(stackable);
     }
 

@@ -3824,7 +3824,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2081480697575143310, guid: 9d4a4bd794a60184fba6f66301be2fdd, type: 3}
       propertyPath: m_text
-      value: 20
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2081480699277736293, guid: 9d4a4bd794a60184fba6f66301be2fdd, type: 3}
       propertyPath: m_Name
@@ -18439,6 +18439,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1264092743}
     m_Modifications:
+    - target: {fileID: 247914296232413976, guid: 9d4a4bd794a60184fba6f66301be2fdd, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 414951823136188986, guid: 9d4a4bd794a60184fba6f66301be2fdd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.32
@@ -18586,6 +18590,10 @@ PrefabInstance:
     - target: {fileID: 3453659195425878827, guid: 9d4a4bd794a60184fba6f66301be2fdd, type: 3}
       propertyPath: _currencyType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7647386537692191269, guid: 9d4a4bd794a60184fba6f66301be2fdd, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8910899146676372615, guid: 9d4a4bd794a60184fba6f66301be2fdd, type: 3}
       propertyPath: m_IsActive

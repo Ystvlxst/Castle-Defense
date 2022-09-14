@@ -8,7 +8,7 @@ public class StackHolder : StackView
     [SerializeField] private float _offsetY;
     [SerializeField] private float _sortMoveDuration = 2f;
 
-    private Vector3 _lastTopPosition;
+    private Vector3 _lastAddedScale;
     private int _lastChildCount;
 
     protected override Vector3 CalculateAddEndPosition(Transform container, Transform stackable)
@@ -16,30 +16,17 @@ public class StackHolder : StackView
         var stackableLocalScale = stackable.localScale;
         var endPosition = new Vector3(0, stackableLocalScale.y / 2, 0);
 
-        if (container.childCount > _lastChildCount)
-        {
-            endPosition += _lastTopPosition;
-        }
-        else if (container.childCount != 0)
-        {
-            Transform topStackable = FindTopStackable(container);
-            Vector3 topPosition = new Vector3(0, topStackable.localPosition.y + topStackable.localScale.y / 2, 0);
-
-            endPosition += topPosition;
-        }
-
-        endPosition.y += _offsetY;
-
         _lastChildCount = container.childCount;
-        _lastTopPosition = endPosition + new Vector3(0, stackableLocalScale.y / 2, 0);
+        _lastAddedScale = new Vector3(0, stackable.localScale.y / 2f, 0);
+        
 
-        return endPosition;
+        return Vector3.zero;
     }
 
     protected override void Sort(List<Transform> unsortedTransforms)
     {
         var sortedList = unsortedTransforms.OrderBy(transform => transform.localPosition.y);
-        var position = Vector3.zero;
+        var position = Vector3.zero + _lastAddedScale;
 
         foreach (var item in sortedList)
         {

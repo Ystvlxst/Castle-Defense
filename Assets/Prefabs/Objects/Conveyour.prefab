@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 140da3603717c8d4da294ce8810af370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stackView: {fileID: 91218847}
+  _stackView: {fileID: 7979649363671254386}
   _stackUIView: {fileID: 2130796208678875123}
   _stackCapacity: 15
   _allTypesThatCanBeAdded:
@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 140da3603717c8d4da294ce8810af370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stackView: {fileID: 533313516827031600}
+  _stackView: {fileID: 3029669075332060415}
   _stackUIView: {fileID: 1058551176511256131}
   _stackCapacity: 15
   _allTypesThatCanBeAdded:
@@ -502,7 +502,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1780790674525180182}
-  - component: {fileID: 533313516827031600}
+  - component: {fileID: 3029669075332060415}
   m_Layer: 15
   m_Name: ConveyourStackView
   m_TagString: Untagged
@@ -524,7 +524,7 @@ Transform:
   m_Father: {fileID: 1780790673085907593}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &533313516827031600
+--- !u!114 &3029669075332060415
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -533,7 +533,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1780790674525180184}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcd3ccb1e8925c24196c290b11e78c84, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d545dabefd04eb448bc6fa61e1d8a4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _stackContainer: {fileID: 1780790674525180182}
@@ -542,10 +542,10 @@ MonoBehaviour:
     _enabled: 1
     _value: 1.1
   _jumpPower:
-    _enabled: 1
+    _enabled: 0
     _value: 3
-  _space: 0.01
-  _sortAnimationDuration: 0
+  _offsetY: 0.01
+  _sortMoveDuration: 0.2
 --- !u!1 &2042312632000752448
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,7 +586,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1967779229658911141}
-  - component: {fileID: 91218847}
+  - component: {fileID: 7979649363671254386}
   m_Layer: 15
   m_Name: EndStackView
   m_TagString: Untagged
@@ -608,7 +608,7 @@ Transform:
   m_Father: {fileID: 1780790672700220928}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &91218847
+--- !u!114 &7979649363671254386
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -617,7 +617,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2397604998481173136}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcd3ccb1e8925c24196c290b11e78c84, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d545dabefd04eb448bc6fa61e1d8a4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _stackContainer: {fileID: 1967779229658911141}
@@ -626,10 +626,10 @@ MonoBehaviour:
     _enabled: 1
     _value: 1.1
   _jumpPower:
-    _enabled: 1
+    _enabled: 0
     _value: 3
-  _space: 0.01
-  _sortAnimationDuration: 1
+  _offsetY: 0.01
+  _sortMoveDuration: 0.2
 --- !u!1 &2690900378052699934
 GameObject:
   m_ObjectHideFlags: 0

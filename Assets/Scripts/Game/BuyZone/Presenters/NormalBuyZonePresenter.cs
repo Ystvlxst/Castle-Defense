@@ -7,9 +7,11 @@ public class NormalBuyZonePresenter : BuyZonePresenter
 {
     [Space(5)] [SerializeField] private bool _alwaysUnlocked = false;
     [SerializeField] private StackableType _currencyType;
-
+    [SerializeField] private StackPresenter _stackPresenter;
+    
     private int _reduceValue = 1;
     private bool _paying;
+    private BuyZone _buyZone;
 
     public override event UnityAction Unlocking;
 
@@ -27,6 +29,8 @@ public class NormalBuyZonePresenter : BuyZonePresenter
         if(_paying)
             return;
         
+        _buyZone = buyZone;
+
         if (AvailableCurrency(moneyHolder, stackPresenter) == 0)
             return;
 
@@ -55,15 +59,19 @@ public class NormalBuyZonePresenter : BuyZonePresenter
             {
                 Stackable removed = stackPresenter.RemoveFromStack(_currencyType);
                 _paying = true;
-                
-                removed.transform.DOMove(transform.position, 0.15f).OnComplete(() =>
-                {
-                    _paying = false;
-                    Destroy(removed.gameObject);
-                    ReduceCost(buyZone);
-                });
+                _stackPresenter.AddToStack(removed);
+                _stackPresenter.Added += OnAddedToStack;
             }
         }
+    }
+
+    private void OnAddedToStack(Stackable stackable)
+    {
+        _stackPresenter.Added -= OnAddedToStack;
+        _paying = false;
+        _stackPresenter.RemoveFromStack(stackable);
+        Destroy(stackable.gameObject);
+        ReduceCost(_buyZone);
     }
 
     private void ReduceCost(BuyZone buyZone)
