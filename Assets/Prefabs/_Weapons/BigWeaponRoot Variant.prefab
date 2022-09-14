@@ -109,7 +109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4463202599686578740, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _shootDistance
-      value: 20
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 4463202599686578740, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _bulletTemplate
@@ -263,21 +263,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71704f5959a3414380b89812e497e705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1858199760497485915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6130255906147124345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09c69d6b07a443c2a8c6e578a835d3f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _type: 0
-  _upgradeable: {fileID: 110986093610389761}
-  _view: {fileID: 2478190440685157937}
 --- !u!114 &2412264789040107827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,3 +278,18 @@ MonoBehaviour:
   _type: 0
   _upgradeable: {fileID: 110986093610389761}
   _view: {fileID: 7219430540023277057}
+--- !u!114 &1858199760497485915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6130255906147124345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09c69d6b07a443c2a8c6e578a835d3f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _type: 0
+  _upgradeable: {fileID: 110986093610389761}
+  _view: {fileID: 2478190440685157937}

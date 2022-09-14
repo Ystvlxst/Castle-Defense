@@ -817,6 +817,10 @@ PrefabInstance:
       propertyPath: _navMeshAgent
       value: 
       objectReference: {fileID: 8013116022133551709}
+    - target: {fileID: 981569642411068526, guid: 784c872c500f81242b9ce4c706431204, type: 3}
+      propertyPath: _speedChangeSpeed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1195305698517615546, guid: 784c872c500f81242b9ce4c706431204, type: 3}
       propertyPath: m_Layer
       value: 13
