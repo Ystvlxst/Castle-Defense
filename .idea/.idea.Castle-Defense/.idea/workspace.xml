@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d3b516d-3b73-4cfc-ac92-be663e9d2345" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Castle-Defense/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Castle-Defense/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Graphics/Animations/Enemy/Enemy.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Animations/Enemy/Enemy.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Graphics/Materials/Laser.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Materials/Laser.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Assistants/Resources Assistant Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Assistants/Resources Assistant Variant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/_Enemies/Robots/Boss 2-Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/_Enemies/Robots/Boss 2-Variant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/_Weapons/BigWeaponRoot Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/_Weapons/BigWeaponRoot Variant.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Animations/DoctorAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Animations/DoctorAnimation.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -102,7 +102,7 @@
       <workItem from="1662790046652" duration="2528000" />
       <workItem from="1662886791342" duration="9175000" />
       <workItem from="1663078704334" duration="10246000" />
-      <workItem from="1663137724544" duration="8946000" />
+      <workItem from="1663137724544" duration="6548000" />
     </task>
     <servers />
   </component>
