@@ -178,6 +178,10 @@ PrefabInstance:
     - target: {fileID: 703423989145785202, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _upgradeable
       value: 
+      objectReference: {fileID: 8018020523037242283}
+    - target: {fileID: 727537081795036262, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1557466534994183452, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _guid
@@ -234,7 +238,7 @@ PrefabInstance:
     - target: {fileID: 4931499040357176379, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _upgradeable
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8018020523037242283}
     - target: {fileID: 5408711824464836288, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _size.y
       value: 20
@@ -294,6 +298,10 @@ PrefabInstance:
     - target: {fileID: 7080637460571569055, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: m_Name
       value: LaserWeaponRoot Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8884428315106993609, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 411113465, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
@@ -361,6 +369,7 @@ MonoBehaviour:
   _stackPresenter: {fileID: 1597047833278074392}
   _shotsPerAmmo: 1
   _shotEffect: {fileID: 5464875016633975434, guid: f860f32180bce41988f207882a4ed146, type: 3}
+  _shootDistance: 35
   _rotationSpeed: 5
   _damage: 5
   _lineRenderer: {fileID: 6712706405991023441}

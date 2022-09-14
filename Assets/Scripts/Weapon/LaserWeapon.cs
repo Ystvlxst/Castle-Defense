@@ -2,7 +2,7 @@ using System.Collections;
 using BabyStack.Model;
 using UnityEngine;
 
-public class LaserWeapon : Weapon, IModificationListener<float>
+public class LaserWeapon : Weapon
 {
     [SerializeField] private float _rotationSpeed;
     [SerializeField] private float _damage;

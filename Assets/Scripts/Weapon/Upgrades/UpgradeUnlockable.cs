@@ -36,7 +36,7 @@ public abstract class UpgradeUnlockable<T> : UnlockableObject
             _modification.Upgrade();
         
         _modification.Save();
-        (_upgradeable as IModificationListener<T>)?.OnModificationUpdate(_modification.CurrentModificationValue);
+        (_upgradeable as IModificationListener<T>).OnModificationUpdate(_modification.CurrentModificationValue);
         _view.Unlock();
         
         return gameObject;

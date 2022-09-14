@@ -22,6 +22,7 @@ public class WeaponShootDistanceView : MonoBehaviour
 
     private void Start()
     {
+        _projector.material = new Material(_projector.material);
         SetFieldActive(false);
     }
 

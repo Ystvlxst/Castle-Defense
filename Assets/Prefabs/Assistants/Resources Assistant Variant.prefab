@@ -47,6 +47,10 @@ PrefabInstance:
       propertyPath: _magnet
       value: 
       objectReference: {fileID: 3646681776895084118}
+    - target: {fileID: 2043433329, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
+      propertyPath: _moneyHolder
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2163363535663578311, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_Name
       value: Resources Assistant Variant
@@ -249,6 +253,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8709567511414753730, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
+    - {fileID: 1330972618, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
+    - {fileID: 6393979337540201469, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
 --- !u!1 &3215097813674634209 stripped
 GameObject:

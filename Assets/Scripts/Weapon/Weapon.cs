@@ -1,7 +1,8 @@
 using System.Linq;
+using BabyStack.Model;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour
+public class Weapon : MonoBehaviour, IModificationListener<float>
 {
     [SerializeField] private float _towerHealthFactor;
     [SerializeField] private Transform _spawn;
@@ -23,16 +24,16 @@ public class Weapon : MonoBehaviour
     protected ParticleSystem ShotEffect => _shotEffect;
     protected float UpgradeFactor => _upgradeFactor;
     protected float ShotsPerAmmo => _shotsPerAmmo;
-    public float ShootDistance => _shootDistance;
+    public float ShootDistance => _shootDistance + _upgradeFactor * _shootDistance;
 
     private void Awake() =>
         _tower = FindObjectOfType<Tower>();
 
-    public void OnModificationUpdate(float value) =>
+    public void OnModificationUpdate(float value) => 
         _upgradeFactor = value;
 
     protected bool CanShoot() =>
-        _ammo > 0 && TargetSelector.HasTarget(_shootDistance) && _tower.CurrentHealth >= _tower.Health - _towerHealthFactor;
+        _ammo > 0 && TargetSelector.HasTarget(ShootDistance) && _tower.CurrentHealth >= _tower.Health - _towerHealthFactor;
 
     protected bool CanRefillAmmo() =>
         StackPresenter.Empty == false && _ammo == 0;

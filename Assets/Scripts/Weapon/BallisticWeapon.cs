@@ -4,7 +4,7 @@ using BabyStack.Model;
 using UnityEngine;
 using DG.Tweening;
 
-public class BallisticWeapon : Weapon, IModificationListener<float>
+public class BallisticWeapon : Weapon
 {
     [SerializeField] private float _angle;
     [SerializeField] private Bullet _bulletTemplate;
