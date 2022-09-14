@@ -6,7 +6,7 @@ public class SettingsPresenter : MonoBehaviour
 {
     [SerializeField] private MenuView _settings;
     [SerializeField] private Button _settingsButton;
-    [SerializeField] private JoystickInput _joystickInput;
+    [SerializeField] private PlayerJoystickInput playerJoystickInput;
     [SerializeField] private Canvas _joystickCanvas;
     [Space(10)]
     [SerializeField] private List<GameObject> _disabledUIObjects;
@@ -26,7 +26,7 @@ public class SettingsPresenter : MonoBehaviour
     {
         _settings.gameObject.SetActive(true);
         _disabledUIObjects.ForEach(item => item.SetActive(false));
-        _joystickInput.enabled = false;
+        playerJoystickInput.enabled = false;
         _joystickCanvas.enabled = false;
     }
 
@@ -34,7 +34,7 @@ public class SettingsPresenter : MonoBehaviour
     {
         _settings.gameObject.SetActive(false);
         _disabledUIObjects.ForEach(item => item.SetActive(true));
-        _joystickInput.enabled = true;
+        playerJoystickInput.enabled = true;
         _joystickCanvas.enabled = true;
     }
 }

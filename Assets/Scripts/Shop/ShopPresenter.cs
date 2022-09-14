@@ -7,7 +7,7 @@ public class ShopPresenter : MonoBehaviour
     [SerializeField] private ShopZone _shopZone;
     [SerializeField] private MenuView _shopView;
     [SerializeField] private TimerView _timerView;
-    [SerializeField] private JoystickInput _joystickInput;
+    [SerializeField] private PlayerJoystickInput playerJoystickInput;
     [SerializeField] private Canvas _joystickCanvas;
     [SerializeField] private float _waitTime = 1f;
     [SerializeField] private GameObject _modifications;
@@ -68,14 +68,14 @@ public class ShopPresenter : MonoBehaviour
     private void OnTimerCompleted()
     {
         _shopView.gameObject.SetActive(true);
-        _joystickInput.enabled = false;
+        playerJoystickInput.enabled = false;
         _joystickCanvas.enabled = false;
     }
 
     private void OnCloseButtonClicked()
     {
         _shopView.gameObject.SetActive(false);
-        _joystickInput.enabled = true;
+        playerJoystickInput.enabled = true;
         _joystickCanvas.enabled = true;
     }
 }

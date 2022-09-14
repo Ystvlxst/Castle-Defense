@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MoveTutorial : MonoBehaviour
 {
-    [SerializeField] private JoystickInput _input;
+    [SerializeField] private PlayerJoystickInput _input;
 
     private void OnEnable()
     {

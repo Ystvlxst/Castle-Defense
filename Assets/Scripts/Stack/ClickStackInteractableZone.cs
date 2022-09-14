@@ -2,11 +2,11 @@ using UnityEngine;
 
 public abstract class ClickStackInteractableZone : StackInteractableZoneBase
 {
-    [SerializeField] private JoystickInput _joystickInput;
+    [SerializeField] private PlayerJoystickInput playerJoystickInput;
 
     private void Update()
     {
-        if (Input.GetMouseButtonUp(0) && !_joystickInput.StoppedMoving && !_joystickInput.Moving)
+        if (Input.GetMouseButtonUp(0) && !playerJoystickInput.StoppedMoving && !playerJoystickInput.Moving)
             TryInteract();
     }
 

@@ -7,7 +7,7 @@ public class TimerStackableProducer : TimerStackInteractableZone, IModificationL
 {
     [SerializeField] private SingleTypeStackableProvider _stackableProvider;
     [SerializeField] private int _maxCount = 10;
-    [SerializeField] private JoystickInput _joystickInput;
+    [SerializeField] private PlayerJoystickInput playerJoystickInput;
 
     private float _interactSpeedRate = 1f;
 

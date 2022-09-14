@@ -4,12 +4,21 @@
     <list default="true" id="2d3b516d-3b73-4cfc-ac92-be663e9d2345" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Castle-Defense/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Castle-Defense/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Graphics/Materials/Laser.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Materials/Laser.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/BuyZone/NormalBuyZone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/BuyZone/NormalBuyZone.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Objects/Conveyour.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Objects/Conveyour.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/BuyZone/Presenters/NormalBuyZonePresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/BuyZone/Presenters/NormalBuyZonePresenter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stack/View/StackHolder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stack/View/StackHolder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stack/View/StackView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stack/View/StackView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Drone/DronePlatform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Drone/DronePlatform.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Haptic/Settings/SettingsPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Haptic/Settings/SettingsPresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/InputSwither.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Input/InputSwither.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/JoystickInput.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/JoystickInput.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/Shop/PlayerStackCapacityModification.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Shop/PlayerStackCapacityModification.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Money/MoneyHolder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Money/MoneyHolder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerJoystickInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerJoystickInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shop/CanvasShopPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shop/CanvasShopPresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shop/ShopPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shop/ShopPresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shop/TimerStackableProducer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shop/TimerStackableProducer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stack/ClickStackInteractableZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stack/ClickStackInteractableZone.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tutroial/MoveTutorial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tutroial/MoveTutorial.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

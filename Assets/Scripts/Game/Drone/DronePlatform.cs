@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class DronePlatform : Trigger<CharacterMovement>
 {
-    [SerializeField] private PlayerJoystickInput _playerJoystickInput;
-    [SerializeField] private PlayerJoystickInput _droneJoystickInput;
+    [SerializeField] private PlayerJoystickInput playerJoystickInput;
+    [SerializeField] private PlayerJoystickInput dronePlayerJoystickInput;
     [SerializeField] private NullInput _playerNullInput;
     [SerializeField] private NullInput _droneNullInput;
     [SerializeField] private DroneMovement _droneMovement;
@@ -32,7 +32,7 @@ public class DronePlatform : Trigger<CharacterMovement>
             return;
 
         _playerMovement.SetInput(_playerNullInput);
-        _droneMovement.SetInput(_droneJoystickInput);
+        _droneMovement.SetInput(dronePlayerJoystickInput);
 
         _camera.ShowDrone();
         _droneCollector.enabled = true;
@@ -51,9 +51,9 @@ public class DronePlatform : Trigger<CharacterMovement>
     private IEnumerator SwitchControlBack()
     {
         yield return new WaitForSeconds(3f);
-        yield return new WaitUntil(() => _droneJoystickInput.Destination == _droneMovement.transform.position);
+        yield return new WaitUntil(() => dronePlayerJoystickInput.Destination == _droneMovement.transform.position);
         
-        _playerMovement.SetInput(_playerJoystickInput);
+        _playerMovement.SetInput(playerJoystickInput);
         _droneMovement.SetInput(_droneNullInput);
 
         _camera.ShowPlayer();

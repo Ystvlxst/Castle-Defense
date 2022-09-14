@@ -16,8 +16,8 @@ public class MoneyHolder : MonoBehaviour
     private void OnEnable()
     {
         _money = new MoneyBalance();
-        _money.Add(1000);
         _money.Load();
+        _money.Add(1000);
 
         _money.Changed += OnMoneyChanged;
     }
