@@ -7,6 +7,6 @@ namespace Game.Assistants.Behaviour
     {
         public Vector3 Destination { get; set; }
 
-        private void Update() => Destination = transform.position;
+        //private void LateUpdate() => Destination = transform.position;
     }
 }

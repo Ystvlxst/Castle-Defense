@@ -22,10 +22,9 @@ public class DoctorAnimation : MonoBehaviour
         _playerStack.BecameEmpty += OnBecameEmpty;
     }
 
-    private void Update()
+    private void LateUpdate()
     {
-        if (_animator)
-            _animator.SetFloat(AnimationParams.Speed, _navMeshAgent.velocity.magnitude);
+        SetSpeed(0);
     }
 
     private void OnDisable()
@@ -39,8 +38,8 @@ public class DoctorAnimation : MonoBehaviour
 
     public void SetSpeed(float normalizedSpeed)
     {
-        /*if (_animator)
-            _animator.SetFloat(AnimationParams.Speed, normalizedSpeed);*/
+        if (_animator)
+            _animator.SetFloat(AnimationParams.Speed, normalizedSpeed);
     }
 
     protected virtual void OnAwake() { }
