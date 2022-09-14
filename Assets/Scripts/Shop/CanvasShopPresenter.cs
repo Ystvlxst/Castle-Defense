@@ -5,7 +5,6 @@ public class CanvasShopPresenter : MonoBehaviour
 {
     [SerializeField] private MenuView _shopView;
     [SerializeField] private Button _openButton;
-    [SerializeField] private PlayerJoystickInput playerJoystickInput;
     [SerializeField] private Canvas _joystickCanvas;
     
     private void OnEnable()
@@ -34,7 +33,6 @@ public class CanvasShopPresenter : MonoBehaviour
     {
         _openButton.gameObject.SetActive(opened);
         _shopView.gameObject.SetActive(!opened);
-        playerJoystickInput.enabled = opened;
         _joystickCanvas.enabled = opened;
     }
 }

@@ -11,7 +11,7 @@ public class NormalBuyZonePresenter : BuyZonePresenter
     
     private int _reduceValue = 1;
     private bool _paying;
-    private BuyZone _buyZone;
+    private BuyZone _currentBuyZone;
 
     public override event UnityAction Unlocking;
 
@@ -26,7 +26,7 @@ public class NormalBuyZonePresenter : BuyZonePresenter
 
     protected override void BuyFrame(BuyZone buyZone, MoneyHolder moneyHolder, StackPresenter stackPresenter)
     {
-        _buyZone = buyZone;
+        _currentBuyZone = buyZone;
 
         if (AvailableCurrency(moneyHolder, stackPresenter) == 0)
             return;
@@ -37,6 +37,9 @@ public class NormalBuyZonePresenter : BuyZonePresenter
             _reduceValue = buyZone.CurrentCost;
 
         _reduceValue = Mathf.Clamp(_reduceValue, 1, AvailableCurrency(moneyHolder, stackPresenter));
+            
+        if (_currencyType != StackableType.Dollar)
+                _reduceValue = 1;
 
         SpendMoney(moneyHolder, stackPresenter, buyZone);
 
@@ -68,7 +71,7 @@ public class NormalBuyZonePresenter : BuyZonePresenter
         _paying = false;
         _stackPresenter.RemoveFromStack(stackable);
         Destroy(stackable.gameObject);
-        ReduceCost(_buyZone);
+        ReduceCost(_currentBuyZone);
     }
 
     private void ReduceCost(BuyZone buyZone)
