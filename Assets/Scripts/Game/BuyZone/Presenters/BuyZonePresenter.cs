@@ -13,6 +13,7 @@ public abstract class BuyZonePresenter : GUIDObject
 
     private BuyZone _buyZone;
     private Coroutine _tryBuy;
+    private float _betweenPayDelay = 0.11f;
 
     public event UnityAction<BuyZonePresenter> FirstTimeUnlocked;
     public event UnityAction<BuyZonePresenter> Unlocked;
@@ -124,8 +125,8 @@ public abstract class BuyZonePresenter : GUIDObject
             {
                 delayed = false;
             }
-
-            yield return null;
+            
+            yield return new WaitForSeconds(_betweenPayDelay);
         }
     }
 

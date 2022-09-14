@@ -49,7 +49,6 @@ public class MoneyCollector : MonoBehaviour
 
     public void OnDollarAttracted(int dollarValue, Transform dollarTransform)
     {
-        _moneyHolder.AddMoney(dollarValue);
         Collected?.Invoke(dollarValue);
         Destroy(dollarTransform.gameObject);
     }

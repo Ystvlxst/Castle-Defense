@@ -15,12 +15,12 @@ namespace BabyStack.Model
             {
                 return new List<ModificationData<int>>()
                 {
-                    new ModificationData<int>(300, 5),
-                    new ModificationData<int>(200, 8),
-                    new ModificationData<int>(400, 11),
-                    new ModificationData<int>(700, 14),
-                    new ModificationData<int>(1000, 17),
-                    new ModificationData<int>(1500, 20),
+                    new ModificationData<int>(5, 5),
+                    new ModificationData<int>(5, 8),
+                    new ModificationData<int>(8, 11),
+                    new ModificationData<int>(11, 14),
+                    new ModificationData<int>(14, 17),
+                    new ModificationData<int>(17, 20),
                 };
             }
         }

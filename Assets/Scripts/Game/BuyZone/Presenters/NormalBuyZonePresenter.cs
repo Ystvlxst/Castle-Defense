@@ -26,9 +26,6 @@ public class NormalBuyZonePresenter : BuyZonePresenter
 
     protected override void BuyFrame(BuyZone buyZone, MoneyHolder moneyHolder, StackPresenter stackPresenter)
     {
-        if(_paying)
-            return;
-        
         _buyZone = buyZone;
 
         if (AvailableCurrency(moneyHolder, stackPresenter) == 0)

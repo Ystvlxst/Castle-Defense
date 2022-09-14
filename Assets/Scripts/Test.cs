@@ -47,7 +47,6 @@ public class Test : MonoBehaviour
 
     private void OnAddButtonClicked()
     {
-        _moneyHolder.AddMoney(200);
     }
 
     private void ShowProgress()

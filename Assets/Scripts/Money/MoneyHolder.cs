@@ -2,48 +2,47 @@ using BabyStack.Model;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(StackPresenter))]
 public class MoneyHolder : MonoBehaviour
 {
-    [SerializeField] private IntProgress _totalMoneyProgress;
-
-    private MoneyBalance _money;
-
+    [SerializeField] private StackableType _currencyType = StackableType.Detail;
+    
+    private StackPresenter _stackPresenter;
     public event UnityAction<int> BalanceChanged;
 
-    public int Value => _money.Value;
-    public bool HasMoney => _money.Value > 0;
+    public int Value => _stackPresenter.CalculateCount(_currencyType);
+    public bool HasMoney => Value > 0;
+
+    private void Awake()
+    {
+        _stackPresenter = GetComponent<StackPresenter>();
+    }
 
     private void OnEnable()
     {
-        _money = new MoneyBalance();
-        _money.Load();
-        _money.Add(1000);
-
-        _money.Changed += OnMoneyChanged;
+        _stackPresenter.Added += OnAdded;
+        _stackPresenter.Removed += OnAdded;
     }
-
+    
     private void OnDisable()
     {
-        _money.Changed -= OnMoneyChanged;
-        _money.Save();
+        _stackPresenter.Added += OnAdded;
+        _stackPresenter.Removed += OnAdded;
     }
 
-    public void AddMoney(int value)
+    private void OnAdded(Stackable stackable)
     {
-        _money.Add(value);
-
-        _totalMoneyProgress.Add(value);
-        _totalMoneyProgress.Save();
+        if (stackable.Type == _currencyType) 
+            BalanceChanged?.Invoke(Value);
     }
 
     public void SpendMoney(int value)
     {
-        _money.Spend(value);
+        for (int i = 0; i < value; i++)
+        {
+            Stackable item = _stackPresenter.RemoveFromStack(_currencyType);
+            Destroy(item.gameObject);
+        }
     }
 
-    private void OnMoneyChanged()
-    {
-        BalanceChanged?.Invoke(_money.Value);
-        _money.Save();
-    }
 }

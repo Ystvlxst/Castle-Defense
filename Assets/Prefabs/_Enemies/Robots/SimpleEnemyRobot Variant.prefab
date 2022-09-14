@@ -45,7 +45,7 @@ PrefabInstance:
       objectReference: {fileID: 5483011978199956694}
     - target: {fileID: 7187789322495436878, guid: 9b8569960f79d3346b1194417d55692f, type: 3}
       propertyPath: _amountRange.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7187789322495436878, guid: 9b8569960f79d3346b1194417d55692f, type: 3}
       propertyPath: _amountRange.y
