@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using BabyStack.Model;
 
-public class WeaponCooldownModification : Modification<float>
+public class LaserWeaponModification : Modification<float>
 {
-    private const string GUID = "WeaponCooldownGUID";
+    private const string GUID = "LaserWeaponGUID";
 
-    public WeaponCooldownModification()
+    public LaserWeaponModification()
         : base(GUID)
     {
     }

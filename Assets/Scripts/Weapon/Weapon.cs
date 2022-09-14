@@ -24,7 +24,7 @@ public class Weapon : MonoBehaviour, IModificationListener<float>
     protected ParticleSystem ShotEffect => _shotEffect;
     protected float UpgradeFactor => _upgradeFactor;
     protected float ShotsPerAmmo => _shotsPerAmmo;
-    public float ShootDistance => _shootDistance + _upgradeFactor * _shootDistance;
+    public float ShootDistance => _shootDistance + (_upgradeFactor - 1) * _shootDistance * 2f;
 
     private void Awake() =>
         _tower = FindObjectOfType<Tower>();

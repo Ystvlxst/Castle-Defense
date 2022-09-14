@@ -294,6 +294,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FastWeaponRoot Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7993321507786185059, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: m_Size.x
+      value: 2.4569514
+      objectReference: {fileID: 0}
+    - target: {fileID: 7993321507786185059, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: m_Center.x
+      value: 0.09069455
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
 --- !u!4 &4096565766723345278 stripped
