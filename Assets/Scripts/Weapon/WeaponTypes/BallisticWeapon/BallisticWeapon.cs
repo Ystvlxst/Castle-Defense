@@ -1,18 +1,14 @@
-using System;
 using System.Collections;
 using System.Linq;
-using BabyStack.Model;
-using BehaviorDesigner.Runtime.Tasks.Unity.UnityVector3;
 using UnityEngine;
-using DG.Tweening;
 
 public class BallisticWeapon : Weapon
 {
-    [SerializeField] private float _rotationSpeed;
     [SerializeField] private float _angle;
     [SerializeField] private Bullet _bulletTemplate;
     [SerializeField] private float _cooldown;
     [SerializeField] private float _torqueForce;
+    [SerializeField] private float _force;
 
     private readonly float _g = Physics.gravity.y;
     private Vector3 _selectTarget;
@@ -40,10 +36,11 @@ public class BallisticWeapon : Weapon
             while (CanShoot())
             {
                 _selectTarget = TargetSelector.SelectTarget();
-                _targetDirection = _selectTarget - Vector3.up * 0.5f - WeaponTransform.position;
+                Gunpoint gunpoint = SelectGunpoint();
+                _targetDirection = _selectTarget - Vector3.up * 0.5f - gunpoint.transform.position;
 
                 yield return new WaitUntil(() => WeaponJoints.All(joint => joint.LooksAt(_targetDirection)));
-                Shot();
+                Shot(gunpoint);
 
                 yield return new WaitForSeconds(_cooldown / UpgradeFactor);
             }
@@ -52,9 +49,9 @@ public class BallisticWeapon : Weapon
         }
     }
 
-    private void Shot()
+    private void Shot(Gunpoint gunpoint)
     {
-        Vector3 fromTo = _selectTarget - WeaponTransform.position;
+        /*Vector3 fromTo = _selectTarget - WeaponTransform.position;
         Vector3 fromToXZ = new Vector3(fromTo.x, fromTo.y * 0.5f, fromTo.z);
 
         float x = fromToXZ.magnitude;
@@ -63,13 +60,10 @@ public class BallisticWeapon : Weapon
         float angleInRadians = _angle * Mathf.PI / 180;
 
         float v2 = (_g * x * x) / (2 * (y - Mathf.Tan(angleInRadians) * x) * Mathf.Pow(Mathf.Cos(angleInRadians), 2));
-        float v = Mathf.Sqrt(Mathf.Abs(v2));
-
-        Bullet bullet = Instantiate(_bulletTemplate, Spawn.position, Quaternion.identity);
-        bullet.Rigidbody.velocity = Spawn.forward * v;
-        bullet.Rigidbody.AddTorque(Spawn.forward * _torqueForce);
+        float v = Mathf.Sqrt(Mathf.Abs(v2));*/
+        
+        gunpoint.Shoot(_bulletTemplate, _force, _torqueForce);
         MinusAmmo();
-        ShotEffect.Play();
     }
 
     private void OnDrawGizmos()

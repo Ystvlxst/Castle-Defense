@@ -12,9 +12,13 @@ public class LaserWeapon : Weapon
     [SerializeField] private float _timePerAmmo = 5;
     
     private Enemy _target;
+    private Gunpoint _gunpoint;
 
-    private void Start() =>
+    private void Start()
+    {
+        _gunpoint = SelectGunpoint();
         StartCoroutine(Shoot());
+    }
 
     private void Update() =>
         Rotate();
@@ -60,21 +64,20 @@ public class LaserWeapon : Weapon
     {
         if(_target == null)
             return;
-
+        
         Vector3 targetDirection = _target.transform.position - Vector3.up * 0.5f - WeaponTransform.position;
-
-        float rotationSpeed = _rotationSpeed * UpgradeFactor * UpgradeFactor * Time.deltaTime;
-        Spawn.Rotate(Vector3.Cross(Spawn.forward, targetDirection), rotationSpeed);
+        
+        foreach (WeaponJoint joint in WeaponJoints) 
+            joint.Rotate(targetDirection);
     }
 
     private void Shot()
     {
         ResetBeam();
-        ShotEffect.Play();
 
         RaycastHit[] results = new RaycastHit[16];
 
-        int count = Physics.RaycastNonAlloc(Spawn.position, Spawn.forward, results,  1000f,_layerMask);
+        int count = Physics.RaycastNonAlloc(_gunpoint.transform.position, _gunpoint.transform.forward, results,  1000f,_layerMask);
 
         for (int i = 0; i < count; i++)
         {
@@ -89,7 +92,7 @@ public class LaserWeapon : Weapon
     }
 
     private void ResetBeam() => 
-        SetLaserRayEnd(Spawn.position);
+        SetLaserRayEnd(_gunpoint.transform.position);
 
     private void SetLaserRayEnd(Vector3 position)
     {
