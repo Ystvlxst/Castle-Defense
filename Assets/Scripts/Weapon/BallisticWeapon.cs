@@ -18,8 +18,8 @@ public class BallisticWeapon : Weapon
     private void Start() => 
         StartCoroutine(Shoot());
 
-    private void Update() =>
-            Rotate();
+    //private void Update() =>
+            //Rotate();
 
     private IEnumerator Shoot()
     {
@@ -52,7 +52,7 @@ public class BallisticWeapon : Weapon
 
         Vector3 fromToXZ = new Vector3(fromTo.x, fromTo.y * 0.5f, fromTo.z);
 
-        WeaponTransform.rotation = Quaternion.LookRotation(fromToXZ, Vector3.up);
+        //WeaponTransform.rotation = Quaternion.LookRotation(fromToXZ, Vector3.up);
 
         float x = fromToXZ.magnitude;
         float y = fromTo.y;
