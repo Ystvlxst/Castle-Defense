@@ -6,8 +6,7 @@ using UnityEngine.Events;
 
 public abstract class BuyZonePresenter : MonoBehaviour
 {
-    [Space(10)]
-    [SerializeField] private int _totalCost;
+    [Space(10)] [SerializeField] private int _totalCost;
     [SerializeField] private MoneyHolderTrigger _trigger;
     [SerializeField] private BuyZoneView _view;
     [SerializeField] private UnlockableObject _unlockable;
@@ -18,9 +17,8 @@ public abstract class BuyZonePresenter : MonoBehaviour
 
     public event UnityAction<BuyZonePresenter> FirstTimeUnlocked;
     public event UnityAction<BuyZonePresenter> Unlocked;
-
     public abstract event UnityAction Unlocking;
-
+    
     public int TotalCost => _totalCost;
     public bool IsUnlocked => _buyZone.CurrentCost == 0;
 
@@ -32,8 +30,14 @@ public abstract class BuyZonePresenter : MonoBehaviour
             _view.RenderCost(_totalCost);
     }
 #endif
+    
+    public void Init(BuyZone buyZone, UnlockableObject unlockable)
+    {
+        _unlockable = unlockable;
+        Init(buyZone);
+    }
 
-    public void Init(IBuyZone buyZone) => 
+    public void Init(IBuyZone buyZone) =>
         _buyZone = buyZone;
 
     private void OnEnable()
@@ -56,13 +60,13 @@ public abstract class BuyZonePresenter : MonoBehaviour
     {
         if (_buyZone == null)
             throw new InvalidOperationException("Not initialized");
-        
+
         _buyZone.Unlocked += OnBuyZoneUnlocked;
         _buyZone.CostUpdated += OnCostUpdated;
-        
-        if(IsUnlocked)
+
+        if (IsUnlocked)
             OnBuyZoneUnlockedOnLoad();
-        
+
         UpdateCost();
 
         OnBuyZoneLoaded(_buyZone);
@@ -74,7 +78,7 @@ public abstract class BuyZonePresenter : MonoBehaviour
         _buyZone.CostUpdated -= OnCostUpdated;
     }
 
-    public void PlayNewText() => 
+    public void PlayNewText() =>
         _view.PlayNewText();
 
     private void OnPlayerTriggerEnter(MoneyHolder moneyHolder)
@@ -86,7 +90,7 @@ public abstract class BuyZonePresenter : MonoBehaviour
             StopCoroutine(_tryBuy);
 
         _tryBuy = StartCoroutine(TryBuy(moneyHolder, stackPresenter, movement));
-        
+
         OnEnter();
     }
 
@@ -97,10 +101,10 @@ public abstract class BuyZonePresenter : MonoBehaviour
         OnExit();
     }
 
-    private void OnBuyZoneUnlockedOnLoad() => 
+    private void OnBuyZoneUnlockedOnLoad() =>
         OnBuyZoneUnlocked(true);
 
-    private void OnBuyZoneUnlocked() => 
+    private void OnBuyZoneUnlocked() =>
         OnBuyZoneUnlocked(false);
 
     private void OnBuyZoneUnlocked(bool onLoad)
@@ -115,7 +119,8 @@ public abstract class BuyZonePresenter : MonoBehaviour
             FirstTimeUnlocked?.Invoke(this);
     }
 
-    private IEnumerator TryBuy(MoneyHolder moneyHolder, StackPresenter stackPresenter, CharacterMovement characterMovement)
+    private IEnumerator TryBuy(MoneyHolder moneyHolder, StackPresenter stackPresenter,
+        CharacterMovement characterMovement)
     {
         yield return null;
 
@@ -135,21 +140,36 @@ public abstract class BuyZonePresenter : MonoBehaviour
             {
                 delayed = false;
             }
-            
+
             yield return new WaitForSeconds(_betweenPayDelay);
         }
     }
 
-    private void OnCostUpdated(int value) => 
+    private void OnCostUpdated(int value) =>
         UpdateCost();
 
-    private void UpdateCost() => 
+    private void UpdateCost() =>
         _view.RenderCost(_buyZone.CurrentCost);
 
-    protected virtual void OnBuyZoneLoaded(IBuyZone buyZone) { }
-    protected virtual void OnEnabled() { }
-    protected virtual void OnDisabled() { }
-    protected virtual void OnEnter() { }
-    protected virtual void OnExit() { }
+    protected virtual void OnBuyZoneLoaded(IBuyZone buyZone)
+    {
+    }
+
+    protected virtual void OnEnabled()
+    {
+    }
+
+    protected virtual void OnDisabled()
+    {
+    }
+
+    protected virtual void OnEnter()
+    {
+    }
+
+    protected virtual void OnExit()
+    {
+    }
+
     protected abstract void BuyFrame(IBuyZone buyZone, MoneyHolder moneyHolder, StackPresenter stackPresenter);
 }
