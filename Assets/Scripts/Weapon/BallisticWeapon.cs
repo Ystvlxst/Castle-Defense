@@ -18,8 +18,8 @@ public class BallisticWeapon : Weapon
     private void Start() => 
         StartCoroutine(Shoot());
 
-    //private void Update() =>
-            //Rotate();
+    private void Update() =>
+            Rotate();
 
     private IEnumerator Shoot()
     {
@@ -43,16 +43,10 @@ public class BallisticWeapon : Weapon
     {
         MinusAmmo();
         ShotEffect.Play();
-        
-        Spawn.localEulerAngles = new Vector3(-_angle, 0f, 0f);
 
         _selectTarget = TargetSelector.SelectTarget();
-
         Vector3 fromTo = _selectTarget - WeaponTransform.position;
-
         Vector3 fromToXZ = new Vector3(fromTo.x, fromTo.y * 0.5f, fromTo.z);
-
-        //WeaponTransform.rotation = Quaternion.LookRotation(fromToXZ, Vector3.up);
 
         float x = fromToXZ.magnitude;
         float y = fromTo.y;
@@ -72,7 +66,7 @@ public class BallisticWeapon : Weapon
         if (_selectTarget == null)
             return;
 
-        Vector3 targetDirection = (_selectTarget - WeaponTransform.position) - Vector3.up * 0.5f - WeaponTransform.position;
+        Vector3 targetDirection = _selectTarget - WeaponTransform.position;
 
         float rotationSpeed = _rotationSpeed * UpgradeFactor * UpgradeFactor * Time.deltaTime;
         Spawn.Rotate(Vector3.Cross(Spawn.forward, targetDirection), rotationSpeed);
