@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8062444026446438950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4915554349554937252}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4915554349554937252
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8062444026446438950}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.205, z: 1.564}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7490125190023306656}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4357855365015860021
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31,6 +61,18 @@ PrefabInstance:
       propertyPath: _allTypesThatCanBeAdded.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 4134f09592c8ff540885f639e4f9284a, type: 2}
+    - target: {fileID: 1004342596727413051, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1526255522862522775, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.344
+      objectReference: {fileID: 0}
+    - target: {fileID: 1526255522862522775, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.767
+      objectReference: {fileID: 0}
     - target: {fileID: 1557466534994183452, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _guid
       value: 5a54193f-ce26-4591-a48d-9b127b327bbe
@@ -87,6 +129,10 @@ PrefabInstance:
       propertyPath: _angle
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 4463202599686578740, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: _spawn
+      value: 
+      objectReference: {fileID: 4915554349554937252}
     - target: {fileID: 4463202599686578740, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _cooldown
       value: 2
@@ -203,6 +249,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigWeaponRoot Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7350768896636674403, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7993321507786185059, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: m_Size.x
       value: 3.1458826
@@ -229,6 +279,11 @@ MonoBehaviour:
 --- !u!198 &2978127378105387200 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 1526255522877717493, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+  m_PrefabInstance: {fileID: 4357855365015860021}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7490125190023306656 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6595648581787954837, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
   m_PrefabInstance: {fileID: 4357855365015860021}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &6130255906147124345 stripped

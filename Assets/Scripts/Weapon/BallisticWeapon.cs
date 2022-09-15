@@ -44,7 +44,7 @@ public class BallisticWeapon : Weapon
 
         _selectTarget = TargetSelector.SelectTarget();
         Vector3 fromTo = _selectTarget - WeaponTransform.position;
-        Vector3 fromToXZ = new Vector3(fromTo.x, 0f, fromTo.z);
+        Vector3 fromToXZ = new Vector3(fromTo.x, fromTo.y * 0.5f, fromTo.z);
 
         WeaponTransform.rotation = Quaternion.LookRotation(fromToXZ, Vector3.up);
 
