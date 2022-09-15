@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class UpgradeUnlockable<T> : UnlockableObject
 {
     [SerializeField] private MonoBehaviour _upgradeable;
+    [SerializeField] private UpgradeUnlockableView _view;
 
     public Modification<T> Modification { get; private set; }
 
@@ -53,5 +54,6 @@ public abstract class UpgradeUnlockable<T> : UnlockableObject
     private void UpdateUpgradable()
     {
         (_upgradeable as IModificationListener<T>).OnModificationUpdate(Modification.CurrentModificationValue);
+        _view.Unlock(Modification.CurrentModificationLevel);
     }
 }

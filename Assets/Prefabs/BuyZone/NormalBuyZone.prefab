@@ -457,7 +457,7 @@ MonoBehaviour:
   _view: {fileID: 2081480697731583671}
   _unlockable: {fileID: 4738959684396113692}
   _alwaysUnlocked: 0
-  _currencyType: 0
+  _currencyType: 1
   _stackPresenter: {fileID: 556567452613766479}
 --- !u!114 &1838472215714062475
 MonoBehaviour:
