@@ -16,9 +16,9 @@ public class FastWeaponModification : Modification<float>
         {
             return new List<ModificationData<float>>()
             {
-                new ModificationData<float>(100, 1f),
-                new ModificationData<float>(1400, 1.5f),
-                new ModificationData<float>(1400, 2f),
+                new ModificationData<float>(1, 1f),
+                new ModificationData<float>(20, 1.5f),
+                new ModificationData<float>(40, 2f),
             };
         }
     }

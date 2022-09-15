@@ -16,9 +16,9 @@ public class BigWeaponModification : Modification<float>
         {
             return new List<ModificationData<float>>()
             {
-                new ModificationData<float>(100, 1f),
-                new ModificationData<float>(1400, 1.5f),
-                new ModificationData<float>(1400, 2f),
+                new ModificationData<float>(1, 1f),
+                new ModificationData<float>(30, 1.5f),
+                new ModificationData<float>(50, 2f),
             };
         }
     }

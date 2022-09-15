@@ -17,6 +17,8 @@ namespace BabyStack.Model
             _currentModification = 0;
         }
 
+        public event Action Upgraded;
+        
         public int CurrentModificationLevel => _currentModification;
         public T CurrentModificationValue => Data[_currentModification].Value;
         public abstract List<ModificationData<T>> Data { get; }
@@ -38,6 +40,7 @@ namespace BabyStack.Model
                 throw new InvalidOperationException();
 
             _currentModification++;
+            Upgraded?.Invoke();
         }
 
         public void Save()

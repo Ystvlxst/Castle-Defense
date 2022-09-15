@@ -1,5 +1,4 @@
 using BabyStack.Model;
-using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,22 +10,19 @@ public class NormalBuyZonePresenter : BuyZonePresenter
     
     private int _reduceValue = 1;
     private bool _paying;
-    private BuyZone _currentBuyZone;
+    private IBuyZone _buyZone;
 
     public override event UnityAction Unlocking;
 
-    protected override void OnBuyZoneLoaded(BuyZone buyZone)
+    protected override void OnBuyZoneLoaded(IBuyZone buyZone)
     {
-        if (_alwaysUnlocked && buyZone.CurrentCost > 0)
-        {
+        if (_alwaysUnlocked && buyZone.CurrentCost > 0) 
             buyZone.ReduceCost(buyZone.CurrentCost);
-            buyZone.Save();
-        }
     }
 
-    protected override void BuyFrame(BuyZone buyZone, MoneyHolder moneyHolder, StackPresenter stackPresenter)
+    protected override void BuyFrame(IBuyZone buyZone, MoneyHolder moneyHolder, StackPresenter stackPresenter)
     {
-        _currentBuyZone = buyZone;
+        _buyZone = buyZone;
 
         if (AvailableCurrency(moneyHolder, stackPresenter) == 0)
             return;
@@ -46,7 +42,7 @@ public class NormalBuyZonePresenter : BuyZonePresenter
         Unlocking?.Invoke();
     }
 
-    private void SpendMoney(MoneyHolder moneyHolder, StackPresenter stackPresenter, BuyZone buyZone)
+    private void SpendMoney(MoneyHolder moneyHolder, StackPresenter stackPresenter, IBuyZone buyZone)
     {
         if (_currencyType == StackableType.Dollar)
         {
@@ -71,10 +67,10 @@ public class NormalBuyZonePresenter : BuyZonePresenter
         _paying = false;
         _stackPresenter.RemoveFromStack(stackable);
         Destroy(stackable.gameObject);
-        ReduceCost(_currentBuyZone);
+        ReduceCost(_buyZone);
     }
 
-    private void ReduceCost(BuyZone buyZone)
+    private void ReduceCost(IBuyZone buyZone)
     {
         buyZone.ReduceCost(_reduceValue);
     }

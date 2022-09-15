@@ -1,39 +1,20 @@
 using System;
-using System.Collections;
 using UnityEngine;
 
 namespace BabyStack.Model
 {
     [Serializable]
-    public class BuyZone : SavedObject<BuyZone>
+    public class BuyZone : IBuyZone
     {
-        [SerializeField] private DynamicCost _dynamicCost;
+        [SerializeField] protected DynamicCost _dynamicCost;
 
-        private static Hashtable _buyZones = new Hashtable();
-
-        private BuyZone(int totalCost, string guid)
-            : base(guid)
-        {
+        public BuyZone(int totalCost) => 
             _dynamicCost = new DynamicCost(totalCost);
-        }
 
-        public event Action<bool> Unlocked;
-        public event Action<int> CostUpdated;
-
+        public virtual event Action Unlocked;
+        public virtual event Action<int> CostUpdated;
         public int TotalCost => _dynamicCost.TotalCost;
         public int CurrentCost => _dynamicCost.CurrentCost;
-
-        public static BuyZone GetZone(int totalCost, string guid)
-        {
-            if (_buyZones.ContainsKey(guid))
-                return (BuyZone) _buyZones[guid];
-            
-            BuyZone buyZone = new BuyZone(totalCost, guid);
-            _buyZones.Add(guid, buyZone);
-            buyZone.Load();
-
-            return buyZone;
-        }
 
         public void ReduceCost(int value)
         {
@@ -41,18 +22,7 @@ namespace BabyStack.Model
             CostUpdated?.Invoke(_dynamicCost.CurrentCost);
 
             if (_dynamicCost.CurrentCost == 0)
-                Unlocked?.Invoke(false);
-        }
-
-        protected override void OnLoad(BuyZone loadedObject)
-        {
-            if(_dynamicCost.CurrentCost == loadedObject._dynamicCost.CurrentCost)
-                return;
-            
-            _dynamicCost = loadedObject._dynamicCost;
-
-            if (_dynamicCost.CurrentCost == 0)
-                Unlocked?.Invoke(true);
+                Unlocked?.Invoke();
         }
     }
 }
