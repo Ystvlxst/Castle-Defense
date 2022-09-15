@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class UnlockableMapZoneList : UnlockableObject
+public class UnlockableMapZoneList : UnlockableWithGUID
 {
     [SerializeField] private float _showDelay = 3f;
     [SerializeField] private UnlockableMapZone[] _mapZones;

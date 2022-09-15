@@ -411,6 +411,9 @@ GameObject:
   - component: {fileID: 2081480699277736313}
   - component: {fileID: 3453659195425878827}
   - component: {fileID: 1838472215714062475}
+  - component: {fileID: 7345985790973924857}
+  - component: {fileID: 2624560006831155513}
+  - component: {fileID: 4738959684396113692}
   m_Layer: 0
   m_Name: NormalBuyZone
   m_TagString: Untagged
@@ -449,11 +452,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a2e6b38ee0562a4bbaac6ee2607ae67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _guid: 
   _totalCost: 18
   _trigger: {fileID: 2081480699339213034}
   _view: {fileID: 2081480697731583671}
-  _unlockable: {fileID: 0}
+  _unlockable: {fileID: 4738959684396113692}
   _alwaysUnlocked: 0
   _currencyType: 0
   _stackPresenter: {fileID: 556567452613766479}
@@ -471,6 +473,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buyZonePresenter: {fileID: 3453659195425878827}
   _buyZoneAudio: {fileID: 3081919025356681093}
+--- !u!114 &7345985790973924857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081480699277736293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67ae8dde427d4d34a91937490462e962, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2624560006831155513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081480699277736293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f21da5e004c5b144a86929c1c2224ea3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _guid: 4a250e78-577a-414d-af2c-7d836f14b0b6
+--- !u!114 &4738959684396113692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081480699277736293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c96492f40f104e2eb68738e6d0e66966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _type: 0
+  _unlockableWithGuid: {fileID: 0}
 --- !u!1 &2081480699339212823
 GameObject:
   m_ObjectHideFlags: 0

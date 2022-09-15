@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(MapZoneCamera))]
-public class UnlockableMapZone : UnlockableObject
+public class UnlockableMapZone : UnlockableWithGUID
 {
     [SerializeField] private GameObject _mapRoot;
     [SerializeField] private float _unlockDuration = 1f;

@@ -6,7 +6,7 @@ public abstract class UnlockableObject : MonoBehaviour
 
     public UnlockableObjectType Type => _type;
 
-    public abstract GameObject Unlock(Transform parent, bool onLoad, string guid);
+    public abstract GameObject Unlock(Transform parent, bool onLoad);
 }
 
 public enum UnlockableObjectType

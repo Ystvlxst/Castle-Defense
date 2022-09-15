@@ -1,9 +1,10 @@
+using System;
 using BabyStack.Model;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-public abstract class BuyZonePresenter : GUIDObject
+public abstract class BuyZonePresenter : MonoBehaviour
 {
     [Space(10)]
     [SerializeField] private int _totalCost;
@@ -11,7 +12,7 @@ public abstract class BuyZonePresenter : GUIDObject
     [SerializeField] private BuyZoneView _view;
     [SerializeField] private UnlockableObject _unlockable;
 
-    private BuyZone _buyZone;
+    private IBuyZone _buyZone;
     private Coroutine _tryBuy;
     private float _betweenPayDelay = 0.11f;
 
@@ -32,17 +33,13 @@ public abstract class BuyZonePresenter : GUIDObject
     }
 #endif
 
-    private void Awake()
-    {
-        _buyZone = BuyZone.GetZone(_totalCost, GUID);
-    }
+    public void Init(IBuyZone buyZone) => 
+        _buyZone = buyZone;
 
     private void OnEnable()
     {
         _trigger.Enter += OnPlayerTriggerEnter;
         _trigger.Exit += OnPlayerTriggerExit;
-        _buyZone.Unlocked += OnBuyZoneUnlocked;
-        _buyZone.CostUpdated += OnCostUpdated;
 
         OnEnabled();
     }
@@ -51,26 +48,34 @@ public abstract class BuyZonePresenter : GUIDObject
     {
         _trigger.Enter -= OnPlayerTriggerEnter;
         _trigger.Exit -= OnPlayerTriggerExit;
-        _buyZone.Unlocked -= OnBuyZoneUnlocked;
-        _buyZone.CostUpdated -= OnCostUpdated;
 
         OnDisabled();
     }
 
     private void Start()
     {
+        if (_buyZone == null)
+            throw new InvalidOperationException("Not initialized");
+        
+        _buyZone.Unlocked += OnBuyZoneUnlocked;
+        _buyZone.CostUpdated += OnCostUpdated;
+        
         if(IsUnlocked)
-            OnBuyZoneUnlocked(true);
+            OnBuyZoneUnlockedOnLoad();
         
         UpdateCost();
 
         OnBuyZoneLoaded(_buyZone);
     }
 
-    public void PlayNewText()
+    private void OnDestroy()
     {
-        _view.PlayNewText();
+        _buyZone.Unlocked -= OnBuyZoneUnlocked;
+        _buyZone.CostUpdated -= OnCostUpdated;
     }
+
+    public void PlayNewText() => 
+        _view.PlayNewText();
 
     private void OnPlayerTriggerEnter(MoneyHolder moneyHolder)
     {
@@ -88,16 +93,21 @@ public abstract class BuyZonePresenter : GUIDObject
     private void OnPlayerTriggerExit(MoneyHolder moneyHolder)
     {
         StopCoroutine(_tryBuy);
-        _buyZone.Save();
 
         OnExit();
     }
+
+    private void OnBuyZoneUnlockedOnLoad() => 
+        OnBuyZoneUnlocked(true);
+
+    private void OnBuyZoneUnlocked() => 
+        OnBuyZoneUnlocked(false);
 
     private void OnBuyZoneUnlocked(bool onLoad)
     {
         _trigger.Disable();
         _view.Hide();
-        _unlockable.Unlock(transform, onLoad, GUID);
+        _unlockable.Unlock(transform, onLoad);
 
         Unlocked?.Invoke(this);
 
@@ -130,20 +140,16 @@ public abstract class BuyZonePresenter : GUIDObject
         }
     }
 
-    private void OnCostUpdated(int value)
-    {
+    private void OnCostUpdated(int value) => 
         UpdateCost();
-    }
 
-    private void UpdateCost()
-    {
+    private void UpdateCost() => 
         _view.RenderCost(_buyZone.CurrentCost);
-    }
 
-    protected virtual void OnBuyZoneLoaded(BuyZone buyZone) { }
+    protected virtual void OnBuyZoneLoaded(IBuyZone buyZone) { }
     protected virtual void OnEnabled() { }
     protected virtual void OnDisabled() { }
     protected virtual void OnEnter() { }
     protected virtual void OnExit() { }
-    protected abstract void BuyFrame(BuyZone buyZone, MoneyHolder moneyHolder, StackPresenter stackPresenter);
+    protected abstract void BuyFrame(IBuyZone buyZone, MoneyHolder moneyHolder, StackPresenter stackPresenter);
 }

@@ -28,7 +28,7 @@ public abstract class UpgradeUnlockable<T> : UnlockableObject
 
     protected abstract Modification<T> LoadModification();
 
-    public override GameObject Unlock(Transform parent, bool onLoad, string guid)
+    public override GameObject Unlock(Transform parent, bool onLoad)
     {
         _modification.Load();
 
