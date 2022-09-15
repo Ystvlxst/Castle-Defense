@@ -13,7 +13,7 @@ public class WeaponList : ReferenceObjectList<Weapon>
         reference.GetComponentInChildren<TargetSelector>().Init(_enemyContainer);
 
         _interactableObjectsContainer.Add(reference.GetComponentInChildren<ICharacterInteractable>(), 1);
-        _weaponsBreaker.Add(reference);
+        _weaponsBreaker.Add(reference.GetComponentInChildren<BreakdownStatus>());
         
         if (_weaponsProgress.Contains(guid))
             return;

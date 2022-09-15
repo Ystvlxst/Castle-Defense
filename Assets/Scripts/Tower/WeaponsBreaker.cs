@@ -8,7 +8,7 @@ public class WeaponsBreaker : MonoBehaviour
 {
     [SerializeField] private Tower _tower;
     
-    private readonly List<Weapon> _weapons = new List<Weapon>();
+    private readonly List<BreakdownStatus> _weapons = new List<BreakdownStatus>();
     private int _damage;
     private int _damageToBreakWeapon = 50;
     private int _maxBrokenWeaponCount = 2;
@@ -19,7 +19,7 @@ public class WeaponsBreaker : MonoBehaviour
     private void OnDisable() => 
         _tower.Damaged -= OnTowerDamaged;
 
-    public void Add(Weapon reference) => 
+    public void Add(BreakdownStatus reference) => 
         _weapons.Add(reference);
 
     private void OnTowerDamaged(int damage)
