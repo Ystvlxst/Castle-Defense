@@ -208,7 +208,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 411113465, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _aheadOffset
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 411113465, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: EnemyContainer
@@ -328,7 +328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4463202599686578740, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _cooldown
-      value: 0.6
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4463202599686578740, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: m_Enabled
