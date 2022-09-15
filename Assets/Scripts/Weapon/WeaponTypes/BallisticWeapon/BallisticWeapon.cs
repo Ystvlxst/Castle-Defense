@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Linq;
 using BabyStack.Model;
 using BehaviorDesigner.Runtime.Tasks.Unity.UnityVector3;
 using UnityEngine;
@@ -16,14 +17,18 @@ public class BallisticWeapon : Weapon
     private readonly float _g = Physics.gravity.y;
     private Vector3 _selectTarget;
     private Vector3 _targetDirection;
-    private float _maxDegreesDelta = 20f;
-    private float _maxMagnitudeDelta = 20f;
 
     private void Start() =>
         StartCoroutine(Shoot());
 
-    private void Update() =>
-        Rotate();
+    private void Update()
+    {
+        if(_targetDirection == Vector3.zero)
+            return;
+        
+        foreach (WeaponJoint joint in WeaponJoints) 
+            joint.Rotate(_targetDirection);
+    }
 
     private IEnumerator Shoot()
     {
@@ -35,8 +40,9 @@ public class BallisticWeapon : Weapon
             while (CanShoot())
             {
                 _selectTarget = TargetSelector.SelectTarget();
+                _targetDirection = _selectTarget - Vector3.up * 0.5f - WeaponTransform.position;
 
-                yield return new WaitUntil(() => _targetDirection.normalized == Spawn.forward);
+                yield return new WaitUntil(() => WeaponJoints.All(joint => joint.LooksAt(_targetDirection)));
                 Shot();
 
                 yield return new WaitForSeconds(_cooldown / UpgradeFactor);
@@ -64,19 +70,6 @@ public class BallisticWeapon : Weapon
         bullet.Rigidbody.AddTorque(Spawn.forward * _torqueForce);
         MinusAmmo();
         ShotEffect.Play();
-    }
-
-    private void Rotate()
-    {
-        if (_selectTarget == null)
-            return;
-
-        _targetDirection = _selectTarget - Vector3.up * 0.5f - WeaponTransform.position;
-
-        float rotationSpeed = _rotationSpeed * UpgradeFactor * UpgradeFactor * Time.deltaTime;
-        var rotation = Vector3.RotateTowards(Spawn.forward, _targetDirection, _maxDegreesDelta * Mathf.Deg2Rad * Time.deltaTime, _maxMagnitudeDelta);
-        
-        Spawn.rotation = Quaternion.LookRotation(rotation);
     }
 
     private void OnDrawGizmos()

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using BabyStack.Model;
 using UnityEngine;
@@ -12,6 +13,7 @@ public class Weapon : MonoBehaviour, IModificationListener<float>
     [SerializeField] private ParticleSystem _shotEffect;
     [SerializeField] private float _shootDistance;
     [SerializeField] private BreakdownStatus _breakdown;
+    [SerializeField] private List<WeaponJoint> _weaponJoints;
 
     private float _upgradeFactor = 1;
     private int _ammo;
@@ -23,6 +25,7 @@ public class Weapon : MonoBehaviour, IModificationListener<float>
     protected ParticleSystem ShotEffect => _shotEffect;
     protected float UpgradeFactor => _upgradeFactor;
     protected float ShotsPerAmmo => _shotsPerAmmo;
+    protected  List<WeaponJoint> WeaponJoints => _weaponJoints;
     public float ShootDistance => _shootDistance + (_upgradeFactor - 1) * _shootDistance * 2f;
 
     public void OnModificationUpdate(float value) => 
