@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="2d3b516d-3b73-4cfc-ac92-be663e9d2345" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Castle-Defense/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Castle-Defense/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/_Bullets/BulletStandart.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/_Bullets/BulletStandart.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon/BallisticWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/BallisticWeapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Materials/Laser.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Materials/Laser.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Models/ControlePanel.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Models/ControlePanel.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/CharacterMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/CharacterMovement.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

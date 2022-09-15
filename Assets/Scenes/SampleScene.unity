@@ -17655,7 +17655,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1569249205
 Transform:
   m_ObjectHideFlags: 0
@@ -22866,6 +22866,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drone (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b224662994a2446efb5d9b8b53cc4608, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b224662994a2446efb5d9b8b53cc4608, type: 3}
 --- !u!4 &2092110880 stripped
@@ -23536,7 +23540,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6461613534943952018, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: _amount
-      value: 5
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8013116022133551709, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_Speed

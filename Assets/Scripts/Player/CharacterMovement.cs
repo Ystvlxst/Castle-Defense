@@ -25,6 +25,8 @@ public class CharacterMovement : MonoBehaviour, IModificationListener<float>
     {
         if (_inputSource.Destination != transform.position) 
             Move();
+        else
+            Stop();
 
         IsMoving = transform.position != _lastPosition;
         _lastPosition = transform.position;
