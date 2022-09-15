@@ -6,6 +6,7 @@ using DG.Tweening;
 
 public class BallisticWeapon : Weapon
 {
+    [SerializeField] private float _rotationSpeed;
     [SerializeField] private float _angle;
     [SerializeField] private Bullet _bulletTemplate;
     [SerializeField] private float _cooldown;
@@ -17,13 +18,16 @@ public class BallisticWeapon : Weapon
     private void Start() => 
         StartCoroutine(Shoot());
 
+    private void Update() =>
+            Rotate();
+
     private IEnumerator Shoot()
     {
         while (true)
         {
             if(CanRefillAmmo())
                 RefillAmmo((int)(ShotsPerAmmo * UpgradeFactor));
-            
+
             while (CanShoot())
             {
                 Shot();
@@ -43,7 +47,9 @@ public class BallisticWeapon : Weapon
         Spawn.localEulerAngles = new Vector3(-_angle, 0f, 0f);
 
         _selectTarget = TargetSelector.SelectTarget();
+
         Vector3 fromTo = _selectTarget - WeaponTransform.position;
+
         Vector3 fromToXZ = new Vector3(fromTo.x, fromTo.y * 0.5f, fromTo.z);
 
         WeaponTransform.rotation = Quaternion.LookRotation(fromToXZ, Vector3.up);
@@ -59,6 +65,17 @@ public class BallisticWeapon : Weapon
         Bullet bullet = Instantiate(_bulletTemplate, Spawn.position, Quaternion.identity);
         bullet.Rigidbody.velocity = Spawn.forward * v;
         bullet.Rigidbody.AddTorque(Spawn.forward * _torqueForce);
+    }
+
+    private void Rotate()
+    {
+        if (_selectTarget == null)
+            return;
+
+        Vector3 targetDirection = (_selectTarget - WeaponTransform.position) - Vector3.up * 0.5f - WeaponTransform.position;
+
+        float rotationSpeed = _rotationSpeed * UpgradeFactor * UpgradeFactor * Time.deltaTime;
+        Spawn.Rotate(Vector3.Cross(Spawn.forward, targetDirection), rotationSpeed);
     }
 
     private void OnDrawGizmos()
