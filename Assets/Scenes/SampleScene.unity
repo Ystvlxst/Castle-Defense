@@ -2182,6 +2182,7 @@ MonoBehaviour:
   _weaponsProgress: {fileID: 11400000, guid: 372c7430f0ce2c94fbe524e35ce53fc1, type: 2}
   _enemyContainer: {fileID: 1594673592}
   _interactableObjectsContainer: {fileID: 1909060132}
+  _weaponsBreaker: {fileID: 1735101902}
 --- !u!4 &274251729
 Transform:
   m_ObjectHideFlags: 0
@@ -5811,6 +5812,7 @@ MonoBehaviour:
   _weaponsProgress: {fileID: 11400000, guid: 372c7430f0ce2c94fbe524e35ce53fc1, type: 2}
   _enemyContainer: {fileID: 1594673592}
   _interactableObjectsContainer: {fileID: 1909060132}
+  _weaponsBreaker: {fileID: 1735101902}
 --- !u!1 &625529482
 GameObject:
   m_ObjectHideFlags: 0
@@ -12330,6 +12332,7 @@ MonoBehaviour:
   _weaponsProgress: {fileID: 11400000, guid: 372c7430f0ce2c94fbe524e35ce53fc1, type: 2}
   _enemyContainer: {fileID: 1594673592}
   _interactableObjectsContainer: {fileID: 1909060132}
+  _weaponsBreaker: {fileID: 1735101902}
 --- !u!1001 &1223820239
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16608,6 +16611,7 @@ MonoBehaviour:
   _weaponsProgress: {fileID: 11400000, guid: 372c7430f0ce2c94fbe524e35ce53fc1, type: 2}
   _enemyContainer: {fileID: 1594673592}
   _interactableObjectsContainer: {fileID: 1909060132}
+  _weaponsBreaker: {fileID: 1735101902}
 --- !u!1001 &1516701193
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17111,6 +17115,7 @@ MonoBehaviour:
   _weaponsProgress: {fileID: 11400000, guid: 372c7430f0ce2c94fbe524e35ce53fc1, type: 2}
   _enemyContainer: {fileID: 1594673592}
   _interactableObjectsContainer: {fileID: 1909060132}
+  _weaponsBreaker: {fileID: 1735101902}
 --- !u!1001 &1552349010
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19237,6 +19242,7 @@ GameObject:
   - component: {fileID: 1735101898}
   - component: {fileID: 1735101897}
   - component: {fileID: 1735101901}
+  - component: {fileID: 1735101902}
   m_Layer: 14
   m_Name: Middle
   m_TagString: Untagged
@@ -19335,6 +19341,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 5000
   _hitEffect: {fileID: 1516701195}
+--- !u!114 &1735101902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735101896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0112fd3e9bad4395a8a4391ac9f764b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tower: {fileID: 1735101901}
 --- !u!1 &1736879619
 GameObject:
   m_ObjectHideFlags: 0
@@ -21944,6 +21963,7 @@ MonoBehaviour:
   _weaponsProgress: {fileID: 11400000, guid: 372c7430f0ce2c94fbe524e35ce53fc1, type: 2}
   _enemyContainer: {fileID: 1594673592}
   _interactableObjectsContainer: {fileID: 1909060132}
+  _weaponsBreaker: {fileID: 1735101902}
 --- !u!1 &1977512324
 GameObject:
   m_ObjectHideFlags: 0
@@ -23453,7 +23473,7 @@ MonoBehaviour:
   _totalCost: 20
   _trigger: {fileID: 2081480699339213034, guid: 9d4a4bd794a60184fba6f66301be2fdd, type: 3}
   _view: {fileID: 2081480699294054614}
-  _unlockable: {fileID: 4738959686018836861}
+  _unlockable: {fileID: 0}
   _alwaysUnlocked: 0
   _currencyType: 1
   _stackPresenter: {fileID: 556567453137181486}

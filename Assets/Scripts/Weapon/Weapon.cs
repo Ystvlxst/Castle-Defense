@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour, IModificationListener<float>
 {
-    [SerializeField] private float _towerHealthFactor;
     [SerializeField] private Transform _spawn;
     [SerializeField] private Transform _weaponTransform;
     [SerializeField] private TargetSelector _targetSelector;
@@ -13,7 +12,6 @@ public class Weapon : MonoBehaviour, IModificationListener<float>
     [SerializeField] private ParticleSystem _shotEffect;
     [SerializeField] private float _shootDistance;
 
-    private Tower _tower;
     private float _upgradeFactor = 1;
     private int _ammo;
 
@@ -25,15 +23,13 @@ public class Weapon : MonoBehaviour, IModificationListener<float>
     protected float UpgradeFactor => _upgradeFactor;
     protected float ShotsPerAmmo => _shotsPerAmmo;
     public float ShootDistance => _shootDistance + (_upgradeFactor - 1) * _shootDistance * 2f;
-
-    private void Awake() =>
-        _tower = FindObjectOfType<Tower>();
+    public bool Broken { get; private set; }
 
     public void OnModificationUpdate(float value) => 
         _upgradeFactor = value;
 
     protected bool CanShoot() =>
-        _ammo > 0 && TargetSelector.HasTarget(ShootDistance) && _tower.CurrentHealth >= _tower.Health - _towerHealthFactor;
+        _ammo > 0 && TargetSelector.HasTarget(ShootDistance) && !Broken;
 
     protected bool CanRefillAmmo() =>
         StackPresenter.Empty == false && _ammo == 0;
@@ -44,6 +40,22 @@ public class Weapon : MonoBehaviour, IModificationListener<float>
         StackPresenter.RemoveFromStack(stackable);
         Destroy(stackable.gameObject);
         _ammo += shotsPerAmmo;
+    }
+
+    public void Break()
+    {
+        if(Broken)
+            return;
+        
+        Broken = true;
+    }
+
+    public void Repair()
+    {
+        if(!Broken)
+            return;
+
+        Broken = false;
     }
 
     protected void MinusAmmo() =>

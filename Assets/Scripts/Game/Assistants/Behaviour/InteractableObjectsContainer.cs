@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-using Random = UnityEngine.Random;
 
 namespace Game.Assistants.Behaviour
 {
@@ -41,10 +40,8 @@ namespace Game.Assistants.Behaviour
             IEnumerable<InteractablePriority> enumerable =
                 _interactablePriorities.Where(interactablePriority => interactablePriority.Priority == priority);
             
-            return Shuffle(enumerable.Select(priority => priority.CharacterInteractable)).First();
+            return enumerable.Select(priority => priority.CharacterInteractable).Shuffle().First();
         }
-        private static IEnumerable<ICharacterInteractable> Shuffle(IEnumerable<ICharacterInteractable> collection) => 
-            collection.OrderBy(item => Random.value);
     }
 
     internal class InteractablePriority
