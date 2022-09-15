@@ -12,6 +12,8 @@ public class WaveSpawner : MonoBehaviour
     private int _spawned;
     private bool _decreaseWave;
     private int _wave = 0;
+    private int _damage;
+    private int _damageToDecreaseWave = 50;
 
     private void OnEnable() =>
         _tower.Damaged += OnBaseDamaged;
@@ -64,7 +66,13 @@ public class WaveSpawner : MonoBehaviour
 
     private void OnBaseDamaged(int i)
     {
-        _decreaseWave = true;
+        _damage += i;
+
+        if (_damage > _damageToDecreaseWave)
+        {
+            _damage = 0;
+            _decreaseWave = true;
+        }
     }
 
     private IEnumerator InitEnemyDelayed(Transform spawnPoint, Enemy enemy, EnemySpawner enemySpawner)

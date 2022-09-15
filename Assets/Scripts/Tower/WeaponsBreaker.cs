@@ -10,7 +10,7 @@ public class WeaponsBreaker : MonoBehaviour
     
     private readonly List<BreakdownStatus> _weapons = new List<BreakdownStatus>();
     private int _damage;
-    private int _damageToBreakWeapon = 500;
+    private int _damageToBreakWeapon = 300;
     private int _maxBrokenWeaponCount = 2;
 
     private void OnEnable() => 

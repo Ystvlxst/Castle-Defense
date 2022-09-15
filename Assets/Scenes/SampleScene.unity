@@ -2183,6 +2183,7 @@ MonoBehaviour:
   _enemyContainer: {fileID: 1594673592}
   _interactableObjectsContainer: {fileID: 1909060132}
   _weaponsBreaker: {fileID: 1735101902}
+  _player: {fileID: 1695964239}
 --- !u!4 &274251729
 Transform:
   m_ObjectHideFlags: 0
@@ -5813,6 +5814,7 @@ MonoBehaviour:
   _enemyContainer: {fileID: 1594673592}
   _interactableObjectsContainer: {fileID: 1909060132}
   _weaponsBreaker: {fileID: 1735101902}
+  _player: {fileID: 1695964239}
 --- !u!1 &625529482
 GameObject:
   m_ObjectHideFlags: 0
@@ -12333,6 +12335,7 @@ MonoBehaviour:
   _enemyContainer: {fileID: 1594673592}
   _interactableObjectsContainer: {fileID: 1909060132}
   _weaponsBreaker: {fileID: 1735101902}
+  _player: {fileID: 1695964239}
 --- !u!1001 &1223820239
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13248,7 +13251,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3453659195425878827, guid: 9d4a4bd794a60184fba6f66301be2fdd, type: 3}
       propertyPath: _totalCost
-      value: 1
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3453659195425878827, guid: 9d4a4bd794a60184fba6f66301be2fdd, type: 3}
       propertyPath: _currencyType
@@ -16612,6 +16615,7 @@ MonoBehaviour:
   _enemyContainer: {fileID: 1594673592}
   _interactableObjectsContainer: {fileID: 1909060132}
   _weaponsBreaker: {fileID: 1735101902}
+  _player: {fileID: 1695964239}
 --- !u!1001 &1516701193
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17116,6 +17120,7 @@ MonoBehaviour:
   _enemyContainer: {fileID: 1594673592}
   _interactableObjectsContainer: {fileID: 1909060132}
   _weaponsBreaker: {fileID: 1735101902}
+  _player: {fileID: 1695964239}
 --- !u!1001 &1552349010
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17512,7 +17517,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1569249205
 Transform:
   m_ObjectHideFlags: 0
@@ -18900,6 +18905,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1a6130845375642c6835ed5cf7b2121d, type: 3}
   m_PrefabInstance: {fileID: 1690280479}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1695964239 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6393979337540201469, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
+  m_PrefabInstance: {fileID: 7725888358796988697}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f123f89ac7f044e8eabe385fd12d440f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1704321756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21964,6 +21980,7 @@ MonoBehaviour:
   _enemyContainer: {fileID: 1594673592}
   _interactableObjectsContainer: {fileID: 1909060132}
   _weaponsBreaker: {fileID: 1735101902}
+  _player: {fileID: 1695964239}
 --- !u!1 &1977512324
 GameObject:
   m_ObjectHideFlags: 0
@@ -23093,7 +23110,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2081480697613684504
 Transform:
   m_ObjectHideFlags: 0
@@ -24091,7 +24108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6461613534943952018, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: _amount
-      value: 200
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8013116022133551709, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_Speed

@@ -1,3 +1,4 @@
+using System;
 using BabyStack.Model;
 using UnityEngine;
 
@@ -8,6 +9,9 @@ public class BreakdownStatus : UnlockableObject
     
     private BuyZonePresenter _buyZonePresenter;
 
+    public event Action Broke;
+    public event Action Repaired;
+    
     public bool Broken { get; private set; }
 
     public void Break()
@@ -18,6 +22,7 @@ public class BreakdownStatus : UnlockableObject
         Broken = true;
         _buyZonePresenter = Instantiate(_repairZoneTemplate, transform);
         _buyZonePresenter.Init(new BuyZone(_repairCost), this);
+        Broke?.Invoke();
     }
 
     private void Repair()
@@ -32,6 +37,7 @@ public class BreakdownStatus : UnlockableObject
     {
         Destroy(_buyZonePresenter.gameObject);
         Repair();
+        Repaired?.Invoke();
         return gameObject;
     }
 }

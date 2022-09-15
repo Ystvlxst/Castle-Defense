@@ -1,4 +1,5 @@
 using Game.Assistants.Behaviour;
+using Source.UI.EnemyPointersUI;
 using UnityEngine;
 
 public class WeaponList : ReferenceObjectList<Weapon>
@@ -7,6 +8,7 @@ public class WeaponList : ReferenceObjectList<Weapon>
     [SerializeField] private EnemyContainer _enemyContainer;
     [SerializeField] private InteractableObjectsContainer _interactableObjectsContainer;
     [SerializeField] private WeaponsBreaker _weaponsBreaker;
+    [SerializeField] private Player _player;
 
     protected override void AfterUnlocked(Weapon reference, bool onLoad, string guid)
     {
@@ -14,6 +16,7 @@ public class WeaponList : ReferenceObjectList<Weapon>
 
         _interactableObjectsContainer.Add(reference.GetComponentInChildren<ICharacterInteractable>(), 1);
         _weaponsBreaker.Add(reference.GetComponentInChildren<BreakdownStatus>());
+        reference.GetComponentInChildren<BrokenObjectPointer>().Init(_player);
         
         if (_weaponsProgress.Contains(guid))
             return;
