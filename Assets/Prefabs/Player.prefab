@@ -670,7 +670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e766d91102596f448bde24cba5e9125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _totalMoneyProgress: {fileID: 11400000, guid: 96b162980c61bf4498cd5c4ac005293a, type: 2}
+  _currencyType: 1
 --- !u!114 &1330972623
 MonoBehaviour:
   m_ObjectHideFlags: 0

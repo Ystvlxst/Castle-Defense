@@ -9,6 +9,7 @@ public class BigBullet : Bullet
         {
             Collide();
             Explode();
+            DecalEffect(GroundDecal);
         }
     }
 

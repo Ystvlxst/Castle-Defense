@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Tower : MonoBehaviour
 {
@@ -7,8 +8,7 @@ public class Tower : MonoBehaviour
     [SerializeField] private ParticleSystem _hitEffect;
 
     private int _currentHealth;
-
-    public event Action Die;
+    
     public event Action<int> Damaged;
 
     public int Health => _health;
@@ -25,7 +25,7 @@ public class Tower : MonoBehaviour
         _currentHealth -= damage;
 
         if (_currentHealth <= 0)
-            Dying();
+            _currentHealth = 0;
 
         _hitEffect.Play();
     }
@@ -36,10 +36,5 @@ public class Tower : MonoBehaviour
 
         if (_currentHealth >= _health)
             _currentHealth = _health;
-    }
-
-    private void Dying()
-    {
-        Die?.Invoke();
     }
 }
