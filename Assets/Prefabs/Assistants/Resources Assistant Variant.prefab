@@ -51,6 +51,10 @@ PrefabInstance:
       propertyPath: _moneyHolder
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 891353058462128373, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1cdf5f0801e7144108d5a6dd0334d47e, type: 2}
     - target: {fileID: 2163363535663578311, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_Name
       value: Resources Assistant Variant
@@ -375,5 +379,5 @@ MonoBehaviour:
         byteData: 
         byteDataArray: 
       Version: 1.7.2
-  gizmoViewMode: 2
-  showBehaviorDesignerGizmo: 1
+  gizmoViewMode: 0
+  showBehaviorDesignerGizmo: 0
