@@ -79,6 +79,7 @@ MonoBehaviour:
   _damageRadius: 6
   _force: 20
   _hitEffectTemplate: {fileID: 1834739528865192990, guid: 824ebb51453e53a428682e1346e098ac, type: 3}
+  _groundDecal: {fileID: 198129106043806410, guid: 628d050c815a3a3448ce1dcdf0578f21, type: 3}
 --- !u!1001 &24265224839795579
 PrefabInstance:
   m_ObjectHideFlags: 0

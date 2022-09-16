@@ -78,3 +78,5 @@ MonoBehaviour:
   _damageRadius: 0.5
   _force: 1
   _hitEffectTemplate: {fileID: 289002043150383254, guid: df762cee0069947baa7c17416205b5d3, type: 3}
+  _groundDecal: {fileID: 198211411379540024, guid: 5bc227c2a45a7e44ea8521ddb446b620, type: 3}
+  _enemyDecal: {fileID: 0}

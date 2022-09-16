@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,7 +8,6 @@ public class Tower : MonoBehaviour
 
     private int _currentHealth;
 
-    public event UnityAction Die;
     public event UnityAction Damaged;
 
     public int Health => _health;
@@ -27,7 +24,7 @@ public class Tower : MonoBehaviour
         _currentHealth -= damage;
 
         if (_currentHealth <= 0)
-            Dying();
+            _currentHealth = 0;
 
         _hitEffect.Play();
     }
@@ -38,10 +35,5 @@ public class Tower : MonoBehaviour
 
         if (_currentHealth >= _health)
             _currentHealth = _health;
-    }
-
-    private void Dying()
-    {
-        Die?.Invoke();
     }
 }
