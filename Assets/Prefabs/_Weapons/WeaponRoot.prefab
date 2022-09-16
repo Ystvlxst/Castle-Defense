@@ -295,7 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 868d38dcd6fb4b57bd0750e73e415a89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buyZoneTemplate: {fileID: 8109033435881179568, guid: 52c342daa3af0fa4d997c32c939a1fa6, type: 3}
+  _buyZoneTemplate: {fileID: 2797782155663661717, guid: c9169e1a32472db4d9274f1b7c773084, type: 3}
   _upgradeUnlockable: {fileID: 4437545188769610271}
 --- !u!114 &4437545188769610271
 MonoBehaviour:

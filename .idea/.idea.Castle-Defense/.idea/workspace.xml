@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d3b516d-3b73-4cfc-ac92-be663e9d2345" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Materials/Laser.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Materials/Laser.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Castle-Defense/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Castle-Defense/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/BuyZone/NormalBuyZoneSavable.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/BuyZone/NormalBuyZoneSavable.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/BuyZone/RepairBuyZone Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/BuyZone/RepairBuyZone Variant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Pointer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Pointer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/_Weapons/BigWeaponRoot Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/_Weapons/BigWeaponRoot Variant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/_Weapons/WeaponRoot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/_Weapons/WeaponRoot.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon/WeaponTypes/LaserWeapon/LaserBeamAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/WeaponTypes/LaserWeapon/LaserBeamAnimation.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,11 +124,13 @@
     <setting file="mock://C:/Work/Projects/git/Castle-Defense/Assets/Scripts/Tower/Tower.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Shop/Conveyor/ConveyorList.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://C:/Work/Projects/git/Castle-Defense/Assets/Scripts/Tutroial/DroneTutorial.cs.meta" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/VertexModifiers/Shadow.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/3ed82e893f584901a16bc2e097c74b571cc00/2e/db71a80f/SharedVariable`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Work/Projects/git/Castle-Defense/Assets/Prefabs/_Weapons/BigWeaponRoot Variant.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InteractableInitializer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://C:/Work/Projects/git/Castle-Defense/Assets/Prefabs/_Bullets/BulletStandart.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Work/Projects/git/Castle-Defense/Assets/Scripts/Weapon/TargetSelectors/ClosestToLastTargetSelector.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/VertexModifiers/Outline.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2EO6QRUvRx0KLrkrFkSYey6kQ8B" />
   <component name="ProjectViewState">
