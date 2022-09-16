@@ -1158,6 +1158,10 @@ PrefabInstance:
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 198106407056937278, guid: 72ae485445fce1144bab28ae2f6aadd4, type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 198139479421387580, guid: 72ae485445fce1144bab28ae2f6aadd4, type: 3}
       propertyPath: playOnAwake
       value: 0
