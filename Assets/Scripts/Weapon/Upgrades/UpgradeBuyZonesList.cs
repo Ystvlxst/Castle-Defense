@@ -1,39 +1,45 @@
-using System.Collections.Generic;
-using System.Linq;
+using BabyStack.Model;
 using UnityEngine;
 
 public class UpgradeBuyZonesList : MonoBehaviour
 {
-    private List<BuyZonePresenter> _buyZones;
+    [SerializeField] private BuyZonePresenter _buyZoneTemplate;
+    [SerializeField] private UpgradeUnlockable<float> _upgradeUnlockable;
+    
+    private BuyZonePresenter _buyZonePresenter;
 
     private void Start()
     {
-        _buyZones = GetComponentsInChildren<BuyZonePresenter>().ToList();
-
-        DisableLocked();
-        ActivateFirstLocked();
+        TryLoadNextBuyZone();
     }
 
-    private void DisableLocked()
+    private void TryLoadNextBuyZone()
     {
-        foreach (BuyZonePresenter buyZonePresenter in _buyZones)
-            buyZonePresenter.gameObject.SetActive(buyZonePresenter.IsUnlocked);
-    }
-
-    private void ActivateFirstLocked()
-    {
-        foreach (var buyZonePresenter in _buyZones.Where(buyZonePresenter => buyZonePresenter.IsUnlocked == false))
-        {
-            buyZonePresenter.gameObject.SetActive(true);
-            buyZonePresenter.Unlocked += OnUnlocked;
-
+        if (!HasNextModification(out ModificationData<float> modification)) 
             return;
-        }
+        
+        _buyZonePresenter = Instantiate(_buyZoneTemplate, transform);
+        _buyZonePresenter.Init(new BuyZone(modification.Price), _upgradeUnlockable);
+        _buyZonePresenter.Unlocked += OnBuyZoneUnlocked;
     }
 
-    private void OnUnlocked(BuyZonePresenter buyZonePresenter)
+    private void OnBuyZoneUnlocked(BuyZonePresenter buyZonePresenter)
     {
-        buyZonePresenter.Unlocked -= OnUnlocked;
-        ActivateFirstLocked();
+        _buyZonePresenter.Unlocked -= OnBuyZoneUnlocked;
+        Destroy(_buyZonePresenter.gameObject);
+        TryLoadNextBuyZone();
+    }
+
+    private bool HasNextModification(out ModificationData<float> modification)
+    {
+        modification = default;
+
+        Modification<float> unlockableModification = _upgradeUnlockable.Modification;
+
+        if (!unlockableModification.TryGetNextModification(out ModificationData<float> newModification))
+            return false;
+        
+        modification = newModification;
+        return true;
     }
 }

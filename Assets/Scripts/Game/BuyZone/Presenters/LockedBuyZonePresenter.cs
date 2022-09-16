@@ -37,7 +37,7 @@ public class LockedBuyZonePresenter : BuyZonePresenter
             UnsubscribeUpdateEvents();
     }
 
-    protected override void BuyFrame(BuyZone buyZone, MoneyHolder moneyHolder, StackPresenter stackPresenter)
+    protected override void BuyFrame(IBuyZone buyZone, MoneyHolder moneyHolder, StackPresenter stackPresenter)
     {
         if (CanUnlock() == false)
             return;

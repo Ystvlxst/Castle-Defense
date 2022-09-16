@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class LocationTransition : UnlockableObject
+public class LocationTransition : UnlockableWithGUID
 {
     [SerializeField] private LevelLoader.Level _targetLevel;
     [SerializeField] private MoneyHolderTrigger _trigger;

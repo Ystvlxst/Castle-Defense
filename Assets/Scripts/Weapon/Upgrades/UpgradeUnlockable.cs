@@ -6,10 +6,10 @@ public abstract class UpgradeUnlockable<T> : UnlockableObject
 {
     [SerializeField] private MonoBehaviour _upgradeable;
     [SerializeField] private UpgradeUnlockableView _view;
-    
-    private Modification<T> _modification;
 
-    
+    public Modification<T> Modification { get; private set; }
+
+
 #if UNITY_EDITOR
     private void OnValidate()
     {
@@ -23,22 +23,37 @@ public abstract class UpgradeUnlockable<T> : UnlockableObject
 
     private void Awake()
     {
-        _modification = LoadModification();
+        Modification = GetModification();
+        Modification.Load();
+        Modification.Upgraded += UpdateUpgradable;
     }
 
-    protected abstract Modification<T> LoadModification();
-
-    public override GameObject Unlock(Transform parent, bool onLoad, string guid)
+    private void OnDestroy()
     {
-        _modification.Load();
+        Modification.Upgraded -= UpdateUpgradable;
+    }
 
-        if(onLoad == false && _modification.TryGetNextModification(out ModificationData<T> _))
-            _modification.Upgrade();
+    private void Start()
+    {
+        Modification.Load();
+        UpdateUpgradable();
+    }
+
+    protected abstract Modification<T> GetModification();
+
+    public override GameObject Unlock(Transform parent, bool onLoad)
+    {
+        if(Modification.TryGetNextModification(out ModificationData<T> _))
+            Modification.Upgrade();
         
-        _modification.Save();
-        (_upgradeable as IModificationListener<T>).OnModificationUpdate(_modification.CurrentModificationValue);
-        _view.Unlock();
+        Modification.Save();
         
         return gameObject;
+    }
+
+    private void UpdateUpgradable()
+    {
+        (_upgradeable as IModificationListener<T>).OnModificationUpdate(Modification.CurrentModificationValue);
+        _view.Unlock(Modification.CurrentModificationLevel);
     }
 }

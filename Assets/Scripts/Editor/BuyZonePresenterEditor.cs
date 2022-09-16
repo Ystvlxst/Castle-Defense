@@ -23,12 +23,6 @@ public class BuyZonePresenterEditor : Editor
         {
             if (otherGUID == _buyZonePresenter)
                 continue;
-
-            if (otherGUID.GUID == _buyZonePresenter.GUID)
-            {
-                EditorGUILayout.HelpBox("This GUID already exist in other object. Try regenerate guid", MessageType.Warning);
-                break;
-            }
         }
     }
 

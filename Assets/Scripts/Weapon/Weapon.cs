@@ -1,39 +1,43 @@
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using BabyStack.Model;
+using Game.Assistants.Behaviour;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour, IModificationListener<float>
 {
-    [SerializeField] private float _towerHealthFactor;
-    [SerializeField] private Transform _spawn;
+    [SerializeField] private List<Gunpoint> _gunpoints;
     [SerializeField] private Transform _weaponTransform;
     [SerializeField] private TargetSelector _targetSelector;
     [SerializeField] private StackPresenter _stackPresenter;
     [SerializeField] private int _shotsPerAmmo;
-    [SerializeField] private ParticleSystem _shotEffect;
     [SerializeField] private float _shootDistance;
+    [SerializeField] private BreakdownStatus _breakdown;
+    [SerializeField] private List<WeaponJoint> _weaponJoints;
 
-    private Tower _tower;
     private float _upgradeFactor = 1;
     private int _ammo;
+    private Gunpoint _currentGunpoint;
 
-    protected Transform Spawn => _spawn;
     protected Transform WeaponTransform => _weaponTransform;
     protected TargetSelector TargetSelector => _targetSelector;
     private StackPresenter StackPresenter => _stackPresenter;
-    protected ParticleSystem ShotEffect => _shotEffect;
     protected float UpgradeFactor => _upgradeFactor;
     protected float ShotsPerAmmo => _shotsPerAmmo;
+    protected List<WeaponJoint> WeaponJoints => _weaponJoints;
     public float ShootDistance => _shootDistance + (_upgradeFactor - 1) * _shootDistance * 2f;
 
-    private void Awake() =>
-        _tower = FindObjectOfType<Tower>();
+    private void Awake()
+    {
+        _currentGunpoint = _gunpoints.First(point => point.gameObject.activeSelf);
+    }
 
-    public void OnModificationUpdate(float value) => 
+    public void OnModificationUpdate(float value) =>
         _upgradeFactor = value;
 
     protected bool CanShoot() =>
-        _ammo > 0 && TargetSelector.HasTarget(ShootDistance) && _tower.CurrentHealth >= _tower.Health - _towerHealthFactor;
+        _ammo > 0 && TargetSelector.HasTarget(ShootDistance) && !_breakdown.Broken;
 
     protected bool CanRefillAmmo() =>
         StackPresenter.Empty == false && _ammo == 0;
@@ -44,6 +48,21 @@ public class Weapon : MonoBehaviour, IModificationListener<float>
         StackPresenter.RemoveFromStack(stackable);
         Destroy(stackable.gameObject);
         _ammo += shotsPerAmmo;
+    }
+
+    protected Gunpoint SelectGunpoint()
+    {
+        Gunpoint nextGunpoint =
+            _gunpoints.FirstOrDefault(point => point.isActiveAndEnabled && point != _currentGunpoint);
+        
+        if (nextGunpoint != null)
+        {
+            _gunpoints.Remove(_currentGunpoint);
+            _gunpoints.Add(_currentGunpoint);
+            _currentGunpoint = nextGunpoint;
+        }
+
+        return _currentGunpoint;
     }
 
     protected void MinusAmmo() =>

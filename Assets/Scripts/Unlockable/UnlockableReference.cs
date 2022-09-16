@@ -2,7 +2,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class UnlockableReference : UnlockableObject
+public class UnlockableReference : UnlockableWithGUID
 {
     [SerializeField] private ParticleSystem _unlockEffect;
     [SerializeField] private MonoBehaviour _template;
