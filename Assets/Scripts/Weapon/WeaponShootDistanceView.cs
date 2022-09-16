@@ -58,8 +58,6 @@ public class WeaponShootDistanceView : MonoBehaviour
     {
         if (_inTrigger == moneyHolder) 
             _inTrigger = null;
-        
-        //SetFieldActive(false);
     }
 
     private void SetFieldActive(bool active)
