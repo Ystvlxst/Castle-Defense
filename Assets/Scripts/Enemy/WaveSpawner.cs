@@ -62,7 +62,7 @@ public class WaveSpawner : MonoBehaviour
         }
     }
 
-    private void OnBaseDamaged()
+    private void OnBaseDamaged(int i)
     {
         _decreaseWave = true;
     }
