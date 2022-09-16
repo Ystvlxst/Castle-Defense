@@ -38,6 +38,7 @@ public class AIMovement : MonoBehaviour, IModificationListener<float>
             _agent.path.corners.Length == 0)
             return;
 
+        /*
         if (_agent.remainingDistance < _agent.stoppingDistance + float.Epsilon)
         {
             _completeAction?.Invoke();
@@ -45,7 +46,7 @@ public class AIMovement : MonoBehaviour, IModificationListener<float>
 
             Completed = true;
             enabled = false;
-        }
+        }*/
     }
 
     public float CalculateRemainingDistance()

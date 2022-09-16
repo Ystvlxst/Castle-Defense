@@ -435,6 +435,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8099141886023887104}
+  - component: {fileID: 2480244366042580820}
   m_Layer: 6
   m_Name: Models
   m_TagString: Untagged
@@ -456,6 +457,22 @@ Transform:
   m_Father: {fileID: 6863932748834031770}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &2480244366042580820
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4859207720905690159}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.9, y: 1.165, z: 0.9}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &6158203713936807455
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,18 +760,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gunpoints: []
-  _weaponTransform: {fileID: 0}
   _targetSelector: {fileID: 411113465}
   _stackPresenter: {fileID: 480776563243333823}
   _shotsPerAmmo: 3
   _shootDistance: 30
   _breakdown: {fileID: 5303560734816265511}
   _weaponJoints: []
-  _angle: 45
   _bulletTemplate: {fileID: 0}
   _cooldown: 5
   _torqueForce: 0
   _force: 0
+  _verticalOffset: 0
 --- !u!114 &274675578288667966
 MonoBehaviour:
   m_ObjectHideFlags: 0

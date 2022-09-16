@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3592165384732115066}
   - component: {fileID: 465617850789695455}
   - component: {fileID: 2419211170922003221}
+  - component: {fileID: 5422487906846307517}
   m_Layer: 0
   m_Name: ControlePanel
   m_TagString: Untagged
@@ -81,3 +82,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!208 &5422487906846307517
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4220505955765967552}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.63, y: 1.255, z: 0.63}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.3}
+  m_TimeToStationary: 0.5
