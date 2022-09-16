@@ -27,6 +27,18 @@ PrefabInstance:
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1791298367646643216, guid: 9b8569960f79d3346b1194417d55692f, type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1876802872432327256, guid: 9b8569960f79d3346b1194417d55692f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 1876802872432327256, guid: 9b8569960f79d3346b1194417d55692f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2964974567047736171, guid: 9b8569960f79d3346b1194417d55692f, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
