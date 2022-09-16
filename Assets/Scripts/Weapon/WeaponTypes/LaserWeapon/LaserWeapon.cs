@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class LaserWeapon : Weapon
 {
-    [SerializeField] private float _rotationSpeed;
     [SerializeField] private float _damage;
     [SerializeField] private LineRenderer _lineRenderer;
     [SerializeField] private LayerMask _layerMask;
@@ -65,7 +64,7 @@ public class LaserWeapon : Weapon
         if(_target == null)
             return;
         
-        Vector3 targetDirection = _target.transform.position - Vector3.up * 0.5f - WeaponTransform.position;
+        Vector3 targetDirection = _target.transform.position - Vector3.up * 0.5f - _gunpoint.transform.position;
         
         foreach (WeaponJoint joint in WeaponJoints) 
             joint.Rotate(targetDirection);
@@ -73,6 +72,7 @@ public class LaserWeapon : Weapon
 
     private void Shot()
     {
+        _gunpoint = SelectGunpoint();
         ResetBeam();
 
         RaycastHit[] results = new RaycastHit[16];
@@ -97,5 +97,6 @@ public class LaserWeapon : Weapon
     private void SetLaserRayEnd(Vector3 position)
     {
         _lineRenderer.SetPosition(1, _lineRenderer.transform.InverseTransformPoint(position));
+        _lineRenderer.SetPosition(0, _lineRenderer.transform.InverseTransformPoint(_gunpoint.transform.position));
     }
 }

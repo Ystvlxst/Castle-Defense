@@ -2,13 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using BabyStack.Model;
-using Game.Assistants.Behaviour;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour, IModificationListener<float>
 {
     [SerializeField] private List<Gunpoint> _gunpoints;
-    [SerializeField] private Transform _weaponTransform;
     [SerializeField] private TargetSelector _targetSelector;
     [SerializeField] private StackPresenter _stackPresenter;
     [SerializeField] private int _shotsPerAmmo;
@@ -20,7 +18,6 @@ public class Weapon : MonoBehaviour, IModificationListener<float>
     private int _ammo;
     private Gunpoint _currentGunpoint;
 
-    protected Transform WeaponTransform => _weaponTransform;
     protected TargetSelector TargetSelector => _targetSelector;
     private StackPresenter StackPresenter => _stackPresenter;
     protected float UpgradeFactor => _upgradeFactor;
