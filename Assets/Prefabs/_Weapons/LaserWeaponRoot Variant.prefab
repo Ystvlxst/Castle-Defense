@@ -97,6 +97,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _x: 1
   _y: 0
+  _maxDegreesDelta: 10
+  _maxMagnitudeDelta: 10
 --- !u!1 &1234387273637769574
 GameObject:
   m_ObjectHideFlags: 0
@@ -662,6 +664,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _x: 1
   _y: 0
+  _maxDegreesDelta: 10
+  _maxMagnitudeDelta: 10
 --- !u!1 &5089231309844226694
 GameObject:
   m_ObjectHideFlags: 0
@@ -791,6 +795,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _x: 0
   _y: 1
+  _maxDegreesDelta: 10
+  _maxMagnitudeDelta: 10
 --- !u!1 &5828211771848971350
 GameObject:
   m_ObjectHideFlags: 0
@@ -1631,6 +1637,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _x: 1
   _y: 0
+  _maxDegreesDelta: 10
+  _maxMagnitudeDelta: 10
 --- !u!1001 &1190592105952278183
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1664,7 +1672,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 274675578288667966, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _amount
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 274675578288667966, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _template
@@ -2090,6 +2098,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7080637460571569055, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
   m_PrefabInstance: {fileID: 1190592105952278183}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2156302309936135362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4063533696634341450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efe5157652ee46cc94ddd743347f4b90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _type: 0
+  _upgradeable: {fileID: 8018020523037242283}
+  _view: {fileID: 3865382925133301033}
 --- !u!114 &1100568254346317090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2135,21 +2158,6 @@ MonoBehaviour:
     m_Bits: 513
   _laserShotEffectTemplate: {fileID: 5825856188868306550, guid: f3930c3068e5f4ed5ad05aa5f14e73ab, type: 3}
   _timePerAmmo: 5
---- !u!114 &2156302309936135362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4063533696634341450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efe5157652ee46cc94ddd743347f4b90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _type: 0
-  _upgradeable: {fileID: 8018020523037242283}
-  _view: {fileID: 3865382925133301033}
 --- !u!1001 &2488556579544781830
 PrefabInstance:
   m_ObjectHideFlags: 0

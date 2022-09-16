@@ -4,9 +4,9 @@ public class WeaponJoint : MonoBehaviour
 {
     [SerializeField] private bool _x;
     [SerializeField] private bool _y;
-
-    private float _maxDegreesDelta = 40f;
-    private float _maxMagnitudeDelta = 40f;
+    [SerializeField] private float _maxDegreesDelta = 40f;
+    [SerializeField] private float _maxMagnitudeDelta = 40f;
+    
     private Vector3 _rotation;
     private float _minDelta = 0.001f;
 

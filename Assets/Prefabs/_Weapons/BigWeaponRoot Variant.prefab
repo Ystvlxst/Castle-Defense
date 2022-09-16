@@ -655,6 +655,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _x: 0
   _y: 1
+  _maxDegreesDelta: 40
+  _maxMagnitudeDelta: 40
 --- !u!1 &5782753164011759035
 GameObject:
   m_ObjectHideFlags: 0
@@ -756,6 +758,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _x: 1
   _y: 1
+  _maxDegreesDelta: 40
+  _maxMagnitudeDelta: 40
 --- !u!1 &6060902022897827884
 GameObject:
   m_ObjectHideFlags: 0
@@ -855,6 +859,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _x: 1
   _y: 1
+  _maxDegreesDelta: 40
+  _maxMagnitudeDelta: 40
 --- !u!1 &6224174275398859447
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,6 +907,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _x: 1
   _y: 0
+  _maxDegreesDelta: 40
+  _maxMagnitudeDelta: 40
 --- !u!1 &7250926556681080041
 GameObject:
   m_ObjectHideFlags: 0
@@ -1931,7 +1939,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 274675578288667966, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _amount
-      value: 16
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 274675578288667966, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _template
@@ -2191,7 +2199,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5408711824464836288, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _size.y
-      value: 7
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5408711824464836288, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: _distanceBetweenObjects.x
