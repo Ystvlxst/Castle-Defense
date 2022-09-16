@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c402fb28a82e9af4c9ce3c26d30b4bf6, type: 3}
   m_Name: ResourcesAssistant
   m_EditorClassIdentifier: 
-  _saveKey: ResourcesAssistant
+  _saveKey: ResourcesAssistantKey
   _data:
   - _template: {fileID: 1500773337, guid: 20102aeaa0c8c15429ce4182294674cd, type: 3}
     _name: Resources Assistant

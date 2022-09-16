@@ -18,9 +18,6 @@ public class AssistantPurchasePresenter : MonoBehaviour
 
     private void OnEnable()
     {
-        _inventory = new AssistantInventory(_assistants);
-        _inventory.Load();
-
         _purchaseView.OnTryBuy += OnBuyClicked;
         _purchaseView.OnFreeBuy += AddAssistant;
 
@@ -29,8 +26,11 @@ public class AssistantPurchasePresenter : MonoBehaviour
         _trigger.Exit += OnPlayerTriggerExit;
     }
 
-    private void Start()
+    private void Awake()
     {
+        _inventory = new AssistantInventory(_assistants);
+        _inventory.Load();
+        
         if (TryDisplayFreeAssistant() == false)
             UpdatePurchasableAssistant();
         
@@ -124,6 +124,7 @@ public class AssistantPurchasePresenter : MonoBehaviour
     {
         if (_purchasableAssistant == null)
         {
+            Debug.Log("disable");
             _trigger.gameObject.SetActive(false);
             _purchaseView.gameObject.SetActive(false);
             
