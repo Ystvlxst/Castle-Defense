@@ -18,8 +18,8 @@ public class LaserBeamAnimation : MonoBehaviour
     private void Update()
     {
         _offset += Vector2.right * _speed * Time.deltaTime;
-        _lineRenderer.sharedMaterial.mainTextureOffset = _offset;
+        _lineRenderer.material.mainTextureOffset = _offset;
         float xScale = Vector3.Distance(_lineRenderer.GetPosition(1), Vector3.zero);
-        _lineRenderer.sharedMaterial.mainTextureScale = new Vector2(xScale * _scaleFactor, 1);
+        _lineRenderer.material.mainTextureScale = new Vector2(xScale * _scaleFactor, 1);
     }
 }
