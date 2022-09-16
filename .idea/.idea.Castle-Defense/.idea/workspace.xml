@@ -4,12 +4,8 @@
     <list default="true" id="2d3b516d-3b73-4cfc-ac92-be663e9d2345" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Castle-Defense/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Castle-Defense/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Graphics/Materials/Laser.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Materials/Laser.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Models/Weapons/Icon_UI_Aim/Aim_03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Models/Weapons/Icon_UI_Aim/Aim_03.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Models/Weapons/Model/Materials/MaterialAim1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Models/Weapons/Model/Materials/MaterialAim1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/_Weapons/LaserWeaponRoot Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/_Weapons/LaserWeaponRoot Variant.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/Weapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon/WeaponTypes/LaserWeapon/LaserWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/WeaponTypes/LaserWeapon/LaserWeapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/DebugButtons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/DebugButtons.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
