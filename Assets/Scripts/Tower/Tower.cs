@@ -1,5 +1,5 @@
+using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class Tower : MonoBehaviour
 {
@@ -8,7 +8,7 @@ public class Tower : MonoBehaviour
 
     private int _currentHealth;
 
-    public event UnityAction Damaged;
+    public event Action<int> Damaged;
 
     public int Health => _health;
     public int CurrentHealth => _currentHealth;
@@ -20,7 +20,7 @@ public class Tower : MonoBehaviour
 
     public void ApplyDamage(int damage)
     {
-        Damaged?.Invoke();
+        Damaged?.Invoke(damage);
         _currentHealth -= damage;
 
         if (_currentHealth <= 0)

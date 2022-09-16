@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/Scripts/Unlockable/UnlockBuyZoneListener.cs.meta
+guid: 9fe13216bc07bb64d97a09aefb0c09e2
+=======
 guid: ff267124445654bcc8cd9117dd88c588
+>>>>>>> Stashed changes:Assets/Scripts/Tutroial/DroneTutorial.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

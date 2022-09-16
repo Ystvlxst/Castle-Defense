@@ -44,7 +44,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.57
+  m_Radius: 0.25
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1352228147017972890
 Rigidbody:
@@ -77,6 +77,8 @@ MonoBehaviour:
   _damage: 34
   _damageRadius: 0.5
   _force: 1
-  _hitEffectTemplate: {fileID: 289002043150383254, guid: df762cee0069947baa7c17416205b5d3, type: 3}
-  _groundDecal: {fileID: 198211411379540024, guid: 5bc227c2a45a7e44ea8521ddb446b620, type: 3}
+  _hitEffectTemplate: {fileID: 289002043150383254, guid: df762cee0069947baa7c17416205b5d3,
+    type: 3}
+  _groundDecal: {fileID: 198211411379540024, guid: 5bc227c2a45a7e44ea8521ddb446b620,
+    type: 3}
   _enemyDecal: {fileID: 0}

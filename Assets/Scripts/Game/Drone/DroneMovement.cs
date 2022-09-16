@@ -30,7 +30,12 @@ internal class DroneMovement : MonoBehaviour
         {
             _moveVector = (_input.Destination - transform.position).normalized;
             transform.Translate(_moveVector * Time.deltaTime * _speed, Space.World);
-            Quaternion quaternion = Quaternion.LookRotation(new Vector3(_moveVector.x, 0, _moveVector.z));
+            Vector3 lookDirection = new Vector3(_moveVector.x, 0, _moveVector.z);
+            
+            if(lookDirection == Vector3.zero)
+                return;
+            
+            Quaternion quaternion = Quaternion.LookRotation(lookDirection);
             transform.rotation = Quaternion.Lerp(transform.rotation, quaternion, Time.deltaTime * _speedRotate);
         }
         else
