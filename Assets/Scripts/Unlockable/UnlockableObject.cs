@@ -11,8 +11,9 @@ public abstract class UnlockableObject : MonoBehaviour
 
 public enum UnlockableObjectType
 {
-    Conveyour,
+    Conveyor,
     Weapon,
-    ItemProducer,
-    Upgrade
+    Upgrade,
+    WeaponRepair,
+    MapZone
 }
