@@ -113,7 +113,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: a6753a8a0510b4d92a7143bfcd09bc0f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 0d21efd551339403ba6ea476a3fcb651, type: 2}
+      objectReference: {fileID: 2100000, guid: 6a838cebeea6648c6a7a1e8f5d9880e4, type: 2}
     - target: {fileID: 919132149155446097, guid: a6753a8a0510b4d92a7143bfcd09bc0f, type: 3}
       propertyPath: m_Name
       value: Laser_Ammo

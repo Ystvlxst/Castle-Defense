@@ -14,6 +14,8 @@ internal class DroneMovement : MonoBehaviour
     private IInputSource _input;
     private Vector3 _moveVector;
 
+    public bool IsFirstMovementStoped = false;
+
     private void Start()
     {
         _input = (IInputSource) _inputBehaviour;
@@ -41,6 +43,7 @@ internal class DroneMovement : MonoBehaviour
         else
         {
             transform.position = Vector3.MoveTowards(transform.position, _targetBase.position, Time.deltaTime * _speed);
+            IsFirstMovementStoped = true;
         }
     }
 
