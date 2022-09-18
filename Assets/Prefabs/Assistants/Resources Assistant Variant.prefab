@@ -9,15 +9,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1188167488, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0000030829387
+      value: -0.18016568
       objectReference: {fileID: 0}
     - target: {fileID: 1188167488, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7709999
+      value: 1.3258164
       objectReference: {fileID: 0}
     - target: {fileID: 1188167488, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.42999926
+      value: -0.4258107
+      objectReference: {fileID: 0}
+    - target: {fileID: 1188167488, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.16843861
+      objectReference: {fileID: 0}
+    - target: {fileID: 1188167488, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.02221871
       objectReference: {fileID: 0}
     - target: {fileID: 1330972619, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: _joystick
@@ -139,6 +147,10 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: -0.000015885606
       objectReference: {fileID: 0}
+    - target: {fileID: 3683419884957291214, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4828070231835164650, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_ConnectedAnchor.x
       value: -1.7462301e-10
@@ -210,6 +222,10 @@ PrefabInstance:
     - target: {fileID: 6332075017711701536, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_ConnectedAnchor.z
       value: 1.3096721e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7347136028285993238, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7812898729213766979, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -379,5 +395,5 @@ MonoBehaviour:
         byteData: 
         byteDataArray: 
       Version: 1.7.2
-  gizmoViewMode: 0
-  showBehaviorDesignerGizmo: 0
+  gizmoViewMode: 2
+  showBehaviorDesignerGizmo: 1
