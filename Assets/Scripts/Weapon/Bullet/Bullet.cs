@@ -4,32 +4,58 @@ using UnityEngine;
 public abstract class Bullet : MonoBehaviour
 {
     [SerializeField] private int _damage;
-    [SerializeField] private float _damageRadius;
-    [SerializeField] private float _force;
+    [SerializeField] private float _hitThrowForce;
     [SerializeField] private ParticleSystem _hitEffectTemplate;
     [SerializeField] private ParticleSystem _groundDecal;
 
     private Rigidbody _rigidbody;
-    public Rigidbody Rigidbody => _rigidbody;
-    public int Damage => _damage;
-    public float Force => _force;
-    public float DamageRadius => _damageRadius;
-    public ParticleSystem GroundDecal => _groundDecal;
 
-    private void Awake()
+    public void Init(Vector3 velocity, Vector3 torque)
     {
-        _rigidbody = GetComponent<Rigidbody>();
+        _rigidbody.velocity = velocity;
+        _rigidbody.AddTorque(torque);
     }
 
-    public void Collide()
+    private void Awake() => 
+        _rigidbody = GetComponent<Rigidbody>();
+
+    protected virtual void OnTriggerEnter(Collider other)
+    {
+        if (other.TryGetComponent(out Ground _)) 
+            HitGround();
+    }
+
+    protected virtual void HitGround()
+    {
+        SpawnDecalEffect(_groundDecal);
+        Collide();
+    }
+
+    protected void Collide()
     {
         ParticleSystem effect = Instantiate(_hitEffectTemplate, transform.position, Quaternion.identity);
         effect.Play();
         Destroy(gameObject);
     }
 
-    public void DecalEffect(ParticleSystem particleSystem)
+    protected void TryThrow(Collider collider, Vector3 direction)
     {
-        ParticleSystem effect = Instantiate(particleSystem, transform.position, Quaternion.identity);
+        if (!collider.TryGetComponent(out IThrowable rigidbody))
+            return;
+
+        rigidbody.Throw(direction * _hitThrowForce);
     }
+
+    protected bool TryApplyDamage(Collider collider)
+    {
+        if (!collider.TryGetComponent(out IDamageable enemy))
+            return true;
+
+        enemy.TakeDamage(_damage);
+        
+        return false;
+    }
+
+    private void SpawnDecalEffect(ParticleSystem particleSystem) => 
+        Instantiate(particleSystem, transform.position, Quaternion.identity);
 }

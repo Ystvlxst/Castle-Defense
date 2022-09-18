@@ -8,8 +8,7 @@ public class Gunpoint : MonoBehaviour
     public void Shoot(Bullet bulletTemplate, float force, float torqueForce)
     {
         Bullet bullet = Instantiate(bulletTemplate, transform.position, transform.rotation);
-        bullet.Rigidbody.velocity = transform.forward * force;
-        bullet.Rigidbody.AddTorque(transform.forward * torqueForce);
+        bullet.Init(transform.forward * force, transform.forward * torqueForce);
         Shot?.Invoke();
     }
 }
