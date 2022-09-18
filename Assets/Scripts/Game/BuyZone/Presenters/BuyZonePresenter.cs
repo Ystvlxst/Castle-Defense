@@ -21,6 +21,7 @@ public abstract class BuyZonePresenter : MonoBehaviour
     
     public int TotalCost => _totalCost;
     public bool IsUnlocked => _buyZone.CurrentCost == 0;
+    public UnlockableObject UnlockableObject => _unlockable;
 
 
 #if UNITY_EDITOR
