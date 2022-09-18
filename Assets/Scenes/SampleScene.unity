@@ -30956,6 +30956,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 7977527122567680526, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8013116022133551709, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_Speed
       value: 5
