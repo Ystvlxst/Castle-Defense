@@ -8,13 +8,17 @@ public class DroneTutorial : MonoBehaviour
 
     [SerializeField] private DronePlatform _dronePlatform;
     [SerializeField] private DroneMovement _droneMovement;
-    [SerializeField] private float _distance;
+    [SerializeField] private float _platformDistance;
+    [SerializeField] private float _droneDistance;
+    [SerializeField] private Canvas _droneCanvas;
+    [SerializeField] private Canvas _platformCanvas;
 
     private void Start()
     {
         if (PlayerPrefs.HasKey(TutorialComplete))
         {
-            gameObject.SetActive(false);
+            _platformCanvas.enabled = false;
+            _droneCanvas.enabled = false;
             return;
         }
 
@@ -24,9 +28,14 @@ public class DroneTutorial : MonoBehaviour
     private IEnumerator StartTutorial()
     {
         yield return null;
-        gameObject.SetActive(true);
-        yield return new WaitUntil(() => Vector3.Distance(_dronePlatform.transform.position, _droneMovement.transform.position) > _distance);
-        gameObject.SetActive(false);
+        _platformCanvas.enabled = true;
+        _droneCanvas.enabled = false;
+        yield return new WaitUntil(() => Vector3.Distance(_dronePlatform.transform.position, _droneMovement.transform.position) > _droneDistance);
+        _droneCanvas.enabled = true;
+        yield return new WaitUntil(() => Vector3.Distance(_dronePlatform.transform.position, _droneMovement.transform.position) > _platformDistance);
+        _platformCanvas.enabled = false;
+        yield return new WaitUntil(() => _droneMovement.IsFirstMovementStoped == true);
+        _droneCanvas.enabled = false;
         PlayerPrefs.SetInt(TutorialComplete, 1);
     }
 }
