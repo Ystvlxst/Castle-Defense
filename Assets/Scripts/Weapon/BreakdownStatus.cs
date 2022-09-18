@@ -20,9 +20,23 @@ public class BreakdownStatus : UnlockableObject
             return;
         
         Broken = true;
+        CreateRepairZone();
+        Broke?.Invoke();
+    }
+
+    public override GameObject Unlock(Transform parent, bool onLoad)
+    {
+        Destroy(_buyZonePresenter.gameObject);
+        Repair();
+        Repaired?.Invoke();
+        
+        return gameObject;
+    }
+
+    private void CreateRepairZone()
+    {
         _buyZonePresenter = Instantiate(_repairZoneTemplate, transform);
         _buyZonePresenter.Init(new BuyZone(_repairCost), this);
-        Broke?.Invoke();
     }
 
     private void Repair()
@@ -31,13 +45,5 @@ public class BreakdownStatus : UnlockableObject
             return;
 
         Broken = false;
-    }
-
-    public override GameObject Unlock(Transform parent, bool onLoad)
-    {
-        Destroy(_buyZonePresenter.gameObject);
-        Repair();
-        Repaired?.Invoke();
-        return gameObject;
     }
 }

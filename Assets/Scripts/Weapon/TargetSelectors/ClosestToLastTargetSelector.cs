@@ -2,37 +2,16 @@ using System;
 using System.Linq;
 using UnityEngine;
 
-class ClosestToLastTargetSelector : TargetSelector
+class ClosestToLastTargetSelector : TargetSelectorWithOffset
 {
-    [SerializeField] private float _aheadOffset;
-    
-    private Enemy _lastSelected;
-
-    public override Vector3 SelectTarget()
+    protected override Enemy SelectEnemy(Enemy first)
     {
-        Enemy first = EnemyContainer.Enemies.First();
+        if (LastSelected == null)
+            return first;
 
-        if(_lastSelected != null)
-        {
-            float Selector(Enemy enemy) => Vector3.SqrMagnitude(enemy.transform.position - _lastSelected.transform.position);
-            float min = EnemyContainer.Enemies.Min(Selector);
-            first = EnemyContainer.Enemies.First(enemy => Math.Abs(Selector(enemy) - min) < 1f);
-        }
+        float Selector(Enemy enemy) => Vector3.SqrMagnitude(enemy.transform.position - LastSelected.transform.position);
+        float min = EnemyContainer.Enemies.Min(Selector);
 
-        _lastSelected = first;
-        Vector3 target = first.transform.position;
-
-        if (first.TryGetComponent(out AttackState attackState) && attackState.enabled == false)
-            target += first.transform.forward * _aheadOffset;
-
-        if (target.z < first.Target.transform.position.z)
-            target.z = first.Target.transform.position.z;
-
-        return target;
-    }
-
-    public override Enemy SelectEnemyTarget()
-    {
-        return null;
+        return EnemyContainer.Enemies.First(enemy => Math.Abs(Selector(enemy) - min) < 1f);
     }
 }

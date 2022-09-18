@@ -124,7 +124,6 @@ public class AssistantPurchasePresenter : MonoBehaviour
     {
         if (_purchasableAssistant == null)
         {
-            Debug.Log("disable");
             _trigger.gameObject.SetActive(false);
             _purchaseView.gameObject.SetActive(false);
             

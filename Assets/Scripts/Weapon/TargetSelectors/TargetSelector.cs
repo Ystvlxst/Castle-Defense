@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 using UnityEngine;
 
@@ -17,12 +16,10 @@ public abstract class TargetSelector : MonoBehaviour
             return false;
 
         bool Condition(Enemy enemy) => Vector3.Distance(enemy.transform.position, transform.position) < maxDistance;
-        
+
         bool hasTarget = EnemyContainer.Enemies.Any(Condition);
         return hasTarget;
     }
 
-    public abstract Vector3 SelectTarget();
-
-    public abstract Enemy SelectEnemyTarget();
+    public abstract ShootTarget SelectTarget();
 }

@@ -11,7 +11,7 @@ public class BallisticWeapon : Weapon
     [SerializeField] private float _verticalOffset;
 
     private readonly float _g = Physics.gravity.y;
-    private Vector3 _selectTarget;
+    private ShootTarget _shootTarget;
     private Vector3 _targetDirection;
 
     private void Start() =>
@@ -19,10 +19,10 @@ public class BallisticWeapon : Weapon
 
     private void Update()
     {
-        if(_targetDirection == Vector3.zero)
+        if (_targetDirection == Vector3.zero)
             return;
-        
-        foreach (WeaponJoint joint in WeaponJoints) 
+
+        foreach (WeaponJoint joint in WeaponJoints)
             joint.Rotate(_targetDirection);
     }
 
@@ -35,9 +35,9 @@ public class BallisticWeapon : Weapon
 
             while (CanShoot())
             {
-                _selectTarget = TargetSelector.SelectTarget();
+                _shootTarget = TargetSelector.SelectTarget();
                 Gunpoint gunpoint = SelectGunpoint();
-                _targetDirection = _selectTarget + Vector3.up * _verticalOffset - gunpoint.transform.position;
+                _targetDirection = _shootTarget.Position + Vector3.up * _verticalOffset - gunpoint.transform.position;
 
                 yield return new WaitUntil(() => WeaponJoints.All(joint => joint.LooksAt(_targetDirection)));
                 Shot(gunpoint);
@@ -53,10 +53,5 @@ public class BallisticWeapon : Weapon
     {
         gunpoint.Shoot(_bulletTemplate, _force, _torqueForce);
         MinusAmmo();
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawSphere(_selectTarget, 1f);
     }
 }

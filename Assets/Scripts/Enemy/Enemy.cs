@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     private EnemyTarget _target;
 
     public EnemyTarget Target => _target;
+    public IDamageable Damageable => _health;
     public bool IsDying => _health.Dead;
 
     public event UnityAction<Enemy> Dying;
