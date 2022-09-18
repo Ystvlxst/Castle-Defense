@@ -7,10 +7,11 @@ public class LaserWeapon : Weapon
     [SerializeField] private LineRenderer _lineRenderer;
     [SerializeField] private LayerMask _layerMask;
     [SerializeField] private ParticleSystem _laserShotEffectTemplate;
-    [SerializeField] private float _timePerAmmo = 5;
+    [SerializeField] private float _shootingTimePerAmmo = 5;
 
     private ShootTarget _target;
     private Gunpoint _gunpoint;
+    private float _shootingTime;
 
     private void Start()
     {
@@ -19,12 +20,10 @@ public class LaserWeapon : Weapon
     }
 
     private void Update() =>
-        Rotate();
+        Aim();
 
     private IEnumerator Shoot()
     {
-        float time = 0;
-
         while (true)
         {
             yield return null;
@@ -42,14 +41,8 @@ public class LaserWeapon : Weapon
                 if (_target.Dead)
                     break;
 
-                Shot();
-                time += Time.deltaTime;
-
-                if (time > _timePerAmmo * UpgradeFactor)
-                {
-                    MinusAmmo();
-                    time = 0;
-                }
+                MakeShot();
+                UpdateShootingTimeAndAmmo();
 
                 yield return null;
             }
@@ -58,18 +51,28 @@ public class LaserWeapon : Weapon
         }
     }
 
-    private void Rotate()
+    private void UpdateShootingTimeAndAmmo()
+    {
+        _shootingTime += Time.deltaTime;
+
+        if (_shootingTime > _shootingTimePerAmmo * UpgradeFactor)
+        {
+            SpendAmmo();
+            _shootingTime = 0;
+        }
+    }
+
+    private void Aim()
     {
         if (_target == null)
             return;
 
         Vector3 targetDirection = _target.Position - Vector3.up * 0.5f - _gunpoint.transform.position;
 
-        foreach (WeaponJoint joint in WeaponJoints)
-            joint.Rotate(targetDirection);
+        Aim(targetDirection);
     }
 
-    private void Shot()
+    private void MakeShot()
     {
         _gunpoint = SelectGunpoint();
         ResetBeam();

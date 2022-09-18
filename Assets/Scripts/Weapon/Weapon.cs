@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using BabyStack.Model;
@@ -22,13 +21,10 @@ public class Weapon : MonoBehaviour, IModificationListener<float>
     private StackPresenter StackPresenter => _stackPresenter;
     protected float UpgradeFactor => _upgradeFactor;
     protected float ShotsPerAmmo => _shotsPerAmmo;
-    protected List<WeaponJoint> WeaponJoints => _weaponJoints;
     public float ShootDistance => _shootDistance + (_upgradeFactor - 1) * _shootDistance * 2f;
 
-    private void Awake()
-    {
+    private void Awake() =>
         _currentGunpoint = _gunpoints.First(point => point.gameObject.activeSelf);
-    }
 
     public void OnModificationUpdate(float value) =>
         _upgradeFactor = value;
@@ -51,17 +47,26 @@ public class Weapon : MonoBehaviour, IModificationListener<float>
     {
         Gunpoint nextGunpoint =
             _gunpoints.FirstOrDefault(point => point.isActiveAndEnabled && point != _currentGunpoint);
-        
-        if (nextGunpoint != null)
-        {
-            _gunpoints.Remove(_currentGunpoint);
-            _gunpoints.Add(_currentGunpoint);
-            _currentGunpoint = nextGunpoint;
-        }
+
+        if (nextGunpoint == null)
+            return _currentGunpoint;
+
+        _gunpoints.Remove(_currentGunpoint);
+        _gunpoints.Add(_currentGunpoint);
+        _currentGunpoint = nextGunpoint;
 
         return _currentGunpoint;
     }
 
-    protected void MinusAmmo() =>
+    protected void SpendAmmo() =>
         _ammo--;
+
+    protected void Aim(Vector3 targetDirection)
+    {
+        foreach (WeaponJoint joint in _weaponJoints)
+            joint.Rotate(targetDirection);
+    }
+
+    protected bool Aimed(Vector3 targetDirection) =>
+        _weaponJoints.All(joint => joint.LooksAt(targetDirection));
 }

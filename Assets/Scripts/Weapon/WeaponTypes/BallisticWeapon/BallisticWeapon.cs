@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Linq;
 using UnityEngine;
 
 public class BallisticWeapon : Weapon
@@ -10,20 +9,17 @@ public class BallisticWeapon : Weapon
     [SerializeField] private float _force;
     [SerializeField] private float _verticalOffset;
 
-    private readonly float _g = Physics.gravity.y;
-    private ShootTarget _shootTarget;
-    private Vector3 _targetDirection;
+    private Vector3 _aimDirection;
 
     private void Start() =>
         StartCoroutine(Shoot());
 
     private void Update()
     {
-        if (_targetDirection == Vector3.zero)
+        if (_aimDirection == Vector3.zero)
             return;
 
-        foreach (WeaponJoint joint in WeaponJoints)
-            joint.Rotate(_targetDirection);
+        Aim(_aimDirection);
     }
 
     private IEnumerator Shoot()
@@ -35,23 +31,33 @@ public class BallisticWeapon : Weapon
 
             while (CanShoot())
             {
-                _shootTarget = TargetSelector.SelectTarget();
                 Gunpoint gunpoint = SelectGunpoint();
-                _targetDirection = _shootTarget.Position + Vector3.up * _verticalOffset - gunpoint.transform.position;
+                ShootTarget shootTarget = TargetSelector.SelectTarget();
 
-                yield return new WaitUntil(() => WeaponJoints.All(joint => joint.LooksAt(_targetDirection)));
-                Shot(gunpoint);
+                _aimDirection = GetAimDirection(shootTarget, gunpoint);
 
-                yield return new WaitForSeconds(_cooldown / UpgradeFactor);
+                yield return new WaitUntil(() => Aimed(_aimDirection));
+
+                MakeShot(gunpoint);
+
+                yield return WaitForCooldown();
             }
 
             yield return null;
         }
     }
 
-    private void Shot(Gunpoint gunpoint)
+    private IEnumerator WaitForCooldown()
+    {
+        yield return new WaitForSeconds(_cooldown / UpgradeFactor);
+    }
+
+    private Vector3 GetAimDirection(ShootTarget shootTarget, Gunpoint gunpoint) =>
+        shootTarget.Position + Vector3.up * _verticalOffset - gunpoint.transform.position;
+
+    private void MakeShot(Gunpoint gunpoint)
     {
         gunpoint.Shoot(_bulletTemplate, _force, _torqueForce);
-        MinusAmmo();
+        SpendAmmo();
     }
 }

@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d3b516d-3b73-4cfc-ac92-be663e9d2345" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/TargetSelectors/ShootTarget.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/TargetSelectors/ShootTarget.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/TargetSelectors/TargetSelectorWithOffset.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/TargetSelectors/TargetSelectorWithOffset.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Castle-Defense/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Castle-Defense/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/IDamageable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/IDamageable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shop/AssistantShop/AssistantPurchasePresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shop/AssistantShop/AssistantPurchasePresenter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon/BreakdownStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/BreakdownStatus.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon/TargetSelectors/ClosestToLastTargetSelector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/TargetSelectors/ClosestToLastTargetSelector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon/TargetSelectors/FirstTargetSelector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/TargetSelectors/FirstTargetSelector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon/TargetSelectors/LaserTargetSelector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/TargetSelectors/LaserTargetSelector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon/TargetSelectors/TargetSelector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/TargetSelectors/TargetSelector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/Weapon.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon/WeaponTypes/BallisticWeapon/BallisticWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/WeaponTypes/BallisticWeapon/BallisticWeapon.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon/WeaponTypes/LaserWeapon/LaserWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/WeaponTypes/LaserWeapon/LaserWeapon.cs" afterDir="false" />
     </list>
