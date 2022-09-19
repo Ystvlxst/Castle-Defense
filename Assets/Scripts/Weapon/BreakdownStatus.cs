@@ -6,7 +6,7 @@ public class BreakdownStatus : UnlockableObject
 {
     [SerializeField] private BuyZonePresenter _repairZoneTemplate;
     [SerializeField] private int _repairCost;
-    
+
     private BuyZonePresenter _buyZonePresenter;
 
     public event Action Broke;

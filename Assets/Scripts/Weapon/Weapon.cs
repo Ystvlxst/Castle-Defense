@@ -21,16 +21,22 @@ public class Weapon : MonoBehaviour, IModificationListener<float>
     private StackPresenter StackPresenter => _stackPresenter;
     protected float UpgradeFactor => _upgradeFactor;
     protected float ShotsPerAmmo => _shotsPerAmmo;
+
     public float ShootDistance => _shootDistance + (_upgradeFactor - 1) * _shootDistance * 2f;
+    public BreakdownStatus Breakdown => _breakdown;
+    public int Ammo => _stackPresenter.Count;
 
     private void Awake() =>
         _currentGunpoint = _gunpoints.First(point => point.gameObject.activeSelf);
 
+    public void AddAmmo(int shotsPerAmmo) => 
+        _ammo += shotsPerAmmo;
+
     public void OnModificationUpdate(float value) =>
         _upgradeFactor = value;
 
-    protected bool CanShoot() =>
-        _ammo > 0 && TargetSelector.HasTarget(ShootDistance) && !_breakdown.Broken;
+    public bool CanShoot() =>
+        _ammo > 0 && TargetSelector.HasTarget(ShootDistance) && !Breakdown.Broken;
 
     protected bool CanRefillAmmo() =>
         StackPresenter.Empty == false && _ammo == 0;
@@ -40,7 +46,7 @@ public class Weapon : MonoBehaviour, IModificationListener<float>
         Stackable stackable = StackPresenter.Data.Last();
         StackPresenter.RemoveFromStack(stackable);
         Destroy(stackable.gameObject);
-        _ammo += shotsPerAmmo;
+        AddAmmo(shotsPerAmmo);
     }
 
     protected Gunpoint SelectGunpoint()

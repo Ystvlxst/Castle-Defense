@@ -15,13 +15,22 @@ public class WeaponList : ReferenceObjectList<Weapon>
         reference.GetComponentInChildren<TargetSelector>().Init(_enemyContainer);
 
         _interactableObjectsContainer.Add(reference.GetComponentInChildren<ICharacterInteractable>(), 1);
-        _weaponsBreaker.Add(reference.GetComponentInChildren<BreakdownStatus>());
-        reference.GetComponentInChildren<BrokenObjectPointer>().Init(_player);
         
+        if(_weaponsBreaker != null)
+            _weaponsBreaker.Add(reference);
+        
+        reference.GetComponentInChildren<BrokenObjectPointer>().Init(_player);
+
+        LastWeaponRecharger lastWeaponRecharger = reference.GetComponentInChildren<LastWeaponRecharger>();
+
+        if (lastWeaponRecharger != null)
+            lastWeaponRecharger.Init(_weaponsBreaker);
+            
         if (_weaponsProgress.Contains(guid))
             return;
         
         _weaponsProgress.Add(guid);
+
         _weaponsProgress.Save();
     }
 }
