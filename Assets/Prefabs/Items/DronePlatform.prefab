@@ -415,6 +415,7 @@ GameObject:
   - component: {fileID: 8952803411785832856}
   - component: {fileID: 7820302733304999691}
   - component: {fileID: 8512271226379893697}
+  - component: {fileID: 5980976299254872429}
   m_Layer: 9
   m_Name: DroneTutorialCanvas
   m_TagString: Untagged
@@ -515,6 +516,19 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &5980976299254872429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373372420687019278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d992315248469b4180477254a4ecbe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _xRotate: 1
 --- !u!1001 &19480490407823825
 PrefabInstance:
   m_ObjectHideFlags: 0
