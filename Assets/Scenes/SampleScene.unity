@@ -16846,6 +16846,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Upgrades
       objectReference: {fileID: 0}
+    - target: {fileID: 1632458217916254194, guid: 75d61e94b1bfe684195f47b820a0dbc4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4766425027704377111, guid: 75d61e94b1bfe684195f47b820a0dbc4, type: 3}
       propertyPath: m_Color.b
       value: 0.5309677
