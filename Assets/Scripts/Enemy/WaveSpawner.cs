@@ -8,6 +8,7 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] private EnemyContainer _enemyContainer;
     [SerializeField] private List<SpawnWave> _waves;
     [SerializeField] private Tower _tower;
+    [SerializeField] private float _timeToSpawnSecondWave;
 
     private int _spawned;
     private bool _decreaseWave;
@@ -40,11 +41,23 @@ public class WaveSpawner : MonoBehaviour
 
             _wave = Mathf.Clamp(_wave, 0, _waves.Count);
 
-            for (int i = 0; i < _wave; i++)
-                StartCoroutine(Spawn(_waves[i]));
+            if (_wave == 3)
+            {
+                yield return new WaitForSeconds(_timeToSpawnSecondWave);
+
+                Spawning();
+            }
+            else
+                Spawning();
 
             yield return new WaitUntil(() => _spawned == 0);
         }
+    }
+
+    private void Spawning()
+    {
+        for (int i = 0; i < _wave; i++)
+            StartCoroutine(Spawn(_waves[i]));
     }
 
     private IEnumerator Spawn(SpawnWave enemySpawner)
