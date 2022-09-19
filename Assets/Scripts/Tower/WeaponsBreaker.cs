@@ -24,9 +24,14 @@ public class WeaponsBreaker : MonoBehaviour
 
     private void OnTowerDamaged(int damage)
     {
-        if(_weapons.Count(weapon => weapon.Broken) >= _maxBrokenWeaponCount)
+        int brokenWeapons = _weapons.Count(weapon => weapon.Broken);
+
+        if (brokenWeapons >= _maxBrokenWeaponCount || _weapons.Count - brokenWeapons <= 1)
+        {
+            _damage = 0;
             return;
-        
+        }
+                    
         _damage += damage;
 
         if (_damage >= _damageToBreakWeapon)
