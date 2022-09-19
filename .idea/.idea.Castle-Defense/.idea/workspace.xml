@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2d3b516d-3b73-4cfc-ac92-be663e9d2345" name="Changes" comment="" />
+    <list default="true" id="2d3b516d-3b73-4cfc-ac92-be663e9d2345" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Castle-Defense/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Castle-Defense/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/_Enemies/Robots/EnemyRobot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/_Enemies/Robots/EnemyRobot.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/_Enemies/Robots/SimpleEnemyRobot Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/_Enemies/Robots/SimpleEnemyRobot Variant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/_Enemies/Robots/UpgradedRobot Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/_Enemies/Robots/UpgradedRobot Variant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/_Weapons/BigWeaponRoot Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/_Weapons/BigWeaponRoot Variant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/_Weapons/FastWeaponRoot Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/_Weapons/FastWeaponRoot Variant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/_Weapons/LaserWeaponRoot Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/_Weapons/LaserWeaponRoot Variant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/_Weapons/VariantsWithoutUpgrade/BigWeaponRoot Variant NoUpgrade.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/_Weapons/VariantsWithoutUpgrade/BigWeaponRoot Variant NoUpgrade.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/_Weapons/VariantsWithoutUpgrade/FastWeaponRoot Variant NoUpgrade.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/_Weapons/VariantsWithoutUpgrade/FastWeaponRoot Variant NoUpgrade.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/_Weapons/VariantsWithoutUpgrade/LaserWeaponRoot Variant NoUpgrade.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/_Weapons/VariantsWithoutUpgrade/LaserWeaponRoot Variant NoUpgrade.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/_Weapons/WeaponRoot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/_Weapons/WeaponRoot.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Money/LootDrop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Money/LootDrop.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shop/AssistantShop/ResourcesAssistant.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shop/AssistantShop/ResourcesAssistant.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tower/WeaponsBreaker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tower/WeaponsBreaker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon/Upgrades/BigWeaponModification.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/Upgrades/BigWeaponModification.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon/Upgrades/BigWeaponUpgradeUnlockable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/Upgrades/BigWeaponUpgradeUnlockable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon/Upgrades/FastWeaponModification.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/Upgrades/FastWeaponModification.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon/Upgrades/FastWeaponUpgradeUnlockable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/Upgrades/FastWeaponUpgradeUnlockable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon/Upgrades/LaserWeaponModification.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/Upgrades/LaserWeaponModification.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon/Upgrades/LaserWeaponUpgradeUnlockable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/Upgrades/LaserWeaponUpgradeUnlockable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon/Upgrades/UpgradeUnlockable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/Upgrades/UpgradeUnlockable.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

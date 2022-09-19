@@ -7,13 +7,15 @@ public class LootDrop : MonoBehaviour
     [SerializeField] private Vector3 _spawnOffset = new Vector3(0.38f, 2.2f, 0.0f);
     [SerializeField] private Vector2 _amountRange;
     [SerializeField] private float _spawnDelayBetweenItems = 0.1f;
+    [SerializeField] private float _dropProbability;
 
     private float _force = 6f;
     private Vector3 _spawnPosition => transform.position + _spawnOffset  + Random.insideUnitSphere * 0.5f;
 
     public void DropLoot()
     {
-        StartCoroutine(DropLootOverTime());
+        if(Random.Range(0f, 1f) < _dropProbability)
+            StartCoroutine(DropLootOverTime());
     }
 
     private IEnumerator DropLootOverTime()

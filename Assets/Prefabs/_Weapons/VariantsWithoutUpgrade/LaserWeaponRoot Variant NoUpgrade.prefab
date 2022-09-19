@@ -103,10 +103,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: LaserWeaponRoot Variant NoUpgrade
       objectReference: {fileID: 0}
+    - target: {fileID: 8683882697009826173, guid: 4ea596172d4871f429a5626986d8b97d, type: 3}
+      propertyPath: _guid
+      value: 7ecc8744-970a-4009-8ce4-7c361df20141
+      objectReference: {fileID: 0}
     - target: {fileID: 9006702914961288747, guid: 4ea596172d4871f429a5626986d8b97d, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4463790592216148829, guid: 4ea596172d4871f429a5626986d8b97d, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ea596172d4871f429a5626986d8b97d, type: 3}

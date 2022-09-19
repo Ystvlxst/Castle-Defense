@@ -1914,6 +1914,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 7495833092293525466, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
+      propertyPath: _guid
+      value: 0ede83c4-5995-4133-b98f-908cc54ad806
+      objectReference: {fileID: 0}
     - target: {fileID: 7806584614801197545, guid: 0764dbaf947e747efa36a9a3c687775f, type: 3}
       propertyPath: m_RootOrder
       value: 10

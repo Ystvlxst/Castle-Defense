@@ -5,8 +5,8 @@ public class FastWeaponModification : Modification<float>
 {
     private const string GUID = "WeaponCooldownGUID";
 
-    public FastWeaponModification()
-        : base(GUID)
+    public FastWeaponModification(string guid)
+        : base(GUID + guid)
     {
     }
 

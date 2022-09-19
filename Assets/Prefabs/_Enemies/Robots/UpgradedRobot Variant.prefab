@@ -113,11 +113,15 @@ PrefabInstance:
       objectReference: {fileID: 1319709982390294480}
     - target: {fileID: 7187789322495436878, guid: 9b8569960f79d3346b1194417d55692f, type: 3}
       propertyPath: _amountRange.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7187789322495436878, guid: 9b8569960f79d3346b1194417d55692f, type: 3}
       propertyPath: _amountRange.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7187789322495436878, guid: 9b8569960f79d3346b1194417d55692f, type: 3}
+      propertyPath: _dropProbability
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 7187789322495436883, guid: 9b8569960f79d3346b1194417d55692f, type: 3}
       propertyPath: m_RootOrder

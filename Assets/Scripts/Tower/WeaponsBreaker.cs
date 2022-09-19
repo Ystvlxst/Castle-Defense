@@ -7,10 +7,10 @@ using UnityEngine;
 public class WeaponsBreaker : MonoBehaviour
 {
     [SerializeField] private Tower _tower;
-    
+    [SerializeField] private int _damageToBreakWeapon = 150;
+
     private readonly List<BreakdownStatus> _weapons = new List<BreakdownStatus>();
     private int _damage;
-    private int _damageToBreakWeapon = 300;
     private int _maxBrokenWeaponCount = 2;
 
     private void OnEnable() => 

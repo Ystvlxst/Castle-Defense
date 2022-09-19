@@ -5,8 +5,8 @@ public class BigWeaponModification : Modification<float>
 {
     private const string GUID = "BigWeaponGUID";
 
-    public BigWeaponModification()
-        : base(GUID)
+    public BigWeaponModification(string guid)
+        : base(GUID + guid)
     {
     }
 

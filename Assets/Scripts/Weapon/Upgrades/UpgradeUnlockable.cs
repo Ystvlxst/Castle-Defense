@@ -6,8 +6,11 @@ public abstract class UpgradeUnlockable<T> : UnlockableObject
 {
     [SerializeField] private MonoBehaviour _upgradeable;
     [SerializeField] private UpgradeUnlockableView _view;
+    [SerializeField] private GUIDObject _guid;
 
     public Modification<T> Modification { get; private set; }
+
+    protected string GUID => _guid.GUID;
 
 
 #if UNITY_EDITOR

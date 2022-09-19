@@ -63,6 +63,10 @@ PrefabInstance:
       propertyPath: _amountRange.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7187789322495436878, guid: 9b8569960f79d3346b1194417d55692f, type: 3}
+      propertyPath: _dropProbability
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 7187789322495436883, guid: 9b8569960f79d3346b1194417d55692f, type: 3}
       propertyPath: m_RootOrder
       value: 0
