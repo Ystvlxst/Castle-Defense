@@ -2995,7 +2995,7 @@ MonoBehaviour:
   _weaponsProgress: {fileID: 11400000, guid: 372c7430f0ce2c94fbe524e35ce53fc1, type: 2}
   _enemyContainer: {fileID: 1594673592}
   _interactableObjectsContainer: {fileID: 1909060132}
-  _weaponsBreaker: {fileID: 0}
+  _weaponsBreaker: {fileID: 1735101902}
   _player: {fileID: 1695964239}
 --- !u!4 &274251729
 Transform:

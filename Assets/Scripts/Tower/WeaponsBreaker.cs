@@ -22,7 +22,7 @@ public class WeaponsBreaker : MonoBehaviour
 
     private void OnTowerDamaged(int damage)
     {
-        int brokenWeapons = _weapons.Count(weapon => weapon.Breakdown.Broken);
+        int brokenWeapons = _weapons.Count(weapon => weapon.Breakdown is { Broken : true});
 
         if (brokenWeapons >= _maxBrokenWeaponCount || _weapons.Count - brokenWeapons <= 1)
         {
@@ -35,7 +35,7 @@ public class WeaponsBreaker : MonoBehaviour
         if (_damage >= _damageToBreakWeapon)
         {
             Weapon weapon = _weapons
-                .Where(weapon => weapon.Breakdown.Broken == false)
+                .Where(weapon => weapon.Breakdown is {Broken: false})
                 .OrderBy(weapon => weapon.Ammo)
                 .FirstOrDefault();
 

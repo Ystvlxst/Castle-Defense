@@ -36,7 +36,7 @@ public class Weapon : MonoBehaviour, IModificationListener<float>
         _upgradeFactor = value;
 
     public bool CanShoot() =>
-        _ammo > 0 && TargetSelector.HasTarget(ShootDistance) && !Breakdown.Broken;
+        _ammo > 0 && TargetSelector.HasTarget(ShootDistance) && (Breakdown == null || !Breakdown.Broken);
 
     protected bool CanRefillAmmo() =>
         StackPresenter.Empty == false && _ammo == 0;
