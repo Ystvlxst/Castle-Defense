@@ -73,7 +73,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _trigger: {fileID: 19480490250915626}
-  _interactionTime: 0.1
+  _interactionTime: 0.05
   _view: {fileID: 0}
   _conveyorEndStack: {fileID: 19480491399292444}
 --- !u!1 &19480491339067550

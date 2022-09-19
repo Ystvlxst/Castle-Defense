@@ -30432,6 +30432,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1264092743}
     m_Modifications:
+    - target: {fileID: 19480490250915621, guid: 60bc281c181c347eaafa84d6f4fe7fac, type: 3}
+      propertyPath: _interactionTime
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 19480491952018344, guid: 60bc281c181c347eaafa84d6f4fe7fac, type: 3}
       propertyPath: m_Name
       value: DronePlatform
