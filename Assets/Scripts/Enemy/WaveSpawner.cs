@@ -41,7 +41,7 @@ public class WaveSpawner : MonoBehaviour
 
             _wave = Mathf.Clamp(_wave, 0, _waves.Count);
 
-            if (_wave == 3)
+            if (_wave == 2)
             {
                 yield return new WaitForSeconds(_timeToSpawnSecondWave);
 
