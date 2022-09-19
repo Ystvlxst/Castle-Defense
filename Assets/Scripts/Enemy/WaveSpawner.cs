@@ -18,16 +18,24 @@ public class WaveSpawner : MonoBehaviour
     private void OnEnable() =>
         _tower.Damaged += OnBaseDamaged;
 
-    private void Start() =>
+    private void Start() => 
+        StartCoroutine(SpawnStartWaves());
+
+    private IEnumerator SpawnStartWaves()
+    {
+        StartCoroutine(Spawn(_waves[0], 0, Vector3.back * 100f));
+        yield return new WaitForSeconds(4f);
+        StartCoroutine(Spawn(_waves[1], 0, Vector3.zero));
+        
+        _wave = 2;
         StartCoroutine(Spawn());
+    }
 
     private void OnDisable() =>
         _tower.Damaged -= OnBaseDamaged;
 
     private IEnumerator Spawn()
     {
-        _wave = 0;
-
         while (true)
         {
             _wave++;
@@ -41,13 +49,13 @@ public class WaveSpawner : MonoBehaviour
             _wave = Mathf.Clamp(_wave, 0, _waves.Count);
 
             for (int i = 0; i < _wave; i++)
-                StartCoroutine(Spawn(_waves[i]));
+                StartCoroutine(Spawn(_waves[i], 0.1f, Vector3.zero));
 
             yield return new WaitUntil(() => _spawned == 0);
         }
     }
 
-    private IEnumerator Spawn(SpawnWave enemySpawner)
+    private IEnumerator Spawn(SpawnWave enemySpawner, float SpawnDelay, Vector3 spawnOffset)
     {
         EnemySpawner spawner = enemySpawner.EnemySpawner;
 
@@ -55,12 +63,14 @@ public class WaveSpawner : MonoBehaviour
         {
             Transform spawnPoint = spawner.GetRandomSpawnPoint();
 
-            Enemy enemy = spawner.SpawnEnemy(spawnPoint);
+            Enemy enemy = spawner.SpawnEnemy(spawnPoint.position + spawnOffset, spawnPoint.rotation);
             _spawned++;
             enemy.Dying += OnEnemyDying;
-            StartCoroutine(InitEnemyDelayed(spawnPoint, enemy, spawner));
+            enemy.Init(spawner.GetClosestTarget(spawnPoint, spawner.SelectTargets()));
+            _enemyContainer.Add(enemy);
+            InitTarget(enemy);
 
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(SpawnDelay);
         }
     }
 
@@ -73,14 +83,6 @@ public class WaveSpawner : MonoBehaviour
             _damage = 0;
             _decreaseWave = true;
         }
-    }
-
-    private IEnumerator InitEnemyDelayed(Transform spawnPoint, Enemy enemy, EnemySpawner enemySpawner)
-    {
-        yield return new WaitForSeconds(1);
-        enemy.Init(enemySpawner.GetClosestTarget(spawnPoint, enemySpawner.SelectTargets()));
-        _enemyContainer.Add(enemy);
-        InitTarget(enemy);
     }
 
     private void InitTarget(Enemy enemy)

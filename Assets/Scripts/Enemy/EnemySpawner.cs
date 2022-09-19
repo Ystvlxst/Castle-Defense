@@ -13,9 +13,9 @@ public class EnemySpawner : MonoBehaviour
     public Transform GetRandomSpawnPoint() => 
         _spawnPoints[Random.Range(0, _spawnPoints.Count)];
 
-    public Enemy SpawnEnemy(Transform spawnPoint)
+    public Enemy SpawnEnemy(Vector3 position, Quaternion rotation)
     {
-        Enemy enemy = Instantiate(_enemyTemplate, spawnPoint.position + Random.insideUnitSphere, spawnPoint.rotation);
+        Enemy enemy = Instantiate(_enemyTemplate, position + Random.insideUnitSphere, rotation);
         
         return enemy;
     }
