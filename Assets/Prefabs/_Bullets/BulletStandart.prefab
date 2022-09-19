@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1352228147017972895}
   - component: {fileID: 1352228147017972890}
   - component: {fileID: 1352228147017972891}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BulletStandart
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
@@ -76,8 +76,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 34
-  _damageRadius: 0.5
-  _force: 1
+  _hitThrowForce: 0
   _hitEffectTemplate: {fileID: 198272901577952178, guid: 79eb65b00125a9a43ae9eaa75cb41e3d, type: 3}
   _groundDecal: {fileID: 198211411379540024, guid: 5bc227c2a45a7e44ea8521ddb446b620, type: 3}
 --- !u!1 &5479224978751551196
@@ -90,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8057027256863041599}
   - component: {fileID: 4220005175755612609}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
