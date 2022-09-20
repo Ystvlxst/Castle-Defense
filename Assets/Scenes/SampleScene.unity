@@ -30663,6 +30663,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8439568526343209330, guid: 4067db03c6fa548cf9cc94046dac564f, type: 3}
+      propertyPath: _tower
+      value: 
+      objectReference: {fileID: 1735101901}
+    - target: {fileID: 8439568526343209330, guid: 4067db03c6fa548cf9cc94046dac564f, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 1735101901}
