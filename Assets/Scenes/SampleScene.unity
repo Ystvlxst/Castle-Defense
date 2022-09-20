@@ -29082,30 +29082,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1977512324}
   m_Mesh: {fileID: -273165303615012990, guid: 1500219ea94c6435a97b62ebbdca9ccf, type: 3}
---- !u!1 &1985075895 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8095100463950989890, guid: 4067db03c6fa548cf9cc94046dac564f, type: 3}
+--- !u!95 &1985075896 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 647425462885779458, guid: 4067db03c6fa548cf9cc94046dac564f, type: 3}
   m_PrefabInstance: {fileID: 5669280833206828055}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1985075896
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1985075895}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3dfe0fbed11c243f1aa930473bc45ca2, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1991952204
 GameObject:
   m_ObjectHideFlags: 0
@@ -30681,50 +30662,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8095100463950989892, guid: 4067db03c6fa548cf9cc94046dac564f, type: 3}
-      propertyPath: m_Value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8095100463950989892, guid: 4067db03c6fa548cf9cc94046dac564f, type: 3}
-      propertyPath: m_MaxValue
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 8095100463950989892, guid: 4067db03c6fa548cf9cc94046dac564f, type: 3}
-      propertyPath: m_Colors.m_NormalColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8095100463950989892, guid: 4067db03c6fa548cf9cc94046dac564f, type: 3}
-      propertyPath: m_Colors.m_NormalColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8095100463950989892, guid: 4067db03c6fa548cf9cc94046dac564f, type: 3}
-      propertyPath: m_Colors.m_NormalColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8095100463950989892, guid: 4067db03c6fa548cf9cc94046dac564f, type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8095100463950989892, guid: 4067db03c6fa548cf9cc94046dac564f, type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8095100463950989892, guid: 4067db03c6fa548cf9cc94046dac564f, type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8095100463950989893, guid: 4067db03c6fa548cf9cc94046dac564f, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8095100463950989893, guid: 4067db03c6fa548cf9cc94046dac564f, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8095100463950989893, guid: 4067db03c6fa548cf9cc94046dac564f, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8439568526343209330, guid: 4067db03c6fa548cf9cc94046dac564f, type: 3}
       propertyPath: _player
       value: 
@@ -30740,33 +30677,9 @@ PrefabInstance:
     - target: {fileID: 8439568526343209330, guid: 4067db03c6fa548cf9cc94046dac564f, type: 3}
       propertyPath: _animators.Array.data[1]
       value: 
-      objectReference: {fileID: 5669280833206828057}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4067db03c6fa548cf9cc94046dac564f, type: 3}
---- !u!1 &5669280833206828056 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8095100462971133885, guid: 4067db03c6fa548cf9cc94046dac564f, type: 3}
-  m_PrefabInstance: {fileID: 5669280833206828055}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &5669280833206828057
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5669280833206828056}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ded07db4424704f2c928dcd3883c3687, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &6838659116840588107
 PrefabInstance:
   m_ObjectHideFlags: 0

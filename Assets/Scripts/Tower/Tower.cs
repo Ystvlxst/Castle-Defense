@@ -40,7 +40,7 @@ public class Tower : MonoBehaviour
             _currentHealth = _health;
     }
 
-    public void CheckLowHealth()
+    private void CheckLowHealth()
     {
         if (_currentHealth <= _lowestHealth)
             _currentHealth = _lowestHealth;

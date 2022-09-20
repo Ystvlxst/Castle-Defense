@@ -7,15 +7,19 @@ public class TowerHealthView : MonoBehaviour
     private const string _low = "Low";
 
     [SerializeField] private Tower _player;
-    [SerializeField] private Animator[] _animators;
+    [SerializeField] private Animator _animator;
+    [SerializeField] private Image _image;
 
     private Slider _slider;
+    private Color _startFillColor;
 
     private void Awake()
     {
         _slider = GetComponent<Slider>();
 
         _slider.maxValue = _player.Health;
+
+        _startFillColor = _image.color;
     }
 
     private void Update()
@@ -23,20 +27,14 @@ public class TowerHealthView : MonoBehaviour
         _slider.value = _player.CurrentHealth;
 
         if (_player.CurrentHealth <= _player.LowestHealth)
-            SetTrigger();
+        {
+            _animator.SetTrigger(_low);
+            _image.color = Color.red;
+        }
         else
-            ResetTrigger();
-    }
-
-    private void SetTrigger()
-    {
-        foreach(Animator animator in _animators)
-            animator.SetTrigger(_low);
-    }
-
-    private void ResetTrigger()
-    {
-        foreach (Animator animator in _animators)
-            animator.ResetTrigger(_low);
+        {
+            _animator.ResetTrigger(_low);
+            _image.color = _startFillColor;
+        }
     }
 }
