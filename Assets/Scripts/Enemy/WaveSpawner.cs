@@ -25,10 +25,20 @@ public class WaveSpawner : MonoBehaviour
     {
         StartCoroutine(Spawn(_waves[0], 0, Vector3.back * 100f));
         yield return new WaitForSeconds(4f);
-        StartCoroutine(Spawn(_waves[1], 0, Vector3.zero));
-        
-        _wave = 2;
+        SpawnSecondWave();
+
+        yield return new WaitForSeconds(20f);
+        SpawnSecondWave();
+        StartCoroutine(Spawn(_waves[2], 0, Vector3.zero));
+
+        _wave = 3;
         StartCoroutine(Spawn());
+    }
+
+    private void SpawnSecondWave()
+    {
+        StartCoroutine(Spawn(_waves[0], 0, Vector3.zero));
+        StartCoroutine(Spawn(_waves[1], 0, Vector3.zero));
     }
 
     private void OnDisable() =>
@@ -38,6 +48,8 @@ public class WaveSpawner : MonoBehaviour
     {
         while (true)
         {
+            yield return new WaitUntil(() => _spawned == 0);
+
             _wave++;
 
             if (_decreaseWave)
@@ -52,8 +64,6 @@ public class WaveSpawner : MonoBehaviour
                 StartCoroutine(Spawn(_waves[i], 0.1f, Vector3.zero));
 
             _tower.ReestablishHealth();
-
-            yield return new WaitUntil(() => _spawned == 0);
         }
     }
 
