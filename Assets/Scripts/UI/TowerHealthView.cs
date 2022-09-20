@@ -13,22 +13,15 @@ public class TowerHealthView : MonoBehaviour
     private Slider _slider;
     private Color _startFillColor;
 
-    private void OnEnable()
+    private void Awake()
     {
         _slider = GetComponent<Slider>();
         _slider.maxValue = _tower.Health;
         _slider.value = _slider.maxValue;
         _startFillColor = _image.color;
-
-        _tower.Damaged += CheckHealth;
     }
 
-    private void OnDisable()
-    {
-        _tower.Damaged -= CheckHealth;
-    }
-
-    private void CheckHealth(int damage)
+    private void Update()
     {
         _slider.value = _tower.CurrentHealth;
 

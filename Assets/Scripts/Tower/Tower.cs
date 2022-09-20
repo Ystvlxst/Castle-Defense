@@ -7,7 +7,7 @@ public class Tower : MonoBehaviour
 {
     [SerializeField] private int _health;
     [SerializeField] private ParticleSystem _hitEffect;
-
+    [SerializeField] private ParticleSystem _healing;
     private int _currentHealth;
     private int _lowestHealth = 250;
 
@@ -32,12 +32,14 @@ public class Tower : MonoBehaviour
         _hitEffect.Play();
     }
 
-    public void AddHealth(int health)
+    public void ReestablishHealth()
     {
-        _currentHealth += health;
+        _currentHealth = _health;
 
         if (_currentHealth >= _health)
             _currentHealth = _health;
+
+        _healing.Play();
     }
 
     private void CheckLowHealth()
