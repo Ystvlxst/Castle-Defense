@@ -40,4 +40,7 @@ public class LootDrop : MonoBehaviour
         
         return direction.normalized;
     }
+
+    public void SetMultiplier(int i) => 
+        _amountRange *= i;
 }

@@ -5,6 +5,7 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private EnemyStateMachine _enemyStateMachine;
     [SerializeField] private Health _health;
+    [SerializeField] private LootDrop _lootDrop;
 
     private EnemyTarget _target;
 
@@ -14,11 +15,12 @@ public class Enemy : MonoBehaviour
 
     public event UnityAction<Enemy> Dying;
 
-    public void Init(EnemyTarget target)
+    public void Init(EnemyTarget target, int amount)
     {
         _health.enabled = true;
         _target = target;
         _enemyStateMachine.Launch();
+        _lootDrop.SetMultiplier(amount);
     }
 
     private void Awake() => 

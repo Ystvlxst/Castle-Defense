@@ -14,17 +14,17 @@ public class WaveSpawner : MonoBehaviour
     private int _wave = 0;
     private int _damage;
     private int _damageToDecreaseWave = 50;
+    private int _lootMultiplier;
 
     private void OnEnable() =>
         _tower.Damaged += OnBaseDamaged;
 
-    private void Start() => 
-        StartCoroutine(SpawnStartWaves());
-
     private IEnumerator SpawnStartWaves()
     {
+        _lootMultiplier = 3;
         StartCoroutine(Spawn(_waves[0], 0, Vector3.back * 100f));
         yield return new WaitForSeconds(4f);
+        _lootMultiplier = 1;
         SpawnSecondWave();
 
         yield return new WaitForSeconds(20f);
@@ -34,6 +34,9 @@ public class WaveSpawner : MonoBehaviour
         _wave = 3;
         StartCoroutine(Spawn());
     }
+
+    private void Start() => 
+        StartCoroutine(SpawnStartWaves());
 
     private void SpawnSecondWave()
     {
@@ -75,15 +78,22 @@ public class WaveSpawner : MonoBehaviour
         {
             Transform spawnPoint = spawner.GetRandomSpawnPoint();
 
-            Enemy enemy = spawner.SpawnEnemy(spawnPoint.position + spawnOffset, spawnPoint.rotation);
-            _spawned++;
-            enemy.Dying += OnEnemyDying;
-            enemy.Init(spawner.GetClosestTarget(spawnPoint, spawner.SelectTargets()));
-            _enemyContainer.Add(enemy);
-            InitTarget(enemy);
+            SpawnEnemy(spawnOffset, spawner, spawnPoint);
 
             yield return new WaitForSeconds(SpawnDelay);
         }
+    }
+
+    private Enemy SpawnEnemy(Vector3 spawnOffset, EnemySpawner spawner, Transform spawnPoint)
+    {
+        Enemy enemy = spawner.SpawnEnemy(spawnPoint.position + spawnOffset, spawnPoint.rotation);
+        _spawned++;
+        enemy.Dying += OnEnemyDying;
+        enemy.Init(spawner.GetClosestTarget(spawnPoint, spawner.SelectTargets()), _lootMultiplier);
+        _enemyContainer.Add(enemy);
+        InitTarget(enemy);
+
+        return enemy;
     }
 
     private void OnBaseDamaged(int i)
