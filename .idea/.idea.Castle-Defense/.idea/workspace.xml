@@ -2,37 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d3b516d-3b73-4cfc-ac92-be663e9d2345" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tutroial/Analytics.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tutroial/Analytics/ITutorialAnalyticsEventSource.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tutroial/Analytics/ITutorialAnalyticsEventSource.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tutroial/Analytics/TutorialAnalytics.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tutroial/Analytics/TutorialAnalytics.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tutroial/Behaviours.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tutroial/Behaviours/TutorialBuyZone.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tutroial/Behaviours/TutorialBuyZone.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tutroial/Behaviours/TutorialCastleBehaviour.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tutroial/Behaviours/TutorialCastleBehaviour.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tutroial/Behaviours/TutorialCastleRoot.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tutroial/Behaviours/TutorialCastleRoot.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tutroial/Behaviours/TutorialConveyor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tutroial/Behaviours/TutorialConveyor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tutroial/Behaviours/TutorialConveyorEventSource.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tutroial/Behaviours/TutorialConveyorEventSource.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tutroial/Behaviours/TutorialDronePlatformEnter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tutroial/Behaviours/TutorialDronePlatformEnter.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tutroial/Behaviours/TutorialRemoveFromStack.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tutroial/Behaviours/TutorialRemoveFromStack.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Castle-Defense/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Castle-Defense/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Animations/Arrow/ArrowTemplate.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Animations/Arrow/ArrowTemplate.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Animations/Camera/Level1.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Animations/Camera/Level1.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Objects/1Conveyour Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Objects/1Conveyour Variant.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Objects/Conveyour.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Objects/Conveyour.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tutorial/ArrowTemplate.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tutorial/ArrowTemplate.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraAnimatorParameters.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraAnimatorParameters.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Shop/Conveyor/TakeItemsInteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Shop/Conveyor/TakeItemsInteractable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tutroial/TutorialCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tutroial/TutorialCamera.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/_Weapons/FastWeaponRoot Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/_Weapons/FastWeaponRoot Variant.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

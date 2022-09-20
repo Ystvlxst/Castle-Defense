@@ -1,6 +1,8 @@
+using System.Collections;
 using Game.Assistants.Behaviour;
 using Source.UI.EnemyPointersUI;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class WeaponList : ReferenceObjectList<Weapon>
 {
@@ -26,12 +28,19 @@ public class WeaponList : ReferenceObjectList<Weapon>
 
         reference.GetComponentInChildren<BrokenObjectPointer>().Init(_player);
 
-
+        StartCoroutine(UpdateNavMeshObstacle(reference.GetComponentInChildren<NavMeshObstacle>()));
+        
         if (_weaponsProgress.Contains(guid))
             return;
         
         _weaponsProgress.Add(guid);
-
         _weaponsProgress.Save();
+    }
+
+    private IEnumerator UpdateNavMeshObstacle(NavMeshObstacle obstacle)
+    {
+        obstacle.enabled = false;
+        yield return new WaitForSeconds(1f);
+        obstacle.enabled = true;
     }
 }
