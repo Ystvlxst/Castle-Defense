@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class TowerHealthView : MonoBehaviour
 {
     private const string _low = "Low";
+    private const string _full = "Full";
 
     [SerializeField] private Tower _tower;
     [SerializeField] private Animator _animator;
@@ -25,14 +26,15 @@ public class TowerHealthView : MonoBehaviour
     {
         _slider.value = _tower.CurrentHealth;
 
-        if (_tower.CurrentHealth <= _tower.LowestHealth)
+        if (_tower.IsLow)
         {
             _animator.SetTrigger(_low);
             _image.color = Color.red;
         }
-        else
+
+        if(_tower.IsFull)
         {
-            _animator.ResetTrigger(_low);
+            _animator.SetTrigger(_full);
             _image.color = _startFillColor;
         }
     }

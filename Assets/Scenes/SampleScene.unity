@@ -25518,7 +25518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2319f6c2fdf9e410882d0b484a195874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 1000
+  _health: 500
   _hitEffect: {fileID: 1516701195}
   _healing: {fileID: 91608697}
 --- !u!114 &1735101902

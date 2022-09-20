@@ -9,13 +9,15 @@ public class Tower : MonoBehaviour
     [SerializeField] private ParticleSystem _hitEffect;
     [SerializeField] private ParticleSystem _healing;
     private int _currentHealth;
-    private int _lowestHealth = 250;
+    private int _lowestHealth = 50;
 
     public event Action<int> Damaged;
 
     public int Health => _health;
     public int CurrentHealth => _currentHealth;
     public int LowestHealth => _lowestHealth;
+    public bool IsFull => _currentHealth == _health;
+    public bool IsLow => _currentHealth <= _lowestHealth;
 
     private void Awake()
     {
