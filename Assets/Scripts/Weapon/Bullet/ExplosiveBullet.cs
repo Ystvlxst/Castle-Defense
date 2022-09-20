@@ -10,7 +10,7 @@ public class ExplosiveBullet : Bullet
         Explode();
     }
 
-    private void Explode()
+    protected void Explode()
     {
         foreach (Collider hitCollider in GetHitColliders())
         {

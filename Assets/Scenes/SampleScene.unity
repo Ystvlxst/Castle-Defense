@@ -16625,7 +16625,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 38154731}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1124297345
 PrefabInstance:
@@ -25835,11 +25835,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1703713204}
   m_Mesh: {fileID: -273165303615012990, guid: 1500219ea94c6435a97b62ebbdca9ccf, type: 3}
---- !u!4 &1716562836 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 466495379507142191, guid: 60bc281c181c347eaafa84d6f4fe7fac, type: 3}
-  m_PrefabInstance: {fileID: 19480491914666562}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1720834578
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31878,11 +31873,15 @@ PrefabInstance:
     - target: {fileID: 6838659116416172279, guid: 66ec5f65b58934f85a0b8335926d3c3c, type: 3}
       propertyPath: _targetBase
       value: 
-      objectReference: {fileID: 1716562836}
+      objectReference: {fileID: 0}
     - target: {fileID: 6838659116416172279, guid: 66ec5f65b58934f85a0b8335926d3c3c, type: 3}
       propertyPath: _dronePlatform
       value: 
       objectReference: {fileID: 38154733}
+    - target: {fileID: 7058917238723534363, guid: 66ec5f65b58934f85a0b8335926d3c3c, type: 3}
+      propertyPath: _cooldown
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7653315997236877647, guid: 66ec5f65b58934f85a0b8335926d3c3c, type: 3}
       propertyPath: m_fontSize
       value: 0.7
