@@ -51,6 +51,8 @@ public class WaveSpawner : MonoBehaviour
             for (int i = 0; i < _wave; i++)
                 StartCoroutine(Spawn(_waves[i], 0.1f, Vector3.zero));
 
+            _tower.ReestablishHealth();
+
             yield return new WaitUntil(() => _spawned == 0);
         }
     }
