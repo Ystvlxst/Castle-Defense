@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -10,7 +11,9 @@ public abstract class Bullet : MonoBehaviour
 
     private Rigidbody _rigidbody;
 
-    public void Init(Vector3 velocity, Vector3 torque)
+    protected Rigidbody Rigidbody => _rigidbody;
+
+    public void Launch(Vector3 velocity, Vector3 torque)
     {
         _rigidbody.velocity = velocity;
         _rigidbody.AddTorque(torque);
@@ -49,11 +52,11 @@ public abstract class Bullet : MonoBehaviour
     protected bool TryApplyDamage(Collider collider)
     {
         if (!collider.TryGetComponent(out IDamageable enemy))
-            return true;
+            return false;
 
         enemy.TakeDamage(_damage);
         
-        return false;
+        return true;
     }
 
     private void SpawnDecalEffect(ParticleSystem particleSystem) => 
