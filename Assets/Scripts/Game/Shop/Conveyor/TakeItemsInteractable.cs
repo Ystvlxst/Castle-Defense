@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using BabyStack.Model;
 using DG.Tweening;
@@ -9,11 +10,14 @@ public class TakeItemsInteractable : TimerStackInteractableZone
     
     public StackPresenter ConveyorEndStack => _conveyorEndStack;
 
+    public event Action<Stackable> TookItem;
+
     public override void InteractAction(StackPresenter enteredStack)
     {
         var stackable = _conveyorEndStack.RemoveFromStack(GetFirstInOutput());
         stackable.transform.DOComplete(true);
         enteredStack.AddToStack(stackable);
+        TookItem?.Invoke(stackable);
     }
 
     public override bool CanInteract(StackPresenter enteredStack) => 
