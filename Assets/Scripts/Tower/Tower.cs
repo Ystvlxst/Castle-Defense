@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Events;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Tower : MonoBehaviour
 {
@@ -8,11 +9,13 @@ public class Tower : MonoBehaviour
     [SerializeField] private ParticleSystem _hitEffect;
 
     private int _currentHealth;
+    private int _lowestHealth = 25;
 
     public event Action<int> Damaged;
 
     public int Health => _health;
     public int CurrentHealth => _currentHealth;
+    public int LowestHealth => _lowestHealth;
 
     private void Awake()
     {
@@ -24,8 +27,7 @@ public class Tower : MonoBehaviour
         Damaged?.Invoke(damage);
         _currentHealth -= damage;
 
-        if (_currentHealth <= 0)
-            _currentHealth = 0;
+        CheckLowHealth();
 
         _hitEffect.Play();
     }
@@ -36,5 +38,11 @@ public class Tower : MonoBehaviour
 
         if (_currentHealth >= _health)
             _currentHealth = _health;
+    }
+
+    public void CheckLowHealth()
+    {
+        if (_currentHealth <= _lowestHealth)
+            _currentHealth = _lowestHealth;
     }
 }
