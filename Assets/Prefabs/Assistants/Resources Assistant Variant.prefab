@@ -243,6 +243,10 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 3.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8013116022133551709, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
+      propertyPath: m_AutoBraking
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8114623886956264150, guid: 0b4b537feec48453086c34d9ad69b6c2, type: 3}
       propertyPath: m_ConnectedAnchor.x
       value: -0.0016917207
