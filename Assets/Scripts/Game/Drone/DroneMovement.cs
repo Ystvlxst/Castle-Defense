@@ -1,6 +1,3 @@
-using System;
-using DG.Tweening;
-using TMPro;
 using UnityEngine;
 
 internal class DroneMovement : MonoBehaviour
@@ -8,17 +5,18 @@ internal class DroneMovement : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private float _speedRotate;
     [SerializeField] private MonoBehaviour _inputBehaviour;
-    [SerializeField] private Transform _targetBase;
     [SerializeField] private DronePlatform _dronePlatform;
     
     private IInputSource _input;
     private Vector3 _moveVector;
 
     public bool IsFirstMovementStoped = false;
+    private Vector3 _startPosition;
 
     private void Start()
     {
         _input = (IInputSource) _inputBehaviour;
+        _startPosition = transform.position;
     }
 
     private void Update()
@@ -26,7 +24,12 @@ internal class DroneMovement : MonoBehaviour
         Move();
     }
 
-    public void Move()
+    public void SetInput(IInputSource input)
+    {
+        _input = input;
+    }
+
+    private void Move()
     {
         if (_dronePlatform.IsPlayerMover == false)
         {
@@ -42,13 +45,8 @@ internal class DroneMovement : MonoBehaviour
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position, _targetBase.position, Time.deltaTime * _speed);
+            transform.position = Vector3.MoveTowards(transform.position, _startPosition, Time.deltaTime * _speed);
             IsFirstMovementStoped = true;
         }
-    }
-
-    public void SetInput(IInputSource input)
-    {
-        _input = input;
     }
 }
