@@ -9,7 +9,7 @@ public class Tower : MonoBehaviour
     [SerializeField] private ParticleSystem _hitEffect;
 
     private int _currentHealth;
-    private int _lowestHealth = 25;
+    private int _lowestHealth = 250;
 
     public event Action<int> Damaged;
 
