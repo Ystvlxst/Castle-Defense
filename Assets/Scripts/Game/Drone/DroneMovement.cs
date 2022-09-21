@@ -7,25 +7,16 @@ internal class DroneMovement : MonoBehaviour
     [SerializeField] private float _speedRotate;
     [SerializeField] private MonoBehaviour _inputBehaviour;
     [SerializeField] private DronePlatform _dronePlatform;
-    [SerializeField] private List<Transform> _pathPointsTransforms;
-    [SerializeField] private float _autoSpeed;
-
-    private List<Vector3> _pathPoints = new List<Vector3>();
+    [SerializeField] private Transform _startPoint;
 
     private IInputSource _input;
     private Vector3 _moveVector;
 
     public bool IsFirstMovementStoped = false;
-    private Vector3 _startPosition;
-    private int _currentPathPoint;
 
     private void Start()
     {
-        foreach (Transform transformPoint in _pathPointsTransforms) 
-            _pathPoints.Add(transformPoint.position);
-        
         _input = (IInputSource) _inputBehaviour;
-        _startPosition = transform.position;
     }
 
     private void Update()
@@ -56,14 +47,8 @@ internal class DroneMovement : MonoBehaviour
         else
         {
             IsFirstMovementStoped = true;
-            Vector3 pathPoint = _pathPoints[_currentPathPoint];
-            lookRotation = Quaternion.LookRotation(pathPoint - transform.position);
-            transform.position = Vector3.MoveTowards(transform.position, pathPoint, Time.deltaTime * _autoSpeed);
-
-            if (Vector3.SqrMagnitude(transform.position - pathPoint) < 0.5f)
-            {
-                _currentPathPoint = _currentPathPoint == _pathPoints.Count - 1 ? 0 : _currentPathPoint + 1;
-            }
+            lookRotation = Quaternion.LookRotation(_startPoint.forward);
+            transform.position = Vector3.MoveTowards(transform.position, _startPoint.position, Time.deltaTime * _speed);
         }
         
         transform.rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * _speedRotate);

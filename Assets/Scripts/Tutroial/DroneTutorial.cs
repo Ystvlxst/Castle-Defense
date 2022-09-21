@@ -6,7 +6,7 @@ public class DroneTutorial : MonoBehaviour
 {
     private const string TutorialComplete = "TutorialComplete";
 
-    [SerializeField] private DronePlatform _dronePlatform;
+    [SerializeField] private Transform _dronePlatform;
     [SerializeField] private DroneMovement _droneMovement;
     [SerializeField] private float _platformDistance;
     [SerializeField] private float _droneDistance;
