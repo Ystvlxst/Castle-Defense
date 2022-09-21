@@ -8,7 +8,7 @@ using Random = UnityEngine.Random;
 [RequireComponent(typeof(NavMeshAgent))]
 public class AttackState : State
 {
-    private const string _attack = "Attack";
+    private const string _attack = "Action";
 
     [SerializeField] private int _damage;
     [SerializeField] private Animator _animator;

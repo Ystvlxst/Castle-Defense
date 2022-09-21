@@ -6,7 +6,6 @@ public class DoctorAnimation : MonoBehaviour
 {
     [SerializeField] private StackPresenter _playerStack;
     [SerializeField] private Animator _animator;
-    [SerializeField] private NavMeshAgent _navMeshAgent;
 
     private void Awake()
     {

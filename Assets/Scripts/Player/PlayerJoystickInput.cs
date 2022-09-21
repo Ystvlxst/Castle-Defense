@@ -9,7 +9,8 @@ class PlayerJoystickInput : MonoBehaviour, IInputSource
 
     private void Update()
     {
-        Destination = transform.position + new Vector3(_joystick.Direction.x, 0, _joystick.Direction.y);
+        Vector3 direction = new Vector3(_joystick.Direction.x, 0, _joystick.Direction.y).normalized;
+        Destination = transform.position + direction;
         
         if(Moving)
             Moved?.Invoke();

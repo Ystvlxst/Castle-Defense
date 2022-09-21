@@ -189,6 +189,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b8569960f79d3346b1194417d55692f, type: 3}
+--- !u!195 &9012837818651349483 stripped
+NavMeshAgent:
+  m_CorrespondingSourceObject: {fileID: 7187789322495436876, guid: 9b8569960f79d3346b1194417d55692f, type: 3}
+  m_PrefabInstance: {fileID: 2221436181898607015}
+  m_PrefabAsset: {fileID: 0}
 --- !u!54 &9012837818651349484 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 7187789322495436875, guid: 9b8569960f79d3346b1194417d55692f, type: 3}
@@ -395,7 +400,7 @@ Animator:
   m_GameObject: {fileID: 2943976490942190090}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: b0475812ae08b4e90991b85cc1a9684a, type: 3}
-  m_Controller: {fileID: 9100000, guid: d0459ce3bc9384071807aabf8ebd017e, type: 2}
+  m_Controller: {fileID: 22100000, guid: f5a5e34ec20aac847a61242a3b33082e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -404,3 +409,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &773126112811958691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2943976490942190090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42973304762445fc9989c82d1b1a4e92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _navMeshAgent: {fileID: 9012837818651349483}
