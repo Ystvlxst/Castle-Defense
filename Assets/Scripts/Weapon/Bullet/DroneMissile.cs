@@ -9,7 +9,7 @@ class DroneMissile : ExplosiveBullet
     private float _currentSpeed;
     private Transform _target;
     private Vector3 _lastTargetPosition = Vector3.zero;
-    private Vector3 _targetPosition => _target != null ? _target.position + Vector3.down * 5f : _lastTargetPosition;
+    private Vector3 _targetPosition => _target != null ? _target.position + Vector3.down * 3f : _lastTargetPosition;
 
     private void FixedUpdate()
     {
