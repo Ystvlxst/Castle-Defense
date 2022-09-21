@@ -3,7 +3,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class DeathState : State, IThrowable
+public class DeathState : State
 {
     private const string _dead = "Dead";
 

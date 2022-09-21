@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2d3b516d-3b73-4cfc-ac92-be663e9d2345" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/SpeedAnimation.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/SpeedAnimation.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Castle-Defense/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Castle-Defense/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Animations/Enemy/Boss.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Animations/Enemy/Boss.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Animations/Enemy/Robot/Fall Over.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Animations/Enemy/Robot/Fall Over.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Animations/Enemy/Robot/RobotEnemy.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Animations/Enemy/Robot/RobotEnemy.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Animations/Enemy/Robot/RobotEnemyUpgreade.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Animations/Enemy/Robot/RobotEnemyUpgreade.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Animations/Player/Doctor.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Animations/Player/Doctor.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/_Enemies/Robots/EnemyRobot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/_Enemies/Robots/EnemyRobot.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/_Enemies/Robots/UpgradedRobot Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/_Enemies/Robots/UpgradedRobot Variant.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/StateMachine/States/AttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/StateMachine/States/AttackState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Animations/DoctorAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Animations/DoctorAnimation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerJoystickInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerJoystickInput.cs" afterDir="false" />
-    </list>
+    <list default="true" id="2d3b516d-3b73-4cfc-ac92-be663e9d2345" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -126,7 +111,7 @@
       <workItem from="1663219499859" duration="5797000" />
       <workItem from="1663322281044" duration="844000" />
       <workItem from="1663394124125" duration="792000" />
-      <workItem from="1663755583152" duration="1564000" />
+      <workItem from="1663755583152" duration="2173000" />
     </task>
     <servers />
   </component>
