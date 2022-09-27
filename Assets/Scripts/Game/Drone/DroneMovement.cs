@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 internal class DroneMovement : MonoBehaviour
@@ -6,17 +7,16 @@ internal class DroneMovement : MonoBehaviour
     [SerializeField] private float _speedRotate;
     [SerializeField] private MonoBehaviour _inputBehaviour;
     [SerializeField] private DronePlatform _dronePlatform;
-    
+    [SerializeField] private Transform _startPoint;
+
     private IInputSource _input;
     private Vector3 _moveVector;
 
     public bool IsFirstMovementStoped = false;
-    private Vector3 _startPosition;
 
     private void Start()
     {
         _input = (IInputSource) _inputBehaviour;
-        _startPosition = transform.position;
     }
 
     private void Update()
@@ -31,6 +31,8 @@ internal class DroneMovement : MonoBehaviour
 
     private void Move()
     {
+        Quaternion lookRotation = Quaternion.identity;
+        
         if (_dronePlatform.IsPlayerMover == false)
         {
             _moveVector = (_input.Destination - transform.position).normalized;
@@ -39,14 +41,16 @@ internal class DroneMovement : MonoBehaviour
             
             if(lookDirection == Vector3.zero)
                 return;
-            
-            Quaternion quaternion = Quaternion.LookRotation(lookDirection);
-            transform.rotation = Quaternion.Lerp(transform.rotation, quaternion, Time.deltaTime * _speedRotate);
+
+            lookRotation = Quaternion.LookRotation(lookDirection);
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position, _startPosition, Time.deltaTime * _speed);
             IsFirstMovementStoped = true;
+            lookRotation = Quaternion.LookRotation(_startPoint.forward);
+            transform.position = Vector3.MoveTowards(transform.position, _startPoint.position, Time.deltaTime * _speed);
         }
+        
+        transform.rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * _speedRotate);
     }
 }

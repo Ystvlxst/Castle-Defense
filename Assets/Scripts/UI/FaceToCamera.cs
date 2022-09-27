@@ -12,7 +12,7 @@ public class FaceToCamera : MonoBehaviour
         _camera = Camera.main.transform;
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         transform.forward = _camera.forward;
 

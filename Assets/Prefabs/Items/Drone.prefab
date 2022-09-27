@@ -44,9 +44,8 @@ GameObject:
   - component: {fileID: 5803986231685400852}
   - component: {fileID: 394477608318341003}
   - component: {fileID: 239450467837218560}
-  - component: {fileID: 2532006648755265579}
   m_Layer: 9
-  m_Name: DronePlatformCanvas (1)
+  m_Name: DroneCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,7 +69,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -0.026666641, y: 2.0213342}
-  m_SizeDelta: {x: 3, y: 2}
+  m_SizeDelta: {x: 4, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &6371618206849595272
 Canvas:
@@ -158,19 +157,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _xRotate: 1
---- !u!114 &2532006648755265579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4795595085975625805}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d992315248469b4180477254a4ecbe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _xRotate: 1
 --- !u!1 &6838659116416172272
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,7 +188,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6838659116416172272}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.37, y: 7.74, z: -36.33}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
@@ -230,6 +216,7 @@ MonoBehaviour:
   _speedRotate: 20
   _inputBehaviour: {fileID: 6838659116416172169}
   _dronePlatform: {fileID: 0}
+  _startPoint: {fileID: 0}
   IsFirstMovementStoped: 0
 --- !u!114 &6838659116416172276
 MonoBehaviour:
@@ -334,7 +321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1980b0ae254f4c6cbfad6a1e4dba10cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cooldown: 3
+  _cooldown: 1
   _layerMask:
     serializedVersion: 2
     m_Bits: 512
